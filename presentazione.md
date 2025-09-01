@@ -27,8 +27,4 @@ nav_order: 2
 # 👱🏻💻 Il mio curriculum
 ---
 
-<embed 
-  src="{{ '/assets/pdf/CV.pdf' | relative_url }}" 
-  type="application/pdf" 
-  width="100%" 
-  height="900px" />
+<img src="{{ '/assets/images/CopertinaBTE.png' | relative_url }}" width="100%">
