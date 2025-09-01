@@ -25,6 +25,7 @@ nav_order: 4
 </script>
 
 # Contatti
+---
 📬 Per segnalazione di eventuali errori:  
 &emsp;&nbsp;&nbsp;[marcomarino.ci@gmail.com](mailto:marcomarino.ci@gmail.com)
 
