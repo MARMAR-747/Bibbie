@@ -27,4 +27,6 @@ nav_order: 2
 # 👱🏻💻 Il mio curriculum
 ---
 
-<img src="{{ '/assets/images/CopertinaBTE.png' | relative_url }}" width="100%">
+<img src="{{ '/assets/images/CV1.png' | relative_url }}" width="100%">  
+<img src="{{ '/assets/images/CV2.png' | relative_url }}" width="100%">  
+<img src="{{ '/assets/images/CV3.png' | relative_url }}" width="100%">
