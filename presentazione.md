@@ -27,9 +27,8 @@ nav_order: 2
 # 👱🏻💻 Il mio curriculum
 ---
 
-<iframe 
-  src="https://docs.google.com/viewer?embedded=true&url=https://github.com/MARMAR-747/Bibbie/blob/main/assets/pdf/CV.pdf" 
+<embed 
+  src="{{ '/assets/pdf/CV.pdf' | relative_url }}" 
+  type="application/pdf" 
   width="100%" 
-  height="900px" 
-  style="border:none;">
-</iframe>
+  height="900px" />
