@@ -28,10 +28,8 @@ nav_order: 2
 ---
 
 <iframe 
-  src="/assets/pdf/CV.pdf" 
+  src="https://docs.google.com/viewer?embedded=true&url=https://github.com/MARMAR-747/Bibbie/blob/main/assets/pdf/CV.pdf" 
   width="100%" 
   height="900px" 
-  style="border:none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  style="border:none;">
 </iframe>
-
-<iframe src="{{ '/assets/pdf/CV.pdf' | relative_url }}" width="100%" height="900px" style="border:none;"></iframe>
