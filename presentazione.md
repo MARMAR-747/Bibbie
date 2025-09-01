@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chi sono
+title: Il mio curriculum
 nav_order: 2
 ---
 
@@ -24,6 +24,12 @@ nav_order: 2
   });
 </script>
 
-# 👱🏻💻 Chi sono
+# 👱🏻💻 Il mio curriculum
 ---
 
+<iframe 
+  src="/assets/pdf/CV Marco Marino.pdf" 
+  width="100%" 
+  height="900px" 
+  style="border:none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</iframe>
