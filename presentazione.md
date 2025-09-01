@@ -28,7 +28,7 @@ nav_order: 2
 ---
 
 <iframe 
-  src="/assets/pdf/CV Marco Marino.pdf" 
+  src="/assets/pdf/CV.pdf" 
   width="100%" 
   height="900px" 
   style="border:none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
