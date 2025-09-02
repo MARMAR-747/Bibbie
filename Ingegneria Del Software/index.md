@@ -6,7 +6,7 @@ nav_exclude: true
 
 <div class="nav-buttons">
   <a href="/Bibbie/Controlli Automatici/" class="nav-button left">⬅️ Controlli Automatici</a>
-  <a href="/Bibbie/Controlli Automatici/" class="nav-button right">➡️ BHO</a>
+  <a href="/Bibbie/Controlli Automatici/" class="nav-button right">➡️ Programmazione Web e Mobile</a>
 </div>
 
 <br>
