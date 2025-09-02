@@ -38,6 +38,12 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Giovanni Garbo
+    </td>
+  </tr>
+  <tr>
     <td><strong>Descrizione</strong></td>
     <td>
       Teoria dei Segnali è, per antonomasia, la materia scoglio di Ingegneria Informatica a uniPa. Il programma è estremamente vasto e complesso, nonostante i soli 9 CFU assegnati. A rendere il tutto più impegnativo, il professore Garbo non è noto per la sua magnanimità in sede d’esame.
