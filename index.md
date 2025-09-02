@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let count = 0;
   const step = 1;
-  const delay = 600;
+  const delay = 400;
 
   const update = () => {
     if (count >= target) {
