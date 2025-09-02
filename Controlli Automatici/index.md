@@ -86,7 +86,7 @@ nav_exclude: true
   <tbody>
     <tr>
       <td>
-        <a href="../Controlli Automatici/Progetto_CA2315.pdf" target="_blank">Submarine: ROV</a>
+        <a href="../Controlli Automatici/Progetto_CA2315.pdf" target="_blank">SUBMARINE: ROV</a>
       </td>
       <td style="text-align: center;">Progetto</td>
       <td style="text-align: center;">36</td>
@@ -96,7 +96,7 @@ nav_exclude: true
   </tbody>
 </table>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdtodu3VPHwG825FNluwVazuPSc_mzX1lgQC1v22RndIOVhaQ/viewform" target="_blank" rel="noopener noreferrer">
+<a href="https://forms.gle/iqwHpBBBcairaDzy7" target="_blank" rel="noopener noreferrer">
   Valuta il materiale di Controlli Automatici ⭐
 </a> <br><br>
 
