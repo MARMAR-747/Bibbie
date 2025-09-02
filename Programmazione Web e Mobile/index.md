@@ -103,28 +103,28 @@ nav_exclude: true
   <tbody>
     <tr>
       <td>
-        <a href="../Ingegneria Del Software/RAD.pdf" target="_blank">RAD</a>
+        <a href="../Programmazione Web e Mobile/BIBBIA DI PWM.pdf" target="_blank">BIBBIA DI PWM</a>
       </td>
-      <td style="text-align: center;">Progetto</td>
-      <td style="text-align: center;">193</td>
+      <td style="text-align: center;">Teoria</td>
+      <td style="text-align: center;">247</td>
       <td style="text-align: center;">✅</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
     <tr>
       <td>
-        <a href="../Ingegneria Del Software/ODD.pdf" target="_blank">ODD</a>
+        <a href="../Programmazione Web e Mobile/Presentazione progetto PWM.pptx" target="_blank">PRESENTAZIONE PROGETTO PWM</a>
       </td>
-      <td style="text-align: center;">Progetto</td>
-      <td style="text-align: center;">22</td>
+      <td style="text-align: center;">PowerPoint</td>
+      <td style="text-align: center;">32</td>
       <td style="text-align: center;">✅</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
     <tr>
       <td>
-        <a href="../Ingegneria Del Software/SDD.pdf" target="_blank">SDD</a>
+        <a href="../Programmazione Web e Mobile/Handy Shopping" target="_blank">HANDY SHOPPING</a>
       </td>
       <td style="text-align: center;">Progetto</td>
-      <td style="text-align: center;">33</td>
+      <td style="text-align: center;">-</td>
       <td style="text-align: center;">✅</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
