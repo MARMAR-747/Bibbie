@@ -38,6 +38,12 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Antonino Imburgia
+    </td>
+  </tr>
+  <tr>
     <td><strong>Descrizione</strong></td>
     <td>
       Elettrotecnica, nonostante valga solo 6 CFU, presenta un programma tanto corposo quanto accessibile. Fortunatamente, il professor Imburgia si distingue per        la sua chiarezza espositiva ed è uno dei pochi docenti che propone esami realmente coerenti con quanto svolto in aula. Per lo studio della teoria, è               consigliato il file “LA BIBBIA DI ELETTROTECNICA”, che prende spunto direttamente dagli appunti scritti in classe dal professore offrendo una panoramica           accurata di tutti gli argomenti trattati (l’unico difetto di quest'ultimo è infatti la grafia, a volte poco leggibile). Per quanto riguarda gli esercizi, il       riferimento principale è il file “LE RIVELAZIONI DI ELETTROTECNICA”, che contiene: <br>
