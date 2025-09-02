@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/main"
+    tools:context=".Altro.RegisterActivity">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="40dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/titolo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/handy_shopping"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tvRegistrati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/registrazione"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/titolo" />
+
+        <TextView
+            android:id="@+id/scrittaLogin"
+            android:layout_width="312dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/mail_pass_pass"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegistrati" />
+
+        <EditText
+            android:id="@+id/etNome"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:autofillHints="name"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/nome_utente"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/scrittaLogin" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/inserisci_la_tua_email_qui"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/etNome" />
+
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/la_mail_scelta_gi_stata_utilizzata"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrittaLogin" />
+
+        <ImageView
+            android:id="@+id/infoPassword"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/info"
+            app:layout_constraintBottom_toBottomOf="@+id/Password"
+            app:layout_constraintStart_toEndOf="@+id/Password"
+            app:layout_constraintTop_toTopOf="@+id/Password" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autofillHints="password"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/inserisci_la_tua_password_qui"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+        <ImageView
+            android:id="@+id/visible"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/view"
+            app:layout_constraintBottom_toBottomOf="@+id/Password"
+            app:layout_constraintEnd_toEndOf="@+id/Password"
+            app:layout_constraintTop_toTopOf="@+id/Password" />
+
+        <ImageView
+            android:id="@+id/hidden"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/hidden"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/Password"
+            app:layout_constraintEnd_toEndOf="@+id/Password"
+            app:layout_constraintTop_toTopOf="@+id/Password" />
+
+        <EditText
+            android:id="@+id/Password2"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autofillHints="password"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/reinserisci_la_tua_password_qui"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/Password" />
+
+        <ImageView
+            android:id="@+id/visible2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/view"
+            app:layout_constraintBottom_toBottomOf="@+id/Password2"
+            app:layout_constraintEnd_toEndOf="@+id/Password2"
+            app:layout_constraintTop_toTopOf="@+id/Password2" />
+
+        <ImageView
+            android:id="@+id/hidden2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/hidden"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/Password2"
+            app:layout_constraintEnd_toEndOf="@+id/Password2"
+            app:layout_constraintTop_toTopOf="@+id/Password2" />
+
+        <Button
+            android:id="@+id/btnAccedi"
+            android:layout_width="128dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_border"
+            android:text="@string/accedi"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/accedi"
+            app:layout_constraintVertical_bias="0.012" />
+
+        <TextView
+            android:id="@+id/accedi"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:hint="Hai già un account?"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/btnRgstr" />
+
+        <Button
+            android:id="@+id/btnRgstr"
+            android:layout_width="128dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_border"
+            android:text="@string/registrati"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/Password2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

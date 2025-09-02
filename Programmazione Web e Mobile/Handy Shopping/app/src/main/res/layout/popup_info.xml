@@ -1,0 +1,18 @@
+<!-- res/layout/popup_info.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/transparent_background"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Inserisci almeno 8 caratteri tra i quali numeri, lettere maiuscole e minuscole"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
