@@ -105,6 +105,7 @@ raccolto **per anno e per materia**.
 - [Elettronica](Elettronica/) (9 CFU)
 - [Controlli Automatici](Controlli Automatici/) (9 CFU)
 - [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
+- [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
 
 <div class="counter-container">
   <div class="counter-box">
