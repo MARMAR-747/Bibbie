@@ -38,11 +38,17 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Federico Concone
+    </td>
+  </tr>
+  <tr>
     <td><strong>Menzioni speciali</strong></td>
-    <td>Si ringraziano in modo speciale gli altri tre eroi che hanno costituito il gruppo del progetto di Ingegneria Del Software:<br>
-    - <strong>Francesco Fausto Franchina</strong> (anche detto <strong>Cicerone</strong>), signore dei flussi e dei DB.<br>
-    - <strong>Diego Lo Voi</strong> (anche detto <strong>Diegheone</strong>), signore assoluto dei Mock-up e del supporto psicologico avanzato.<br>
-    - <strong>Giovanni Dolcemascolo</strong> (anche detto <strong>Giova</strong>), colui che mi ha assistito (non senza crolli nervosi e con imprecazioni di livello astrale) nel redigere i famigerati Sequence/Object Diagrams.</td>
+    <td>Si ringrazia in modo speciale un eroe senza il quale il progetto non avrebbe mai visto luce in tempo:<br>
+    - <strong>Simone Girgenti</strong> (anche detto <strong>Simeone</strong>), colui che non ha vacillato di fronte al temibile Kotlin
+      e si è fatto carico di portare avanti il lavoro quando non sono stato disponibile.<br>
+    </td>
   </tr>
   <tr>
     <td><strong>Descrizione</strong></td>
@@ -53,9 +59,11 @@ nav_exclude: true
   <tr>
     <td><strong>Modalità d'esame</strong></td>
     <td>
-      Il <strong>progetto</strong> consta di tre corposi file da redigere: il RAD (Requirements Analysis Document), l'ODD (Object Design Document) e l'SDD (System Design Document).  
+      Il <strong>progetto</strong> consta
       <br><br>
-      L'<strong>orale</strong> consiste nella maggior parte dei casi in una discussione del progetto svolto (specialmente se svolto adeguatamente). E' possibile, talvolta, che la professoressa faccia qualche domanda di teoria (stando attenti a lezione potrete capire quali sono le domande più frequenti).
+      Lo <strong>scritto</strong>
+      <br><br>
+      L'<strong>orale</strong> consiste
     </td>
   </tr>
   <tr>
