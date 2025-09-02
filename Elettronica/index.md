@@ -37,6 +37,12 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Mauro Mosca
+    </td>
+  </tr>
+  <tr>
     <td><strong>Descrizione</strong></td>
     <td>
       
