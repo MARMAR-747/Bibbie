@@ -36,6 +36,12 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Angela Valenti
+    </td>
+  </tr>
+  <tr>
     <td><strong>Descrizione</strong></td>
     <td>
       
