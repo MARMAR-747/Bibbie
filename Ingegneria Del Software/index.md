@@ -38,6 +38,12 @@ nav_exclude: true
 
 <table>
   <tr>
+    <td><strong>Prof.</strong></td>
+    <td>
+      Valeria Seidita
+    </td>
+  </tr>
+  <tr>
     <td><strong>Menzioni speciali</strong></td>
     <td>Si ringraziano in modo speciale gli altri tre eroi che hanno costituito il gruppo del progetto di Ingegneria Del Software:<br>
     - <strong>Francesco Fausto Franchina</strong> (anche detto <strong>Cicerone</strong>), signore dei flussi e dei DB.<br>
