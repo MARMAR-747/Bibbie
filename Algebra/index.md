@@ -112,7 +112,7 @@ nav_exclude: true
   </tbody>
 </table>
 
-<a href="https://forms.gle/qpdXSWjaTQ6PaftP8" target="_blank" rel="noopener noreferrer">
+<a href="https://forms.gle/SPKm8SfiY1dxVx2KA" target="_blank" rel="noopener noreferrer">
   Valuta il materiale di Algebra ⭐
 </a> <br><br>
 
