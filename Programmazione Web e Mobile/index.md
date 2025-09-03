@@ -121,7 +121,7 @@ nav_exclude: true
     </tr>
     <tr>
       <td>
-        <a href="../Programmazione Web e Mobile/Handy Shopping" target="_blank">HANDY SHOPPING</a>
+        <a href="../Programmazione Web e Mobile/Handy_Shopping.zip" target="_blank">HANDY SHOPPING (FILE APP ANDROID STUDIO)</a>
       </td>
       <td style="text-align: center;">Progetto</td>
       <td style="text-align: center;">-</td>
