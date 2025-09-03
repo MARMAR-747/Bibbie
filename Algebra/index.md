@@ -10,36 +10,6 @@ nav_exclude: true
 
 <br>
 
-<style>
-body {
-  opacity: 1;
-  transition: opacity 0.4s ease-in-out;
-}
-body.fade-out {
-  opacity: 0;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Entrata
-  document.body.classList.remove("fade-out");
-
-  // Uscita
-  document.querySelectorAll("a").forEach(link => {
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.add("fade-out");
-        setTimeout(() => {
-          window.location = link.href;
-        }, 400); // durata transizione
-      });
-    }
-  });
-});
-</script>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('theme-toggle');
