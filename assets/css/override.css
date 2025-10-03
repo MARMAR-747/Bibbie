@@ -4,24 +4,19 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   font-family: 'Mozilla Text', sans-serif !important;
 }
 
-.theme-button {
+.theme-button,
+.lang-button {
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 8px;
   padding: 0.5rem;
   color: var(--body-text-color);
-}
-
-.lang-button {
-  margin-left: 8px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  text-decoration: none;
-  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* per i link */
 }
 
 /* Aumenta dimensione del testo nella navigation */
