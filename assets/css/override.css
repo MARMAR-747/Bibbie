@@ -14,6 +14,16 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   color: var(--body-text-color);
 }
 
+.lang-button {
+  margin-left: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Aumenta dimensione del testo nella navigation */
 .nav-list .nav-list-item .nav-list-link {
   font-size: 1.05rem; /* Cambia il valore a piacere */
