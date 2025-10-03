@@ -26,6 +26,48 @@ nav_order: 1
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  const langBtn = document.getElementById('lang-toggle');
+  const savedLang = localStorage.getItem('lang') || 'it';
+
+  // Dizionario con tutte le traduzioni
+  const translations = {
+    it: {
+      title: "Le Bibbie di Ingegneria Informatica",
+      subtitle: "Appunti universitari in versione digitale",
+      counter: "📚 PDF disponibili",
+      intro: "Quella di Ingegneria Informatica è universalmente riconosciuta come una delle facoltà più complesse...",
+    },
+    en: {
+      title: "The Computer Engineering Bibles",
+      subtitle: "University notes in digital format",
+      counter: "📚 Available PDFs",
+      intro: "Computer Engineering is universally recognized as one of the most challenging faculties..."
+    }
+  };
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    langBtn.textContent = lang === 'it' ? '🇮🇹' : '🇬🇧';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.textContent = translations[lang][key] || key;
+    });
+  }
+
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      const newLang = localStorage.getItem('lang') === 'it' ? 'en' : 'it';
+      setLanguage(newLang);
+    });
+  }
+
+  setLanguage(savedLang);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
   const counter = document.getElementById('pdf-count');
   if (!counter) return;
   
