@@ -87,37 +87,6 @@ simbolico: questi appunti sono diventati per me — e spero anche per voi — **
 Di seguito troverete infatti **tutto il materiale** da me prodotto durante la **triennale in Ingegneria Informatica** all’**Università degli Studi di Palermo**, 
 raccolto **per anno e per materia**.
 
-## 📂 Materiale (Triennale UniPa)
----
-### ➀ Primo anno
-
-- [Algebra](Algebra/) (6 CFU)
-
-### ➁ Secondo anno
-
-- [Teoria dei segnali](Teoria Dei Segnali/) (9 CFU)
-- [Elettrotecnica](Elettrotecnica/) (6 CFU)
-- [Metodi matematici e numerici] (9 CFU)
-
-### ➂ Terzo anno
-
-- [Reti di calcolatori] (9 CFU)
-- [Elettronica](Elettronica/) (9 CFU)
-- [Controlli Automatici](Controlli Automatici/) (9 CFU)
-- [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
-- [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
-
-
-## 📂 Materiale (Magistrale UniSapienza)
----
-### ➀ Primo anno
-
-- [Statistica] (6 CFU)
-- [Crittografia] (6 CFU)
-- [Sistemi distribuiti] (6 CFU)
-- [Infrastrutture network] (6 CFU)
-
-
 <div class="counter-container">
   <div class="counter-box">
     <span id="pdf-count" class="counter" data-target="14">0</span>
@@ -152,6 +121,36 @@ raccolto **per anno e per materia**.
   display: block;
 }
 </style>
+
+## 📂 Materiale (Triennale UniPa)
+---
+### ➀ Primo anno
+
+- [Algebra](Algebra/) (6 CFU)
+
+### ➁ Secondo anno
+
+- [Teoria dei segnali](Teoria Dei Segnali/) (9 CFU)
+- [Elettrotecnica](Elettrotecnica/) (6 CFU)
+- [Metodi matematici e numerici] (9 CFU)
+
+### ➂ Terzo anno
+
+- [Reti di calcolatori] (9 CFU)
+- [Elettronica](Elettronica/) (9 CFU)
+- [Controlli Automatici](Controlli Automatici/) (9 CFU)
+- [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
+- [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
+
+
+## 📂 Materiale (Magistrale UniSapienza)
+---
+### ➀ Primo anno
+
+- [Statistica] (6 CFU)
+- [Crittografia] (6 CFU)
+- [Sistemi distribuiti] (6 CFU)
+- [Infrastrutture network] (6 CFU)
 
 ---
 🔒 Tutto il materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
