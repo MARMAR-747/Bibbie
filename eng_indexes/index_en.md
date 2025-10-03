@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home Eng
+nav_exclude: true
 ---
 
 <script>
