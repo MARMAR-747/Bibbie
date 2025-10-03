@@ -87,7 +87,7 @@ simbolico: questi appunti sono diventati per me — e spero anche per voi — **
 Di seguito troverete infatti **tutto il materiale** da me prodotto durante la **triennale in Ingegneria Informatica** all’**Università degli Studi di Palermo**, 
 raccolto **per anno e per materia**.
 
-## 📂 Materie
+## 📂 Materiale (Triennale UniPa)
 ---
 ### ➀ Primo anno
 
@@ -106,6 +106,17 @@ raccolto **per anno e per materia**.
 - [Controlli Automatici](Controlli Automatici/) (9 CFU)
 - [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
 - [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
+
+
+## 📂 Materiale (Magistrale UniSapienza)
+---
+### ➀ Primo anno
+
+- [Statistica] (6 CFU)
+- [Crittografia] (6 CFU)
+- [Sistemi distribuiti] (6 CFU)
+- [Infrastrutture network] (6 CFU)
+
 
 <div class="counter-container">
   <div class="counter-box">
