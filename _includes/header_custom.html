@@ -2,6 +2,12 @@
   🌙
 </button>
 
-<a href="/Bibbie/index_en.html" class="lang-button" aria-label="Switch to English">
-  <img src="/Bibbie/assets/images/UK_flag.png" alt="English" style="width:24px; height:auto;">
-</a>
+{% if page.name == "index.md" %}
+  <a href="/Bibbie/index_en.html" class="lang-button" aria-label="Switch to English">
+    <img src="/Bibbie/assets/images/UK_flag.png" alt="English" style="width:24px; height:auto;">
+  </a>
+{% elsif page.name == "index_en.md" %}
+  <a href="/Bibbie/index.html" class="lang-button" aria-label="Switch to Italian">
+    <img src="/Bibbie/assets/images/IT_flag.png" alt="Italiano" style="width:24px; height:auto;">
+  </a>
+{% endif %}
