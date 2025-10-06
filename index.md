@@ -143,7 +143,7 @@ raccolto **per anno e per materia**.
 }
 </style>
 
-## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="20">
+## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30">
 ### ➀ Primo anno
 
 - [Algebra](Algebra/) (6 CFU)
