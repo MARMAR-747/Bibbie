@@ -27,6 +27,26 @@ nav_order: 1
 </script>
 
 <script>
+  // Se l'utente cambia lingua, salvala
+  document.querySelectorAll('.lang-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      localStorage.setItem('lang', btn.getAttribute('aria-label').includes('English') ? 'en' : 'it');
+    });
+  });
+
+  // Se clicca su "Home", usa la lingua salvata
+  document.querySelectorAll('a[href="/Bibbie/index.html"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const lang = localStorage.getItem('lang');
+      if (lang === 'en') {
+        e.preventDefault();
+        window.location.href = '/Bibbie/index_en.html';
+      }
+    });
+  });
+</script>
+
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const counter = document.getElementById('pdf-count');
   if (!counter) return;
