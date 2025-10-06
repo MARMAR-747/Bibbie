@@ -68,31 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 ---
-DA TRADURRE
-Quella di **Ingegneria Informatica** è universalmente riconosciuta come una delle **facoltà più complesse** da affrontare.
-Ogni giorno ci si confronta con problemi di **notevole difficoltà** — uno tra tutti: l’esame di **Teoria dei Segnali**.
+**Computer Engineering** is universally recognized as one of the **most challenging degrees** to tackle.
+Every day, students face problems of **considerable difficulty** — one of the toughest being the exam in **Signal Theory**.
 
-Ma cosa succede se non si ha a disposizione del **buon materiale per studiare**?
+But what happens if you don’t have access to **good study material**?
 
-Ho iniziato a scrivere appunti **per me stesso**, come esercizio di memoria e per allenarmi a scrivere al PC (soprattutto su Word).
-Con il tempo, però, mi sono reso conto che **ore e ore di lavoro** non potevano essere lasciate in un cassetto: avevo trovato un nuovo scopo, ovvero
-**aiutare chi, come me, trovava difficoltà a orientarsi tra le dispense dei docenti**.
+I began writing notes **for myself**, as a memory exercise and to practice typing on the computer (mainly with Word).
+Over time, however, I realized that **hours and hours of work** couldn’t just be left in a drawer: I had found a new purpose —
+**helping those who, like me, struggled to navigate through the professors’ handouts**.
 
-**Chiariamoci**: non considero i miei appunti "migliori" rispetto a quelli ufficiali.
-Credo però che, nell’eccessivo formalismo accademico, si perda talvolta il contatto concreto con gli studenti.
+**Let’s be clear**: I don’t consider my notes “better” than the official ones.
+I do believe, however, that in the excessive academic formalism, there is sometimes a loss of real connection with students.
 
-### 📖 Perché “Le Bibbie”?
-Perché anche le materie da **6 CFU**, all’apparenza innocue, possono nascondere **programmi vastissimi**. Il nome è ironico, ma anche 
-simbolico: questi appunti sono diventati per me — e spero anche per voi — **una guida completa e affidabile**.
+### 📖 Why “The Bibles”?
 
-Di seguito troverete infatti **tutto il materiale** da me prodotto durante la **triennale in Ingegneria Informatica** all’**Università degli Studi di Palermo**, 
-raccolto **per anno e per materia**.
+Because even courses worth just **6 CFU**, seemingly harmless, can hide **vast syllabi**. The name is ironic, yet also
+symbolic: these notes became for me — and I hope for you as well — **a complete and reliable guide**.
+
+Below you will find **all the material** I produced during my **Bachelor’s degree in Computer Engineering** at the
+**University of Palermo**, organized **by year and by subject**.
+
 
 <div class="counter-container">
   <div class="counter-box">
     <span id="pdf-count" class="counter" data-target="14">0</span>
     <p data-i18n="counter"></p>
-    <p>📚 PDF disponibili</p>
+    <p>📚 Available PDF</p>
   </div>
 </div>
 
