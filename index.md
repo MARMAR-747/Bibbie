@@ -143,8 +143,7 @@ raccolto **per anno e per materia**.
 }
 </style>
 
-<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="40">
-## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa)
+## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="40">
 ---
 ### ➀ Primo anno
 
