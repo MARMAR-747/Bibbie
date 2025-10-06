@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       strings: [
         'Le Bibbie di Ingegneria Informatica',
         'Appunti universitari in versione digitale',
-        'Università degli Studi di Palermo'
+        'Università degli Studi di Palermo e di Roma'
       ],
       typeSpeed: 50,
       backSpeed: 25,
@@ -125,7 +125,7 @@ raccolto **per anno e per materia**.
 }
 </style>
 
-## 📂 Materiale (Triennale UniPa)
+## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa)
 ---
 ### ➀ Primo anno
 
@@ -146,7 +146,7 @@ raccolto **per anno e per materia**.
 - [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
 
 
-## 📂 Materiale (Magistrale UniSapienza)
+## 📂 Materiale (Magistrale in Cybersecurity - UniSapienza)
 ---
 ### ➀ Primo anno
 
