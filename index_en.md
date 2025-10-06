@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', function () {
     new Typed('#typed', {
       strings: [
-        'Le Bibbie di Ingegneria Informatica',
-        'Appunti universitari in versione digitale',
-        'Università degli Studi di Palermo'
+        'The Computer Engineering Bibles',
+        'University notes in digital format',
+        'Universities of Palermo and Rome'
       ],
       typeSpeed: 50,
       backSpeed: 25,
@@ -93,7 +93,7 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
   <div class="counter-box">
     <span id="pdf-count" class="counter" data-target="14">0</span>
     <p data-i18n="counter"></p>
-    <p>📚 Available PDF</p>
+    <p>📚 Available PDFs</p>
   </div>
 </div>
 
@@ -125,19 +125,19 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 }
 </style>
 
-## 📂 Materiale (Triennale UniPa)
+## 📂 Material (Bachelor’s Degree in computer engineering - UniPa)
 ---
-### ➀ Primo anno
+### ➀ First year
 
 - [Algebra](Algebra/) (6 CFU)
 
-### ➁ Secondo anno
+### ➁ Second year
 
 - [Teoria dei segnali](Teoria Dei Segnali/) (9 CFU)
 - [Elettrotecnica](Elettrotecnica/) (6 CFU)
 - [Metodi matematici e numerici] (9 CFU)
 
-### ➂ Terzo anno
+### ➂ Third year
 
 - [Reti di calcolatori] (9 CFU)
 - [Elettronica](Elettronica/) (9 CFU)
@@ -146,9 +146,9 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 - [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
 
 
-## 📂 Materiale (Magistrale UniSapienza)
+## 📂 Material (Master’s Degree in cybersecurity - UniSapienza)
 ---
-### ➀ Primo anno
+### ➀ First year
 
 - [Statistica] (6 CFU)
 - [Crittografia] (6 CFU)
@@ -156,5 +156,5 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 - [Infrastrutture network] (6 CFU)
 
 ---
-🔒 Tutto il materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
-🔗 Ultimo aggiornamento: {{ site.time | date: "%d/%m/%Y" }}
+🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
+🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
