@@ -4,8 +4,6 @@ title: Home
 nav_order: 1
 ---
 
-<p>DEBUG URL: {{ page.url }}</p>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('theme-toggle');
