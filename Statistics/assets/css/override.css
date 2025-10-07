@@ -56,10 +56,8 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .stats-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 16px;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 1.5rem;
 }
 
 #typed-stats {
@@ -79,9 +77,20 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   animation: flicker 1s infinite ease-in-out;
 }
 
-/* Effetto luminoso alternato */
+/* Cursore di Typed.js */
+.typed-cursor {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Effetto luminoso */
 @keyframes flicker {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
 
+/* (opzionale) un tocco in dark mode */
+:root[data-theme="dark"] .number-stream {
+  text-shadow: 0 0 6px rgba(100, 200, 255, 0.35);
+  opacity: 0.85;
+}
