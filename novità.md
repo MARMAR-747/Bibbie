@@ -27,10 +27,8 @@ nav_order: 3
 # 🆕 Aggiornamenti del materiale
 ---
 
-Benvenuto nella sezione **Novità**, dove puoi trovare tutti gli aggiornamenti relativi al progetto **Le Bibbie di Ingegneria Informatica** 📘  
+Benvenuto nella sezione **Novità**, dove puoi trovare tutti gli aggiornamenti relativi a questo sito web.  
 Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto o migliorato**, e – se disponibile – un link diretto al materiale aggiornato.
-
----
 
 ## 📅 Ultimi aggiornamenti
 
