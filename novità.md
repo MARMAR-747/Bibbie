@@ -24,7 +24,7 @@ nav_order: 3
   });
 </script>
 
-# 🆕 Ultimi aggiornamenti
+# 🆕 Aggiornamenti Ottobre 2025
 ---
 
 Benvenuto nella sezione **Novità**, dove puoi trovare tutti gli aggiornamenti relativi a questo sito web.
@@ -32,7 +32,7 @@ Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto
 
 ## 🗓️ 6 Ottobre 2025
 - Aggiunta la **modalità notte** in tutto il sito 🌙  
-- Implementato il **cambio lingua (IT/EN)** nella home page 🇮🇹🇬🇧  
+- Implementato il **cambio lingua (IT/EN)** nella home page  
 
 ---
 
