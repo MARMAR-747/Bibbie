@@ -60,10 +60,15 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   margin: 1rem 0 1.5rem;
 }
 
-#typed-stats {
+.stats-title {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--link-color);
+  letter-spacing: 1px;
+  border-right: 2px solid var(--link-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-cursor 0.8s infinite;
 }
 
 .number-stream {
@@ -77,10 +82,10 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   animation: flicker 1s infinite ease-in-out;
 }
 
-/* Cursore di Typed.js */
-.typed-cursor {
-  font-weight: 400;
-  opacity: 0.7;
+/* Cursore lampeggiante */
+@keyframes blink-cursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--link-color); }
 }
 
 /* Effetto luminoso */
@@ -89,7 +94,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   50% { opacity: 1; }
 }
 
-/* (opzionale) un tocco in dark mode */
+/* Glow leggero in dark mode */
 :root[data-theme="dark"] .number-stream {
   text-shadow: 0 0 6px rgba(100, 200, 255, 0.35);
   opacity: 0.85;
