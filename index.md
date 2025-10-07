@@ -163,7 +163,7 @@ raccolto **per anno e per materia**.
 - [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
 - [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
 
-## 📂 Materiale (Magistrale in Cybersecurity - UniSapienza) <img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
+## 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Magistrale in Cybersecurity - UniSapienza)
 ---
 ### ➀ Primo anno
 
