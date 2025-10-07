@@ -144,12 +144,7 @@ raccolto **per anno e per materia**.
 </style>
 
 ## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
-
-<h2 style="display: inline-flex; align-items: center; gap: 8px;">
-  📂 Materiale (Triennale in Ingegneria Informatica - UniPa)
-  <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" alt="IT">
-</h2>
-
+---
 ### ➀ Primo anno
 
 - [Algebra](Algebra/) (6 CFU)
@@ -168,8 +163,7 @@ raccolto **per anno e per materia**.
 - [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
 - [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
 
-<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="40">
-## 📂 Materiale (Magistrale in Cybersecurity - UniSapienza)
+## 📂 Materiale (Magistrale in Cybersecurity - UniSapienza) <img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
 ---
 ### ➀ Primo anno
 
