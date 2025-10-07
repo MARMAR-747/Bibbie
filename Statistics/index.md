@@ -5,8 +5,7 @@ nav_exclude: true
 ---
 
 <div class="nav-buttons">
-  <a href="/Bibbie/Algebra/" class="nav-button left">⬅️ Algebra</a>
-  <a href="/Bibbie/Elettrotecnica/" class="nav-button right">➡️ Elettrotecnica</a>
+  <a href="/Bibbie/Statistics/" class="nav-button right">➡️ Cryptography</a>
 </div>
 
 <br>
@@ -32,52 +31,41 @@ nav_exclude: true
 </script>
 
 <h1 class="stats-header">
-  <span id="typed-stats"></span>
+  <span class="stats-title"></span>
   <span class="number-stream"></span>
 </h1>
 
 <p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
 <p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
 
-<!-- Carico Typed con defer così è pronto prima del nostro init -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const title = document.querySelector('.stats-title');
+  const numbers = document.querySelector('.number-stream');
+  if (!title || !numbers) return;
 
-<!-- Init robusto: attende DOM + presenza di window.Typed -->
-<script defer>
-  (function () {
-    function start() {
-      if (!document.querySelector('#typed-stats')) return;           // l'H1 esiste?
-      if (typeof window.Typed === 'undefined') {                     // typed non ancora pronto? riprova
-        return setTimeout(start, 50);
-      }
-
-      // Effetto digit typing
-      new Typed('#typed-stats', {
-        strings: ['Statistics', 'Data Analysis', 'Homework & Insights 📊'],
-        typeSpeed: 60,
-        backSpeed: 30,
-        loop: true,
-        smartBackspace: true
-      });
-
-      // Effetto numeri dinamici
-      const el = document.querySelector('.number-stream');
-      if (el) {
-        const randomNumbers = (len = 10) =>
-          Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join('');
-        const updateStream = () => { el.textContent = randomNumbers(10); };
-        updateStream();
-        setInterval(updateStream, 250);
-      }
+  // Effetto "digit typing" artigianale
+  const text = "Statistics";
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      title.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 100); // velocità di scrittura
     }
+  }
+  type();
 
-    // Parto quando il DOM è pronto
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', start);
-    } else {
-      start();
-    }
-  })();
+  // Effetto numeri in tempo reale
+  function randomNumbers(length = 10) {
+    return Array.from({ length }, () => Math.floor(Math.random() * 10)).join('');
+  }
+  function updateStream() {
+    numbers.textContent = randomNumbers(10);
+  }
+  updateStream();
+  setInterval(updateStream, 250);
+});
 </script>
 
 ---
