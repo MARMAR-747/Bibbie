@@ -27,7 +27,7 @@ nav_order: 3
 # 🆕 Aggiornamenti Ottobre 2025
 ---
 
-Benvenuto nella sezione **Novità**, dove puoi trovare tutti gli aggiornamenti relativi a questo sito web.
+Benvenuto nella sezione **Novità**, dove puoi consultare tutti gli aggiornamenti di questo sito web relativi al mese corrente.
 Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto o migliorato**, e – se disponibile – **un link diretto al materiale aggiornato**.
 
 ## 🗓️ 6 Ottobre 2025
