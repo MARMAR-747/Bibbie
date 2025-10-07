@@ -31,42 +31,55 @@ nav_exclude: true
   });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Effetto digit typing
-  new Typed('#typed-stats', {
-    strings: ['Statistics', 'Data Analysis', 'Homework & Insights 📊'],
-    typeSpeed: 60,
-    backSpeed: 30,
-    loop: true,
-    smartBackspace: true
-  });
-
-  // Effetto numeri dinamici
-  const el = document.querySelector('.number-stream');
-  if (!el) return;
-
-  function randomNumbers(length = 10) {
-    return Array.from({ length }, () => Math.floor(Math.random() * 10)).join('');
-  }
-
-  function updateStream() {
-    el.textContent = randomNumbers(10);
-  }
-
-  setInterval(updateStream, 250); // Aggiorna ogni 250 ms
-});
-</script>
-
 <h1 class="stats-header">
   <span id="typed-stats"></span>
   <span class="number-stream"></span>
 </h1>
 
 <p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
-
 <p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
+
+<!-- Carico Typed con defer così è pronto prima del nostro init -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+<!-- Init robusto: attende DOM + presenza di window.Typed -->
+<script defer>
+  (function () {
+    function start() {
+      if (!document.querySelector('#typed-stats')) return;           // l'H1 esiste?
+      if (typeof window.Typed === 'undefined') {                     // typed non ancora pronto? riprova
+        return setTimeout(start, 50);
+      }
+
+      // Effetto digit typing
+      new Typed('#typed-stats', {
+        strings: ['Statistics', 'Data Analysis', 'Homework & Insights 📊'],
+        typeSpeed: 60,
+        backSpeed: 30,
+        loop: true,
+        smartBackspace: true
+      });
+
+      // Effetto numeri dinamici
+      const el = document.querySelector('.number-stream');
+      if (el) {
+        const randomNumbers = (len = 10) =>
+          Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join('');
+        const updateStream = () => { el.textContent = randomNumbers(10); };
+        updateStream();
+        setInterval(updateStream, 250);
+      }
+    }
+
+    // Parto quando il DOM è pronto
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>
+
 ---
 🔒 Questo materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Ultimo aggiornamento: {{ site.time | date: "%d/%m/%Y" }}
