@@ -14,12 +14,13 @@ nav_exclude: true
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('theme-toggle');
     const saved = localStorage.getItem('theme');
-    if (saved) {
+    if (saved && window.jtd) {
       jtd.setTheme(saved);
       if (btn) btn.textContent = saved === 'dark' ? '☀️' : '🌙';
     }
     if (btn) {
       btn.addEventListener('click', () => {
+        if (!window.jtd) return;
         const curr = jtd.getTheme();
         const next = curr === 'dark' ? 'light' : 'dark';
         jtd.setTheme(next);
@@ -31,41 +32,25 @@ nav_exclude: true
 </script>
 
 <h1 class="stats-header">
-  <span class="stats-title"></span>
-  <span class="number-stream"></span>
+  <!-- Typing solo CSS: il testo è già nel DOM -->
+  <span class="stats-title" data-text="Statistics">Statistics</span>
+  <span class="number-stream" id="stats-numbers">0000000000</span>
 </h1>
 
 <p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
 <p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const title = document.querySelector('.stats-title');
-  const numbers = document.querySelector('.number-stream');
-  if (!title || !numbers) return;
-
-  // Effetto "digit typing" artigianale
-  const text = "Statistics";
-  let i = 0;
-  function type() {
-    if (i < text.length) {
-      title.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, 100); // velocità di scrittura
-    }
-  }
-  type();
-
-  // Effetto numeri in tempo reale
-  function randomNumbers(length = 10) {
-    return Array.from({ length }, () => Math.floor(Math.random() * 10)).join('');
-  }
-  function updateStream() {
-    numbers.textContent = randomNumbers(10);
-  }
-  updateStream();
-  setInterval(updateStream, 250);
-});
+(function () {
+  // Evita che un errore qui blocchi la pagina
+  try {
+    const el = document.getElementById('stats-numbers');
+    if (!el) return;
+    const rand = (len = 10) => Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join('');
+    el.textContent = rand(10);
+    setInterval(() => { el.textContent = rand(10); }, 250);
+  } catch (e) { /* no-op */ }
+})();
 </script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
