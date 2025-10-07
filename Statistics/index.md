@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 Questo materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Ultimo aggiornamento: {{ site.time | date: "%d/%m/%Y" }}
 
