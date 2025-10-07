@@ -167,7 +167,7 @@ raccolto **per anno e per materia**.
 ---
 ### ➀ Primo anno
 
-- [Statistics] (6 CFU)
+- [Statistics](Statistics/) (6 CFU)
 - [Cryptography] (6 CFU)
 - [Distributed Systems] (6 CFU)
 - [Network Infrastructures] (6 CFU)
