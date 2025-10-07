@@ -28,7 +28,7 @@ nav_order: 3
 ---
 
 Benvenuto nella sezione **Novità**, dove puoi trovare tutti gli aggiornamenti relativi a questo sito web.
-Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto o migliorato**, e – se disponibile – un link diretto al materiale aggiornato.
+Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto o migliorato**, e – se disponibile – **un link diretto al materiale aggiornato**.
 
 ## 🗓️ 6 Ottobre 2025
 - Aggiunta la **modalità notte** in tutto il sito 🌙  
