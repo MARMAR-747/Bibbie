@@ -143,7 +143,9 @@ raccolto **per anno e per materia**.
 }
 </style>
 
-## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30">
+## 📂 Materiale (Triennale in Ingegneria Informatica - UniPa) 
+<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
+
 ### ➀ Primo anno
 
 - [Algebra](Algebra/) (6 CFU)
@@ -167,10 +169,10 @@ raccolto **per anno e per materia**.
 ---
 ### ➀ Primo anno
 
-- [Statistica] (6 CFU)
-- [Crittografia] (6 CFU)
-- [Sistemi distribuiti] (6 CFU)
-- [Infrastrutture network] (6 CFU)
+- [Statistics] (6 CFU)
+- [Cryptography] (6 CFU)
+- [Distributed Systems] (6 CFU)
+- [Network Infrastructures] (6 CFU)
 
 ---
 🔒 Tutto il materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
