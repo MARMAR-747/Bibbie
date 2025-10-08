@@ -122,7 +122,8 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .stats-table td {
   border-bottom: 1px solid var(--border-color);
   padding: 0.6rem 0.8rem;
-  text-align: left;
+  text-align: center; /* 🔹 centra tutto orizzontalmente */
+  vertical-align: middle; /* 🔹 centra anche verticalmente */
 }
 
 .stats-table th {
