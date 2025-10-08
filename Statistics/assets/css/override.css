@@ -110,3 +110,30 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   text-shadow: 0 0 6px rgba(100,200,255,.35);
   opacity: .9;
 }
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.stats-table th,
+.stats-table td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.stats-table th {
+  color: var(--link-color);
+  font-weight: 600;
+}
+
+.stats-table tr:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+:root[data-theme="dark"] .stats-table tr:hover {
+  background-color: rgba(255,255,255,0.05);
+}
