@@ -116,30 +116,49 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   border-collapse: collapse;
   margin-top: 1.5rem;
   font-size: 1rem;
+  border: 1px solid var(--border-color); /* 🔹 bordo esterno visibile */
 }
 
+/* Celle generiche */
 .stats-table th,
 .stats-table td {
-  border-bottom: 1px solid var(--border-color);
+  border: 1px solid var(--border-color); /* 🔹 bordo visibile tra le celle */
   padding: 0.6rem 0.8rem;
   text-align: center;        /* Centra tutto di default */
   vertical-align: middle;
 }
 
-/* 🔹 Solo le celle (non l’intestazione) della prima colonna a sinistra */
+/* 🔹 Prima colonna (numero homework) più stretta */
+.stats-table th:first-child,
 .stats-table td:first-child {
+  min-width: 70px;
+  width: 70px;
+}
+
+/* 🔹 Solo le celle (non il titolo della colonna) della sezione "Titolo" allineate a sinistra */
+.stats-table td:nth-child(2) {
   text-align: left;
 }
 
+/* Intestazioni */
 .stats-table th {
   color: var(--link-color);
   font-weight: 600;
+  background-color: var(--table-header-bg, rgba(0,0,0,0.03));
+  text-align: center; /* ✅ il titolo "Titolo" resta centrato */
 }
 
+/* Effetto hover */
 .stats-table tr:hover {
-  background-color: rgba(0,0,0,0.03);
+  background-color: rgba(0,0,0,0.04);
 }
 
 :root[data-theme="dark"] .stats-table tr:hover {
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(255,255,255,0.08);
+}
+
+/* 🔹 Bordi più visibili anche in modalità scura */
+:root[data-theme="dark"] .stats-table th,
+:root[data-theme="dark"] .stats-table td {
+  border-color: rgba(255,255,255,0.2);
 }
