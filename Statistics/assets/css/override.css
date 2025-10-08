@@ -56,7 +56,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .stats-header {
   display: inline-flex !important; /* inline per evitare spazi residui */
   align-items: baseline !important;
-  gap: 4px !important;             /* forza la distanza */
+  gap: 6px !important;             /* forza la distanza */
   margin: 1rem 0 1.5rem !important;
   line-height: 1;                  /* compatta verticalmente */
 }
