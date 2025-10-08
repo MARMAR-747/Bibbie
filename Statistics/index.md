@@ -37,13 +37,14 @@ nav_exclude: true
   <span class="number-stream" id="stats-numbers"></span>
 </h1>
 
-<p> Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
-<p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+<p> Benvenuto nella sezione dedicata agli <strong>homework</strong> del corso di <em>Statistics</em>.</p>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-🔒 Questo materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
-🔗 Ultimo aggiornamento: {{ site.time | date: "%d/%m/%Y" }}
+🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
+🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
 {% assign ordine = site.materie_order %}
 {% assign idx = page.order_index | plus: 0 %}
