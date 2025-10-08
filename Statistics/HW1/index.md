@@ -5,7 +5,7 @@ nav_exclude: true
 ---
 
 <div class="nav-buttons">
-  <a href="/Bibbie/Statistics/" class="nav-button left">➡️ Statistics</a>
+  <a href="/Bibbie/Statistics/" class="nav-button left">⬅️ Statistics</a>
 </div>
 
 <br>
@@ -31,46 +31,8 @@ nav_exclude: true
   });
 </script>
 
-<h1 class="stats-header">
-  <span class="stats-icon">📊</span>
-  <span class="stats-title" data-text="Statistics">Statistics</span>
-  <span class="number-stream" id="stats-numbers"></span>
-</h1>
+DA CAPIRE CHE CABBO SCRIVERE
 
-<p> Welcome to the <em>Statistics</em> course <strong>assignments</strong> section.</p>
-
-<h2>📋 Homework</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="width: 2%; text-align: center;">#</th>
-      <th style="width: 69%; text-align: center;">Title</th>
-      <th style="width: 2%; text-align: center;">Link</th>
-      <th style="width: 2%; text-align: center;">Deadline</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center;">1</td>
-      <td style="text-align: left;">What is statistics and why can it be useful for cybersecurity?</td>
-      <td style="text-align: center;"><a href="https://esempio.com/homework1.pdf">📄 HW</a></td>
-      <td style="text-align: center;">09/10/25</td>
-    </tr>
-    <tr>
-      <td style="text-align: center;">2</td>
-      <td style="text-align: left;">TBD</td>
-      <td style="text-align: center;">TBD</td>
-      <td style="text-align: center;">TBD</td>
-    </tr>
-    <tr>
-      <td style="text-align: center;">3</td>
-      <td style="text-align: left;">TBD</td>
-      <td style="text-align: center;">TBD</td>
-      <td style="text-align: center;">TBD</td>
-    </tr>
-  </tbody>
-</table>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
@@ -94,5 +56,3 @@ nav_exclude: true
     <span></span>
   {% endif %}
 </div>
-
-<script src="{{ 'Statistics/assets/js/stats.js' | relative_url }}"></script>
