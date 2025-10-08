@@ -55,7 +55,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 /* --- STATISTICS TITLE --- */
 .stats-header{
   display:flex;
-  align-items:center;
+  align-items:left;
   gap:4px;
   margin:1rem 0 1.5rem;
 }
@@ -73,7 +73,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   animation:typing 1.2s steps(10,end) forwards, blink 0.8s step-end infinite;
 }
 /* “Statistics” ha 10 caratteri -> 10ch */
-@keyframes typing { to { width:10ch; } }
+@keyframes typing { to { width:11ch; } }
 @keyframes blink  { 50% { border-color:transparent; } }
 
 .number-stream{
