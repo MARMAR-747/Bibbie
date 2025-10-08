@@ -32,9 +32,8 @@ nav_exclude: true
 </script>
 
 <h1 class="stats-header">
-  <!-- Typing solo CSS: il testo è già nel DOM -->
   <span class="stats-title" data-text="Statistics">Statistics</span>
-  <span class="number-stream" id="stats-numbers">0000000000</span>
+  <span class="number-stream" id="stats-numbers" data-len="10"></span>
 </h1>
 
 <p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
@@ -65,23 +64,33 @@ nav_exclude: true
 </div>
 
 <script>
-(function() {
-  const el = document.getElementById('stats-numbers');
+(function () {
+  // evita doppie inizializzazioni
+  if (window.__statsNumbersInit) return;
+  window.__statsNumbersInit = true;
+
+  var el = document.getElementById('stats-numbers');
   if (!el) return;
 
-  function randomNumbers(length = 10) {
-    let nums = '';
-    for (let i = 0; i < length; i++) {
-      nums += Math.floor(Math.random() * 10);
-    }
-    return nums;
+  var lenAttr = el.getAttribute('data-len');
+  var L = (lenAttr && !isNaN(lenAttr)) ? parseInt(lenAttr, 10) : 10;
+
+  function randomNumbers(n) {
+    var out = '';
+    for (var i = 0; i < n; i++) out += Math.floor(Math.random() * 10);
+    return out;
   }
 
-  function updateStream() {
-    el.textContent = randomNumbers(10);
-  }
+  function update() { el.textContent = randomNumbers(L); }
 
-  updateStream(); // Imposta i primi numeri
-  setInterval(updateStream, 250); // Cambia ogni 250 ms
+  // prima scrittura immediata
+  update();
+
+  // se per qualsiasi motivo l'intervallo viene bloccato, rifai un kickstart dopo 300ms
+  setTimeout(update, 300);
+
+  // aggiornamento regolare
+  setInterval(update, 250);
 })();
 </script>
+
