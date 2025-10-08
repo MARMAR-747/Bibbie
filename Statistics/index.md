@@ -54,7 +54,7 @@ nav_exclude: true
     <tr>
       <td style="text-align: center;">1</td>
       <td style="text-align: left;">What is statistics and why can it be useful for cybersecurity?</td>
-      <td style="text-align: center;"><a href="https://esempio.com/homework1.pdf">📄 Homework</a></td>
+      <td style="text-align: center;"><a href="https://esempio.com/homework1.pdf">📄 HW</a></td>
       <td style="text-align: center;">09/10/25</td>
     </tr>
     <tr>
