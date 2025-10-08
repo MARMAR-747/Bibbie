@@ -41,37 +41,36 @@ nav_exclude: true
 
 <h2>📋 Homework</h2>
 
-<table class="stats-table">
+<table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>Link</th>
-      <th>Deadline</th>
+      <th style="width: 2%; text-align: center;">#</th>
+      <th style="width: 69%; text-align: center;">Title</th>
+      <th style="width: 2%; text-align: center;">Link</th>
+      <th style="width: 2%; text-align: center;">Deadline</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>What is statistics and why can it be useful for cybersecurity?</td>
-      <td><a href="https://esempio.com/homework1.pdf">📄 Homework</a></td>
-      <td>9/10/2025</td>
+      <td style="text-align: center;">1</td>
+      <td style="text-align: left;">What is statistics and why can it be useful for cybersecurity?</td>
+      <td style="text-align: center;"><a href="https://esempio.com/homework1.pdf">📄 Homework</a></td>
+      <td style="text-align: center;">09/10/25</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>TBD</td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center;">2</td>
+      <td style="text-align: left;">TBD</td>
+      <td style="text-align: center;">TBD</td>
+      <td style="text-align: center;">TBD</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>TBD</td>
-      <td> </td>
-      <td> </td>
+      <td style="text-align: center;">3</td>
+      <td style="text-align: left;">TBD</td>
+      <td style="text-align: center;">TBD</td>
+      <td style="text-align: center;">TBD</td>
     </tr>
   </tbody>
 </table>
-
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
