@@ -39,6 +39,35 @@ nav_exclude: true
 
 <p> Welcome to the <em>Statistics</em> course <strong>assignments</strong> section.</p>
 
+<h2>📋 Homework</h2>
+
+<table class="stats-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Deadline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#1 – What is statistics and why can it be useful for cybersecurity?</td>
+      <td><a href="https://esempio.com/homework1.pdf">📄 Homework</a></td>
+      <td>9/10/2025</td>
+    </tr>
+    <tr>
+      <td>Homework 2 – Probability Distributions</td>
+      <td><a href="https://esempio.com/homework2.pdf">📄 Download PDF</a></td>
+      <td>27 Ottobre 2025</td>
+    </tr>
+    <tr>
+      <td>Homework 3 – Regression Analysis</td>
+      <td><a href="https://esempio.com/homework3.pdf">📄 Download PDF</a></td>
+      <td>10 Novembre 2025</td>
+    </tr>
+  </tbody>
+</table>
+
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
