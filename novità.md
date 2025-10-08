@@ -37,6 +37,12 @@ Ogni aggiornamento riporta la **data di pubblicazione**, il **contenuto aggiunto
 ---
 
 ## 🗓️ 7 Ottobre 2025
-- Fixate le icone delle bandiere (italiana e inglese)
+- Fixate le icone delle bandiere (italiana e inglese) in corrispondenza del materiale nella home
+
+---
+
+## 🗓️ 8 Ottobre 2025
+- Nuova sezione per il corso Statistics (uniSapienza), in aggiornamento
+- Nuova sezione per il primo homework assegnato dal professore, in aggiornamento
 
 ---
