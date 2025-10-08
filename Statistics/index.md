@@ -31,15 +31,6 @@ nav_exclude: true
   });
 </script>
 
-<h1 class="stats-header">
-  <!-- Typing solo CSS: il testo è già nel DOM -->
-  <span class="stats-title" data-text="Statistics">Statistics</span>
-  <span class="number-stream" id="stats-numbers">0000000000</span>
-</h1>
-
-<p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
-<p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // piccolo ritardo per essere certi che il DOM sia completo
@@ -64,6 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 200);
 });
 </script>
+
+<h1 class="stats-header">
+  <!-- Typing solo CSS: il testo è già nel DOM -->
+  <span class="stats-title" data-text="Statistics">Statistics</span>
+  <span class="number-stream" id="stats-numbers">0000000000</span>
+</h1>
+
+<p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
+<p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
