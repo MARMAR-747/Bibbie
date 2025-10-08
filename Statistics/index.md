@@ -32,11 +32,11 @@ nav_exclude: true
 </script>
 
 <h1 class="stats-header">
-  <span class="stats-title" data-text="Statistics">Statistics</span>
+  <span class="stats-title" data-text="📊Statistics">Statistics</span>
   <span class="number-stream" id="stats-numbers" data-len="10"></span>
 </h1>
 
-<p>📊 Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
+<p> Benvenuto nella sezione dedicata agli <strong>homework</strong> e agli esercizi del corso di <em>Statistics</em> presso UniSapienza.</p>
 <p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
