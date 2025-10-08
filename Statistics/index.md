@@ -63,6 +63,7 @@ nav_exclude: true
   {% endif %}
 </div>
 
+{% raw %}
 <script>
 (function () {
   // evita doppie inizializzazioni
@@ -93,4 +94,4 @@ nav_exclude: true
   setInterval(update, 250);
 })();
 </script>
-
+{% endraw %}
