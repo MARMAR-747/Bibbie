@@ -63,4 +63,4 @@ nav_exclude: true
   {% endif %}
 </div>
 
-<script src="{{ 'Bibbie/Statistics/assets/js/stats.js' | relative_url }}"></script>
+<script src="{{ 'Statistics/assets/js/stats.js' | relative_url }}"></script>
