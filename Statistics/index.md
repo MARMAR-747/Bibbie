@@ -63,35 +63,4 @@ nav_exclude: true
   {% endif %}
 </div>
 
-{% raw %}
-<script>
-(function () {
-  // evita doppie inizializzazioni
-  if (window.__statsNumbersInit) return;
-  window.__statsNumbersInit = true;
-
-  var el = document.getElementById('stats-numbers');
-  if (!el) return;
-
-  var lenAttr = el.getAttribute('data-len');
-  var L = (lenAttr && !isNaN(lenAttr)) ? parseInt(lenAttr, 10) : 10;
-
-  function randomNumbers(n) {
-    var out = '';
-    for (var i = 0; i < n; i++) out += Math.floor(Math.random() * 10);
-    return out;
-  }
-
-  function update() { el.textContent = randomNumbers(L); }
-
-  // prima scrittura immediata
-  update();
-
-  // se per qualsiasi motivo l'intervallo viene bloccato, rifai un kickstart dopo 300ms
-  setTimeout(update, 300);
-
-  // aggiornamento regolare
-  setInterval(update, 250);
-})();
-</script>
-{% endraw %}
+<script src="{{ '/assets/js/stats.js' | relative_url }}"></script>
