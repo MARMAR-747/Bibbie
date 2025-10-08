@@ -11,12 +11,10 @@
   }
 
   function update() {
-    const span = document.createElement('span');
-    span.textContent = randomNumbers(10);
-    el.innerHTML = '';            // pulisce la cifra precedente
-    el.appendChild(span);
+    el.textContent = randomNumbers(10);
   }
 
+  // Aggiornamento regolare
   update();
   setInterval(update, 250);
 })();
