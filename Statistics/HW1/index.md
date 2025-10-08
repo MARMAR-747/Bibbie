@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Statistics
+title: HW1
 nav_exclude: true
 ---
 
 <div class="nav-buttons">
-  <a href="/Bibbie/Statistics/" class="nav-button right">➡️ Cryptography</a>
+  <a href="/Bibbie/Statistics/" class="nav-button left">➡️ Statistics</a>
 </div>
 
 <br>
