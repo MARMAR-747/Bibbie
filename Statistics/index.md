@@ -31,31 +31,6 @@ nav_exclude: true
   });
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // piccolo ritardo per essere certi che il DOM sia completo
-  setTimeout(() => {
-    const el = document.getElementById('stats-numbers');
-    if (!el) return;
-
-    function randomNumbers(length = 10) {
-      let nums = '';
-      for (let i = 0; i < length; i++) {
-        nums += Math.floor(Math.random() * 10);
-      }
-      return nums;
-    }
-
-    function updateStream() {
-      el.textContent = randomNumbers(10);
-    }
-
-    updateStream();              // imposta la prima volta
-    setInterval(updateStream, 250);  // aggiorna ogni 250 ms
-  }, 200);
-});
-</script>
-
 <h1 class="stats-header">
   <!-- Typing solo CSS: il testo è già nel DOM -->
   <span class="stats-title" data-text="Statistics">Statistics</span>
@@ -88,3 +63,25 @@ document.addEventListener('DOMContentLoaded', () => {
     <span></span>
   {% endif %}
 </div>
+
+<script>
+(function() {
+  const el = document.getElementById('stats-numbers');
+  if (!el) return;
+
+  function randomNumbers(length = 10) {
+    let nums = '';
+    for (let i = 0; i < length; i++) {
+      nums += Math.floor(Math.random() * 10);
+    }
+    return nums;
+  }
+
+  function updateStream() {
+    el.textContent = randomNumbers(10);
+  }
+
+  updateStream(); // Imposta i primi numeri
+  setInterval(updateStream, 250); // Cambia ogni 250 ms
+})();
+</script>
