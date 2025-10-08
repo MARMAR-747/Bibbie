@@ -70,18 +70,12 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 
 /* Titolo principale con effetto typing */
 .stats-title {
-  position: relative;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--link-color);
+  width: auto !important;       /* NON più 0 -> 10ch */
   white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  border-right: 2px solid var(--link-color);
-  animation: typing 1.2s steps(10,end) forwards, blink .8s step-end infinite;
+  overflow: visible;
+  border-right: 0 !important;   /* niente caret CSS */
+  animation: none !important;   /* stop animazioni */
 }
-@keyframes typing { to { width: 10ch; } }
-@keyframes blink { 50% { border-color: transparent; } }
 
 /* Numeri in scorrimento verticale */
 .number-stream {
