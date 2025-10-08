@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, .site-nav, .site-header, .site-footer, .main-content{
+  font-family: 'Mozilla Text', sans-serif !important;
+}
+
+.theme-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.5rem;
+  color: var(--body-text-color);
+}
+
+/* Aumenta dimensione del testo nella navigation */
+.nav-list .nav-list-item .nav-list-link {
+  font-size: 1.05rem; /* Cambia il valore a piacere */
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.nav-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav-button:hover {
+  background-color: #005fa3;
+}
+
+.nav-button.left {
+  margin-right: auto;
+}
+
+.nav-button.right {
+  margin-left: auto;
+}
+
+/* --- STATISTICS TITLE --- */
+.stats-header {
+  display: inline-flex !important; /* inline per evitare spazi residui */
+  align-items: baseline !important;
+  gap: 6px !important;             /* forza la distanza */
+  margin: 1rem 0 1.5rem !important;
+  line-height: 1;                  /* compatta verticalmente */
+}
+
+/* Simbolo accanto al titolo */
+.stats-icon {
+  font-size: 2rem;                     /* regola la dimensione del simbolo */
+  color: var(--link-color);
+  margin-right: 6px;                   /* spazio tra simbolo e testo */
+}
+
+/* Titolo principale con effetto typing */
+.stats-title {
+  width: auto !important;       /* NON più 0 -> 10ch */
+  white-space: nowrap;
+  overflow: visible;
+  border-right: 0 !important;   /* niente caret CSS */
+  animation: none !important;   /* stop animazioni */
+}
+
+/* Numeri in scorrimento verticale */
+.number-stream {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.8rem;
+  color: var(--body-text-color);
+  opacity: 0.85;
+  letter-spacing: 2px;
+  display: inline-block;
+  min-width: 120px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  height: 2rem; /* limita lo spazio per lo scroll */
+}
+
+.number-stream span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  animation: slideNumbers 0.25s linear;
+}
+
+@keyframes slideNumbers {
+  0%   { transform: translateY(100%); opacity: 0; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Glow in dark mode */
+:root[data-theme="dark"] .number-stream {
+  text-shadow: 0 0 6px rgba(100,200,255,.35);
+  opacity: .9;
+}
