@@ -37,7 +37,7 @@ nav_exclude: true
   <span class="number-stream" id="stats-numbers"></span>
 </h1>
 
-<p> Benvenuto nella sezione dedicata agli <strong>homework</strong> del corso di <em>Statistics</em>.</p>
+<p> Welcome to the <em>Statistics</em> course <strong>assignments</strong> section.</p>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
