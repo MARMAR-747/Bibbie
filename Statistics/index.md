@@ -41,16 +41,28 @@ nav_exclude: true
 <p>Qui troverai esercitazioni, soluzioni e approfondimenti progressivamente aggiornati durante il semestre.</p>
 
 <script>
-(function () {
-  // Evita che un errore qui blocchi la pagina
-  try {
+document.addEventListener('DOMContentLoaded', () => {
+  // piccolo ritardo per essere certi che il DOM sia completo
+  setTimeout(() => {
     const el = document.getElementById('stats-numbers');
     if (!el) return;
-    const rand = (len = 10) => Array.from({ length: len }, () => Math.floor(Math.random() * 10)).join('');
-    el.textContent = rand(10);
-    setInterval(() => { el.textContent = rand(10); }, 250);
-  } catch (e) { /* no-op */ }
-})();
+
+    function randomNumbers(length = 10) {
+      let nums = '';
+      for (let i = 0; i < length; i++) {
+        nums += Math.floor(Math.random() * 10);
+      }
+      return nums;
+    }
+
+    function updateStream() {
+      el.textContent = randomNumbers(10);
+    }
+
+    updateStream();              // imposta la prima volta
+    setInterval(updateStream, 250);  // aggiorna ogni 250 ms
+  }, 200);
+});
 </script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
