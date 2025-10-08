@@ -44,6 +44,7 @@ nav_exclude: true
 <table class="stats-table">
   <thead>
     <tr>
+      <th>#</th>
       <th>Title</th>
       <th>Link</th>
       <th>Deadline</th>
@@ -51,19 +52,22 @@ nav_exclude: true
   </thead>
   <tbody>
     <tr>
-      <td>#1 – What is statistics and why can it be useful for cybersecurity?</td>
+      <td>1</td>
+      <td>What is statistics and why can it be useful for cybersecurity?</td>
       <td><a href="https://esempio.com/homework1.pdf">📄 Homework</a></td>
       <td>9/10/2025</td>
     </tr>
     <tr>
-      <td>Homework 2 – Probability Distributions</td>
-      <td><a href="https://esempio.com/homework2.pdf">📄 Download PDF</a></td>
-      <td>27 Ottobre 2025</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
-      <td>Homework 3 – Regression Analysis</td>
-      <td><a href="https://esempio.com/homework3.pdf">📄 Download PDF</a></td>
-      <td>10 Novembre 2025</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
