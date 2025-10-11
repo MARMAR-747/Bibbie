@@ -31,12 +31,6 @@ nav_exclude: true
   });
 </script>
 
----
-layout: default
-title: HW1 - What is Statistics?
-nav_exclude: true
----
-
 # 📊 What is Statistics?
 
 <div class="quote-box">
