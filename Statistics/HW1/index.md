@@ -57,7 +57,7 @@ Its purpose is to **summarize data** through graphical tools
 that describe the salient aspects of the observed data, thus forming the statistical content.
 
 <div class="figure-container">
-  <img src="/Bibbie/assets/images/FIG1.png" alt="Example histogram by AGCOM" class="figure-img">
+  <img src="/Bibbie/assets/images/AGCOM_histogram.png" alt="Example histogram by AGCOM" class="figure-img">
   <p class="figure-caption">
     <strong>Fig. 1.</strong> Example of histogram provided by AGCOM, depicting FTTH coverage in Italy based on the number of municipalities reached (regardless of how many households are served).
   </p>
@@ -72,10 +72,11 @@ Its purpose is to **establish the characteristics** of the data and the behavior
 It is strongly connected to **probability theory** and allows us to make predictions based on models derived from inferential techniques.
 
 <div class="figure-container">
-  <img src="/Bibbie/assets/images/FIG2.png" alt="Example of linear regression on Nasdaq" class="figure-img">
+  <img src="/Bibbie/assets/images/Linear_regression.png" alt="Example of linear regression on Nasdaq" class="figure-img">
   <p class="figure-caption">
     <strong>Fig. 2.</strong> Example of linear regression applied to Nasdaq price movements (hourly chart, 131-period calculation).  
     The regression line acts as an equilibrium price and can be used for both trend-following and reversal strategies.
+    When prices cross the regression line and the line changes slope, we are usually witnessing a trend reversal; we therefore expect a new price movement in the direction indicated by the regression line. If, on the other hand, prices deviate significantly from the regression line, this could be interpreted as a sign of strong imbalance; for this reason, we can expect prices to return to the linear regression line.
   </p>
 </div>
 
