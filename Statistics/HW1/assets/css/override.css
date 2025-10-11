@@ -110,3 +110,29 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   text-shadow: 0 0 6px rgba(100,200,255,.35);
   opacity: .9;
 }
+
+/* --- QUOTE BOX --- */
+.quote-box {
+  border-left: 4px solid var(--link-color);
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
+
+.quote-box p {
+  margin: 0.2rem 0;
+  font-size: 1.05rem;
+}
+
+.quote-author {
+  text-align: right;
+  font-style: italic;
+  color: var(--body-text-color);
+}
+
+/* Dark mode adjustment */
+:root[data-theme="dark"] .quote-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--link-color);
+}
