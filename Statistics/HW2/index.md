@@ -145,7 +145,10 @@ VALUES
 </div>
 
 The resulting table is the following:  
-<img src="{{ '/assets/images/Players_table.png' | relative_url }}">
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Players_Table.png" alt="Example dataset table" class="figure-img">
+</div>
+
 
 This query fills the dataset with sample data representing different players  
 from multiple countries. Such a dataset can later be used to compute **descriptive statistics**  
