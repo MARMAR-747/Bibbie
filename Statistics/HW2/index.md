@@ -289,41 +289,90 @@ or if regional preferences differ significantly.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-# 🔐 Letter Distribution and Caesar Cipher
+# 🧮 Interactive Caesar Cipher Demo
 
-### 📊 Letter Distribution
+This section allows you to experiment with the **Caesar cipher**, encrypting and decoding text interactively.  
+It also demonstrates how **statistics** can help in **cryptanalysis** by analyzing letter frequency.
 
-We start by computing the **frequency distribution of letters** in a given text.
-The following JavaScript code counts how often each letter appears
-and prints the result in descending order of frequency.
+<div class="cipher-container">
+  <label for="cipher-text">Enter your text:</label><br>
+  <textarea id="cipher-text" rows="4" placeholder="Type some text here..."></textarea>
 
-<div class="code-window">
-  <div class="code-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
+  <div class="cipher-controls">
+    <label for="shift-value">Shift:</label>
+    <input type="number" id="shift-value" min="0" max="25" value="5">
+    <button id="encrypt-btn">🔒 Encrypt</button>
+    <button id="auto-decrypt-btn">🧠 Auto-decrypt</button>
   </div>
-  <pre><code class="language-javascript">
-const text = "Statistics and cryptography can work together.";
-const freq = {};
 
-for (const char of text.toLowerCase()) {
-  if (/[a-z]/.test(char)) {
-    freq[char] = (freq[char] || 0) + 1;
-  }
-}
-
-const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
-console.log("Letter distribution:");
-for (const [letter, count] of sorted) {
-  console.log(letter, count);
-}
-  </code></pre>
+  <div class="cipher-output">
+    <p><strong>Encrypted text:</strong> <span id="encrypted-output"></span></p>
+    <p><strong>Guessed shift:</strong> <span id="guessed-shift"></span></p>
+    <p><strong>Decrypted text:</strong> <span id="decrypted-output"></span></p>
+  </div>
 </div>
 
-This simple script shows how we can **model text as a dataset** —  
-each letter is a category, and its **frequency** represents the count of occurrences,
-just like any univariate distribution.
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const textArea = document.getElementById("cipher-text");
+  const shiftInput = document.getElementById("shift-value");
+  const encryptBtn = document.getElementById("encrypt-btn");
+  const autoDecryptBtn = document.getElementById("auto-decrypt-btn");
+  const encryptedOut = document.getElementById("encrypted-output");
+  const guessedShiftOut = document.getElementById("guessed-shift");
+  const decryptedOut = document.getElementById("decrypted-output");
+
+  const englishFreq = {
+    e: 12.7, t: 9.1, a: 8.2, o: 7.5, i: 7.0, n: 6.7,
+    s: 6.3, h: 6.1, r: 6.0, d: 4.3, l: 4.0, c: 2.8,
+    u: 2.8, m: 2.4, w: 2.4, f: 2.2, g: 2.0, y: 2.0,
+    p: 1.9, b: 1.5, v: 1.0, k: 0.8, j: 0.15, x: 0.15,
+    q: 0.1, z: 0.07
+  };
+
+  function caesarCipher(str, shift) {
+    const a = "a".charCodeAt(0);
+    return str.toLowerCase().replace(/[a-z]/g, c =>
+      String.fromCharCode((c.charCodeAt(0) - a + shift + 26) % 26 + a)
+    );
+  }
+
+  function guessShift(cipher) {
+    let bestShift = 0, bestScore = Infinity;
+    for (let shift = 0; shift < 26; shift++) {
+      const decrypted = caesarCipher(cipher, 26 - shift);
+      const freq = {};
+      for (const c of decrypted) if (/[a-z]/.test(c)) freq[c] = (freq[c] || 0) + 1;
+      const total = Object.values(freq).reduce((a, b) => a + b, 0);
+      const rel = {};
+      for (const [k, v] of Object.entries(freq)) rel[k] = (v / total) * 100;
+      let score = 0;
+      for (const l in englishFreq) score += Math.abs((rel[l] || 0) - englishFreq[l]);
+      if (score < bestScore) { bestScore = score; bestShift = shift; }
+    }
+    return bestShift;
+  }
+
+  encryptBtn.addEventListener("click", () => {
+    const text = textArea.value.trim();
+    if (!text) return alert("Please enter some text.");
+    const shift = parseInt(shiftInput.value);
+    const encrypted = caesarCipher(text, shift);
+    encryptedOut.textContent = encrypted;
+    guessedShiftOut.textContent = "-";
+    decryptedOut.textContent = "-";
+  });
+
+  autoDecryptBtn.addEventListener("click", () => {
+    const cipher = encryptedOut.textContent.trim();
+    if (!cipher) return alert("Please encrypt a text first!");
+    const guessedShift = guessShift(cipher);
+    const decrypted = caesarCipher(cipher, 26 - guessedShift);
+    guessedShiftOut.textContent = guessedShift;
+    decryptedOut.textContent = decrypted;
+  });
+});
+</script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
