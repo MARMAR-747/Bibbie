@@ -303,7 +303,7 @@ or if regional preferences differ significantly.
 <p><strong>Analysis:</strong></p>
 <pre id="caesar-info" class="caesar-output"></pre>
 
-<script src="{{ '/assets/js/Caesar.js' | relative_url }}" defer></script>
+<script src="{{ 'Statistics/HW2/assets/js/Caesar.js' | relative_url }}" defer></script>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
