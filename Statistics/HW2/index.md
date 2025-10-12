@@ -304,7 +304,7 @@ This section allows you to experiment with the **Caesar cipher**, encrypting and
     <div class="cipher-controls">
       <label for="encrypt-shift">Shift:</label>
       <input type="number" id="encrypt-shift" min="0" max="25" value="5">
-      <button id="encrypt-btn">Encrypt</button>
+      <button type="button" id="encrypt-btn" class="cipher-btn encrypt">Encrypt</button>
     </div>
 
     <div class="cipher-output">
@@ -319,7 +319,7 @@ This section allows you to experiment with the **Caesar cipher**, encrypting and
     <textarea id="decrypt-text" rows="4" placeholder="Paste encrypted text here..."></textarea>
 
     <div class="cipher-controls">
-      <button id="decrypt-btn">Auto-decrypt</button>
+      <button type="button" id="decrypt-btn" class="cipher-btn decrypt">Auto-decrypt</button>
     </div>
 
     <div class="cipher-output">
