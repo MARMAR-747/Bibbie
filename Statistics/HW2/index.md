@@ -149,11 +149,98 @@ The resulting table is the following:
   <img src="/Bibbie/assets/images/Players_Table.png" alt="Example dataset table" class="figure-img">
 </div>
 
-
 This query fills the dataset with sample data representing different players  
 from multiple countries. Such a dataset can later be used to compute **descriptive statistics**  
 (e.g., average win rate per country or most frequent champion)  
 and to explore **bivariate distributions** between variables like *age* and *win rate*.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 📈 Univariate Distributions — Exploring Single Variables
+
+Once the dataset has been created, we can begin analyzing the **frequency distributions**  
+of individual variables. These analyses allow us to observe how often certain values occur  
+and identify the most frequent characteristics in our dataset.
+
+Below are three examples of **univariate distributions** obtained from the `players` table.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🧙‍♂️ Favorite Champion Distribution
+The following query counts how many players prefer each champion.  
+It gives us insight into which champions are the most popular in the dataset.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+SELECT favorite_champion, COUNT(*) AS frequency
+FROM players
+GROUP BY favorite_champion
+ORDER BY frequency DESC;
+  </code></pre>
+</div>
+
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Univariate_favorite_champion_table.png" alt="Example dataset table" class="figure-img">
+</div>
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 👥 Age Distribution
+This query groups the players by age, counting how many share the same value.  
+It helps identify the **most common age groups** among the players.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+SELECT age, COUNT(*) AS frequency
+FROM players
+GROUP BY age
+ORDER BY age;
+  </code></pre>
+</div>
+
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Univariate_age_table.png" alt="Example dataset table" class="figure-img">
+</div>
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🌍 Country Distribution
+This last query shows how many players come from each country,  
+helping us understand the **geographical composition** of the dataset.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+SELECT country, COUNT(*) AS frequency
+FROM players
+GROUP BY country
+ORDER BY frequency DESC;
+  </code></pre>
+</div>
+
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Univariate_country_table.png" alt="Example dataset table" class="figure-img">
+</div>
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+Together, these queries describe three **univariate distributions** —  
+each one focusing on a single variable (*favorite_champion*, *age*, and *country*).  
+They form the first step in understanding the overall structure and diversity of our data.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
