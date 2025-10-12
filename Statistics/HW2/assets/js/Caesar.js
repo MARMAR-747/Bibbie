@@ -2,8 +2,38 @@
 
 (function () {
   // ===== CONFIG =====
-  const TEXT = `Statistics and cryptography can work together.
-Caesar ciphers are simple but great for teaching ideas about frequency.`;
+  const TEXT = `Freedom is not a starting point but a destination.
+It is a slow, difficult conquest, built day by day through choices, actions, and thoughts. There is no moment in which we can truly say: “Now I am free.” Because at every moment, something tries to bind us again — fear, judgment, habit, memory.
+Freedom is not the absence of constraints, but the ability to move within them without being crushed. It is like walking through a maze, knowing that each wall can be a guide rather than a prison.
+
+Many confuse freedom with license — with the right to do whatever they please.
+But being free does not mean being able to do everything; it means knowing what is worth doing, and doing it. It means choosing your own path, even when it is hard, even when others take the easier road.
+Freedom is quiet; it does not need to shout. It lives in the smallest gestures: in telling the truth when lying would be easier; in staying faithful to an idea when everyone else has forgotten it; in looking at the world through your own eyes, not through the eyes others lend you.
+
+Every true form of freedom is born from knowledge.
+No one can be free without knowing from what they wish to be freed.
+Those who do not recognize their own chains will never be able to break them.
+That is why culture is the first form of freedom.
+To read, to understand, to question — these acts liberate us more than any revolution. Human freedom begins the moment a person learns to think for themselves.
+
+And yet, freedom is never solitude.
+No one is truly free unless others are free as well.
+Freedom is a good that grows only when shared — like air, like light, like hope.
+It cannot be hoarded; whoever tries to keep it for themselves will lose it.
+
+We live in times when freedom is often reduced to a word, a slogan, an abstract right. But true freedom does not need solemn declarations; it needs awareness, commitment, courage. It is a path measured in the everyday.
+To be free is to accept responsibility for who we are.
+It means not making excuses, not delegating, not looking away.
+It means understanding that every choice we make shapes a part of the world, and that every free act is also a just one.
+
+Perhaps absolute freedom does not exist. But that should not discourage us.
+Freedom is made of degrees, of attempts, of falls and new beginnings.
+It is a fragile flame that must be protected even when it seems useless.
+And if one day we lose it, it will not be because someone took it from us, but because we failed to defend it.
+
+Because freedom is not a gift.
+It is a responsibility.
+It is the highest test of our humanity.`;
 
   const SHIFT = 5;
 
