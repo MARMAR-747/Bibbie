@@ -331,11 +331,11 @@ It is the highest test of our humanity.
 <p><strong>Letter Distribution:</strong></p>
 <pre id="caesar-distribution" class="caesar-output"></pre>
 
-<p><strong>Encrypted Text:</strong></p>
-<pre id="caesar-encrypted" class="caesar-output"></pre>
+<p><strong>🔒 Encrypted text:</strong></p>
+<pre id="caesar-encrypted" class="typewriter"></pre>
 
-<p><strong>Decrypted Text:</strong></p>
-<pre id="caesar-decrypted" class="caesar-output"></pre>
+<p><strong>🧠 Decrypted text (auto-detected shift):</strong></p>
+<pre id="caesar-decrypted" class="typewriter"></pre>
 
 <p><strong>Analysis:</strong></p>
 <pre id="caesar-info" class="caesar-output"></pre>
