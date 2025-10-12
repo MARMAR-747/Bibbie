@@ -289,55 +289,21 @@ or if regional preferences differ significantly.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-# 🧮 Interactive Caesar Cipher Demo
+# 🧮 Letter distribution and Caesar Cipher
 
-This section allows you to experiment with the **Caesar cipher**, encrypting and decoding text interactively. It also demonstrates how **statistics** can help in **cryptanalysis** by analyzing letter frequency.
+<p><strong>Letter Distribution:</strong></p>
+<pre id="caesar-distribution" class="caesar-output"></pre>
 
-{% raw %}
-<div id="caesar-simple">
-  <label for="cs-text"><strong>Testo da criptare</strong></label><br>
-  <textarea id="cs-text" rows="4" style="width:100%;"></textarea>
+<p><strong>Encrypted Text:</strong></p>
+<pre id="caesar-encrypted" class="caesar-output"></pre>
 
-  <div style="margin-top:.6rem;">
-    <label for="cs-shift"><strong>Shift</strong> (0–25):</label>
-    <input id="cs-shift" type="number" min="0" max="25" value="5" style="width:70px; text-align:center;">
-    <button type="button" id="cs-btn" style="margin-left:.5rem;">Cripta</button>
-  </div>
+<p><strong>Decrypted Text:</strong></p>
+<pre id="caesar-decrypted" class="caesar-output"></pre>
 
-  <div style="margin-top:.8rem;">
-    <strong>Output:</strong>
-    <pre id="cs-out" style="white-space:pre-wrap;word-break:break-word;margin-top:.3rem;"></pre>
-  </div>
-</div>
+<p><strong>Analysis:</strong></p>
+<pre id="caesar-info" class="caesar-output"></pre>
 
-<script>
-(function(){
-  // Caesar cipher che preserva maiuscole/minuscole, ignora i non-lettera
-  function caesar(str, shift){
-    // normalizza lo shift (accetta anche negativi per sicurezza)
-    shift = ((shift % 26) + 26) % 26;
-    return str.replace(/[A-Za-z]/g, ch => {
-      const isUpper = ch >= 'A' && ch <= 'Z';
-      const base = isUpper ? 65 : 97; // 'A' o 'a'
-      const code = ch.charCodeAt(0) - base;
-      return String.fromCharCode(((code + shift) % 26) + base);
-    });
-  }
-
-  function $(id){ return document.getElementById(id); }
-
-  const btn = $('cs-btn');
-  if(!btn) return; // se non trova il bottone, esce silenziosamente
-
-  btn.addEventListener('click', () => {
-    const text  = $('cs-text').value || '';
-    const shift = parseInt(($('cs-shift').value || '0'), 10) || 0;
-    $('cs-out').textContent = caesar(text, shift);
-  });
-})();
-</script>
-{% endraw %}
-
+<script src="{{ '/assets/js/Caesar.js' | relative_url }}" defer></script>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
