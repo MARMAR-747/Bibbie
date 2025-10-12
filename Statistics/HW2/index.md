@@ -73,6 +73,38 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+## 💾 Practical Example — Creating a Dataset using PostgreSQL
+
+To better understand how datasets are created and structured before statistical analysis,  
+we can use a simple SQL example. The following query defines a table named `players`,  
+which could represent data collected from a multiplayer game:
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+CREATE TABLE players (
+    id SERIAL PRIMARY KEY,
+    player_name VARCHAR(50),
+    age INT,
+    country VARCHAR(50),
+    matches_played INT,
+    win_rate FLOAT,
+    favorite_champion VARCHAR(50)
+);
+  </code></pre>
+</div>
+
+This table structure allows us to store data in a **tabular format**,  
+where each row corresponds to a player and each column represents one of their attributes.  
+It is from such datasets that we can later compute **distributions**, visualize data,  
+and perform **statistical analysis**.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
