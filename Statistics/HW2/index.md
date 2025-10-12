@@ -37,7 +37,7 @@ A **dataset** is a structured collection of data, usually organized in **rows** 
 
 A **distribution** describes how the values of a variable are spread or arranged within a dataset — which values occur and **how often** they appear.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🔎 Types of distributions (by number of variables)
 
@@ -62,7 +62,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 </div>
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🧭 What distributions help us understand
 
@@ -70,6 +70,8 @@ A **distribution** describes how the values of a variable are spread or arranged
 - **Central tendency:** mean, median, mode.  
 - **Spread:** variance, standard deviation.  
 - **Relationships between variables** (bivariate and multivariate cases).
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
