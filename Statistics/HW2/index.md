@@ -293,95 +293,50 @@ or if regional preferences differ significantly.
 
 This section allows you to experiment with the **Caesar cipher**, encrypting and decoding text interactively. It also demonstrates how **statistics** can help in **cryptanalysis** by analyzing letter frequency.
 
-<div class="cipher-wrapper">
+{% raw %}
+<div id="caesar-simple">
+  <label for="cs-text"><strong>Testo da criptare</strong></label><br>
+  <textarea id="cs-text" rows="4" style="width:100%;"></textarea>
 
-  <!-- ENCRYPTION BLOCK -->
-  <div class="cipher-container">
-    <h3>🔒 Encryption</h3>
-    <label for="encrypt-text">Enter text to encrypt:</label><br>
-    <textarea id="encrypt-text" rows="4" placeholder="Type your text here..."></textarea>
+  <div style="margin-top:.6rem;">
+    <label for="cs-shift"><strong>Shift</strong> (0–25):</label>
+    <input id="cs-shift" type="number" min="0" max="25" value="5" style="width:70px; text-align:center;">
+    <button type="button" id="cs-btn" style="margin-left:.5rem;">Cripta</button>
+  </div>
 
-    <div class="cipher-controls">
-      <label for="encrypt-shift">Shift:</label>
-      <input type="number" id="encrypt-shift" min="0" max="25" value="5">
-      <button type="button" id="encrypt-btn" class="cipher-btn encrypt">Encrypt</button>
-    </div>
-
-    <div class="cipher-output">
-  <p><strong>Encrypted text:</strong></p>
-  <pre id="encrypt-output" class="cipher-result"></pre>
-</div>
-
-  <!-- DECRYPTION BLOCK -->
-  <div class="cipher-container">
-    <h3>🧠 Auto-decryption</h3>
-    <label for="decrypt-text">Enter encrypted text:</label><br>
-    <textarea id="decrypt-text" rows="4" placeholder="Paste encrypted text here..."></textarea>
-
-    <div class="cipher-controls">
-      <button type="button" id="decrypt-btn" class="cipher-btn decrypt">Auto-decrypt</button>
-    </div>
-
-   <div class="cipher-output">
-  <p><strong>Guessed shift:</strong> <span id="guessed-shift" class="cipher-result"></span></p>
-  <p><strong>Decrypted text:</strong></p>
-  <pre id="decrypted-output" class="cipher-result"></pre>
-</div>
+  <div style="margin-top:.8rem;">
+    <strong>Output:</strong>
+    <pre id="cs-out" style="white-space:pre-wrap;word-break:break-word;margin-top:.3rem;"></pre>
+  </div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const englishFreq = {
-    e: 12.7, t: 9.1, a: 8.2, o: 7.5, i: 7.0, n: 6.7,
-    s: 6.3, h: 6.1, r: 6.0, d: 4.3, l: 4.0, c: 2.8,
-    u: 2.8, m: 2.4, w: 2.4, f: 2.2, g: 2.0, y: 2.0,
-    p: 1.9, b: 1.5, v: 1.0, k: 0.8, j: 0.15, x: 0.15,
-    q: 0.1, z: 0.07
-  };
-
-  function caesarCipher(str, shift) {
-    const a = "a".charCodeAt(0);
-    return str.toLowerCase().replace(/[a-z]/g, c =>
-      String.fromCharCode((c.charCodeAt(0) - a + shift + 26) % 26 + a)
-    );
+(function(){
+  // Caesar cipher che preserva maiuscole/minuscole, ignora i non-lettera
+  function caesar(str, shift){
+    // normalizza lo shift (accetta anche negativi per sicurezza)
+    shift = ((shift % 26) + 26) % 26;
+    return str.replace(/[A-Za-z]/g, ch => {
+      const isUpper = ch >= 'A' && ch <= 'Z';
+      const base = isUpper ? 65 : 97; // 'A' o 'a'
+      const code = ch.charCodeAt(0) - base;
+      return String.fromCharCode(((code + shift) % 26) + base);
+    });
   }
 
-  function guessShift(cipher) {
-    let bestShift = 0, bestScore = Infinity;
-    for (let shift = 0; shift < 26; shift++) {
-      const decrypted = caesarCipher(cipher, 26 - shift);
-      const freq = {};
-      for (const c of decrypted) if (/[a-z]/.test(c)) freq[c] = (freq[c] || 0) + 1;
-      const total = Object.values(freq).reduce((a, b) => a + b, 0);
-      const rel = {};
-      for (const [k, v] of Object.entries(freq)) rel[k] = (v / total) * 100;
-      let score = 0;
-      for (const l in englishFreq) score += Math.abs((rel[l] || 0) - englishFreq[l]);
-      if (score < bestScore) { bestScore = score; bestShift = shift; }
-    }
-    return bestShift;
-  }
+  function $(id){ return document.getElementById(id); }
 
-  // Encryption
-  document.getElementById("encrypt-btn").addEventListener("click", () => {
-    const text = document.getElementById("encrypt-text").value.trim();
-    const shift = parseInt(document.getElementById("encrypt-shift").value);
-    if (!text) return alert("Please enter text to encrypt.");
-    const encrypted = caesarCipher(text, shift);
-    document.getElementById("encrypt-output").textContent = encrypted;
-  });
+  const btn = $('cs-btn');
+  if(!btn) return; // se non trova il bottone, esce silenziosamente
 
-  // Decryption
-  document.getElementById("decrypt-btn").addEventListener("click", () => {
-    const cipher = document.getElementById("decrypt-text").value.trim();
-    if (!cipher) return alert("Please paste encrypted text first!");
-    const guessedShift = guessShift(cipher);
-    const decrypted = caesarCipher(cipher, 26 - guessedShift);
-    document.getElementById("guessed-shift").textContent = guessedShift;
-    document.getElementById("decrypted-output").textContent = decrypted;
+  btn.addEventListener('click', () => {
+    const text  = $('cs-text').value || '';
+    const shift = parseInt(($('cs-shift').value || '0'), 10) || 0;
+    $('cs-out').textContent = caesar(text, shift);
   });
-});
+})();
 </script>
+{% endraw %}
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
