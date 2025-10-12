@@ -253,6 +253,42 @@ They form the first step in understanding the overall structure and diversity of
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+## 🔄 Bivariate Distribution — Relationship Between Two Variables
+
+After analyzing the single-variable (univariate) distributions,  
+we can move to a **bivariate distribution**, which explores the relationship between two variables.  
+In this case, we study how the **preferred champion** varies depending on the **player’s country**.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+SELECT 
+    country,
+    favorite_champion,
+    COUNT(*) AS frequency
+FROM players
+GROUP BY country, favorite_champion
+ORDER BY country, frequency DESC;
+  </code></pre>
+</div>
+
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Bivariate_country_fav_table.png" alt="Example dataset table" class="figure-img">
+</div>
+
+This query produces a **two-dimensional frequency table**,  
+where each row represents a pair *(country, favorite_champion)* and shows  
+how many players fall into that combination.
+By comparing these joint frequencies, we can detect potential **correlations** or **patterns** —  
+for example, whether players from the same country tend to favor the same champions,  
+or if regional preferences differ significantly.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
