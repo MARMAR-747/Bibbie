@@ -44,22 +44,21 @@ This study can be both **qualitative** and **quantitative** and occurs under con
 The need to quantify the phenomena under study — that is, to analyze and describe them in mathematical terms — has its origins in **ancient Egypt**,  
 where successive dynasties introduced the recording of data such as **population size**, **material goods**, **number of soldiers**, and so on.  
 
-Obviously, statistics has undergone significant evolution over the ages, up to the present day where two main branches are recognized: descriptive and inferential statistics.
+Obviously, statistics has undergone significant evolution over the ages, up to the present day where two main branches are recognized: **descriptive** and **inferential** statistics.
 
 ---
 
 ## 📈 Main Branches of Statistics
 
 ### 1️⃣ Descriptive Statistics
-Its purpose is to **summarize data** through graphical tools  
-(such as bar charts, pie charts, histograms, box plots) and indices  
-(statistical indicators, position indicators, dispersion indicators, correlation indicators, shape indicators, etc.)  
-that describe the salient aspects of the observed data, thus forming the statistical content.
+Its purpose is to **summarize data** through graphical tools (such as bar charts, pie charts, histograms, box plots) and indices  
+(statistical indicators, position indicators, dispersion indicators, correlation indicators, shape indicators, etc.) that describe 
+the salient aspects of the observed data, thus forming the statistical content.
 
 <div class="figure-container">
   <img src="/Bibbie/assets/images/AGCOM_histogram.png" alt="Example histogram by AGCOM" class="figure-img">
   <p class="figure-caption">
-    <strong>Fig. 1.</strong> Example of histogram provided by AGCOM, depicting FTTH coverage in Italy based on the number of municipalities reached (regardless of how many households are served).
+    <strong>Fig. 1.</strong> Example of histogram provided by AGCOM, depicting FTTH coverage in Italy based on the number of municipalities reached (regardless of how many households are reached locally).
   </p>
 </div>
 
