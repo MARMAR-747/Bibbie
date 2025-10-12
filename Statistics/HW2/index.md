@@ -41,7 +41,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 ## 🔎 Types of distributions (by number of variables)
 
-<div class="dist-list">
+<div class="dist-list" markdown="1">
 
 **Univariate distribution** → focuses on **one** variable.  
 <div class="dist-example">
