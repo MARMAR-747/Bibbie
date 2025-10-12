@@ -122,3 +122,22 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 :root[data-theme="light"] .code-header {
   background: #e4e4e4;
 }
+
+.figure-container {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.figure-img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.figure-caption {
+  font-size: 0.9rem;
+  color: var(--body-text-color);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
