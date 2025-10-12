@@ -51,3 +51,29 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .nav-button.right {
   margin-left: auto;
 }
+
+.dist-list {
+  display: grid;
+  gap: .6rem;
+}
+
+.dist-example {
+  margin: .35rem 0 .6rem 0;
+  padding: .6rem .8rem;
+  border-left: 3px solid var(--link-color);
+  background: rgba(0,0,0,.03);
+  border-radius: 6px;
+  font-size: .98rem;
+}
+:root[data-theme="dark"] .dist-example {
+  background: rgba(255,255,255,.05);
+}
+
+.dots-separator {
+  text-align: center;
+  line-height: 1.2;
+  color: var(--body-text-color);
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  opacity: 0.6;
+}
