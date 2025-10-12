@@ -308,9 +308,9 @@ This section allows you to experiment with the **Caesar cipher**, encrypting and
     </div>
 
     <div class="cipher-output">
-      <p><strong>Encrypted text:</strong> <span id="encrypt-output"></span></p>
-    </div>
-  </div>
+  <p><strong>Encrypted text:</strong></p>
+  <pre id="encrypt-output" class="cipher-result"></pre>
+</div>
 
   <!-- DECRYPTION BLOCK -->
   <div class="cipher-container">
@@ -322,12 +322,11 @@ This section allows you to experiment with the **Caesar cipher**, encrypting and
       <button type="button" id="decrypt-btn" class="cipher-btn decrypt">Auto-decrypt</button>
     </div>
 
-    <div class="cipher-output">
-      <p><strong>Guessed shift:</strong> <span id="guessed-shift"></span></p>
-      <p><strong>Decrypted text:</strong> <span id="decrypted-output"></span></p>
-    </div>
-  </div>
-
+   <div class="cipher-output">
+  <p><strong>Guessed shift:</strong> <span id="guessed-shift" class="cipher-result"></span></p>
+  <p><strong>Decrypted text:</strong></p>
+  <pre id="decrypted-output" class="cipher-result"></pre>
+</div>
 </div>
 
 <script>
