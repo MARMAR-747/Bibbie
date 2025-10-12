@@ -65,10 +65,9 @@ the salient aspects of the observed data, thus forming the statistical content.
 ---
 
 ### 2️⃣ Inferential Statistics
-Its purpose is to **establish the characteristics** of the data and the behavior of the measurements collected  
-(statistical variables) with a predetermined **probability of error**.  
-
-It is strongly connected to **probability theory** and allows us to make predictions based on models derived from inferential techniques.
+Its purpose is to **establish the characteristics** of the data and the behavior of the measurements collected (statistical variables) 
+with a predetermined **probability of error**. It is strongly connected to **probability theory** and 
+allows us to make predictions based on models derived from inferential techniques.
 
 <div class="figure-container">
   <img src="/Bibbie/assets/images/Linear_regression.png" alt="Example of linear regression on Nasdaq" class="figure-img">
