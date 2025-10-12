@@ -144,8 +144,8 @@ VALUES
   </code></pre>
 </div>
 
-The resulting table is the following:
-
+The resulting table is the following:  
+<img src="{{ '/assets/images/Players_table.png' | relative_url }}">
 
 This query fills the dataset with sample data representing different players  
 from multiple countries. Such a dataset can later be used to compute **descriptive statistics**  
