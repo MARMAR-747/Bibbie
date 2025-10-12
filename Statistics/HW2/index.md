@@ -187,6 +187,9 @@ ORDER BY frequency DESC;
 <div class="figure-container">
   <img src="/Bibbie/assets/images/Univariate_favorite_champion_table.png" alt="Example dataset table" class="figure-img">
 </div>
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Bar_chart_favorite_champion.png" alt="Example dataset table" class="figure-img">
+</div>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -211,6 +214,9 @@ ORDER BY age;
 <div class="figure-container">
   <img src="/Bibbie/assets/images/Univariate_age_table.png" alt="Example dataset table" class="figure-img">
 </div>
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Bar_chart_age.png" alt="Example dataset table" class="figure-img">
+</div>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -234,6 +240,9 @@ ORDER BY frequency DESC;
 
 <div class="figure-container">
   <img src="/Bibbie/assets/images/Univariate_country_table.png" alt="Example dataset table" class="figure-img">
+</div>
+<div class="figure-container">
+  <img src="/Bibbie/assets/images/Bar_chart_country.png" alt="Example dataset table" class="figure-img">
 </div>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
