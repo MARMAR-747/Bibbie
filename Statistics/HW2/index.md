@@ -291,37 +291,47 @@ or if regional preferences differ significantly.
 
 # 🧮 Interactive Caesar Cipher Demo
 
-This section allows you to experiment with the **Caesar cipher**, encrypting and decoding text interactively.  
-It also demonstrates how **statistics** can help in **cryptanalysis** by analyzing letter frequency.
+This section allows you to experiment with the **Caesar cipher**, encrypting and decoding text interactively. It also demonstrates how **statistics** can help in **cryptanalysis** by analyzing letter frequency.
 
-<div class="cipher-container">
-  <label for="cipher-text">Enter your text:</label><br>
-  <textarea id="cipher-text" rows="4" placeholder="Type some text here..."></textarea>
+<div class="cipher-wrapper">
 
-  <div class="cipher-controls">
-    <label for="shift-value">Shift:</label>
-    <input type="number" id="shift-value" min="0" max="25" value="5">
-    <button id="encrypt-btn">🔒 Encrypt</button>
-    <button id="auto-decrypt-btn">🧠 Auto-decrypt</button>
+  <!-- ENCRYPTION BLOCK -->
+  <div class="cipher-container">
+    <h3>🔒 Encryption</h3>
+    <label for="encrypt-text">Enter text to encrypt:</label><br>
+    <textarea id="encrypt-text" rows="4" placeholder="Type your text here..."></textarea>
+
+    <div class="cipher-controls">
+      <label for="encrypt-shift">Shift:</label>
+      <input type="number" id="encrypt-shift" min="0" max="25" value="5">
+      <button id="encrypt-btn">Encrypt</button>
+    </div>
+
+    <div class="cipher-output">
+      <p><strong>Encrypted text:</strong> <span id="encrypt-output"></span></p>
+    </div>
   </div>
 
-  <div class="cipher-output">
-    <p><strong>Encrypted text:</strong> <span id="encrypted-output"></span></p>
-    <p><strong>Guessed shift:</strong> <span id="guessed-shift"></span></p>
-    <p><strong>Decrypted text:</strong> <span id="decrypted-output"></span></p>
+  <!-- DECRYPTION BLOCK -->
+  <div class="cipher-container">
+    <h3>🧠 Auto-decryption</h3>
+    <label for="decrypt-text">Enter encrypted text:</label><br>
+    <textarea id="decrypt-text" rows="4" placeholder="Paste encrypted text here..."></textarea>
+
+    <div class="cipher-controls">
+      <button id="decrypt-btn">Auto-decrypt</button>
+    </div>
+
+    <div class="cipher-output">
+      <p><strong>Guessed shift:</strong> <span id="guessed-shift"></span></p>
+      <p><strong>Decrypted text:</strong> <span id="decrypted-output"></span></p>
+    </div>
   </div>
+
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const textArea = document.getElementById("cipher-text");
-  const shiftInput = document.getElementById("shift-value");
-  const encryptBtn = document.getElementById("encrypt-btn");
-  const autoDecryptBtn = document.getElementById("auto-decrypt-btn");
-  const encryptedOut = document.getElementById("encrypted-output");
-  const guessedShiftOut = document.getElementById("guessed-shift");
-  const decryptedOut = document.getElementById("decrypted-output");
-
   const englishFreq = {
     e: 12.7, t: 9.1, a: 8.2, o: 7.5, i: 7.0, n: 6.7,
     s: 6.3, h: 6.1, r: 6.0, d: 4.3, l: 4.0, c: 2.8,
@@ -353,23 +363,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return bestShift;
   }
 
-  encryptBtn.addEventListener("click", () => {
-    const text = textArea.value.trim();
-    if (!text) return alert("Please enter some text.");
-    const shift = parseInt(shiftInput.value);
+  // Encryption
+  document.getElementById("encrypt-btn").addEventListener("click", () => {
+    const text = document.getElementById("encrypt-text").value.trim();
+    const shift = parseInt(document.getElementById("encrypt-shift").value);
+    if (!text) return alert("Please enter text to encrypt.");
     const encrypted = caesarCipher(text, shift);
-    encryptedOut.textContent = encrypted;
-    guessedShiftOut.textContent = "-";
-    decryptedOut.textContent = "-";
+    document.getElementById("encrypt-output").textContent = encrypted;
   });
 
-  autoDecryptBtn.addEventListener("click", () => {
-    const cipher = encryptedOut.textContent.trim();
-    if (!cipher) return alert("Please encrypt a text first!");
+  // Decryption
+  document.getElementById("decrypt-btn").addEventListener("click", () => {
+    const cipher = document.getElementById("decrypt-text").value.trim();
+    if (!cipher) return alert("Please paste encrypted text first!");
     const guessedShift = guessShift(cipher);
     const decrypted = caesarCipher(cipher, 26 - guessedShift);
-    guessedShiftOut.textContent = guessedShift;
-    decryptedOut.textContent = decrypted;
+    document.getElementById("guessed-shift").textContent = guessedShift;
+    document.getElementById("decrypted-output").textContent = decrypted;
   });
 });
 </script>
