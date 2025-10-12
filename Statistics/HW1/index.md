@@ -52,7 +52,7 @@ Both are fundamental in transforming **data into knowledge**, providing the math
 ## 📈 Main Branches of Statistics
 
 ### 1️⃣ Descriptive Statistics
-Its purpose is to **summarize data** through graphical tools (such as bar charts, pie charts, histograms, box plots) and indices  
+Its purpose is to **summarize data** through graphical tools (such as bar charts, pie charts, histograms, box plots) and indices 
 (statistical indicators, position indicators, dispersion indicators, correlation indicators, shape indicators, etc.) that describe 
 the salient aspects of the observed data, thus forming the statistical content.
 
