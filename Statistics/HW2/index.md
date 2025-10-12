@@ -289,6 +289,44 @@ or if regional preferences differ significantly.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+# 🔐 Letter Distribution and Caesar Cipher
+
+### 📊 Letter Distribution
+
+We start by computing the **frequency distribution of letters** in a given text.
+The following JavaScript code counts how often each letter appears
+and prints the result in descending order of frequency.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-javascript">
+const text = "Statistics and cryptography can work together.";
+const freq = {};
+
+for (const char of text.toLowerCase()) {
+  if (/[a-z]/.test(char)) {
+    freq[char] = (freq[char] || 0) + 1;
+  }
+}
+
+const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+console.log("Letter distribution:");
+for (const [letter, count] of sorted) {
+  console.log(letter, count);
+}
+  </code></pre>
+</div>
+
+This simple script shows how we can **model text as a dataset** —  
+each letter is a category, and its **frequency** represents the count of occurrences,
+just like any univariate distribution.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
