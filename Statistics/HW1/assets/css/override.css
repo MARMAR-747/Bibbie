@@ -136,3 +136,16 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   background-color: rgba(255, 255, 255, 0.05);
   border-left-color: var(--link-color);
 }
+
+/* --- Cybersecurity section styling --- */
+h2[id*="cybersecurity"]::before {
+  content: "🛡️ ";
+}
+
+h2[id*="cybersecurity"] {
+  color: var(--link-color);
+}
+
+ul + p {
+  margin-top: 1rem;
+}
