@@ -67,9 +67,9 @@ A **distribution** describes how the values of a variable are spread or arranged
 ## 🧭 What distributions help us understand
 
 - **Shape of the data:** symmetric, skewed, etc.  
-- **Central tendency:** mean, median, mode  
-- **Spread:** variance, standard deviation  
-- **Relationships between variables:** (bivariate and multivariate cases)
+- **Central tendency:** mean, median, mode.  
+- **Spread:** variance, standard deviation.  
+- **Relationships between variables** (bivariate and multivariate cases).
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
