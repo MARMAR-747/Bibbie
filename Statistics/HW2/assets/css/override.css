@@ -140,3 +140,26 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   margin-top: 0.5rem;
   font-style: italic;
 }
+
+.typewriter {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  border-left: 3px solid var(--link-color);
+  padding: 1rem;
+  background: rgba(0,0,0,0.05);
+  color: var(--body-text-color);
+  white-space: pre-wrap;
+  overflow: hidden;
+  width: fit-content;
+  animation: typing 3s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+:root[data-theme="dark"] .typewriter {
+  background: rgba(255,255,255,0.05);
+}
+
