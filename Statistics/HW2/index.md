@@ -290,6 +290,28 @@ or if regional preferences differ significantly.
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 # 🧮 Letter distribution and Caesar Cipher
+Let's choose a text and calculate its letter distribution. The text in question is "Freedom" by Italo Calvino.
+
+<p><strong>📜 Original text:</strong></p>
+<pre class="typewriter">
+La libertà non è un punto di partenza, ma un punto d’arrivo. È una conquista lenta, faticosa, che si costruisce ogni giorno attraverso le scelte, i gesti, i pensieri. Non esiste un momento in cui possiamo dire: “Ecco, ora sono libero.” Perché in ogni momento, qualcosa torna a legarci: la paura, il giudizio, l’abitudine, il ricordo.
+La libertà non è assenza di vincoli, ma capacità di muoversi dentro i vincoli senza esserne schiacciati. È come camminare in un labirinto sapendo che ogni muro può diventare una guida, non una prigione.
+
+Molti confondono la libertà con l’arbitrio, con il diritto di fare ciò che si vuole. Ma essere liberi non significa poter fare tutto; significa sapere ciò che vale la pena di fare, e farlo. È scegliere il proprio cammino, anche quando è difficile, anche quando gli altri prendono la strada più comoda.
+La libertà è silenziosa, non ha bisogno di gridare. Vive nei gesti minimi: nel dire la verità quando conviene mentire, nel restare fedeli a un’idea anche quando tutti l’hanno dimenticata, nel guardare il mondo con i propri occhi e non con quelli che ci prestano gli altri.
+
+Ogni libertà autentica nasce dalla conoscenza. Non si può essere liberi se non si sa da cosa si vuole essere liberi. Chi non conosce le proprie catene, non potrà mai spezzarle.
+Per questo la cultura è la prima forma di libertà. Leggere, capire, interrogarsi: sono atti che liberano più di qualunque rivoluzione. La libertà dell’uomo comincia quando egli impara a pensare con la propria testa.
+Eppure, la libertà non è mai solitudine. Nessuno è libero davvero se non lo sono anche gli altri. La libertà è un bene che cresce solo se condiviso. Come l’aria, come la luce, come la speranza. Non può essere tenuta per sé: chi tenta di farlo, la perde.
+
+Viviamo in tempi in cui la libertà viene spesso ridotta a una parola, a uno slogan, a un diritto astratto. Ma la libertà vera non ha bisogno di dichiarazioni solenni: ha bisogno di coscienza, di impegno, di coraggio. È un cammino che si misura nel quotidiano.
+Essere liberi è accettare la responsabilità di ciò che si è. È non cercare scuse, non delegare, non voltarsi dall’altra parte. È comprendere che ogni nostra scelta disegna una parte del mondo, e che ogni atto libero è anche un atto giusto.
+
+Forse la libertà assoluta non esiste. Ma ciò non deve scoraggiarci. La libertà è fatta di gradi, di tentativi, di cadute e riprese. È una fiamma fragile, che bisogna difendere anche quando sembra inutile.
+E se un giorno la perderemo, non accadrà per colpa di chi ce l’ha tolta, ma di chi non l’ha difesa.
+
+Perché la libertà non è un dono. È una responsabilità. È la prova più alta della nostra umanità.
+</pre>
 
 <p><strong>Letter Distribution:</strong></p>
 <pre id="caesar-distribution" class="caesar-output"></pre>
