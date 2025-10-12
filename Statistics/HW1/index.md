@@ -41,7 +41,7 @@ nav_exclude: true
 Statistics (*status rerum* — "state of affairs") is a tool of the scientific method that uses mathematics to study a collective phenomenon.  
 This study can be both **qualitative** and **quantitative** and occurs under conditions of **uncertainty** or **non-determinism**, with a partial knowledge of the phenomenon.
 
-The need to quantify the phenomena under study — that is, to analyze and describe them in mathematical terms — has its origins in **ancient Egypt**,  
+The need to quantify the phenomena under study — that is, to analyze and describe them in mathematical terms — has its origins in **ancient Egypt**, 
 where successive dynasties introduced the recording of data such as **population size**, **material goods**, **number of soldiers**, and so on.  
 
 Obviously, statistics has undergone significant evolution over the ages, up to the present day where two main branches are recognized: **descriptive** and **inferential** statistics.
