@@ -60,13 +60,13 @@ nav_exclude: true
     <tr>
       <td style="text-align: center;">2</td>
       <td style="text-align: left;">TBD</td>
-      <td style="text-align: center;">TBD</td>
+      <td style="text-align: center;"><a href="HW2/">📄 HMWK</a></td>
       <td style="text-align: center;">16/10/25</td>
     </tr>
     <tr>
       <td style="text-align: center;">3</td>
       <td style="text-align: left;">TBD</td>
-      <td style="text-align: center;"><a href="HW2/">📄 HMWK</a></td>
+      <td style="text-align: center;">TBD</td>
       <td style="text-align: center;">TBD</td>
     </tr>
   </tbody>
