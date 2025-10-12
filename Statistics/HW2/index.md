@@ -73,7 +73,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 💾 Practical Example — Creating a Dataset using PostgreSQL
+# 💾 Practical Example — Creating a Dataset using PostgreSQL
 
 To better understand how datasets are created and structured before statistical analysis,  
 we can use a simple SQL example. The following query defines a table named `players`,  
@@ -102,6 +102,55 @@ This table structure allows us to store data in a **tabular format**,
 where each row corresponds to a player and each column represents one of their attributes.  
 It is from such datasets that we can later compute **distributions**, visualize data,  
 and perform **statistical analysis**.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 🧩 Populating the Dataset
+
+Once the structure of the `players` table has been defined,  
+we can insert data to build our dataset.  
+Each row represents an individual player, while each column corresponds to one of their characteristics —  
+for example, their name, country, or win rate.
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-sql">
+INSERT INTO players (player_name, age, country, matches_played, win_rate, favorite_champion)
+VALUES
+('Alice', 22, 'Italy', 150, 0.65, 'Lux'),
+('Bob', 27, 'USA', 300, 0.72, 'Ezreal'),
+('Carol', 19, 'France', 80, 0.58, 'Ahri'),
+('David', 24, 'Italy', 200, 0.60, 'Favij'),
+('Eve', 30, 'Germany', 400, 0.77, 'Garen'),
+('Franz', 28, 'Germany', 250, 0.69, 'Ashe'),
+('Giulia', 21, 'Italy', 180, 0.63, 'Power'),
+('Henry', 23, 'UK', 120, 0.55, 'Lux'),
+('Isabelle', 26, 'France', 220, 0.68, 'Garen'),
+('Jack', 32, 'USA', 450, 0.73, 'Ninja'),
+('Karen', 29, 'Spain', 300, 0.70, 'Ashe'),
+('Luca', 25, 'Italy', 260, 0.66, 'Garen'),
+('Maria', 20, 'Portugal', 90, 0.59, 'Ahri'),
+('Noah', 24, 'USA', 310, 0.71, 'Ezreal'),
+('Olivia', 22, 'UK', 150, 0.61, 'Lux'),
+('Paolo', 28, 'Italy', 330, 0.74, 'Velox'),
+('Quentin', 31, 'France', 410, 0.76, 'Garen'),
+('Rita', 23, 'Germany', 230, 0.65, 'Ahri'),
+('Sara', 27, 'Italy', 280, 0.69, 'Cicciogamer'),
+('Tom', 21, 'Spain', 110, 0.57, 'Ashe');
+  </code></pre>
+</div>
+
+The resulting table is the following:
+
+
+This query fills the dataset with sample data representing different players  
+from multiple countries. Such a dataset can later be used to compute **descriptive statistics**  
+(e.g., average win rate per country or most frequent champion)  
+and to explore **bivariate distributions** between variables like *age* and *win rate*.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
