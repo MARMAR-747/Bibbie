@@ -141,12 +141,26 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   font-style: italic;
 }
 
+.cipher-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
 .cipher-container {
+  flex: 1 1 420px;
   background-color: var(--card-background-color, var(--body-background-color));
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   margin-top: 1.5rem;
+  max-width: 600px;
+}
+
+.cipher-container h3 {
+  margin-top: 0;
+  color: var(--link-color);
 }
 
 .cipher-container textarea {
@@ -157,6 +171,8 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   font-family: 'Fira Code', monospace;
   font-size: 0.95rem;
   resize: vertical;
+  background: var(--body-background-color);
+  color: var(--body-text-color);
 }
 
 .cipher-controls {
@@ -164,11 +180,13 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .cipher-controls input {
   width: 60px;
   text-align: center;
+  padding: 0.3rem;
 }
 
 .cipher-controls button {
@@ -197,4 +215,3 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 :root[data-theme="dark"] .cipher-output {
   background-color: rgba(255,255,255,0.05);
 }
-
