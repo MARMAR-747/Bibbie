@@ -294,23 +294,38 @@ Let's choose a text and calculate its letter distribution. The text in question 
 
 <p><strong>📜 Original text:</strong></p>
 <pre class="typewriter">
-La libertà non è un punto di partenza, ma un punto d’arrivo. È una conquista lenta, faticosa, che si costruisce ogni giorno attraverso le scelte, i gesti, i pensieri. Non esiste un momento in cui possiamo dire: “Ecco, ora sono libero.” Perché in ogni momento, qualcosa torna a legarci: la paura, il giudizio, l’abitudine, il ricordo.
-La libertà non è assenza di vincoli, ma capacità di muoversi dentro i vincoli senza esserne schiacciati. È come camminare in un labirinto sapendo che ogni muro può diventare una guida, non una prigione.
+Freedom is not a starting point but a destination.
+It is a slow, difficult conquest, built day by day through choices, actions, and thoughts. There is no moment in which we can truly say: “Now I am free.” Because at every moment, something tries to bind us again — fear, judgment, habit, memory.
+Freedom is not the absence of constraints, but the ability to move within them without being crushed. It is like walking through a maze, knowing that each wall can be a guide rather than a prison.
 
-Molti confondono la libertà con l’arbitrio, con il diritto di fare ciò che si vuole. Ma essere liberi non significa poter fare tutto; significa sapere ciò che vale la pena di fare, e farlo. È scegliere il proprio cammino, anche quando è difficile, anche quando gli altri prendono la strada più comoda.
-La libertà è silenziosa, non ha bisogno di gridare. Vive nei gesti minimi: nel dire la verità quando conviene mentire, nel restare fedeli a un’idea anche quando tutti l’hanno dimenticata, nel guardare il mondo con i propri occhi e non con quelli che ci prestano gli altri.
+Many confuse freedom with license — with the right to do whatever they please.
+But being free does not mean being able to do everything; it means knowing what is worth doing, and doing it. It means choosing your own path, even when it is hard, even when others take the easier road.
+Freedom is quiet; it does not need to shout. It lives in the smallest gestures: in telling the truth when lying would be easier; in staying faithful to an idea when everyone else has forgotten it; in looking at the world through your own eyes, not through the eyes others lend you.
 
-Ogni libertà autentica nasce dalla conoscenza. Non si può essere liberi se non si sa da cosa si vuole essere liberi. Chi non conosce le proprie catene, non potrà mai spezzarle.
-Per questo la cultura è la prima forma di libertà. Leggere, capire, interrogarsi: sono atti che liberano più di qualunque rivoluzione. La libertà dell’uomo comincia quando egli impara a pensare con la propria testa.
-Eppure, la libertà non è mai solitudine. Nessuno è libero davvero se non lo sono anche gli altri. La libertà è un bene che cresce solo se condiviso. Come l’aria, come la luce, come la speranza. Non può essere tenuta per sé: chi tenta di farlo, la perde.
+Every true form of freedom is born from knowledge.
+No one can be free without knowing from what they wish to be freed.
+Those who do not recognize their own chains will never be able to break them.
+That is why culture is the first form of freedom.
+To read, to understand, to question — these acts liberate us more than any revolution. Human freedom begins the moment a person learns to think for themselves.
 
-Viviamo in tempi in cui la libertà viene spesso ridotta a una parola, a uno slogan, a un diritto astratto. Ma la libertà vera non ha bisogno di dichiarazioni solenni: ha bisogno di coscienza, di impegno, di coraggio. È un cammino che si misura nel quotidiano.
-Essere liberi è accettare la responsabilità di ciò che si è. È non cercare scuse, non delegare, non voltarsi dall’altra parte. È comprendere che ogni nostra scelta disegna una parte del mondo, e che ogni atto libero è anche un atto giusto.
+And yet, freedom is never solitude.
+No one is truly free unless others are free as well.
+Freedom is a good that grows only when shared — like air, like light, like hope.
+It cannot be hoarded; whoever tries to keep it for themselves will lose it.
 
-Forse la libertà assoluta non esiste. Ma ciò non deve scoraggiarci. La libertà è fatta di gradi, di tentativi, di cadute e riprese. È una fiamma fragile, che bisogna difendere anche quando sembra inutile.
-E se un giorno la perderemo, non accadrà per colpa di chi ce l’ha tolta, ma di chi non l’ha difesa.
+We live in times when freedom is often reduced to a word, a slogan, an abstract right. But true freedom does not need solemn declarations; it needs awareness, commitment, courage. It is a path measured in the everyday.
+To be free is to accept responsibility for who we are.
+It means not making excuses, not delegating, not looking away.
+It means understanding that every choice we make shapes a part of the world, and that every free act is also a just one.
 
-Perché la libertà non è un dono. È una responsabilità. È la prova più alta della nostra umanità.
+Perhaps absolute freedom does not exist. But that should not discourage us.
+Freedom is made of degrees, of attempts, of falls and new beginnings.
+It is a fragile flame that must be protected even when it seems useless.
+And if one day we lose it, it will not be because someone took it from us, but because we failed to defend it.
+
+Because freedom is not a gift.
+It is a responsibility.
+It is the highest test of our humanity.
 </pre>
 
 <p><strong>Letter Distribution:</strong></p>
