@@ -125,7 +125,7 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 }
 </style>
 
-### 📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Bachelor’s Degree in computer engineering - UniPa)
+## 📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Bachelor’s Degree in computer engineering - UniPa)
 ---
 ### ➀ First year
 
@@ -146,7 +146,7 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 - [Web and Mobile Programming](Programmazione Web e Mobile/) (9 CFU)
 
 
-### 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Master’s Degree in cybersecurity - UniSapienza)
+## 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Master’s Degree in cybersecurity - UniSapienza)
 ---
 ### ➀ First year
 
