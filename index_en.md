@@ -125,7 +125,7 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 }
 </style>
 
-## 📂 Material (Bachelor’s Degree in computer engineering - UniPa)
+## 📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Bachelor’s Degree in computer engineering - UniPa)
 ---
 ### ➀ First year
 
@@ -133,27 +133,27 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 
 ### ➁ Second year
 
-- [Teoria dei segnali](Teoria Dei Segnali/) (9 CFU)
-- [Elettrotecnica](Elettrotecnica/) (6 CFU)
-- [Metodi matematici e numerici] (9 CFU)
+- [Signal Theory](Teoria Dei Segnali/) (9 CFU)
+- [Electrical Engineering](Elettrotecnica/) (6 CFU)
+- [Mathematical and Numerical Methods] (9 CFU)
 
 ### ➂ Third year
 
-- [Reti di calcolatori] (9 CFU)
-- [Elettronica](Elettronica/) (9 CFU)
-- [Controlli Automatici](Controlli Automatici/) (9 CFU)
-- [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
-- [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
+- [Computer Networks] (9 CFU)
+- [Electronics](Elettronica/) (9 CFU)
+- [Automatic Control](Controlli Automatici/) (9 CFU)
+- [Software Engineering](Ingegneria Del Software/) (9 CFU)
+- [Web and Mobile Programming](Programmazione Web e Mobile/) (9 CFU)
 
 
-## 📂 Material (Master’s Degree in cybersecurity - UniSapienza)
+## 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Master’s Degree in cybersecurity - UniSapienza)
 ---
 ### ➀ First year
 
-- [Statistica] (6 CFU)
-- [Crittografia] (6 CFU)
-- [Sistemi distribuiti] (6 CFU)
-- [Infrastrutture network] (6 CFU)
+- [Statistics](Statistics/) (6 CFU)
+- [Cryptography] (6 CFU)
+- [Distributed Systems] (6 CFU)
+- [Network Infrastructures] (6 CFU)
 
 ---
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
