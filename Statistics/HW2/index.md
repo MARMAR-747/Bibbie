@@ -163,7 +163,7 @@ Below are three examples of **univariate distributions** obtained from the `play
 
 ### 🧙‍♂️ Favorite Champion Distribution
 The following query counts how many players prefer each champion.  
-It gives us insight into which champions are the most popular in the dataset.
+It gives us insight into which champions are the **most popular** in the dataset.
 
 <div class="code-window">
   <div class="code-header">
@@ -283,11 +283,11 @@ whether players from the same country tend to favor the same champions, or if re
 
 # 🧮 Part II: Letter distribution and Caesar Cipher
 Let's choose a text and:
-- Calculate its letter distribution
-- Encrypt it using the Caesar cipher with a given shift
-- Decode it assuming we don't know the shift used.  
+- Calculate its **letter distribution**
+- **Encrypt** it using the Caesar cipher with a given shift
+- **Decode** it assuming we don't know the shift used.  
 
-The chosen text is "Freedom" by Italo Calvino.
+The chosen text is "*Freedom*" by **Italo Calvino**.
 
 <p><strong>📜 Original text:</strong></p>
 <pre class="typewriter">
