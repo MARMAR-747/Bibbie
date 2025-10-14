@@ -275,7 +275,7 @@ ORDER BY country, frequency DESC;
   <img src="/Bibbie/assets/images/Bivariate_country_fav_table.png" alt="Example dataset table" class="figure-img">
 </div>
 
-This query produces a **two-dimensional frequency table**, where each row represents a pair *(country, favorite_champion)* and shows  
+This query produces a **two-dimensional frequency table**, where each row represents a pair *(country, favorite_champion)* and shows 
 how many players fall into that combination. By comparing these joint frequencies, we can detect potential **correlations** or **patterns** — for example, 
 whether players from the same country tend to favor the same champions, or if regional preferences differ significantly.
 
