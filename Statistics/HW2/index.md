@@ -290,7 +290,11 @@ or if regional preferences differ significantly.
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 # 🧮 Letter distribution and Caesar Cipher
-Let's choose a text and calculate its letter distribution. The text in question is "Freedom" by Italo Calvino.
+Let's choose a text and:
+- Calculate its letter distribution
+- Encrypt it using the Caesar cipher with a given shift
+- Decode it assuming we don't know the shift used.
+The chosen text is "Freedom" by Italo Calvino.
 
 <p><strong>📜 Original text:</strong></p>
 <pre class="typewriter">
@@ -327,6 +331,9 @@ Because freedom is not a gift.
 It is a responsibility.
 It is the highest test of our humanity.
 </pre>
+
+We now use the following script to calculate the letter distribution:  
+
 
 <p><strong>Letter Distribution:</strong></p>
 <pre id="caesar-distribution" class="caesar-output"></pre>
