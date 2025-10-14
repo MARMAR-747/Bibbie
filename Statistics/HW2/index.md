@@ -64,7 +64,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🧭 1.1. What distributions help us understand
+## 🧭 What distributions help us understand
 
 - **Shape of the data:** symmetric, skewed, etc.  
 - **Central tendency:** mean, median, mode.  
@@ -293,7 +293,7 @@ or if regional preferences differ significantly.
 Let's choose a text and:
 - Calculate its letter distribution
 - Encrypt it using the Caesar cipher with a given shift
-- Decode it assuming we don't know the shift used.
+- Decode it assuming we don't know the shift used.  
 The chosen text is "Freedom" by Italo Calvino.
 
 <p><strong>📜 Original text:</strong></p>
@@ -343,7 +343,7 @@ We will use the following script, appropriately commented:
   <pre><code class="language-javascript">
 (function () {
   // ===== CONFIG =====
-  // Testo originale da cifrare
+  // Original text to be encrypted
   const TEXT = `Freedom is not a starting point but a destination.
 It is a slow, difficult conquest, built day by day through choices, actions, and thoughts. There is no moment in which we can truly say: “Now I am free.” Because at every moment, something tries to bind us again — fear, judgment, habit, memory.
 Freedom is not the absence of constraints, but the ability to move within them without being crushed. It is like walking through a maze, knowing that each wall can be a guide rather than a prison.
@@ -377,10 +377,10 @@ Because freedom is not a gift.
 It is a responsibility.
 It is the highest test of our humanity.`;
 
-  // Valore di shift per la cifratura di Cesare
+  // Shift value for Caesar cipher
   const SHIFT = 5;
 
-  // Frequenze tipiche delle lettere nella lingua inglese (in percentuale)
+  // Typical letter frequencies in the English language (in percentages)
   const ENGLISH_FREQ = {
     a: 8.167, b: 1.492, c: 2.782, d: 4.253, e: 12.702, f: 2.228, g: 2.015,
     h: 6.094, i: 6.966, j: 0.153, k: 0.772, l: 4.025, m: 2.406, n: 6.749,
@@ -388,67 +388,67 @@ It is the highest test of our humanity.`;
     v: 0.978, w: 2.360, x: 0.150, y: 1.974, z: 0.074
   };
 
-  // Bigrammi comuni in inglese, usati per affinare la decifratura
+  // Common bigrams in English, used to refine decryption
   const COMMON_BIGRAMS = ["th", "he", "in", "er", "an", "re", "on", "at", "en", "nd"];
 
-  // Codice ASCII della lettera 'a'
+  // ASCII code of the letter 'a'
   const A = "a".charCodeAt(0);
 
-  // Funzione per tenere solo le lettere minuscole del testo
+  // Function to keep only lowercase letters in the text
   const onlyLettersLower = s => s.toLowerCase().replace(/[^a-z]/g, "");
 
-  // Converte un indice (0–25) nella lettera corrispondente
+  // Converts an index (0–25) to the corresponding letter
   const indexToLetter = i => String.fromCharCode(A + i);
 
-  // === CIFRARIO DI CESARE ===
+  // === CAESAR'S CIPHER ===
   function caesar(str, shift) {
-    // Normalizza lo shift per mantenerlo nel range 0–25
+    // Normalizes the shift to keep it in the range 0–25
     shift = ((shift % 26) + 26) % 26;
-    // Sostituisce ogni lettera con quella spostata di "shift"
+    // Replaces each letter with the shifted one of "shift" steps
     return str.replace(/[A-Za-z]/g, ch => {
-      const isUpper = ch >= "A" && ch <= "Z"; // Maiuscola?
-      const base = isUpper ? 65 : 97; // Codice ASCII base per A/a
-      const code = ch.charCodeAt(0) - base; // Indice della lettera (0–25)
-      return String.fromCharCode(((code + shift) % 26) + base); // Nuova lettera
+      const isUpper = ch >= "A" && ch <= "Z"; // Capital?
+      const base = isUpper ? 65 : 97; // Basic ASCII code for A/a
+      const code = ch.charCodeAt(0) - base; // Letter index (0–25)
+      return String.fromCharCode(((code + shift) % 26) + base); // New letter
     });
   }
 
-  // === CONTEGGIO LETTERE ===
+  // === LETTER COUNT ===
   function freqCounts(s) {
-    const counts = Array(26).fill(0); // Inizializza array di 26 zeri
-    for (const c of s) counts[c.charCodeAt(0) - A]++; // Incrementa contatore per ogni lettera
-    return counts; // Restituisce array di frequenze assolute
+    const counts = Array(26).fill(0); // Initialize array of 26 zeros
+    for (const c of s) counts[c.charCodeAt(0) - A]++; // Increment counter for each letter
+    return counts; // Returns an array of absolute frequencies
   }
 
-  // Trasforma l'array dei conteggi in un oggetto { lettera: conteggio }
+  // Transform the counts array into a { letter: count } object
   function freqObjectFromCounts(counts) {
     const obj = {};
     for (let i = 0; i < 26; i++) obj[indexToLetter(i)] = counts[i];
     return obj;
   }
 
-  // Ordina l'oggetto delle frequenze in base al valore (decrescente)
+  // Sort the frequency object by value (descending)
   function sortFreqObject(obj) {
     return Object.entries(obj).sort((a, b) => b[1] - a[1]);
   }
 
-  // === ANALISI STATISTICA (Chi-quadrato) ===
-  // Confronta la distribuzione osservata con quella attesa (inglese)
+  // === STATISTICAL ANALYSIS (Chi-square) ===
+  // Compare the observed distribution with the expected one (English)
   function chiSquare(obsCounts, expPercents) {
-    const N = obsCounts.reduce((a, b) => a + b, 0) || 1; // Numero totale di lettere
+    const N = obsCounts.reduce((a, b) => a + b, 0) || 1; // Total number of letters
     let chi = 0;
     for (let i = 0; i < 26; i++) {
-      const expected = (expPercents[i] / 100) * N; // Frequenza attesa
+      const expected = (expPercents[i] / 100) * N; // Expected frequency
       if (expected > 0) {
         const diff = obsCounts[i] - expected;
-        chi += (diff * diff) / expected; // Somma parziale per il test chi²
+        chi += (diff * diff) / expected; // Partial sum for the chi² test
       }
     }
     return chi;
   }
 
   // === BIGRAM SCORE ===
-  // Conta quanti bigrammi comuni appaiono nel testo
+  // Count how many common bigrams appear in the text
   function bigramScore(str) {
     const s = onlyLettersLower(str);
     let score = 0;
@@ -459,50 +459,50 @@ It is the highest test of our humanity.`;
     return score;
   }
 
-  // === RILEVAMENTO AUTOMATICO DELLO SHIFT ===
+  // === AUTOMATIC SHIFT DETECTION ===
   function guessShiftByLanguage(cipher) {
     let best = { shift: 0, chi: Infinity, tie: -Infinity, plaintext: "" };
-    for (let s = 0; s < 26; s++) { // Prova tutti i possibili shift
-      const candidate = caesar(cipher, 26 - s); // Decifra con shift inverso
-      const L = onlyLettersLower(candidate); // Pulisce il testo
-      const obs = freqCounts(L); // Frequenze osservate
-      const expPerc = Array(26).fill(0).map((_, i) => ENGLISH_FREQ[indexToLetter(i)]); // Frequenze attese
-      const chi = chiSquare(obs, expPerc); // Calcola chi²
-      const tie = bigramScore(candidate); // Calcola punteggio dei bigrammi
-      // Se chi² è più piccolo (o uguale ma con più bigrammi comuni), è una soluzione migliore
+    for (let s = 0; s < 26; s++) { // Try all possible shifts
+      const candidate = caesar(cipher, 26 - s); // Decrypt with reverse shift
+      const L = onlyLettersLower(candidate); // Cleans the text
+      const obs = freqCounts(L); // Observed frequencies
+      const expPerc = Array(26).fill(0).map((_, i) => ENGLISH_FREQ[indexToLetter(i)]); // Expected frequencies
+      const chi = chiSquare(obs, expPerc); // Calculate chi²
+      const tie = bigramScore(candidate); // Calculate bigram score
+      // If chi² is smaller (or the same but with more common bigrams), it is a better solution
       const better = (chi < best.chi) || (chi === best.chi && tie > best.tie);
       if (better) best = { shift: s, chi, tie, plaintext: candidate };
     }
     return best;
   }
 
-  // Scrive del testo in un elemento HTML tramite id
+  // Writes text to an HTML element using id
   function write(id, text) {
     const el = document.getElementById(id);
     if (el) el.textContent = text;
   }
 
   // ===== MAIN =====
-  // Pulisce il testo tenendo solo le lettere
+  // Cleans up the text by keeping only the letters
   const letters = onlyLettersLower(TEXT);
-  // Calcola la frequenza assoluta delle lettere
+  // Calculate the absolute frequency of letters
   const counts = freqCounts(letters);
-  // Ordina la distribuzione per frequenza decrescente
+  // Sort the distribution by decreasing frequency
   const sortedCounts = sortFreqObject(freqObjectFromCounts(counts));
 
-  // Cifra il testo con il Cifrario di Cesare (shift definito sopra)
+  // Encrypt the text with the Caesar Cipher (shift defined above)
   const encrypted = caesar(TEXT, SHIFT);
-  // Tenta di indovinare lo shift e decifrare automaticamente
+  // Attempts to guess the shift and decrypt automatically
   const guess = guessShiftByLanguage(encrypted);
 
-  // ===== SCRITTURA RISULTATI NELLA PAGINA =====
-  // Distribuzione lettere ordinate
+  // ===== WRITING RESULTS ON THE PAGE =====
+  // Distribution of ordered letters
   write("caesar-distribution", sortedCounts.map(([k,v]) => `${k}: ${v}`).join("\n"));
-  // Testo cifrato
+  // Ciphertext
   write("caesar-encrypted", encrypted);
-  // Testo decifrato automaticamente
+  // Text automatically decrypted
   write("caesar-decrypted", guess.plaintext);
-  // Info sull'analisi automatica
+  // About automatic analysis
   write("caesar-info", `Guessed shift: ${guess.shift} | Chi²: ${guess.chi.toFixed(2)} | Bigram score: ${guess.tie}`);
 })();
   </code></pre>
@@ -521,6 +521,7 @@ It is the highest test of our humanity.`;
 <pre id="caesar-info" class="caesar-output"></pre>
 
 <script src="{{ 'Statistics/HW2/assets/js/Caesar.js' | relative_url }}" defer></script>
+
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
