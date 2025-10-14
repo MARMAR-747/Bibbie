@@ -98,19 +98,15 @@ CREATE TABLE players (
   </code></pre>
 </div>
 
-This table structure allows us to store data in a **tabular format**,  
-where each row corresponds to a player and each column represents one of their attributes.  
-It is from such datasets that we can later compute **distributions**, visualize data,  
-and perform **statistical analysis**.
+This table structure allows us to store data in a **tabular format**, where each row corresponds to a player and each column represents one of their attributes.
+It is from such datasets that we can later compute **distributions**, visualize data, and perform **statistical analysis**.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🧩 1.2.1. Populating the Dataset
 
-Once the structure of the `players` table has been defined,  
-we can insert data to build our dataset.  
-Each row represents an individual player, while each column corresponds to one of their characteristics —  
-for example, their name, country, or win rate.
+Once the structure of the `players` table has been defined, we can insert data to build our dataset. 
+Each row represents an individual player, while each column corresponds to one of their characteristics — for example, their name, country, or win rate.
 
 <div class="code-window">
   <div class="code-header">
@@ -149,9 +145,8 @@ The resulting table is the following:
   <img src="/Bibbie/assets/images/Players_Table.png" alt="Example dataset table" class="figure-img">
 </div>
 
-This query fills the dataset with sample data representing different players  
-from multiple countries. Such a dataset can later be used to compute **descriptive statistics**  
-(e.g., average win rate per country or most frequent champion)  
+This query fills the dataset with sample data representing different players from multiple countries.
+Such a dataset can later be used to compute **descriptive statistics** (e.g., average win rate per country or most frequent champion) 
 and to explore **bivariate distributions** between variables like *age* and *win rate*.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
@@ -247,17 +242,17 @@ ORDER BY frequency DESC;
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-Together, these queries describe three **univariate distributions** —  
-each one focusing on a single variable (*favorite_champion*, *age*, and *country*).  
-They form the first step in understanding the overall structure and diversity of our data.
+Together, these queries describe three **univariate distributions** — each one focusing on a 
+single variable (*favorite_champion*, *age*, and *country*). They form the first step in understanding 
+the overall structure and diversity of our data.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🔄 1.2.3. Bivariate Distribution — Relationship Between Two Variables
 
-After analyzing the single-variable (univariate) distributions,  
-we can move to a **bivariate distribution**, which explores the relationship between two variables.  
-In this case, we study how the **preferred champion** varies depending on the **player’s country**.
+After analyzing the single-variable (univariate) distributions, we can move to a **bivariate distribution**, 
+which explores the relationship between two variables. In this case, we study how the **preferred champion** varies 
+depending on the **player’s country**.
 
 <div class="code-window">
   <div class="code-header">
@@ -280,12 +275,9 @@ ORDER BY country, frequency DESC;
   <img src="/Bibbie/assets/images/Bivariate_country_fav_table.png" alt="Example dataset table" class="figure-img">
 </div>
 
-This query produces a **two-dimensional frequency table**,  
-where each row represents a pair *(country, favorite_champion)* and shows  
-how many players fall into that combination.
-By comparing these joint frequencies, we can detect potential **correlations** or **patterns** —  
-for example, whether players from the same country tend to favor the same champions,  
-or if regional preferences differ significantly.
+This query produces a **two-dimensional frequency table**, where each row represents a pair *(country, favorite_champion)* and shows  
+how many players fall into that combination. By comparing these joint frequencies, we can detect potential **correlations** or **patterns** — for example, 
+whether players from the same country tend to favor the same champions, or if regional preferences differ significantly.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -294,6 +286,7 @@ Let's choose a text and:
 - Calculate its letter distribution
 - Encrypt it using the Caesar cipher with a given shift
 - Decode it assuming we don't know the shift used.  
+
 The chosen text is "Freedom" by Italo Calvino.
 
 <p><strong>📜 Original text:</strong></p>
