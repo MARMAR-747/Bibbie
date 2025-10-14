@@ -31,7 +31,7 @@ nav_exclude: true
   });
 </script>
 
-# 📚 Datasets and Distributions
+# 📚 Part I: Datasets and Distributions
 
 A **dataset** is a structured collection of data, usually organized in **rows** and **columns** (like a table in a database). Each **row** represents one observation/record, while each **column** represents one variable/feature. A dataset is the foundation for any kind of data analysis or statistical computation: it provides the raw information from which we can extract patterns, compute distributions, and make conclusions.
 
@@ -64,7 +64,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🧭 What distributions help us understand
+## 🧭 1.1. What distributions help us understand
 
 - **Shape of the data:** symmetric, skewed, etc.  
 - **Central tendency:** mean, median, mode.  
@@ -73,7 +73,7 @@ A **distribution** describes how the values of a variable are spread or arranged
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-# 💾 Practical Example — Creating a Dataset using PostgreSQL
+## 💾 1.2. Practical Example — Creating a Dataset using PostgreSQL
 
 To better understand how datasets are created and structured before statistical analysis,  
 we can use a simple SQL example. The following query defines a table named `players`,  
@@ -105,7 +105,7 @@ and perform **statistical analysis**.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🧩 Populating the Dataset
+## 🧩 1.2.1. Populating the Dataset
 
 Once the structure of the `players` table has been defined,  
 we can insert data to build our dataset.  
@@ -156,7 +156,7 @@ and to explore **bivariate distributions** between variables like *age* and *win
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 📈 Univariate Distributions — Exploring Single Variables
+## 📈 1.2.2. Univariate Distributions — Exploring Single Variables
 
 Once the dataset has been created, we can begin analyzing the **frequency distributions**  
 of individual variables. These analyses allow us to observe how often certain values occur  
@@ -253,7 +253,7 @@ They form the first step in understanding the overall structure and diversity of
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🔄 Bivariate Distribution — Relationship Between Two Variables
+## 🔄 1.2.3. Bivariate Distribution — Relationship Between Two Variables
 
 After analyzing the single-variable (univariate) distributions,  
 we can move to a **bivariate distribution**, which explores the relationship between two variables.  
@@ -289,7 +289,7 @@ or if regional preferences differ significantly.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-# 🧮 Letter distribution and Caesar Cipher
+# 🧮 Part II: Letter distribution and Caesar Cipher
 Let's choose a text and:
 - Calculate its letter distribution
 - Encrypt it using the Caesar cipher with a given shift
@@ -507,7 +507,6 @@ It is the highest test of our humanity.`;
 })();
   </code></pre>
 </div>
-
 
 <p><strong>Letter Distribution:</strong></p>
 <pre id="caesar-distribution" class="caesar-output"></pre>
