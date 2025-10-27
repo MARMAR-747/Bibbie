@@ -361,6 +361,52 @@ It is the highest test of our humanity.`;
   </code></pre>
 </div>
 
+<h3>🔐 RSA on Letters — Demo</h3>
+
+<p><strong>Plaintext (letters-only used):</strong></p>
+<pre id="rsa-plaintext" class="caesar-output"></pre>
+
+<p><strong>Public key (example):</strong></p>
+<pre id="rsa-public" class="caesar-output"></pre>
+
+<p><strong>Ciphertext (space-separated integers):</strong></p>
+<pre id="rsa-cipher" class="caesar-output"></pre>
+
+<p><strong>Decryption with private key (check):</strong></p>
+<pre id="rsa-decrypted" class="caesar-output"></pre>
+
+<hr class="big-divider">
+
+<h3>🧠 Statistical Decoding (no keys known)</h3>
+<p>We brute small <em>p, q</em> and a few public exponents <em>e</em>, decrypt each candidate, and score the result with <strong>Chi-Square</strong> vs English letter distribution (+ <strong>bigram</strong> tiebreak).</p>
+
+<p><strong>Best guess — plaintext:</strong></p>
+<pre id="rsa-attack-plain" class="typewriter"></pre>
+
+<p><strong>Best guess — key & score:</strong></p>
+<pre id="rsa-attack-key" class="caesar-output"></pre>
+
+<script src="{{ '/assets/js/hw3_rsa.js' | relative_url }}" defer></script>
+
+### 🔎The process in brief 
+
+**Mappatura** — consideriamo solo le lettere `a..z` e le trasformiamo nei numeri `0..25`.  
+**RSA** — usiamo piccoli numeri primi `p` e `q` per generare una coppia di chiavi `(n,e)` pubblica e `(n,d)` privata.  
+- `n = p*q`  
+- `φ(n) = (p-1)(q-1)`  
+- `d` è l'inverso modulare di `e (mod φ(n))`, calcolato con l'Extended Euclidean Algorithm.
+
+**Cifratura/Decifratura** — ogni lettera `m` è cifrata come `c = m^e mod n` e decifrata come `m = c^d mod n`.  
+**Attacco statistico** — dato il ciphertext (interi separati), si prova a bruteforcere coppie `(p,q)` piccole e valori `e` tipici; per ogni candidato si decifra e si valuta la bontà del plaintext con:
+- **Chi-Square** tra frequenze osservate e frequenze inglesi (minimizzare),  
+- **Bigram score** come tie-break (massimizzare).  
+La soluzione con miglior punteggio è considerata la migliore ipotesi di testo e chiave.
+
+**Nota**: questo attacco funziona qui perché:
+- usiamo **primi piccoli** (fattorizzazione facile) e
+- cifriamo **lettera per lettera** su un alfabeto piccolo; di fatto la cifratura si comporta come una permutazione su 26 simboli e preserva le frequenze.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
