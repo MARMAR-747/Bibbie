@@ -363,11 +363,13 @@ It is the highest test of our humanity.`;
 
 <h3>🔐 RSA on Letters — Demo</h3>
 
-<p><strong>Plaintext (letters-only used):</strong></p>
-<pre id="rsa-plaintext" class="caesar-output"></pre>
-
 <p><strong>Public key (example):</strong></p>
 <pre id="rsa-public" class="caesar-output"></pre>
+
+<p><strong>Ciphertext (space-separated integers):</strong></p>
+<pre class="typewriter">
+<pre id="rsa-decrypted" class="caesar-output"></pre>
+</pre>
 
 <p><strong>Ciphertext (space-separated integers):</strong></p>
 <pre id="rsa-cipher" class="caesar-output"></pre>
