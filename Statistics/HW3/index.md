@@ -174,10 +174,137 @@ We will use the following script, appropriately commented:
     <span class="dot green"></span>
   </div>
   <pre><code class="language-javascript">
+// assets/js/hw3_rsa.js
 (function () {
-  // ===== CONFIG =====
-  // Original text to be encrypted
-  const TEXT = `Freedom is not a starting point but a destination.
+  // ===== Helpers: aritmetica modulare =====
+  function egcd(a, b) {
+    if (b === 0) return [a, 1, 0];
+    const [g, x1, y1] = egcd(b, a % b);
+    return [g, y1, x1 - Math.floor(a / b) * y1];
+  }
+  function modinv(a, m) {
+    const [g, x] = egcd(a, m);
+    if (g !== 1) return null;
+    return ((x % m) + m) % m;
+  }
+  function modPow(base, exp, mod) {
+    let res = 1 % mod, b = base % mod, e = exp;
+    while (e > 0) {
+      if (e & 1) res = (res * b) % mod;
+      b = (b * b) % mod;
+      e >>= 1;
+    }
+    return res;
+  }
+  function isPrime(n){
+    if (n < 2) return false;
+    if (n % 2 === 0) return n === 2;
+    for (let i = 3; i * i <= n; i += 2) if (n % i === 0) return false;
+    return true;
+  }
+
+  // ===== Mappatura alfabeto & frequenze lingua =====
+  const A = "a".charCodeAt(0);
+  const ENGLISH_FREQ = { // %
+    a: 8.167,b: 1.492,c: 2.782,d: 4.253,e:12.702,f: 2.228,g: 2.015,
+    h: 6.094,i: 6.966,j: 0.153,k: 0.772,l: 4.025,m: 2.406,n: 6.749,
+    o: 7.507,p: 1.929,q: 0.095,r: 5.987,s: 6.327,t: 9.056,u: 2.758,
+    v: 0.978,w: 2.360,x: 0.150,y: 1.974,z: 0.074
+  };
+  const COMMON_BG = ["th","he","in","er","an","re","on","at","en","nd"];
+
+  const onlyLettersLower = s => s.toLowerCase().replace(/[^a-z]/g, "");
+  const idx2ch = i => String.fromCharCode(A + i);
+  const ch2idx = ch => ch.charCodeAt(0) - A;
+
+  // ===== Keygen (piccoli primi) =====
+  function keygen(p, q, e = 17) {
+    const n = p * q;
+    const phi = (p - 1) * (q - 1);
+    if (egcd(e, phi)[0] !== 1) throw new Error("e not coprime with phi");
+    const d = modinv(e, phi);
+    return { n, e, d, p, q, phi };
+  }
+
+  // ===== RSA letter-by-letter (0..25) =====
+  function rsaEncryptLetters(plain, n, e) {
+    const out = [];
+    for (const ch of onlyLettersLower(plain)) {
+      const m = ch2idx(ch);          // 0..25
+      const c = modPow(m, e, n);     // m^e mod n
+      out.push(c);
+    }
+    return out; // array di interi
+  }
+  function rsaDecryptLetters(nums, n, d) {
+    return nums.map(c => {
+      const m = modPow(c, d, n);
+      return (m >= 0 && m <= 25) ? idx2ch(m) : "?";
+    }).join("");
+  }
+
+  // ===== Scoring linguistico (chi-quadrato + bigrammi) =====
+  function chiSquareFromText(text) {
+    const s = onlyLettersLower(text);
+    const counts = new Array(26).fill(0);
+    for (const c of s) counts[ch2idx(c)]++;
+    const N = counts.reduce((a,b)=>a+b,0) || 1;
+    let chi = 0;
+    for (let i=0;i<26;i++){
+      const exp = (ENGLISH_FREQ[idx2ch(i)]/100)*N;
+      if (exp > 0) {
+        const diff = counts[i] - exp;
+        chi += (diff*diff)/exp;
+      }
+    }
+    return chi;
+  }
+  function bigramScore(text) {
+    const s = onlyLettersLower(text);
+    let score = 0;
+    for (const bg of COMMON_BG) {
+      const m = s.match(new RegExp(bg, "g"));
+      score += m ? m.length : 0;
+    }
+    return score;
+  }
+
+  // ===== Attacco: prova piccoli (p,q) ed e tipici, valuta con Chi²+BG =====
+  function parseCipher(str){
+    return str.trim().split(/\s+/).filter(Boolean).map(Number);
+  }
+  function attackRSA(cipherStr) {
+    const C = parseCipher(cipherStr);
+    const smallPrimes = [];
+    for (let x=29; x<=101; x++) if (isPrime(x)) smallPrimes.push(x);
+    const eCandidates = [3,5,7,11,17];
+
+    let best = {score: Infinity, tie: -Infinity, key: null, plain: ""};
+
+    for (const p of smallPrimes) {
+      for (const q of smallPrimes) {
+        if (q === p) continue;
+        const n = p*q;
+        if (n <= 26) continue; // evita modulo ridicolo
+        for (const e of eCandidates) {
+          try {
+            const { d } = keygen(p,q,e);
+            if (d == null) continue;
+            const plain = rsaDecryptLetters(C, n, d);
+            if (plain.includes("?")) continue; // scarta mappe fuori 0..25
+            const chi = chiSquareFromText(plain);
+            const bgs = bigramScore(plain);
+            const better = (chi < best.score) || (chi === best.score && bgs > best.tie);
+            if (better) best = {score: chi, tie: bgs, key: {p,q,e,n,d}, plain};
+          } catch(_) { /* chiavi non valide */ }
+        }
+      }
+    }
+    return best;
+  }
+
+  // ===== Demo (modifica DEMO_TEXT per il tuo testo) =====
+  const DEMO_TEXT = `Freedom is not a starting point but a destination.
 It is a slow, difficult conquest, built day by day through choices, actions, and thoughts. There is no moment in which we can truly say: “Now I am free.” Because at every moment, something tries to bind us again — fear, judgment, habit, memory.
 Freedom is not the absence of constraints, but the ability to move within them without being crushed. It is like walking through a maze, knowing that each wall can be a guide rather than a prison.
 
@@ -209,137 +336,31 @@ And if one day we lose it, it will not be because someone took it from us, but b
 Because freedom is not a gift.
 It is a responsibility.
 It is the highest test of our humanity.`;
+  const demoKey = keygen(41,53,17);              // piccoli primi, esempio
+  const cipherNums = rsaEncryptLetters(DEMO_TEXT, demoKey.n, demoKey.e);
+  const cipherStr  = cipherNums.join(" ");
 
-  // Shift value for Caesar cipher
-  const SHIFT = 5;
+  // ===== Scrittura in pagina (se esistono i placeholder) =====
+  function write(id, text) { const el = document.getElementById(id); if (el) el.textContent = text; }
 
-  // Typical letter frequencies in the English language (in percentages)
-  const ENGLISH_FREQ = {
-    a: 8.167, b: 1.492, c: 2.782, d: 4.253, e: 12.702, f: 2.228, g: 2.015,
-    h: 6.094, i: 6.966, j: 0.153, k: 0.772, l: 4.025, m: 2.406, n: 6.749,
-    o: 7.507, p: 1.929, q: 0.095, r: 5.987, s: 6.327, t: 9.056, u: 2.758,
-    v: 0.978, w: 2.360, x: 0.150, y: 1.974, z: 0.074
-  };
+  write("rsa-plaintext", DEMO_TEXT);
+  write("rsa-public", `n=${demoKey.n}, e=${demoKey.e}  (p=${demoKey.p}, q=${demoKey.q})`);
+  write("rsa-cipher", cipherStr);
 
-  // Common bigrams in English, used to refine decryption
-  const COMMON_BIGRAMS = ["th", "he", "in", "er", "an", "re", "on", "at", "en", "nd"];
+  // Decifra con la privata (check)
+  const decrypted = rsaDecryptLetters(cipherNums, demoKey.n, demoKey.d);
+  write("rsa-decrypted", decrypted);
 
-  // ASCII code of the letter 'a'
-  const A = "a".charCodeAt(0);
-
-  // Function to keep only lowercase letters in the text
-  const onlyLettersLower = s => s.toLowerCase().replace(/[^a-z]/g, "");
-
-  // Converts an index (0–25) to the corresponding letter
-  const indexToLetter = i => String.fromCharCode(A + i);
-
-  // === CAESAR'S CIPHER ===
-  function caesar(str, shift) {
-    // Normalizes the shift to keep it in the range 0–25
-    shift = ((shift % 26) + 26) % 26;
-    // Replaces each letter with the shifted one of "shift" steps
-    return str.replace(/[A-Za-z]/g, ch => {
-      const isUpper = ch >= "A" && ch <= "Z"; // Capital?
-      const base = isUpper ? 65 : 97; // Basic ASCII code for A/a
-      const code = ch.charCodeAt(0) - base; // Letter index (0–25)
-      return String.fromCharCode(((code + shift) % 26) + base); // New letter
-    });
+  // Attacco statistico (senza chiavi)
+  const guess = attackRSA(cipherStr);
+  if (guess && guess.key) {
+    write("rsa-attack-plain", guess.plain);
+    write("rsa-attack-key", `Best guess → p=${guess.key.p}, q=${guess.key.q}, e=${guess.key.e}, n=${guess.key.n}, d=${guess.key.d}  |  Chi²=${guess.score.toFixed(2)}  BG=${guess.tie}`);
   }
-
-  // === LETTER COUNT ===
-  function freqCounts(s) {
-    const counts = Array(26).fill(0); // Initialize array of 26 zeros
-    for (const c of s) counts[c.charCodeAt(0) - A]++; // Increment counter for each letter
-    return counts; // Returns an array of absolute frequencies
-  }
-
-  // Transform the counts array into a { letter: count } object
-  function freqObjectFromCounts(counts) {
-    const obj = {};
-    for (let i = 0; i < 26; i++) obj[indexToLetter(i)] = counts[i];
-    return obj;
-  }
-
-  // Sort the frequency object by value (descending)
-  function sortFreqObject(obj) {
-    return Object.entries(obj).sort((a, b) => b[1] - a[1]);
-  }
-
-  // === STATISTICAL ANALYSIS (Chi-square) ===
-  // Compare the observed distribution with the expected one (English)
-  function chiSquare(obsCounts, expPercents) {
-    const N = obsCounts.reduce((a, b) => a + b, 0) || 1; // Total number of letters
-    let chi = 0;
-    for (let i = 0; i < 26; i++) {
-      const expected = (expPercents[i] / 100) * N; // Expected frequency
-      if (expected > 0) {
-        const diff = obsCounts[i] - expected;
-        chi += (diff * diff) / expected; // Partial sum for the chi² test
-      }
-    }
-    return chi;
-  }
-
-  // === BIGRAM SCORE ===
-  // Count how many common bigrams appear in the text
-  function bigramScore(str) {
-    const s = onlyLettersLower(str);
-    let score = 0;
-    for (const bg of COMMON_BIGRAMS) {
-      const matches = s.match(new RegExp(bg, "g"));
-      score += matches ? matches.length : 0;
-    }
-    return score;
-  }
-
-  // === AUTOMATIC SHIFT DETECTION ===
-  function guessShiftByLanguage(cipher) {
-    let best = { shift: 0, chi: Infinity, tie: -Infinity, plaintext: "" };
-    for (let s = 0; s < 26; s++) { // Try all possible shifts
-      const candidate = caesar(cipher, 26 - s); // Decrypt with reverse shift
-      const L = onlyLettersLower(candidate); // Cleans the text
-      const obs = freqCounts(L); // Observed frequencies
-      const expPerc = Array(26).fill(0).map((_, i) => ENGLISH_FREQ[indexToLetter(i)]); // Expected frequencies
-      const chi = chiSquare(obs, expPerc); // Calculate chi²
-      const tie = bigramScore(candidate); // Calculate bigram score
-      // If chi² is smaller (or the same but with more common bigrams), it is a better solution
-      const better = (chi < best.chi) || (chi === best.chi && tie > best.tie);
-      if (better) best = { shift: s, chi, tie, plaintext: candidate };
-    }
-    return best;
-  }
-
-  // Writes text to an HTML element using id
-  function write(id, text) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = text;
-  }
-
-  // ===== MAIN =====
-  // Cleans up the text by keeping only the letters
-  const letters = onlyLettersLower(TEXT);
-  // Calculate the absolute frequency of letters
-  const counts = freqCounts(letters);
-  // Sort the distribution by decreasing frequency
-  const sortedCounts = sortFreqObject(freqObjectFromCounts(counts));
-
-  // Encrypt the text with the Caesar Cipher (shift defined above)
-  const encrypted = caesar(TEXT, SHIFT);
-  // Attempts to guess the shift and decrypt automatically
-  const guess = guessShiftByLanguage(encrypted);
-
-  // ===== WRITING RESULTS ON THE PAGE =====
-  // Distribution of ordered letters
-  write("caesar-distribution", sortedCounts.map(([k,v]) => `${k}: ${v}`).join("\n"));
-  // Ciphertext
-  write("caesar-encrypted", encrypted);
-  // Text automatically decrypted
-  write("caesar-decrypted", guess.plaintext);
-  // About automatic analysis
-  write("caesar-info", `Guessed shift: ${guess.shift} | Chi²: ${guess.chi.toFixed(2)} | Bigram score: ${guess.tie}`);
 })();
   </code></pre>
 </div>
+
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
