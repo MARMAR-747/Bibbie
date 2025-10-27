@@ -50,9 +50,9 @@ Let’s explore each step in detail. 👇
 
 Select two distinct prime numbers `p` and `q`.
 
-> For illustration, we’ll use small primes — in real-world RSA, these are extremely large.
-p = 41
-q = 53
+> For illustration, we’ll use small primes — in real-world RSA, these are extremely large.  
+`p = 41`  
+`q = 53`
 
 ---
 
@@ -71,8 +71,8 @@ These two values are **fundamental** to the RSA system.
 
 Pick an integer `e` such that:
 
-- `e` is greater than 1 and less than φ(n) -> `1 < e < φ(n)` 
-- `e` is coprime with φ(n) (they share no common divisors other than 1) -> `gcd(e, φ(n)) = 1`
+- `e` is greater than 1 and less than φ(n): `1 < e < φ(n)` 
+- `e` is coprime with φ(n) (they share no common divisors other than 1): `gcd(e, φ(n)) = 1`
 
 For example:
 e = 17
@@ -84,12 +84,12 @@ gcd(17, 2080) = 1 ✅
 
 The private exponent `d` is the **modular inverse** of `e` with respect to φ(n):
 
-d × e ≡ 1 mod φ(n)
+`d × e ≡ 1 mod φ(n)`
 
 To find d, we use the **Extended Euclidean Algorithm**, which allows us to find integers
 x and y such that:
 
-a × x + b × y = gcd(a,b)
+`a × x + b × y = gcd(a,b)`
 
 When a = e and b = φ(n), the value x gives us the modular inverse d.
 
@@ -105,8 +105,10 @@ e = 17, φ(n) = 2080
 - **Public key** (shared with everyone): (n,e)
 - **Private key** (kept secret): (n,d)
 
-Public key  → (n=2173, e=17)
+Public key  → (n=2173, e=17)  
 Private key → (n=2173, d=367)
+
+---
 
 ### 6️⃣ Encryption and Decryption
 
