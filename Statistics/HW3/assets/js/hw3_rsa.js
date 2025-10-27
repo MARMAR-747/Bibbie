@@ -1,10 +1,3 @@
-<div class="code-window">
-  <div class="code-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-  </div>
-  <pre><code class="language-javascript">
 // assets/js/hw3_rsa.js
 (function () {
   // ===== Helpers: aritmetica modulare =====
