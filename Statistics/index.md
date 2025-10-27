@@ -59,15 +59,21 @@ nav_exclude: true
     </tr>
     <tr>
       <td style="text-align: center;">2</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;">Datasets, distributions, encryption with Caesar's cypher</td>
       <td style="text-align: center;"><a href="HW2/">📄 HMWK</a></td>
       <td style="text-align: center;">16/10/25</td>
     </tr>
     <tr>
       <td style="text-align: center;">3</td>
+      <td style="text-align: left;">Encryption with RSA</td>
+      <td style="text-align: center;"><a href="HW3/">📄 HMWK</a></td>
+      <td style="text-align: center;">30/10/25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">4</td>
       <td style="text-align: left;">TBD</td>
-      <td style="text-align: center;">TBD</td>
-      <td style="text-align: center;">TBD</td>
+      <td style="text-align: center;"><a href="HW4/">📄 HMWK</a></td>
+      <td style="text-align: center;">30/10/25</td>
     </tr>
   </tbody>
 </table>
