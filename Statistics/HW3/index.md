@@ -175,18 +175,55 @@ We will use the following script, appropriately commented:
   </div>
   <pre><code class="language-javascript">
 // assets/js/hw3_rsa.js
+/*
+Top-level IIFE (Immediately Invoked Function Expression)
+- Encapsulates all functions and variables to avoid polluting the global namespace.
+- When this script runs in a browser, it performs:
+  1) small-key RSA key generation (for demo),
+  2) letter-by-letter RSA encryption of a demo plaintext,
+  3) decryption check using the private key,
+  4) an attack routine that brute-forces small primes and candidate e values,
+     using chi-square and common-bigram scoring to pick the best plaintext guess.
+- Suitable for classroom demonstration of RSA basics and statistical cryptanalysis,
+  but NOT secure for real cryptographic use (see security notes below).
+*/
 (function () {
-  // ===== Helpers: aritmetica modulare =====
+  // ===== Helpers: modular arithmetic =====
+
+  /*
+  Extended Euclidean Algorithm (recursive)
+  - Inputs: integers a, b
+  - Returns: [g, x, y] where g = gcd(a, b) and x,y satisfy a*x + b*y = g
+  - Implementation detail: returns [a,1,0] when b === 0 (base case).
+  - Used to compute modular multiplicative inverses via x when gcd(a, m) == 1.
+  - Complexity: O(log(min(a,b))) recursion depth.
+  */
   function egcd(a, b) {
     if (b === 0) return [a, 1, 0];
     const [g, x1, y1] = egcd(b, a % b);
     return [g, y1, x1 - Math.floor(a / b) * y1];
   }
+
+  /*
+  Modular inverse using extended GCD
+  - Inputs: a, m
+  - If gcd(a,m) != 1, inverse doesn't exist -> returns null.
+  - Otherwise returns x such that (a * x) % m === 1 (in the range 0..m-1).
+  - Note: uses egcd and then normalizes x into positive residue class.
+  */
   function modinv(a, m) {
     const [g, x] = egcd(a, m);
     if (g !== 1) return null;
     return ((x % m) + m) % m;
   }
+
+  /*
+  Modular exponentiation (binary exponentiation / square-and-multiply)
+  - Computes (base^exp) % mod efficiently with O(log exp) multiplications.
+  - Uses bitwise operations on the exponent (e & 1) and repeated squaring.
+  - Works for non-negative integer exponents.
+  - Important for RSA encryption/decryption where exp is e or d.
+  */
   function modPow(base, exp, mod) {
     let res = 1 % mod, b = base % mod, e = exp;
     while (e > 0) {
@@ -196,6 +233,15 @@ We will use the following script, appropriately commented:
     }
     return res;
   }
+
+  /*
+  Simple primality test (trial division)
+  - Input: integer n
+  - Returns true if n is prime, false otherwise.
+  - Implementation: checks divisibility by 2, then odd divisors up to sqrt(n).
+  - Complexity: O(sqrt(n)) — fine for small demo primes, not for real crypto primes.
+  - WARNING: not suitable for production or large primes.
+  */
   function isPrime(n){
     if (n < 2) return false;
     if (n % 2 === 0) return n === 2;
@@ -203,7 +249,17 @@ We will use the following script, appropriately commented:
     return true;
   }
 
-  // ===== Mappatura alfabeto & frequenze lingua =====
+  // ===== Alphabet mapping & English frequency stats =====
+
+  /*
+  Constants and helpers for mapping letters ↔ numeric values and for scoring.
+  - A: char code for 'a' used to convert between chars and indices 0..25.
+  - ENGLISH_FREQ: approximate letter frequencies as percentages (A-Z) for scoring.
+  - COMMON_BG: small list of common English bigrams used to boost candidate plaintexts
+    that contain frequent pairings like "th", "he", etc.
+  - onlyLettersLower: normalizes input string to lowercase and removes non a-z characters.
+  - idx2ch / ch2idx: convert numeric index (0..25) to letter and vice versa.
+  */
   const A = "a".charCodeAt(0);
   const ENGLISH_FREQ = { // %
     a: 8.167,b: 1.492,c: 2.782,d: 4.253,e:12.702,f: 2.228,g: 2.015,
@@ -217,7 +273,22 @@ We will use the following script, appropriately commented:
   const idx2ch = i => String.fromCharCode(A + i);
   const ch2idx = ch => ch.charCodeAt(0) - A;
 
-  // ===== Keygen (piccoli primi) =====
+  // ===== Key generation (small primes for demo) =====
+
+  /*
+  keygen(p, q, e)
+  - Inputs: two primes p,q and public exponent e (default 17).
+  - Computes:
+      n = p * q
+      phi = (p - 1) * (q - 1)
+      checks that gcd(e, phi) == 1
+      d = modular inverse of e mod phi
+  - Returns an object { n, e, d, p, q, phi }.
+  - Throws Error if e is not coprime with phi.
+  - Important caveats:
+      * Using small primes (like in this demo) is insecure.
+      * In real RSA, e is usually chosen 65537 and p,q are large (>= 2048-bit combined).
+  */
   function keygen(p, q, e = 17) {
     const n = p * q;
     const phi = (p - 1) * (q - 1);
@@ -227,6 +298,17 @@ We will use the following script, appropriately commented:
   }
 
   // ===== RSA letter-by-letter (0..25) =====
+
+  /*
+  rsaEncryptLetters(plain, n, e)
+  - Encrypts plaintext letter-by-letter mapping a->0, b->1, ..., z->25.
+  - onlyLettersLower(plain) removes non-letters and lowercases input.
+  - For each letter m in 0..25 compute c = m^e mod n and push to output array.
+  - Returns array of integers (ciphertext values).
+  - Important: This is *textbook RSA* applied to tiny messages (single-letter integers),
+    which is *not secure*: small modulus and deterministic mapping leak massive information.
+  - Also if n <= 25, many ciphertexts collide — code guards n > 26 in attack phase.
+  */
   function rsaEncryptLetters(plain, n, e) {
     const out = [];
     for (const ch of onlyLettersLower(plain)) {
@@ -234,8 +316,16 @@ We will use the following script, appropriately commented:
       const c = modPow(m, e, n);     // m^e mod n
       out.push(c);
     }
-    return out; // array di interi
+    return out; // array of integers
   }
+
+  /*
+  rsaDecryptLetters(nums, n, d)
+  - For each ciphertext integer c in nums compute m = c^d mod n and convert to a char.
+  - If resulting m is not in [0..25], returns "?" for that position.
+  - Returns the reconstructed string (joined letters).
+  - This assumes sender encoded plaintext as 0..25. Any deviation yields "?" marks.
+  */
   function rsaDecryptLetters(nums, n, d) {
     return nums.map(c => {
       const m = modPow(c, d, n);
@@ -243,7 +333,21 @@ We will use the following script, appropriately commented:
     }).join("");
   }
 
-  // ===== Scoring linguistico (chi-quadrato + bigrammi) =====
+  // ===== Linguistic scoring (chi-square + bigrams) =====
+
+  /*
+  chiSquareFromText(text)
+  - Computes chi-squared statistic comparing letter counts of `text` to expected
+    English letter frequencies (ENGLISH_FREQ).
+  - Steps:
+      * normalize text to letters only (lowercase)
+      * count occurrences for each letter
+      * compute expected count = (freq% / 100) * N
+      * accumulate sum((obs - exp)^2 / exp)
+  - Returns numeric chi-squared; lower values indicate closer match to expected English.
+  - Edge cases: N = 0 => uses N = 1 to avoid division by zero.
+  - Use: statistical filter to prefer plaintexts whose letter distribution resembles English.
+  */
   function chiSquareFromText(text) {
     const s = onlyLettersLower(text);
     const counts = new Array(26).fill(0);
@@ -259,6 +363,13 @@ We will use the following script, appropriately commented:
     }
     return chi;
   }
+
+  /*
+  bigramScore(text)
+  - Simple heuristic: counts occurrences of a short list of common bigrams (COMMON_BG).
+  - Returns cumulative count of occurrences; higher is better.
+  - This acts as tie-breaker or secondary score in attack routine to favor realistic English pairs.
+  */
   function bigramScore(text) {
     const s = onlyLettersLower(text);
     let score = 0;
@@ -269,10 +380,41 @@ We will use the following script, appropriately commented:
     return score;
   }
 
-  // ===== Attacco: prova piccoli (p,q) ed e tipici, valuta con Chi²+BG =====
+  // ===== Attack: try small (p,q) and typical e values, evaluate with Chi² + BG =====
+
+  /*
+  parseCipher(str)
+  - Utility: converts a space-separated string of numbers into an array of Number.
+  - Trims whitespace and filters out empty tokens.
+  - Used when the ciphertext is stored/printed as a single string.
+  */
   function parseCipher(str){
     return str.trim().split(/\s+/).filter(Boolean).map(Number);
   }
+
+  /*
+  attackRSA(cipherStr)
+  - Attempts to cryptanalyze the ciphertext produced by rsaEncryptLetters, assuming:
+      * plaintext letters were mapped to 0..25,
+      * modulus n = p*q where p and q are small primes (between 29 and 101 here),
+      * e is chosen from a small list of candidate exponents.
+  - Strategy:
+      1) parse ciphertext into array C.
+      2) iterate over pairs of distinct small primes p,q (both prime, range 29..101).
+      3) form n = p*q; skip if n <= 26 (would always map to small residues badly).
+      4) try candidate e values [3,5,7,11,17], compute d using keygen/modinv.
+      5) decrypt all ciphertext integers with d; if any decrypted m not in 0..25 produce '?'
+         and those candidates are discarded.
+      6) score resulting plaintext with chi-square and bigram heuristics.
+      7) keep best-scoring plaintext (lowest chi², tiebreak: highest bigram count).
+  - Returns an object `best` which contains:
+      { score: chiSquare, tie: bigramCount, key: {p,q,e,n,d}, plain: "plaintext" }
+  - Notes on effectiveness:
+      * Works well when primes are small and plaintext is standard English.
+      * Computational cost: O(P^2 * E * L * log d) where P ~ number of smallPrimes,
+        E ~ number of eCandidates, L ~ ciphertext length; but P here is small ~ 20 primes.
+      * This is a pedagogical demonstration of frequency analysis + brute force.
+  */
   function attackRSA(cipherStr) {
     const C = parseCipher(cipherStr);
     const smallPrimes = [];
@@ -285,25 +427,32 @@ We will use the following script, appropriately commented:
       for (const q of smallPrimes) {
         if (q === p) continue;
         const n = p*q;
-        if (n <= 26) continue; // evita modulo ridicolo
+        if (n <= 26) continue; // avoid ridiculous modulus that cannot represent 0..25 distinctly
         for (const e of eCandidates) {
           try {
             const { d } = keygen(p,q,e);
             if (d == null) continue;
             const plain = rsaDecryptLetters(C, n, d);
-            if (plain.includes("?")) continue; // scarta mappe fuori 0..25
+            if (plain.includes("?")) continue; // discard candidates that map outside 0..25
             const chi = chiSquareFromText(plain);
             const bgs = bigramScore(plain);
             const better = (chi < best.score) || (chi === best.score && bgs > best.tie);
             if (better) best = {score: chi, tie: bgs, key: {p,q,e,n,d}, plain};
-          } catch(_) { /* chiavi non valide */ }
+          } catch(_) { /* invalid key (e not coprime with phi) => ignore */ }
         }
       }
     }
     return best;
   }
 
-  // ===== Demo (modifica DEMO_TEXT per il tuo testo) =====
+  // ===== Demo (modify DEMO_TEXT for your text) =====
+
+  /*
+  DEMO_TEXT
+  - Long multi-paragraph English text used for demonstration of encryption / attack.
+  - This text is preprocessed by rsaEncryptLetters -> only alphabetic characters are used.
+  - If you change DEMO_TEXT to include accents, punctuation, digits, they will be stripped before encryption.
+  */
   const DEMO_TEXT = `Freedom is not a starting point but a destination.
 It is a slow, difficult conquest, built day by day through choices, actions, and thoughts. There is no moment in which we can truly say: “Now I am free.” Because at every moment, something tries to bind us again — fear, judgment, habit, memory.
 Freedom is not the absence of constraints, but the ability to move within them without being crushed. It is like walking through a maze, knowing that each wall can be a guide rather than a prison.
@@ -336,28 +485,63 @@ And if one day we lose it, it will not be because someone took it from us, but b
 Because freedom is not a gift.
 It is a responsibility.
 It is the highest test of our humanity.`;
-  const demoKey = keygen(41,53,17);              // piccoli primi, esempio
+
+  /*
+  demoKey = keygen(41,53,17)
+  - Constructs a small private/public RSA keypair for the demo.
+  - p=41 and q=53 are small primes; e=17 chosen so gcd(e,phi)==1.
+  - This yields n = 2173 (41*53) and a private exponent d computed via modinv.
+  - This is intentionally small for demonstration; do not use in real systems.
+  */
+  const demoKey = keygen(41,53,17);              // small primes, example
   const cipherNums = rsaEncryptLetters(DEMO_TEXT, demoKey.n, demoKey.e);
   const cipherStr  = cipherNums.join(" ");
 
-  // ===== Scrittura in pagina (se esistono i placeholder) =====
+  // ===== Writing to the page =====
+
+  /*
+  write(id, text)
+  - Utility to set textContent of DOM element with given id, if present.
+  - This allows a simple demo page to show plaintext, public key, ciphertext, decrypted text, and attack result.
+  - If running this file in a non-browser environment (e.g., Node) these writes silently do nothing.
+  */
   function write(id, text) { const el = document.getElementById(id); if (el) el.textContent = text; }
 
+  // Populate DOM placeholders (optional)
   write("rsa-plaintext", DEMO_TEXT);
   write("rsa-public", `n=${demoKey.n}, e=${demoKey.e}  (p=${demoKey.p}, q=${demoKey.q})`);
   write("rsa-cipher", cipherStr);
 
-  // Decifra con la privata (check)
+  // Decipher with the private key (simple correctness check)
   const decrypted = rsaDecryptLetters(cipherNums, demoKey.n, demoKey.d);
   write("rsa-decrypted", decrypted);
 
-  // Attacco statistico (senza chiavi)
+  // Perform the attack (statistical brute force) without knowing the private key
   const guess = attackRSA(cipherStr);
   if (guess && guess.key) {
     write("rsa-attack-plain", guess.plain);
     write("rsa-attack-key", `Best guess → p=${guess.key.p}, q=${guess.key.q}, e=${guess.key.e}, n=${guess.key.n}, d=${guess.key.d}  |  Chi²=${guess.score.toFixed(2)}  BG=${guess.tie}`);
   }
+
+  // End of IIFE
 })();
+
+/* ============================
+   Additional notes & recommendations
+   - Security:
+     * This script uses extremely small primes and encodes letters as raw integers 0..25.
+       That is fully insecure: frequency patterns remain obvious and moduli are trivially factorable.
+     * In real RSA:
+         - Use large random primes (each hundreds or thousands of bits).
+         - Use proper padding (OAEP for encryption, PSS for signatures).
+         - Use cryptographic libraries — do not implement RSA primitives yourself unless for learning.
+   - Pedagogy:
+     * The attack demonstrates that textbook RSA without padding leaks structure and can be broken by brute-force on small keys.
+     * Chi-square testing and bigram scoring are classic statistical methods to distinguish candidate decryptions.
+   - Performance:
+     * modPow is efficient (O(log exp)), but egcd and isPrime used here are fine for small numbers only.
+     * For larger primes and production use, use specialized big-integer libraries (e.g., BigInt in modern JS or crypto libraries).
+   ============================ */
   </code></pre>
 </div>
 
@@ -369,11 +553,8 @@ It is the highest test of our humanity.`;
 <p><strong>Ciphertext (space-separated integers):</strong></p>
 <pre id="rsa-cipher" class="typewriter"></pre>
 
-<p><strong>Ciphertext (space-separated integers):</strong></p>
-<pre id="rsa-cipher" class="caesar-output"></pre>
-
 <p><strong>Decryption with private key (check):</strong></p>
-<pre id="rsa-decrypted" class="caesar-output"></pre>
+<pre id="rsa-decrypted" class="typewriter"></pre>
 
 <hr class="big-divider">
 
@@ -387,25 +568,26 @@ It is the highest test of our humanity.`;
 <pre id="rsa-attack-key" class="caesar-output"></pre>
 
 <script src="{{ 'Statistics/HW3/assets/js/hw3_rsa.js' | relative_url }}" defer></script>
+
 ---
 
-### 🔎The process in brief 
+### 🔎In brief 
 
-**Mappatura** — consideriamo solo le lettere `a..z` e le trasformiamo nei numeri `0..25`.  
-**RSA** — usiamo piccoli numeri primi `p` e `q` per generare una coppia di chiavi `(n,e)` pubblica e `(n,d)` privata.  
-- `n = p*q`  
-- `φ(n) = (p-1)(q-1)`  
-- `d` è l'inverso modulare di `e (mod φ(n))`, calcolato con l'Extended Euclidean Algorithm.
+**Purpose**: Educational demonstration of a minimal RSA pipeline and a ciphertext-only statistical attack. Intended for teaching and lab use, not secure for production.
 
-**Cifratura/Decifratura** — ogni lettera `m` è cifrata come `c = m^e mod n` e decifrata come `m = c^d mod n`.  
-**Attacco statistico** — dato il ciphertext (interi separati), si prova a bruteforcere coppie `(p,q)` piccole e valori `e` tipici; per ogni candidato si decifra e si valuta la bontà del plaintext con:
-- **Chi-Square** tra frequenze osservate e frequenze inglesi (minimizzare),  
-- **Bigram score** come tie-break (massimizzare).  
-La soluzione con miglior punteggio è considerata la migliore ipotesi di testo e chiave.
+**Main components**:
+- **Math utilities:** extended GCD, modular inverse, and fast modular exponentiation (`egcd`, `modinv`, `modPow`).
+- **Alphabet mapping:** naive mapping `a → 0 … z → 25` and simple primality test for small primes.
+- **Key generation:** `keygen(p, q, e)` computes `n`, `phi`, and private exponent `d`.
+- **Encryption / Decryption:** `rsaEncryptLetters` and `rsaDecryptLetters` operate letter-by-letter using `m^e mod n` and `c^d mod n`.
+- **Scoring:** `chiSquareFromText` (letter-distribution) plus `bigramScore` (common bigrams) to evaluate English-likeness.
+- **Attack:** `attackRSA` brute-forces small prime pairs and candidate `e` values, decrypts candidates, and selects the best plaintext by chi-squared (tie-breaker: bigram counts).
+- **Demo flow:** generates a small keypair, encrypts a sample paragraph, checks decryption, and runs the statistical attack; results are written to page placeholders.
 
-**Nota**: questo attacco funziona qui perché:
-- usiamo **primi piccoli** (fattorizzazione facile) e
-- cifriamo **lettera per lettera** su un alfabeto piccolo; di fatto la cifratura si comporta come una permutazione su 26 simboli e preserva le frequenze.
+**Security caveats**:
+- Uses very small primes and encodes single letters as integers — **insecure**.
+- No padding (OAEP/PSS) and no use of modern big-integer handling.
+- For realistic RSA: use large primes (proper bit-length), BigInt or crypto libraries, Miller–Rabin primality testing, and standard padding schemes.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
