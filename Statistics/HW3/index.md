@@ -127,6 +127,8 @@ RSA relies on the fact that it’s **easy to multiply two large primes**, but **
 
 # 🔨 RSA at work
 
+Let's consider the text used in Homework 2 ("Freedom" by Italo Calvino). Instead of the Caesar cipher, in this case we will try to encrypt and decrypt it using the principles of RSA systems.
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
