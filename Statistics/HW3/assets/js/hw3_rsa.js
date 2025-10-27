@@ -182,5 +182,3 @@ It is the highest test of our humanity.`;
     write("rsa-attack-key", `Best guess → p=${guess.key.p}, q=${guess.key.q}, e=${guess.key.e}, n=${guess.key.n}, d=${guess.key.d}  |  Chi²=${guess.score.toFixed(2)}  BG=${guess.tie}`);
   }
 })();
-  </code></pre>
-</div>
