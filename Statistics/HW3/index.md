@@ -386,7 +386,8 @@ It is the highest test of our humanity.`;
 <p><strong>Best guess — key & score:</strong></p>
 <pre id="rsa-attack-key" class="caesar-output"></pre>
 
-<script src="{{ '/assets/js/hw3_rsa.js' | relative_url }}" defer></script>
+<script src="{{ 'Statistics/HW3/assets/js/hw3_rsa.js' | relative_url }}" defer></script>
+---
 
 ### 🔎The process in brief 
 
