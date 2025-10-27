@@ -367,9 +367,7 @@ It is the highest test of our humanity.`;
 <pre id="rsa-public" class="caesar-output"></pre>
 
 <p><strong>Ciphertext (space-separated integers):</strong></p>
-<pre class="typewriter">
-<pre id="rsa-decrypted" class="caesar-output"></pre>
-</pre>
+<pre id="rsa-cipher" class="typewriter"></pre>
 
 <p><strong>Ciphertext (space-separated integers):</strong></p>
 <pre id="rsa-cipher" class="caesar-output"></pre>
