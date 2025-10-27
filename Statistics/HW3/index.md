@@ -33,11 +33,7 @@ nav_exclude: true
 
 # 🔐 Understanding RSA Systems
 
-RSA (**Rivest–Shamir–Adleman**) is one of the most widely used **public-key cryptographic systems**.  
-It allows two parties to exchange information securely **without sharing a secret key in advance**.  
-The strength of RSA lies in the **difficulty of factoring large numbers** into their prime components.
-
----
+RSA (**Rivest–Shamir–Adleman**) is one of the most widely used **public-key cryptographic systems**. It allows two parties to exchange information securely **without sharing a secret key in advance**. The strength of RSA lies in the **difficulty of factoring large numbers** into their prime components.
 
 ## ⚙️ How RSA Works — Step by Step
 
@@ -71,8 +67,8 @@ These two values are **fundamental** to the RSA system.
 
 Pick an integer *e* such that:
 
-- *e* is greater than 1 and less than φ(n): `1 < e < φ(n)` 
-- *e* is coprime with φ(n) (they share no common divisors other than 1): `gcd(e, φ(n)) = 1`
+- *e*  is greater than 1 and less than φ(n): `1 < e < φ(n)` 
+- *e*  is coprime with φ(n) (they share no common divisors other than 1): `gcd(e, φ(n)) = 1`
 
 For example:  
 `e = 17`  
@@ -128,6 +124,8 @@ Because of the mathematical relationship between *e*, *d*, and *φ(n)*, this pro
 RSA relies on the fact that it’s **easy to multiply two large primes**, but **extremely hard to factor their product n back into p and q**. Without knowing p and q, it’s practically **impossible** (for large enough numbers) to compute φ(n) and thus find the private key d. This **asymmetry** — easy to compute in one direction, hard to reverse — is what makes RSA a secure **one-way function**.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+# 🔨 RSA at work
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
