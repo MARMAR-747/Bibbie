@@ -1,9 +1,8 @@
 (function () {
-  // ---------- Utilities ----------
+  // ---------- Helpers ----------
   const $ = (id) => document.getElementById(id);
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 
-  // Simple seeded RNG (Mulberry32)
   function mulberry32(seed) {
     let t = seed >>> 0;
     return function () {
@@ -15,7 +14,6 @@
   }
   const bernoulli = (p, rng) => (rng() < p ? 1 : 0);
 
-  // Precompute m trajectories up to nMax
   function generateData(m, nMax, p, seed = Math.floor(Math.random() * 1e9)) {
     const rng = mulberry32(seed);
     const x = Array.from({ length: nMax }, (_, i) => i + 1);
@@ -32,7 +30,6 @@
     return { f, x, seed };
   }
 
-  // Histogram of values in [0,1]
   function histogram(values, bins) {
     const counts = new Array(bins).fill(0);
     const edges = new Array(bins + 1);
@@ -61,56 +58,46 @@
     hist: { centers: [], counts: [], max: 1 }
   };
 
-  // ---------- Chart.js plugin: draw histogram overlay on the right ----------
+  // ---------- Overlay plugin (histogram on the right) ----------
   const histOverlay = {
-    id: 'histOverlay',
+    id: 'histOverlayV2',
     afterDraw(chart) {
+      if (!state.hist.counts.length) return;
       const { ctx, chartArea } = chart;
       const { left, top, bottom, right, width, height } = chartArea;
 
-      // Reserve a vertical panel on the right (e.g., 28% width)
       const W = width * 0.28;
-      const gap = 10; // gap between trajectories area and histogram
-      const x0 = right - W; // left boundary of histogram panel
+      const gap = 10;
+      const x0 = right - W;
       const y0 = top, H = height;
 
-      // Background (light) to distinguish panel
       ctx.save();
-      ctx.fillStyle = 'rgba(255,255,0,0.06)'; // subtle
+      ctx.fillStyle = 'rgba(255,255,0,0.06)';
       ctx.fillRect(x0 + gap, y0, W - gap, H);
 
-      // Axis lines
       ctx.strokeStyle = 'rgba(0,0,0,0.15)';
       ctx.beginPath();
       ctx.moveTo(x0 + gap, y0);
       ctx.lineTo(x0 + gap, bottom);
       ctx.stroke();
 
-      // Draw histogram bars (horizontal)
       const counts = state.hist.counts;
-      const bins = counts.length || 1;
+      const bins = counts.length;
       const maxC = state.hist.max || 1;
-
       const barH = H / bins;
+
       for (let i = 0; i < bins; i++) {
         const c = counts[i];
-        const len = (c / maxC) * (W - 2 * gap); // normalized length
-        const y = y0 + (bins - 1 - i) * barH + 2; // invert so low p at bottom
-        ctx.fillStyle = 'rgba(255, 215, 0, 0.9)'; // yellow-ish
-        ctx.strokeStyle = 'rgba(120, 120, 0, 0.7)';
+        const len = (c / maxC) * (W - 2 * gap);
+        const y = y0 + (bins - 1 - i) * barH + 2;
+        ctx.fillStyle = 'rgba(255, 215, 0, 0.9)';     // bars
+        ctx.strokeStyle = 'rgba(120, 120, 0, 0.7)';   // outline
         ctx.lineWidth = 1;
         ctx.fillRect(x0 + W - len, y, len, barH - 3);
         ctx.strokeRect(x0 + W - len, y, len, barH - 3);
       }
 
-      // Label "f(n)" along the bottom of the histogram panel
-      ctx.fillStyle = 'rgba(0,0,0,0.6)';
-      ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('f(n)', x0 + gap + (W - gap) / 2, bottom - 6);
-
-      // Vertical p line across the whole plot (already a dataset line; this just reinforces at panel)
-      // Optional: draw a small marker at the panel mid corresponding to p
+      // Marker line for p across the panel
       const pY = chart.scales.y.getPixelForValue(state.p);
       ctx.strokeStyle = 'rgba(220,0,0,0.9)';
       ctx.setLineDash([6, 6]);
@@ -125,11 +112,11 @@
   };
 
   // ---------- Chart ----------
-  let trajChart;
+  let chart;
 
-  function buildChart(ctx) {
+  function buildChart() {
     const labels = state.data.x;
-    const lineDS = state.data.f.slice(0, state.m).map((arr) => ({
+    const datasets = state.data.f.slice(0, state.m).map((arr) => ({
       label: '',
       data: arr.slice(0, state.n).map((y, i) => ({ x: i + 1, y })),
       parsing: false,
@@ -137,9 +124,7 @@
       borderWidth: 1,
       pointRadius: 0
     }));
-
-    // Reference line at p (as a dataset so resta sincronizzato con lo zoom/scale)
-    lineDS.push({
+    datasets.push({
       label: 'p',
       data: labels.slice(0, state.n).map((n) => ({ x: n, y: state.p })),
       borderColor: 'rgba(220,0,0,0.9)',
@@ -148,37 +133,26 @@
       pointRadius: 0
     });
 
-    if (trajChart) trajChart.destroy();
-    trajChart = new Chart(ctx, {
+    if (chart) chart.destroy();
+    chart = new Chart($('trajChartV2'), {
       type: 'line',
-      data: { datasets: lineDS },
+      data: { datasets },
       options: {
         animation: false,
         maintainAspectRatio: false,
         scales: {
-          x: {
-            type: 'linear',
-            min: 1,
-            max: state.nMax,
-            title: { display: true, text: 'n (trials)' }
-          },
-          y: {
-            min: 0, max: 1,
-            title: { display: true, text: 'f(n) = successes / n' }
-          }
+          x: { type: 'linear', min: 1, max: state.nMax, title: { display: true, text: 'n (trials)' } },
+          y: { min: 0, max: 1, title: { display: true, text: 'f(n) = successes / n' } }
         },
-        plugins: {
-          legend: { display: false },
-          tooltip: { mode: 'nearest', intersect: false }
-        },
+        plugins: { legend: { display: false }, tooltip: { mode: 'nearest', intersect: false } },
         elements: { line: { tension: 0 } }
       },
       plugins: [histOverlay]
     });
   }
 
-  function updateLinesOnly() {
-    if (!trajChart) return;
+  function updateLines() {
+    if (!chart) return;
     const labels = state.data.x;
     const ds = state.data.f.slice(0, state.m).map((arr) => ({
       label: '',
@@ -196,107 +170,96 @@
       borderDash: [6, 6],
       pointRadius: 0
     });
-    trajChart.data.datasets = ds;
-    trajChart.options.scales.x.max = state.nMax;
-    trajChart.update('none'); // triggers overlay draw too
+    chart.data.datasets = ds;
+    chart.options.scales.x.max = state.nMax;
+    chart.update('none');
   }
 
   function updateHistogramOverlay() {
-    // take f(n) across trajectories
     const vals = state.data.f.slice(0, state.m).map((arr) => arr[state.n - 1]);
     const { centers, counts } = histogram(vals, state.bins);
     state.hist.centers = centers;
     state.hist.counts = counts;
     state.hist.max = Math.max(1, ...counts);
-    if (trajChart) trajChart.update('none');
+    if (chart) chart.update('none');
   }
 
   function regenerate() {
     state.data = generateData(state.m, state.nMax, state.p, state.seed);
-    buildChart($('trajChart'));
+    buildChart();
     updateHistogramOverlay();
   }
 
   // ---------- Controls ----------
   function syncLabels() {
-    $('nVal').textContent = state.n;
-    $('nMaxVal').textContent = state.nMax;
-    $('mVal').textContent = state.m;
-    $('pVal').textContent = state.p.toFixed(2);
-    $('binsVal').textContent = state.bins;
+    $('nValV2').textContent = state.n;
+    $('nMaxValV2').textContent = state.nMax;
+    $('mValV2').textContent = state.m;
+    $('pValV2').textContent = state.p.toFixed(2);
+    $('binsValV2').textContent = state.bins;
   }
 
   function attachEvents() {
-    $('nSlider').addEventListener('input', (e) => {
+    $('nSliderV2').addEventListener('input', (e) => {
       state.n = clamp(+e.target.value, 1, state.nMax);
-      syncLabels();
-      updateLinesOnly();
-      updateHistogramOverlay();
+      syncLabels(); updateLines(); updateHistogramOverlay();
     });
-    $('nMaxSlider').addEventListener('input', (e) => {
+    $('nMaxSliderV2').addEventListener('input', (e) => {
       state.nMax = +e.target.value;
-      $('nSlider').max = state.nMax;
-      if (state.n > state.nMax) { state.n = state.nMax; $('nSlider').value = state.n; }
-      syncLabels();
-      regenerate();
+      $('nSliderV2').max = state.nMax;
+      if (state.n > state.nMax) { state.n = state.nMax; $('nSliderV2').value = state.n; }
+      syncLabels(); regenerate();
     });
-    $('mSlider').addEventListener('input', (e) => {
+    $('mSliderV2').addEventListener('input', (e) => {
       state.m = +e.target.value;
-      syncLabels();
-      regenerate();
+      syncLabels(); regenerate();
     });
-    $('pSlider').addEventListener('input', (e) => {
+    $('pSliderV2').addEventListener('input', (e) => {
       state.p = +e.target.value;
-      syncLabels();
-      regenerate();
+      syncLabels(); regenerate();
     });
-    $('binsSlider').addEventListener('input', (e) => {
+    $('binsSliderV2').addEventListener('input', (e) => {
       state.bins = +e.target.value;
-      syncLabels();
-      updateHistogramOverlay();
+      syncLabels(); updateHistogramOverlay();
     });
-    $('playBtn').addEventListener('click', () => {
+    $('playBtnV2').addEventListener('click', () => {
       if (state.playing) return;
       state.playing = true;
       state.timer = setInterval(() => {
         if (state.n < state.nMax) {
           state.n += 1;
-          $('nSlider').value = state.n;
-          $('nVal').textContent = state.n;
-          updateLinesOnly();
-          updateHistogramOverlay();
+          $('nSliderV2').value = state.n;
+          $('nValV2').textContent = state.n;
+          updateLines(); updateHistogramOverlay();
         } else {
           state.playing = false; clearInterval(state.timer);
         }
       }, 16);
     });
-    $('pauseBtn').addEventListener('click', () => {
+    $('pauseBtnV2').addEventListener('click', () => {
       state.playing = false; clearInterval(state.timer);
     });
-    $('regenBtn').addEventListener('click', () => {
+    $('regenBtnV2').addEventListener('click', () => {
       state.seed = Math.floor(Math.random() * 1e9);
       regenerate();
     });
-    $('resetBtn').addEventListener('click', () => {
+    $('resetBtnV2').addEventListener('click', () => {
       state.n = Math.min(200, state.nMax);
-      $('nSlider').value = state.n;
-      syncLabels();
-      updateLinesOnly();
-      updateHistogramOverlay();
+      $('nSliderV2').value = state.n;
+      syncLabels(); updateLines(); updateHistogramOverlay();
     });
   }
 
   // ---------- Init ----------
   function init() {
-    $('nSlider').value = state.n;
-    $('nMaxSlider').value = state.nMax;
-    $('mSlider').value = state.m;
-    $('pSlider').value = state.p;
-    $('binsSlider').value = state.bins;
+    $('nSliderV2').value = state.n;
+    $('nMaxSliderV2').value = state.nMax;
+    $('mSliderV2').value = state.m;
+    $('pSliderV2').value = state.p;
+    $('binsSliderV2').value = state.bins;
     syncLabels();
     attachEvents();
     regenerate();
   }
-
   document.addEventListener('DOMContentLoaded', init);
 })();
