@@ -96,21 +96,81 @@ This explains why empirical averages become more reliable with many observations
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-  /* Layout: grafico a sinistra, istogramma a destra */
-  .lln-wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
-  .lln-controls { display: grid; grid-template-columns: repeat(6, minmax(120px,1fr)); gap: 10px; margin: 14px 0; }
-  .lln-controls label { font-weight: 600; font-size: 0.95rem; display: block; }
-  .lln-controls input[type="range"] { width: 100%; }
-  .lln-small { font-size: 0.85rem; color: #666; }
-  .lln-card { padding: 10px; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; }
-  .lln-buttons { display: flex; gap: 8px; align-items: end; }
-  .lln-buttons button { padding: 8px 12px; border-radius: 8px; border: 1px solid #ddd; background: #fafafa; cursor: pointer; }
-  .lln-buttons button:hover { background: #f0f0f0; }
-  canvas { width: 100% !important; height: 420px !important; }
-  @media (max-width: 900px){
+  /* Layout principale */
+  .lln-wrap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-top: 1rem;
+  }
+
+  /* Pannello dei controlli */
+  .lln-card {
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  .lln-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+    align-items: end;
+  }
+
+  .lln-controls label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .lln-controls input[type="range"] {
+    width: 100%;
+  }
+
+  .lln-small {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* Pulsanti */
+  .lln-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .lln-buttons button {
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    background: #fafafa;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .lln-buttons button:hover {
+    background: #f3f3f3;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 420px !important;
+  }
+
+  @media (max-width: 900px) {
     .lln-wrap { grid-template-columns: 1fr; }
+    .lln-controls { grid-template-columns: 1fr 1fr; }
     canvas { height: 360px !important; }
-    .lln-controls { grid-template-columns: repeat(2, minmax(160px,1fr)); }
   }
 </style>
 
