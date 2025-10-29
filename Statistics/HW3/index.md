@@ -584,11 +584,6 @@ It is the highest test of our humanity.`;
 - **Attack:** `attackRSA` brute-forces small prime pairs and candidate `e` values, decrypts candidates, and selects the best plaintext by chi-squared (tie-breaker: bigram counts).
 - **Demo flow:** generates a small keypair, encrypts a sample paragraph, checks decryption, and runs the statistical attack; results are written to page placeholders.
 
-**Security caveats**:
-- Uses very small primes and encodes single letters as integers — **insecure**.
-- No padding (OAEP/PSS) and no use of modern big-integer handling.
-- For realistic RSA: use large primes (proper bit-length), BigInt or crypto libraries, Miller–Rabin primality testing, and standard padding schemes.
-
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
