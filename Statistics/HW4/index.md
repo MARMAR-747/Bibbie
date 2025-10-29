@@ -420,13 +420,13 @@ Below is a description of all the **controls** (valid for both versions) and how
 - **Performance:** very large $m$ (≈150+) or $n_{\max}$ values may slow rendering in some browsers.  
   → Reduce $m$ or $n_{\max}$, or press **Pause** while adjusting sliders.  
 
-> 💡 **Tip:** Try setting $p = 0.2$ or $p = 0.8$, increase $m$, and observe how the histogram becomes narrower as $n$ grows — a clear illustration of the **Law of Large Numbers** in action!
+> 💡 **Tip:** Try setting $p = 0.2$ or $p = 0.8$, increase $m$, and observe how the histogram becomes narrower as $n$ grows — a clear illustration of the **LLN** in action!
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 📘 Theoretical Connection
 
-This interactive simulation provides a **numerical verification** of the **Law of Large Numbers (LLN)**:  
+This interactive simulation provides a **numerical verification** of the **LLN**:  
 
 $$
 f(n) = \frac{1}{n}\sum_{i=1}^{n} X_i \;\longrightarrow\; p \quad \text{as } n \to \infty
