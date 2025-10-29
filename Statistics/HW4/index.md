@@ -381,7 +381,7 @@ Below is a description of all the **controls** (valid for both versions) and how
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🖼️ Version 1 — Two-Panel View
+## 🖼️ Version 1 — Two-Panel view
 
 **Layout**:  
 - **Left:** trajectories of $f(n) = \dfrac{\text{successes}}{n}$.  
@@ -394,7 +394,7 @@ Below is a description of all the **controls** (valid for both versions) and how
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🖼️ Version 2 — Single-Canvas View (Overlay)
+## 🖼️ Version 2 — Single-Canvas view
 
 **Layout**:  
 - A **single canvas**: trajectories occupy the full plot, while the **yellow histogram** appears as a **horizontal overlay panel** on the right.  
@@ -407,7 +407,7 @@ Below is a description of all the **controls** (valid for both versions) and how
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🧠 What to Observe
+## 🧠 What to observe
 
 - For small $n$, $f(n)$ **fluctuates strongly** and the histogram is **wide**.  
 - As $n$ grows, the trajectories **stabilize** near $p$, and the histogram **concentrates** around $p$.  
@@ -415,7 +415,7 @@ Below is a description of all the **controls** (valid for both versions) and how
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 🛠️ Additional Notes
+## 🛠️ Additional notes
 
 - **Performance:** very large $m$ (≈150+) or $n_{\max}$ values may slow rendering in some browsers.  
   → Reduce $m$ or $n_{\max}$, or press **Pause** while adjusting sliders.  
@@ -424,7 +424,7 @@ Below is a description of all the **controls** (valid for both versions) and how
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 📘 Theoretical Connection
+## 📘 Theoretical connection
 
 This interactive simulation provides a **numerical verification** of the **LLN**:  
 
