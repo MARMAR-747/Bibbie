@@ -31,7 +31,48 @@ nav_exclude: true
   });
 </script>
 
-# 🔐 Understanding RSA Systems
+# The Law of Large Numbers (LLN)
+
+The **Law of Large Numbers (LLN)** is a fundamental theorem in probability theory stating that the **average of a large number of independent and identically distributed (i.i.d.) random variables** tends to approach the **expected value** of the underlying distribution as the number of trials increases.
+
+In simpler terms:  
+> When an experiment is repeated many times, the **empirical (observed) frequency** of an event approaches its **theoretical probability**.
+
+Formally, if \( X_1, X_2, \dots, X_n \) are i.i.d. random variables with expected value \( E[X_i] = \mu \), then:
+
+\[
+\frac{1}{n} \sum_{i=1}^{n} X_i \xrightarrow[n \to \infty]{} \mu
+\]
+
+This convergence can be:
+- **Weak (WLLN)**: convergence in probability,
+- **Strong (SLLN)**: convergence almost surely (with probability 1).
+
+### Example
+Consider a sequence of Bernoulli trials with success probability \( p \).  
+Each trial returns:
+\[
+X_i = 
+\begin{cases}
+1, & \text{if success} \\
+0, & \text{if failure}
+\end{cases}
+\]
+
+The relative frequency after \( n \) trials is:
+\[
+f(n) = \frac{1}{n}\sum_{i=1}^{n} X_i
+\]
+
+According to the LLN:
+\[
+f(n) \to p \quad \text{as } n \to \infty
+\]
+
+### Intuitive meaning
+At the beginning (small \( n \)), the relative frequency \( f(n) \) fluctuates significantly.  
+As \( n \) grows, the fluctuations diminish, and \( f(n) \) stabilizes near the true probability \( p \).  
+This is the mathematical foundation for why empirical averages and experimental data become reliable with enough observations.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
