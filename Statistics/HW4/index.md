@@ -162,7 +162,7 @@ This explains why empirical averages become more reliable with many observations
   </div>
 </div>
 
-<script src="/Statistics/HW4/assets/js/hw4_lln.js"></script>
+<script src="{{ 'Statistics/HW4/assets/js/hw4_lln.js' | relative_url }}" defer></script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
