@@ -71,7 +71,7 @@ nav_exclude: true
     </tr>
     <tr>
       <td style="text-align: center;">4</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;">The law of large numbers, simulation of relative frequency trajectories</td>
       <td style="text-align: center;"><a href="HW4/">📄 HMWK</a></td>
       <td style="text-align: center;">30/10/25</td>
     </tr>
