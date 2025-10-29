@@ -313,42 +313,42 @@ This explains why empirical averages become more reliable with many observations
 
 <div class="lln-card lln-controls">
   <div>
-    <label>Trials \( n \): <span id="nVal">200</span></label>
-    <input id="nSlider" type="range" min="1" max="2000" step="1" value="200"/>
+    <label>Trials \( n \): <span id="nValV2">200</span></label>
+    <input id="nSliderV2" type="range" min="1" max="2000" step="1" value="200"/>
     <div class="lln-small">Move or press ▶ Play</div>
   </div>
   <div>
-    <label>Max trials \( n_{\max} \): <span id="nMaxVal">1000</span></label>
-    <input id="nMaxSlider" type="range" min="50" max="10000" step="50" value="1000"/>
+    <label>Max trials \( n_{\max} \): <span id="nMaxValV2">1000</span></label>
+    <input id="nMaxSliderV2" type="range" min="50" max="10000" step="50" value="1000"/>
     <div class="lln-small">Upper bound for the x-axis</div>
   </div>
   <div>
-    <label>Trajectories \( m \): <span id="mVal">50</span></label>
-    <input id="mSlider" type="range" min="1" max="150" step="1" value="50"/>
+    <label>Trajectories \( m \): <span id="mValV2">50</span></label>
+    <input id="mSliderV2" type="range" min="1" max="150" step="1" value="50"/>
     <div class="lln-small">More lines → heavier rendering</div>
   </div>
   <div>
-    <label>Success prob \( p \): <span id="pVal">0.50</span></label>
-    <input id="pSlider" type="range" min="0" max="1" step="0.01" value="0.50"/>
+    <label>Success prob \( p \): <span id="pValV2">0.50</span></label>
+    <input id="pSliderV2" type="range" min="0" max="1" step="0.01" value="0.50"/>
     <div class="lln-small">Bernoulli\(p\) per trial</div>
   </div>
   <div>
-    <label>Bins (hist): <span id="binsVal">20</span></label>
-    <input id="binsSlider" type="range" min="5" max="40" step="1" value="20"/>
+    <label>Bins (hist): <span id="binsValV2">20</span></label>
+    <input id="binsSliderV2" type="range" min="5" max="40" step="1" value="20"/>
     <div class="lln-small">Histogram resolution</div>
   </div>
   <div class="lln-buttons">
-    <button id="playBtn">▶ Play</button>
-    <button id="pauseBtn">⏸ Pause</button>
-    <button id="regenBtn">🔁 Regenerate</button>
-    <button id="resetBtn">🧹 Reset</button>
+    <button id="playBtnV2">▶ Play</button>
+    <button id="pauseBtnV2">⏸ Pause</button>
+    <button id="regenBtnV2">🔁 Regenerate</button>
+    <button id="resetBtnV2">🧹 Reset</button>
   </div>
 </div>
 
 <div class="lln-wrap">
   <div class="lln-card">
     <h3 style="margin:6px 0 8px 0;">Trajectories of \( f(n) \) with right-side histogram</h3>
-    <canvas id="trajChart"></canvas>
+    <canvas id="trajChartV2"></canvas>
     <p class="lln-small">The yellow bars on the right show the empirical distribution of \(f(n)\) over the \(m\) trajectories at the current \(n\). The red dashed line marks \(p\).</p>
   </div>
 </div>
