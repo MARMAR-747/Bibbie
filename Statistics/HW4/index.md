@@ -174,7 +174,7 @@ This explains why empirical averages become more reliable with many observations
   }
 </style>
 
-<h2>🎲 LLN Simulation — trajectories & histogram</h2>
+<h2>🎲 LLN Simulation — trajectories & histogram (VERSION 1)</h2>
 
 <div class="lln-card lln-controls">
   <div>
@@ -223,6 +223,137 @@ This explains why empirical averages become more reliable with many observations
 </div>
 
 <script src="{{ 'Statistics/HW4/assets/js/hw4_lln.js' | relative_url }}" defer></script>
+
+---
+
+<!-- === LLN Interactive Simulator === -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  /* Layout principale */
+  .lln-wrap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-top: 1rem;
+  }
+
+  /* Pannello dei controlli */
+  .lln-card {
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  .lln-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+    align-items: end;
+  }
+
+  .lln-controls label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .lln-controls input[type="range"] {
+    width: 100%;
+  }
+
+  .lln-small {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* Pulsanti */
+  .lln-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .lln-buttons button {
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    background: #fafafa;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .lln-buttons button:hover {
+    background: #f3f3f3;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 420px !important;
+  }
+
+  @media (max-width: 900px) {
+    .lln-wrap { grid-template-columns: 1fr; }
+    .lln-controls { grid-template-columns: 1fr 1fr; }
+    canvas { height: 360px !important; }
+  }
+</style>
+
+<h2>🎲 LLN Simulation — trajectories & histogram (VERSION 2)</h2>
+
+<div class="lln-card lln-controls">
+  <div>
+    <label>Trials \( n \): <span id="nVal">200</span></label>
+    <input id="nSlider" type="range" min="1" max="2000" step="1" value="200"/>
+    <div class="lln-small">Move or press ▶ Play</div>
+  </div>
+  <div>
+    <label>Max trials \( n_{\max} \): <span id="nMaxVal">1000</span></label>
+    <input id="nMaxSlider" type="range" min="50" max="10000" step="50" value="1000"/>
+    <div class="lln-small">Upper bound for the x-axis</div>
+  </div>
+  <div>
+    <label>Trajectories \( m \): <span id="mVal">50</span></label>
+    <input id="mSlider" type="range" min="1" max="150" step="1" value="50"/>
+    <div class="lln-small">More lines → heavier rendering</div>
+  </div>
+  <div>
+    <label>Success prob \( p \): <span id="pVal">0.50</span></label>
+    <input id="pSlider" type="range" min="0" max="1" step="0.01" value="0.50"/>
+    <div class="lln-small">Bernoulli\(p\) per trial</div>
+  </div>
+  <div>
+    <label>Bins (hist): <span id="binsVal">20</span></label>
+    <input id="binsSlider" type="range" min="5" max="40" step="1" value="20"/>
+    <div class="lln-small">Histogram resolution</div>
+  </div>
+  <div class="lln-buttons">
+    <button id="playBtn">▶ Play</button>
+    <button id="pauseBtn">⏸ Pause</button>
+    <button id="regenBtn">🔁 Regenerate</button>
+    <button id="resetBtn">🧹 Reset</button>
+  </div>
+</div>
+
+<div class="lln-wrap">
+  <div class="lln-card">
+    <h3 style="margin:6px 0 8px 0;">Trajectories of \( f(n) \) with right-side histogram</h3>
+    <canvas id="trajChart"></canvas>
+    <p class="lln-small">The yellow bars on the right show the empirical distribution of \(f(n)\) over the \(m\) trajectories at the current \(n\). The red dashed line marks \(p\).</p>
+  </div>
+</div>
+
+<script src="{{ 'Statistics/HW4/assets/js/hw4_llnv2.js' | relative_url }}" defer></script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
