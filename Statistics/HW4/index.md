@@ -195,7 +195,7 @@ This explains why empirical averages become more reliable with many observations
   <div>
     <label>Success prob \( p \): <span id="pVal">0.50</span></label>
     <input id="pSlider" type="range" min="0" max="1" step="0.01" value="0.50"/>
-    <div class="lln-small">Bernoulli\(p\) per trial</div>
+    <div class="lln-small">Bernoulli \(p\) per trial</div>
   </div>
   <div>
     <label>Bins (hist): <span id="binsVal">20</span></label>
@@ -330,7 +330,7 @@ This explains why empirical averages become more reliable with many observations
   <div>
     <label>Success prob \( p \): <span id="pValV2">0.50</span></label>
     <input id="pSliderV2" type="range" min="0" max="1" step="0.01" value="0.50"/>
-    <div class="lln-small">Bernoulli\(p\) per trial</div>
+    <div class="lln-small">Bernoulli \(p\) per trial</div>
   </div>
   <div>
     <label>Bins (hist): <span id="binsValV2">20</span></label>
