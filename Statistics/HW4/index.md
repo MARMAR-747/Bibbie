@@ -31,16 +31,16 @@ nav_exclude: true
   });
 </script>
 
-## 🔢 The Law of Large Numbers (LLN)
+# 🔢 The Law of Large Numbers (LLN)
 
 The **Law of Large Numbers (LLN)** is a cornerstone of probability theory stating that the **average of a large number of independent and identically distributed (i.i.d.) random variables** tends to approach the **expected value** of the underlying distribution as the number of trials increases.
 
 In simpler terms:  
 > When an experiment is repeated many times, the **observed (empirical) frequency** of an event approaches its **true probability**.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 📘 Formal Definition
+## 📘 Formal definition
 
 Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with expected value $E[X_i] = \mu$.  
 The Law of Large Numbers states that:
@@ -54,9 +54,9 @@ This convergence can be:
 - **Weak LLN** → convergence *in probability*  
 - **Strong LLN** → convergence *almost surely* (with probability 1)
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 🎯 Example: Bernoulli Trials
+## 🎯 Example: Bernoulli trials
 
 Consider a sequence of Bernoulli trials with success probability $p$.  
 Each trial is defined as:
@@ -81,15 +81,14 @@ $$
 f(n) \to p \quad \text{as } n \to \infty
 $$
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 💡 Intuitive Meaning
+## 💡 Intuitive meaning
 
-At the beginning (small $n$), the relative frequency $f(n)$ fluctuates heavily — randomness dominates.  
-As $n$ increases, these fluctuations shrink, and $f(n)$ stabilizes near the true probability $p$.  
-This explains why empirical averages become more reliable with many observations.
+At the beginning (small $n$), the relative frequency $f(n)$ fluctuates heavily — randomness dominates. As $n$ increases, these fluctuations shrink, 
+and $f(n)$ stabilizes near the true probability $p$. This explains why empirical averages become more reliable with many observations.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 <!-- === LLN Interactive Simulator === -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -360,7 +359,6 @@ This explains why empirical averages become more reliable with many observations
 ## 🎛️ Controls & Usage
 
 Below is a description of all the **controls** (valid for both versions) and how to use them.  
-This page is part of *Homework 4* (University of Palermo & University of Rome).
 
 ### 🔧 Sliders
 
@@ -385,35 +383,27 @@ This page is part of *Homework 4* (University of Palermo & University of Rome).
 
 ## 🖼️ Version 1 — Two-Panel View
 
-**Layout.**  
+**Layout**:  
 - **Left:** trajectories of $f(n) = \dfrac{\text{successes}}{n}$.  
 - **Right:** vertical histogram showing the empirical distribution of $f(n)$ across $m$ experiments at the current $n$.
 
-**How to use.**  
+**How to use**:  
 1. Set $p$, $m$, and $n_{\max}$.  
 2. Move the **$n$** slider or press **Play** — you’ll see the lines converge toward $p$ (red dashed line) and the histogram concentrate near $p$.  
 3. Increase **Bins** for a more detailed histogram; press **Regenerate** to get new random outcomes.
-
-**When to use.**  
-- Ideal when you want to **visually compare** the trajectories and their distribution **side by side**.  
-- Useful for reports or presentations where each panel needs its own title and axes.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🖼️ Version 2 — Single-Canvas View (Overlay)
 
-**Layout.**  
+**Layout**:  
 - A **single canvas**: trajectories occupy the full plot, while the **yellow histogram** appears as a **horizontal overlay panel** on the right.  
 - The **red dashed line** still indicates the true probability $p$.
 
-**How to use.**  
+**How to use**:  
 1. Set $p$, $m$, and $n_{\max}$.  
 2. Move the **$n$** slider or press **Play** — trajectories evolve and the side histogram updates in real time.  
 3. Adjust **Bins** to change histogram granularity.
-
-**When to use.**  
-- Perfect for a **compact visualization** similar to the original *oscilloscope-style* simulation shown in the example reference.  
-- Useful when you want everything integrated into one dynamic plot.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -429,9 +419,6 @@ This page is part of *Homework 4* (University of Palermo & University of Rome).
 
 - **Performance:** very large $m$ (≈150+) or $n_{\max}$ values may slow rendering in some browsers.  
   → Reduce $m$ or $n_{\max}$, or press **Pause** while adjusting sliders.  
-- **Multiple versions on the same page:** if you keep both, make sure all HTML element **IDs are unique** (e.g., `nSlider` vs `nSliderV2`) and that each version loads its **own JS file**.
-
-<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 > 💡 **Tip:** Try setting $p = 0.2$ or $p = 0.8$, increase $m$, and observe how the histogram becomes narrower as $n$ grows — a clear illustration of the **Law of Large Numbers** in action!
 
@@ -445,8 +432,8 @@ $$
 f(n) = \frac{1}{n}\sum_{i=1}^{n} X_i \;\longrightarrow\; p \quad \text{as } n \to \infty
 $$
 
-Here each $X_i$ follows a Bernoulli$(p)$ distribution.  
-The convergence of the relative frequency $f(n)$ toward the true probability $p$ demonstrates the essence of the LLN — empirical frequencies tend to theoretical probabilities as the number of trials increases.
+Here each $X_i$ follows a Bernoulli$(p)$ distribution. The convergence of the relative frequency $f(n)$ toward the true probability $p$ demonstrates 
+the essence of the LLN — empirical frequencies tend to theoretical probabilities as the number of trials increases.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
