@@ -31,7 +31,7 @@ nav_exclude: true
   });
 </script>
 
-## 📘 The Law of Large Numbers (LLN)
+## 🔢 The Law of Large Numbers (LLN)
 
 The **Law of Large Numbers (LLN)** is a cornerstone of probability theory stating that the **average of a large number of independent and identically distributed (i.i.d.) random variables** tends to approach the **expected value** of the underlying distribution as the number of trials increases.
 
@@ -40,7 +40,7 @@ In simpler terms:
 
 ---
 
-### 🔢 Formal Definition
+### 📘 Formal Definition
 
 Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with expected value $E[X_i] = \mu$.  
 The Law of Large Numbers states that:
