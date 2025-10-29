@@ -31,7 +31,7 @@ nav_exclude: true
   });
 </script>
 
-# 📘 The Law of Large Numbers (LLN)
+## 📘 The Law of Large Numbers (LLN)
 
 The **Law of Large Numbers (LLN)** is a cornerstone of probability theory stating that the **average of a large number of independent and identically distributed (i.i.d.) random variables** tends to approach the **expected value** of the underlying distribution as the number of trials increases.
 
@@ -40,14 +40,14 @@ In simpler terms:
 
 ---
 
-## 🔢 Formal Definition
+### 🔢 Formal Definition
 
-Let \( X_1, X_2, \dots, X_n \) be i.i.d. random variables with expected value \( E[X_i] = \mu \).  
+Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables with expected value $E[X_i] = \mu$.  
 The Law of Large Numbers states that:
 
-\[
+$$
 \frac{1}{n} \sum_{i=1}^{n} X_i \xrightarrow[n \to \infty]{} \mu
-\]
+$$
 
 This convergence can be:
 
@@ -56,38 +56,38 @@ This convergence can be:
 
 ---
 
-## 🎯 Example: Bernoulli Trials
+### 🎯 Example: Bernoulli Trials
 
-Consider a sequence of Bernoulli trials with success probability \( p \).  
+Consider a sequence of Bernoulli trials with success probability $p$.  
 Each trial is defined as:
 
-\[
+$$
 X_i =
 \begin{cases}
 1, & \text{if success} \\
 0, & \text{if failure}
 \end{cases}
-\]
+$$
 
-The **relative frequency of success** after \( n \) trials is:
+The **relative frequency of success** after $n$ trials is:
 
-\[
+$$
 f(n) = \frac{1}{n}\sum_{i=1}^{n} X_i
-\]
+$$
 
 According to the Law of Large Numbers:
 
-\[
+$$
 f(n) \to p \quad \text{as } n \to \infty
-\]
+$$
 
 ---
 
-## 💡 Intuitive Meaning
+### 💡 Intuitive Meaning
 
-At the beginning (small \( n \)), the relative frequency \( f(n) \) fluctuates heavily — randomness dominates.  
-As \( n \) increases, these fluctuations shrink, and \( f(n) \) stabilizes near the true probability \( p \).  
-This is why experimental results become more reliable with a larger number of observations.
+At the beginning (small $n$), the relative frequency $f(n)$ fluctuates heavily — randomness dominates.  
+As $n$ increases, these fluctuations shrink, and $f(n)$ stabilizes near the true probability $p$.  
+This explains why empirical averages become more reliable with many observations.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
