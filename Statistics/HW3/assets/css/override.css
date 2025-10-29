@@ -162,3 +162,10 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 :root[data-theme="dark"] .typewriter {
   background: rgba(255,255,255,0.05);
 }
+
+pre.typewriter {
+  white-space: pre-wrap;
+  word-break: break-all;
+  hyphens: none;
+}
+
