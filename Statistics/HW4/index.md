@@ -89,6 +89,81 @@ At the beginning (small $n$), the relative frequency $f(n)$ fluctuates heavily �
 As $n$ increases, these fluctuations shrink, and $f(n)$ stabilizes near the true probability $p$.  
 This explains why empirical averages become more reliable with many observations.
 
+---
+
+<!-- === LLN Interactive Simulator === -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+  /* Layout: grafico a sinistra, istogramma a destra */
+  .lln-wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+  .lln-controls { display: grid; grid-template-columns: repeat(6, minmax(120px,1fr)); gap: 10px; margin: 14px 0; }
+  .lln-controls label { font-weight: 600; font-size: 0.95rem; display: block; }
+  .lln-controls input[type="range"] { width: 100%; }
+  .lln-small { font-size: 0.85rem; color: #666; }
+  .lln-card { padding: 10px; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; }
+  .lln-buttons { display: flex; gap: 8px; align-items: end; }
+  .lln-buttons button { padding: 8px 12px; border-radius: 8px; border: 1px solid #ddd; background: #fafafa; cursor: pointer; }
+  .lln-buttons button:hover { background: #f0f0f0; }
+  canvas { width: 100% !important; height: 420px !important; }
+  @media (max-width: 900px){
+    .lln-wrap { grid-template-columns: 1fr; }
+    canvas { height: 360px !important; }
+    .lln-controls { grid-template-columns: repeat(2, minmax(160px,1fr)); }
+  }
+</style>
+
+<h2>🎲 LLN Simulation — trajectories & histogram</h2>
+
+<div class="lln-card lln-controls">
+  <div>
+    <label>Trials \( n \): <span id="nVal">200</span></label>
+    <input id="nSlider" type="range" min="1" max="2000" step="1" value="200"/>
+    <div class="lln-small">Move or press ▶ Play</div>
+  </div>
+  <div>
+    <label>Max trials \( n_{\max} \): <span id="nMaxVal">1000</span></label>
+    <input id="nMaxSlider" type="range" min="50" max="10000" step="50" value="1000"/>
+    <div class="lln-small">Upper bound for the x-axis</div>
+  </div>
+  <div>
+    <label>Trajectories \( m \): <span id="mVal">50</span></label>
+    <input id="mSlider" type="range" min="1" max="150" step="1" value="50"/>
+    <div class="lln-small">More lines → heavier rendering</div>
+  </div>
+  <div>
+    <label>Success prob \( p \): <span id="pVal">0.50</span></label>
+    <input id="pSlider" type="range" min="0" max="1" step="0.01" value="0.50"/>
+    <div class="lln-small">Bernoulli\(p\) per trial</div>
+  </div>
+  <div>
+    <label>Bins (hist): <span id="binsVal">20</span></label>
+    <input id="binsSlider" type="range" min="5" max="40" step="1" value="20"/>
+    <div class="lln-small">Histogram resolution</div>
+  </div>
+  <div class="lln-buttons">
+    <button id="playBtn">▶ Play</button>
+    <button id="pauseBtn">⏸ Pause</button>
+    <button id="regenBtn">🔁 Regenerate</button>
+    <button id="resetBtn">🧹 Reset</button>
+  </div>
+</div>
+
+<div class="lln-wrap">
+  <div class="lln-card">
+    <h3 style="margin:6px 0 8px 0;">Trajectories of \( f(n) \) (relative frequency)</h3>
+    <canvas id="trajChart"></canvas>
+  </div>
+  <div class="lln-card">
+    <h3 style="margin:6px 0 8px 0;">Histogram of \( f(n) \) across \( m \) trajectories</h3>
+    <canvas id="histChart"></canvas>
+    <p class="lln-small">As \( n \) grows, the empirical distribution concentrates near \( p \).</p>
+  </div>
+</div>
+
+<script src="/Statistics/HW4/assets/hw4_lln.js"></script>
+
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
