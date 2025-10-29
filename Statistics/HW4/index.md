@@ -357,6 +357,99 @@ This explains why empirical averages become more reliable with many observations
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+## 🎛️ Controls & Usage
+
+Below is a description of all the **controls** (valid for both versions) and how to use them.  
+This page is part of *Homework 4* (University of Palermo & University of Rome).
+
+### 🔧 Sliders
+
+| Slider | Function | Immediate effect |
+|---|---|---|
+| **Trials $n$** | Number of trials currently shown (x-axis). | Truncates the trajectories at $n$; the histogram shows the distribution of $f(n)$ across all $m$ trajectories at that time. |
+| **Max trials $n_{\max}$** | Maximum number of trials simulated per trajectory. | Regenerates the dataset and updates the x-axis range. |
+| **Trajectories $m$** | Number of independent experiments (lines). | Regenerates $m$ new random trajectories. |
+| **Success prob $p$** | Probability of success in each Bernoulli trial. | Regenerates data with the new $p$; the **red dashed line** marks $p$. |
+| **Bins (hist)** | Number of bars in the histogram. | Changes the resolution of the histogram of $f(n)$. |
+
+### ▶️ Buttons
+
+| Button | Icon | Action |
+|---|---|---|
+| **Play** | ▶ | Increases $n$ automatically (animation). |
+| **Pause** | ⏸ | Stops the animation without losing the current data. |
+| **Regenerate** | 🔁 | Uses a new random seed → all trajectories are re-generated. |
+| **Reset** | 🧹 | Resets $n$ to its initial value (e.g., 200) without regeneration. |
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 🖼️ Version 1 — Two-Panel View
+
+**Layout.**  
+- **Left:** trajectories of $f(n) = \dfrac{\text{successes}}{n}$.  
+- **Right:** vertical histogram showing the empirical distribution of $f(n)$ across $m$ experiments at the current $n$.
+
+**How to use.**  
+1. Set $p$, $m$, and $n_{\max}$.  
+2. Move the **$n$** slider or press **Play** — you’ll see the lines converge toward $p$ (red dashed line) and the histogram concentrate near $p$.  
+3. Increase **Bins** for a more detailed histogram; press **Regenerate** to get new random outcomes.
+
+**When to use.**  
+- Ideal when you want to **visually compare** the trajectories and their distribution **side by side**.  
+- Useful for reports or presentations where each panel needs its own title and axes.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 🖼️ Version 2 — Single-Canvas View (Overlay)
+
+**Layout.**  
+- A **single canvas**: trajectories occupy the full plot, while the **yellow histogram** appears as a **horizontal overlay panel** on the right.  
+- The **red dashed line** still indicates the true probability $p$.
+
+**How to use.**  
+1. Set $p$, $m$, and $n_{\max}$.  
+2. Move the **$n$** slider or press **Play** — trajectories evolve and the side histogram updates in real time.  
+3. Adjust **Bins** to change histogram granularity.
+
+**When to use.**  
+- Perfect for a **compact visualization** similar to the original *oscilloscope-style* simulation shown in the example reference.  
+- Useful when you want everything integrated into one dynamic plot.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 🧠 What to Observe
+
+- For small $n$, $f(n)$ **fluctuates strongly** and the histogram is **wide**.  
+- As $n$ grows, the trajectories **stabilize** near $p$, and the histogram **concentrates** around $p$.  
+- The red dashed line always shows the true probability $p$.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 🛠️ Additional Notes
+
+- **Performance:** very large $m$ (≈150+) or $n_{\max}$ values may slow rendering in some browsers.  
+  → Reduce $m$ or $n_{\max}$, or press **Pause** while adjusting sliders.  
+- **Multiple versions on the same page:** if you keep both, make sure all HTML element **IDs are unique** (e.g., `nSlider` vs `nSliderV2`) and that each version loads its **own JS file**.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+> 💡 **Tip:** Try setting $p = 0.2$ or $p = 0.8$, increase $m$, and observe how the histogram becomes narrower as $n$ grows — a clear illustration of the **Law of Large Numbers** in action!
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 📘 Theoretical Connection
+
+This interactive simulation provides a **numerical verification** of the **Law of Large Numbers (LLN)**:  
+
+$$
+f(n) = \frac{1}{n}\sum_{i=1}^{n} X_i \;\longrightarrow\; p \quad \text{as } n \to \infty
+$$
+
+Here each $X_i$ follows a Bernoulli$(p)$ distribution.  
+The convergence of the relative frequency $f(n)$ toward the true probability $p$ demonstrates the essence of the LLN — empirical frequencies tend to theoretical probabilities as the number of trials increases.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
