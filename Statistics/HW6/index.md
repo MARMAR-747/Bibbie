@@ -35,12 +35,9 @@ nav_exclude: true
 
 This page derives the **simplest recurrence relationships** for the **arithmetic mean** and the **variance**, and implements **online algorithms** that update these statistics incrementally as new data arrive.
 
-Traditional "batch" algorithms (recomputing from scratch) are:
-- slower,
-- require storing the full dataset,
-- and are **numerically unstable** (catastrophic cancellation, overflow).
+Traditional "batch" algorithms (recomputing from scratch) are slower, require storing the full dataset and are **numerically unstable** (catastrophic cancellation, overflow).
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🧠 1) Arithmetic Mean — Recurrence & Proof
 
@@ -53,7 +50,7 @@ $$
 The arithmetic mean after $n$ samples is:
 
 $$
-\bar{x}_n = \frac{1}{n}\sum_{i=1}^{n} x_i.
+\bar{x}_n = \frac{1}{n}\sum_{i=1}^{n} x_i
 $$
 
 ### ✅ Recurrence Form (as derived on the whiteboard)
@@ -70,32 +67,23 @@ $$
 
 ### ✍️ Quick Proof
 
-Start from the definition:  
+Start from the definition:
+
 $$
 \bar{x}_n=\frac{1}{n}\sum_{i=1}^{n}x_i=\frac{1}{n}\Big(\sum_{i=1}^{n-1}x_i + x_n\Big)
-=\frac{1}{n}\Big((n-1)\bar{x}_{n-1} + x_n\Big),
-$$  
-which is the first recurrence. Now expand:  
+=\frac{1}{n}\Big((n-1)\bar{x}_{n-1} + x_n\Big)
+$$
+
+which is the first recurrence. Now expand:
+
 $$
 \bar{x}_n = \frac{n-1}{n}\bar{x}_{n-1} + \frac{x_n}{n}
-= \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}.
-$$  
+= \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
+$$
+
 Done.
 
-Start from definition:
-
-$$
-\bar{x}_n = \frac{1}{n}\left(\sum_{i=1}^{n-1}x_i + x_n\right)
-= \frac{1}{n}\left((n-1)\bar{x}_{n-1} + x_n\right).
-$$
-
-Rearranging yields:
-
-$$
-\bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}.
-$$
-
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 📊 2) Variance — Stable Online Recurrence (Welford Algorithm)
 
