@@ -131,45 +131,145 @@ grows, otherwise it decreases.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## 📊 2) Variance — Stable Online Recurrence (Welford Algorithm)
+## 📊 2) Variance — Recurrence & Proof
 
-Define:
+We want to update the variance **incrementally**, without recomputing all previous values.
+
+Let the mean at step $n$ be $\bar{x}_n$, and define the **sum of squared deviations**:
 
 $$
-M2_n = \sum_{i=1}^{n}(x_i - \bar{x}_n)^2.
+M2_n = \sum_{i=1}^{n}(x_i - \bar{x}_n)^2
 $$
 
-Then:
+From this:
 
-- **Population variance:**
+- **Population variance** is:
+
 $$
 \sigma_n^2 = \frac{M2_n}{n}
 $$
 
-- **Sample variance:**
+- **Sample variance** (unbiased) is:
+
 $$
-s_n^2 = \frac{M2_n}{n-1} \quad \text{for } n \ge 2
+s_n^2 = \frac{M2_n}{n-1} \quad \text{for } n \geq 2
 $$
 
-### ✅ Online Update Recurrence
+So our real goal is to find a recurrence for $M2_n$.
 
-Let:
+---
+
+### ✅ Key Observation
+
+Define the difference between the new value and the *previous* mean:
 
 $$
 \delta = x_n - \bar{x}_{n-1}
 $$
 
+The updated mean is (from the previous section):
+
+$$
+\bar{x}_n = \bar{x}_{n-1} + \frac{\delta}{n}
+$$
+
+Now, the deviation of the new point from the *new* mean is:
+
+$$
+x_n - \bar{x}_n
+$$
+
+---
+
+### ✍️ Proof of the Recurrence for $M2_n$
+
+Start from the definition:
+
+$$
+M2_n = \sum_{i=1}^n (x_i - \bar{x}_n)^2
+$$
+
+Split the sum:
+
+$$
+M2_n = \sum_{i=1}^{n-1}(x_i - \bar{x}_n)^2 + (x_n - \bar{x}_n)^2
+$$
+
+Now rewrite each term inside the sum by **adding and subtracting** $\bar{x}_{n-1}$:
+
+$$
+x_i - \bar{x}_n = (x_i - \bar{x}_{n-1}) + (\bar{x}_{n-1} - \bar{x}_n)
+$$
+
+Expand the square:
+
+$$
+(x_i - \bar{x}_n)^2 = (x_i - \bar{x}_{n-1})^2 + 2(x_i - \bar{x}_{n-1})(\bar{x}_{n-1} - \bar{x}_n) + (\bar{x}_{n-1} - \bar{x}_n)^2
+$$
+
+Sum over $i = 1, \dots, n-1$.  
+The middle term disappears because:
+
+$$
+\sum_{i=1}^{n-1}(x_i - \bar{x}_{n-1}) = 0
+$$
+
+(This is always true: deviations around the mean sum to zero.)
+
+So we are left with:
+
+$$
+M2_n = M2_{n-1} + (n-1)(\bar{x}_{n-1} - \bar{x}_n)^2 + (x_n - \bar{x}_n)^2
+$$
+
+Now substitute the mean update relation:
+
+$$
+\bar{x}_{n-1} - \bar{x}_n = -\frac{\delta}{n}, \qquad x_n - \bar{x}_n = \delta\frac{n-1}{n}
+$$
+
+Substitute into the equation:
+
+$$
+M2_n 
+= M2_{n-1} + (n-1)\left(\frac{\delta}{n}\right)^2 + \left(\delta\frac{n-1}{n}\right)^2
+$$
+
+Factor the terms:
+
+$$
+M2_n = M2_{n-1} + \frac{n-1}{n}\delta^2
+$$
+
+This is the **recurrence form**.
+
+---
+
+### ✅ Final Online Update Formula (Welford’s Algorithm)
+
+$$
+\boxed{
+\begin{aligned}
+\delta &= x_n - \bar{x}_{n-1} \\
+\bar{x}_n &= \bar{x}_{n-1} + \frac{\delta}{n} \\
+M2_n &= M2_{n-1} + \frac{n-1}{n}\delta^2
+\end{aligned}
+}
+$$
+
 Then:
 
 $$
-\boxed{\bar{x}_n = \bar{x}_{n-1} + \frac{\delta}{n}}
+\boxed{s_n^2 = \frac{M2_n}{n-1}} \quad \text{(sample variance)}
 $$
 
-$$
-\boxed{M2_n = M2_{n-1} + \delta(x_n - \bar{x}_n)}
-$$
+---
 
-This avoids computing $\sum x_i$ and $\sum x_i^2$, preventing **catastrophic cancellation**.
+### 💡 Interpretation
+
+- If $x_n$ is **far** from the previous mean, $\delta$ is large → variance increases.
+- If $x_n$ is **close** to the mean, $\delta$ is small → variance barely changes.
+- The update is **local**, does **not** require past data, and is **numerically stable**.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
