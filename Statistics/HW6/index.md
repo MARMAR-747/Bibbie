@@ -31,11 +31,9 @@ nav_exclude: true
   });
 </script>
 
-# 📐 Online Mean & Variance — Recurrence, Proofs, and Implementation
+# 📐 Online Mean & Variance — recurrence, proofs and implementation
 
-This page derives the **simplest recurrence relationships** for the **arithmetic mean** and the **variance**, and implements **online algorithms** that update these statistics incrementally as new data arrive.
-
-Traditional "batch" algorithms (recomputing from scratch) are slower, require storing the full dataset and are **numerically unstable** (catastrophic cancellation, overflow).
+This page derives the **simplest recurrence relationships** for the **arithmetic mean** and the **variance**, and implements **online algorithms** that update these statistics incrementally as new data arrive. Traditional "batch" algorithms (recomputing from scratch) are slower, require storing the full dataset and are **numerically unstable** (catastrophic cancellation, overflow).
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -53,7 +51,7 @@ $$
 \bar{x}_n = \frac{1}{n}\sum_{i=1}^{n} x_i
 $$
 
-### ✅ Recurrence Form (as derived on the whiteboard)
+### ✅ Recurrence Form (as derived on the whiteboard in class)
 
 $$
 \bar{x}_n = \frac{1}{n}\left((n-1)\bar{x}_{n-1} + x_n\right)
@@ -65,23 +63,63 @@ $$
 \boxed{\bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}}
 $$
 
-### ✍️ Quick Proof
+### ✍️ Proof
 
-Start from the definition:
-
-$$
-\bar{x}_n=\frac{1}{n}\sum_{i=1}^{n}x_i=\frac{1}{n}\Big(\sum_{i=1}^{n-1}x_i + x_n\Big)
-=\frac{1}{n}\Big((n-1)\bar{x}_{n-1} + x_n\Big)
-$$
-
-which is the first recurrence. Now expand:
+We start from the definition:
 
 $$
-\bar{x}_n = \frac{n-1}{n}\bar{x}_{n-1} + \frac{x_n}{n}
-= \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
+\bar{x}_n = \frac{1}{n}\sum_{i=1}^{n} x_i
 $$
 
-Done.
+I can see the sum up to $n$ as the sum up to $n-1$ plus the last value $x_n$:
+
+$$
+\sum_{i=1}^{n} x_i = \Big(\sum_{i=1}^{n-1}x_i\Big) + x_n
+$$
+
+So:
+
+$$
+\bar{x}_n = \frac{1}{n}\Big(\sum_{i=1}^{n-1}x_i + x_n\Big)
+$$
+
+Now, if the previous mean is:
+
+$$
+\bar{x}_{n-1} = \frac{1}{n-1}\sum_{i=1}^{n-1}x_i
+$$
+
+The sum up to $n-1$ is:
+
+$$
+\sum_{i=1}^{n-1}x_i = (n-1)\bar{x}_{n-1}
+$$
+
+Consequentially:
+
+$$
+\bar{x}_n = \frac{1}{n}\Big(\sum_{i=1}^{n-1}x_i + x_n\Big) = \frac{1}{n}\Big((n-1)\bar{x}_{n-1}+x_n\Big)
+$$
+
+Now we derive the online update formula. First, we divide the terms:
+
+$$
+\bar{x}_n = \frac{1}{n}\Big((n-1)\bar{x}_{n-1}+x_n\Big) = \frac{n-1}{n}\bar{x}_{n-1}+\frac{x_n}{n}
+$$
+
+Then, we rewrite $\frac{n-1}{n}=1-\frac{1}{n}$:
+
+$$
+\bar{x}_n = \frac{n-1}{n}\bar{x}_{n-1}+\frac{x_n}{n} = \bar{x}_{n-1}-\frac{1}{n}\bar{x}_{n-1}+\frac{x_n}{n}
+$$
+
+Finally, we factor and derive the online update formula:
+
+$$
+\bar{x}_n = \bar{x}_{n-1}-\frac{1}{n}\bar{x}_{n-1}+\frac{x_n}{n} = \bar{x}_{n-1}+\frac{x_n-\bar{x}_{n-1}}{n}
+$$
+
+The new mean is the old mean plus a small adjustment, proportional to the difference between the new value and the old mean. If $x_n$ is greater than $\bar{x}_{n-1}$ then $\bar{x}_{n}$ grows, otherwise it decreases.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
