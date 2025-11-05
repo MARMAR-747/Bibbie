@@ -31,16 +31,6 @@ nav_exclude: true
   });
 </script>
 
----
-layout: default
-title: HW5 — Measures of Location and Dispersion
-nav_exclude: true
----
-
-<div class="nav-buttons">
-  <a href="/Bibbie/Statistics/" class="nav-button left">⬅️ Statistics</a>
-</div>
-
 # 📊 Measures of Location and Dispersion
 
 In statistics, **measures of location (or central tendency)** and **measures of dispersion (or variability)** are used to describe and summarize data.  
@@ -49,7 +39,7 @@ In statistics, **measures of location (or central tendency)** and **measures of 
 
 Together, they provide a more complete understanding of a dataset.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🎯 Measures of Location (Central Tendency)
 
@@ -63,7 +53,7 @@ These measures describe the **center** or the most typical value in a dataset.
 | **Midrange** | Average of the minimum and maximum values. | $$\displaystyle \frac{\min(x) + \max(x)}{2}$$ | Easy to compute. | Extremely sensitive to outliers. |
 | **Trimmed Mean** | Mean after removing extreme values (e.g., 5% highest and lowest). | Remove extremes → compute mean. | Reduces effect of outliers while still using most data. | Requires choosing trimming percentage.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ### ✅ Choosing a Location Measure
 
@@ -73,7 +63,7 @@ These measures describe the **center** or the most typical value in a dataset.
 | Skewed distributions / heavy outliers | **Median** |
 | Categorical or discrete repeats | **Mode** |
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 📐 Measures of Dispersion (Variability)
 
@@ -87,7 +77,7 @@ These measures indicate **how spread out** values are around the center.
 | **Interquartile Range (IQR)** | Range between the 25th and 75th percentiles. | $$\text{IQR} = Q_3 - Q_1$$ | Robust to outliers; measures spread of central mass. | Ignores tails of distribution. |
 | **Coefficient of Variation (CV)** | Relative dispersion: SD normalized by mean. | $$\displaystyle \text{CV} = \frac{s}{\bar{x}}$$ | Useful to compare datasets with different scales. | Undefined if mean = 0.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ### ✅ Choosing a Dispersion Measure
 
@@ -97,7 +87,7 @@ These measures indicate **how spread out** values are around the center.
 | Data contain outliers or heavy tails | **IQR** |
 | Compare datasets with different units or scales | **Coefficient of Variation** |
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🧮 Examples for Each Measure
 
@@ -109,7 +99,7 @@ $$
 
 There are $n = 6$ observations.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🎯 Measures of Location (Central Tendency)
 
@@ -150,7 +140,7 @@ $$
 \text{Trimmed Mean} = \frac{4 + 4 + 5 + 7}{4} = \frac{20}{4} = 5
 $$
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 📐 Measures of Dispersion (Variability)
 
@@ -213,7 +203,7 @@ $$
 
 → The relative dispersion is **48%** of the mean.
 
----
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## ✅ Key Insight
 
