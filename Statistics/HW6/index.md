@@ -70,16 +70,16 @@ $$
 
 ### ✍️ Quick Proof
 
-Start from the definition:
+Start from the definition:  
 $$
 \bar{x}_n=\frac{1}{n}\sum_{i=1}^{n}x_i=\frac{1}{n}\Big(\sum_{i=1}^{n-1}x_i + x_n\Big)
 =\frac{1}{n}\Big((n-1)\bar{x}_{n-1} + x_n\Big),
-$$
-which is the first recurrence. Now expand:
+$$  
+which is the first recurrence. Now expand:  
 $$
 \bar{x}_n = \frac{n-1}{n}\bar{x}_{n-1} + \frac{x_n}{n}
 = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}.
-$$
+$$  
 Done.
 
 Start from definition:
