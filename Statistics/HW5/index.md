@@ -101,121 +101,128 @@ These measures indicate **how spread out** values are around the center.
 
 ## 🧮 Examples for Each Measure
 
-To illustrate the concepts, consider the following dataset:
+Consider the dataset:
 
-\[
-X = \{ 2,\, 4,\, 4,\, 5,\, 7,\, 9 \}
-\]
+$$
+X = \{2,\, 4,\, 4,\, 5,\, 7,\, 9\}
+$$
 
-There are \( n = 6 \) observations.
+There are $n = 6$ observations.
 
 ---
 
 ## 🎯 Measures of Location (Central Tendency)
 
-### 1) **Mean (Arithmetic Average)**  
-\[
+### 1) **Mean (Arithmetic Average)**
+
+$$
 \bar{x} = \frac{2 + 4 + 4 + 5 + 7 + 9}{6} = \frac{31}{6} \approx 5.17
-\]
+$$
 
-### 2) **Median**  
-Ordered data: \( 2, 4, 4, 5, 7, 9 \)  
-Middle values (because \( n = 6 \)) → \( 4 \) and \( 5 \)
+### 2) **Median**
 
-\[
+Ordered data: $2, 4, 4, 5, 7, 9$  
+Middle values (since $n = 6$): $4$ and $5$
+
+$$
 \text{Median} = \frac{4 + 5}{2} = 4.5
-\]
+$$
 
-### 3) **Mode**  
+### 3) **Mode**
+
 The value appearing most often is:
 
-\[
+$$
 \text{Mode} = 4
-\]
+$$
 
 ### 4) **Midrange**
-\[
+
+$$
 \text{Midrange} = \frac{\min(X) + \max(X)}{2} = \frac{2 + 9}{2} = 5.5
-\]
+$$
 
-### 5) **Trimmed Mean** (10% trim for example)
-Remove smallest and largest values → \( \{4, 4, 5, 7\} \)
+### 5) **Trimmed Mean** (10% trimming example)
 
-\[
+Remove smallest and largest values → remaining data: $4, 4, 5, 7$
+
+$$
 \text{Trimmed Mean} = \frac{4 + 4 + 5 + 7}{4} = \frac{20}{4} = 5
-\]
+$$
 
 ---
 
 ## 📐 Measures of Dispersion (Variability)
 
 ### 1) **Range**
-\[
+
+$$
 \text{Range} = 9 - 2 = 7
-\]
+$$
 
 ### 2) **Variance**
 
-We already computed:  
-\[
-\bar{x} \approx 5.17
-\]
+First compute the mean $ \bar{x} \approx 5.17 $
 
-Now compute squared deviations:
+Squared deviations:
 
-| \(x_i\) | \(x_i - \bar{x}\) | \((x_i - \bar{x})^2\) |
-|--------|-------------------|----------------------|
-| 2 | \(-3.17\) | \(10.05\) |
-| 4 | \(-1.17\) | \(1.37\) |
-| 4 | \(-1.17\) | \(1.37\) |
-| 5 | \(-0.17\) | \(0.03\) |
-| 7 | \(1.83\) | \(3.35\) |
-| 9 | \(3.83\) | \(14.67\) |
+| $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
+|---|---|---|
+| 2 | -3.17 | 10.05 |
+| 4 | -1.17 | 1.37 |
+| 4 | -1.17 | 1.37 |
+| 5 | -0.17 | 0.03 |
+| 7 | 1.83 | 3.35 |
+| 9 | 3.83 | 14.67 |
 
-\[
+Sum:
+
+$$
 \sum (x_i - \bar{x})^2 = 30.84
-\]
+$$
 
 Sample variance:
-\[
+
+$$
 s^2 = \frac{30.84}{6 - 1} = 6.17
-\]
+$$
 
 ### 3) **Standard Deviation**
 
-\[
+$$
 s = \sqrt{6.17} \approx 2.48
-\]
+$$
 
 ### 4) **Interquartile Range (IQR)**
 
 Quartiles:
 
-- \(Q_1 = 4\)
-- \(Q_3 = 7\)
+$$
+Q_1 = 4, \qquad Q_3 = 7
+$$
 
-\[
+$$
 \text{IQR} = Q_3 - Q_1 = 7 - 4 = 3
-\]
+$$
 
 ### 5) **Coefficient of Variation (CV)**
 
-\[
+$$
 \text{CV} = \frac{s}{\bar{x}} = \frac{2.48}{5.17} \approx 0.48
-\]
+$$
 
-So the relative dispersion is **48%** of the mean.
+→ The relative dispersion is **48%** of the mean.
 
 ---
 
 ## ✅ Key Insight
 
-| Measure Type | What It Tells Us | Example Here |
-|-------------|-----------------|--------------|
-| **Location** | Where values cluster | Around \( \approx 5 \) (mean \( \approx 5.17 \), median \( = 4.5 \)) |
-| **Dispersion** | How spread out values are | Moderate spread (SD \( \approx 2.48 \), IQR \( = 3 \)) |
+| Type | Interpretation | Example Result |
+|---|---|---|
+| **Location** | Where values cluster | Around $\approx 5$ (mean $\approx 5.17$, median $= 4.5$) |
+| **Dispersion** | How spread values are | Moderate spread (SD $\approx 2.48$, IQR $= 3$) |
 
-Together, these measures provide a **complete statistical summary** of the dataset.
+Together, these measures give a **complete statistical summary** of the dataset.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
