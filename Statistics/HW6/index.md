@@ -119,7 +119,15 @@ $$
 \bar{x}_n = \bar{x}_{n-1}-\frac{1}{n}\bar{x}_{n-1}+\frac{x_n}{n} = \bar{x}_{n-1}+\frac{x_n-\bar{x}_{n-1}}{n}
 $$
 
-The new mean is the old mean plus a small adjustment, proportional to the difference between the new value and the old mean. If $x_n$ is greater than $\bar{x}_{n-1}$ then $\bar{x}_{n}$ grows, otherwise it decreases.
+The new mean is the old mean plus a small adjustment, proportional to the difference between the new value and the old mean. If $x_n$ is greater than
+$$
+\bar{x}_{n-1}
+$$
+then
+$$
+\bar{x}_{n}
+$$ 
+grows, otherwise it decreases.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
