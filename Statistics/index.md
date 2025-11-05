@@ -81,6 +81,12 @@ nav_exclude: true
       <td style="text-align: center;"><a href="HW5/">📄 HMWK</a></td>
       <td style="text-align: center;">06/11/25</td>
     </tr>
+    <tr>
+      <td style="text-align: center;">6</td>
+      <td style="text-align: left;">Proof of recurrence formulas and implementation of "online" algorithms for mean and variance</td>
+      <td style="text-align: center;"><a href="HW6/">📄 HMWK</a></td>
+      <td style="text-align: center;">06/11/25</td>
+    </tr>
   </tbody>
 </table>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
