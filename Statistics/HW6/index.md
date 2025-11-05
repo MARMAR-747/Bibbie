@@ -119,6 +119,8 @@ $$
 \bar{x}_n = \bar{x}_{n-1}-\frac{1}{n}\bar{x}_{n-1}+\frac{x_n}{n} = \bar{x}_{n-1}+\frac{x_n-\bar{x}_{n-1}}{n}
 $$
 
+### 💡 Interpretation
+
 The new mean is the old mean plus a small adjustment, proportional to the difference between the new value and the old mean. If $x_n$ is greater than
 $$
 \bar{x}_{n-1}
@@ -157,8 +159,6 @@ $$
 
 So our real goal is to find a recurrence for $M2_n$.
 
----
-
 ### ✅ Key Observation
 
 Define the difference between the new value and the *previous* mean:
@@ -178,8 +178,6 @@ Now, the deviation of the new point from the *new* mean is:
 $$
 x_n - \bar{x}_n
 $$
-
----
 
 ### ✍️ Proof of the Recurrence for $M2_n$
 
@@ -243,8 +241,6 @@ $$
 
 This is the **recurrence form**.
 
----
-
 ### ✅ Final Online Update Formula (Welford’s Algorithm)
 
 $$
@@ -262,8 +258,6 @@ Then:
 $$
 \boxed{s_n^2 = \frac{M2_n}{n-1}} \quad \text{(sample variance)}
 $$
-
----
 
 ### 💡 Interpretation
 
