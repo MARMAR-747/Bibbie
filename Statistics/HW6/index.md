@@ -267,7 +267,8 @@ $$
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## ⚙️ 3) JavaScript Implementation (Stable & Online)    
+<h2>📈 Online Mean & Variance — Interactive Demo</h2>
+<p>This demo shows incremental statistics updated in real time.</p>
 
 <button id="pause-btn" style="padding:6px 12px; border-radius:6px; cursor:pointer;">⏸ Pause</button>
 <button id="reset-btn" style="padding:6px 12px; border-radius:6px; cursor:pointer;">🧹 Reset</button>
@@ -293,6 +294,19 @@ $$
   import { startOnlineDemo } from "{{ 'Statistics/HW6/assets/js/hw_online_stats.js' | relative_url }}";
   startOnlineDemo("stats-output", "stats-chart", "pause-btn", "reset-btn", "values-list");
 </script>
+
+The script used to achieve this is the following:  
+
+<div class="code-window">
+  <div class="code-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+  <pre><code class="language-javascript">
+
+  </code></pre>
+</div>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
