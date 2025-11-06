@@ -449,7 +449,7 @@ When computing the mean and variance, there are two general approaches:
 
    $$
    \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n},
-   \\qquad
+   \qquad
    $$
    $$
    M2_n = M2_{n-1} + \delta (x_n - \bar{x}_n), \qquad \delta = x_n - \bar{x}_{n-1}
@@ -468,7 +468,7 @@ $$
 
 This expression is well-known to be **numerically unstable**, because:
 - $\sum x_i^2$ and $n\bar{x}^2$ may be **very large**
-- their **difference may be very small**
+- their **difference may be very small**  
 And this would cause **catastrophic cancellation** (loss of significant digits).
 
 Online algorithms **avoid this subtraction** entirely.  
