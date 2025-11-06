@@ -267,7 +267,16 @@ $$
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## ⚙️ 3) JavaScript Implementation (Stable & Online)
+## ⚙️ 3) JavaScript Implementation (Stable & Online)  
+
+<button id="pause-btn" style="
+  padding:6px 12px; 
+  margin-bottom:12px;
+  border-radius:6px;
+  cursor:pointer;
+">
+⏸ Pause
+</button>
 
 <pre id="stats-output" class="typewriter" style="
   background:#111; color:#0f0; padding:12px; border-radius:6px; width:max-content;
@@ -279,7 +288,7 @@ $$
 
 <script type="module">
   import { startOnlineDemo } from "{{ 'Statistics/HW6/assets/js/hw_online_stats.js' | relative_url }}";
-  startOnlineDemo("stats-output", "stats-chart");
+  startOnlineDemo("stats-output", "stats-chart", "pause-btn");
 </script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
