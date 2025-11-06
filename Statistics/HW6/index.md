@@ -267,28 +267,31 @@ $$
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-## ⚙️ 3) JavaScript Implementation (Stable & Online)  
+## ⚙️ 3) JavaScript Implementation (Stable & Online)    
 
-<button id="pause-btn" style="
-  padding:6px 12px; 
-  margin-bottom:12px;
-  border-radius:6px;
-  cursor:pointer;
-">
-⏸ Pause
-</button>
+<button id="pause-btn" style="padding:6px 12px; border-radius:6px; cursor:pointer;">⏸ Pause</button>
+<button id="reset-btn" style="padding:6px 12px; border-radius:6px; cursor:pointer;">🧹 Reset</button>
 
-<pre id="stats-output" class="typewriter" style="
-  background:#111; color:#0f0; padding:12px; border-radius:6px; width:max-content;
-"></pre>
+<pre id="stats-output" style="background:#111; color:#0f0; padding:12px; border-radius:6px; width:max-content; margin-top:12px;"></pre>
 
 <canvas id="stats-chart" style="max-width:700px; margin-top:20px;"></canvas>
+
+<h3 style="margin-top:20px;">Values Streamed (latest updates):</h3>
+<pre id="values-list" style="
+  background:#222;
+  color:#0ff;
+  padding:10px;
+  border-radius:6px;
+  max-width:700px;
+  max-height:120px;
+  overflow-y:auto;
+"></pre>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="module">
   import { startOnlineDemo } from "{{ 'Statistics/HW6/assets/js/hw_online_stats.js' | relative_url }}";
-  startOnlineDemo("stats-output", "stats-chart", "pause-btn");
+  startOnlineDemo("stats-output", "stats-chart", "pause-btn", "reset-btn", "values-list");
 </script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
