@@ -431,6 +431,91 @@ export function startOnlineDemo(outputElementId, canvasElementId, pauseButtonId,
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+## 🧮 Numerical Stability and Computational Advantages of Online Algorithms
+
+When computing the mean and variance, there are two general approaches:
+
+1. **Batch (recompute-all) methods** — use full data each time:
+   $$
+   \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i,
+   \qquad
+   s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2
+   $$
+   These methods require **access to all past data** and involve repeated summation over growing sets.
+
+2. **Online (incremental) methods** — update statistics as new data arrives using recurrence formulas:
+   $$
+   \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
+   $$
+   $$
+   M2_n = M2_{n-1} + \delta (x_n - \bar{x}_n), \qquad \delta = x_n - \bar{x}_{n-1}
+   $$
+   These methods store **only constant memory** and update in **$O(1)$ time per observation**.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🔹 Numerical Stability and Error Propagation
+
+Batch computation of variance often uses the formula:
+$$
+s^2 = \frac{1}{n-1}\left(\sum x_i^2 - n \bar{x}^2\right)
+$$
+
+This expression is well-known to be **numerically unstable**, because:
+- $\sum x_i^2$ and $n\bar{x}^2$ may be **very large**,
+- their **difference may be very small**,
+- causing **catastrophic cancellation** (loss of significant digits).
+
+Online algorithms **avoid this subtraction** entirely.  
+The update form:
+$$
+M2_n = M2_{n-1} + \delta(x_n - \bar{x}_n)
+$$
+keeps intermediate values **small and centered**, minimizing floating-point roundoff.
+
+| Aspect | Batch Formula | Online (Welford) |
+|--------|--------------|----------------|
+| Risk of catastrophic cancellation | **High** (difference of large numbers) | **Low**, no large subtraction |
+| Sensitivity to floating-point precision | High | Low |
+| Accumulated numerical error | Grows with $n$ | Bounded and stable |
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🔹 Overflow and Range Control
+
+Batch algorithms often compute:
+- $\sum x_i$ (which can overflow for large $n$),
+- $\sum x_i^2$ (which can overflow even faster).
+
+Online methods avoid this because they:
+- Track only the **mean** and **M2**, which stay **on the scale of the data**, not $n$ times bigger.
+- Therefore reduce risk of:
+  - Overflow,
+  - Underflow,
+  - Loss of significance.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🔹 Computational Efficiency and Scalability
+
+| Property | Batch Methods | Online Methods |
+|---------|--------------|----------------|
+| Time per new data point | $O(n)$ | **$O(1)$** |
+| Memory usage | $O(n)$ (must store data) | **$O(1)$** |
+| Can run on streaming data? | ❌ No | ✅ Yes |
+| Suitable for large datasets? | ❌ Not scalable | ✅ Scales to millions/billions of samples |
+| Can be used in real-time? | ❌ No | ✅ Yes |
+
+This makes online algorithms ideal for:
+- Streaming analytics
+- IoT sensors
+- Network monitoring
+- Real-time dashboards
+- Big data pipelines
+- Machine learning with continuous updates
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
