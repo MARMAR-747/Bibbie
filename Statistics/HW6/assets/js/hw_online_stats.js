@@ -38,16 +38,18 @@ export class OnlineStats {
 // ============================================================
 // This function attaches chart + live updates to the page.
 
-export function startOnlineDemo(outputElementId, canvasElementId) {
+export function startOnlineDemo(outputElementId, canvasElementId, buttonElementId) {
   const stats = new OnlineStats();
   const output = document.getElementById(outputElementId);
   const canvas = document.getElementById(canvasElementId).getContext("2d");
+  const button = document.getElementById(buttonElementId);
 
-  // Store running data for the chart
+  let isRunning = true; // controls play / pause
+
+  // Chart storage
   const xValues = [];
   const meanValues = [];
 
-  // Create line chart (Chart.js)
   const chart = new Chart(canvas, {
     type: "line",
     data: {
@@ -63,24 +65,25 @@ export function startOnlineDemo(outputElementId, canvasElementId) {
     },
     options: {
       responsive: true,
-      animation: false,
-      scales: {
-        x: { title: { display: true, text: "Step (n)" }},
-        y: { title: { display: true, text: "Mean value" }}
-      }
+      animation: false
     }
   });
 
-  // Update loop: new random data every second
+  // Toggle play/pause when button is pressed
+  button.addEventListener("click", () => {
+    isRunning = !isRunning;
+    button.textContent = isRunning ? "⏸ Pause" : "▶ Play";
+  });
+
   setInterval(() => {
-    const x = Math.random() * 10; // Example: random in [0, 10]
+    if (!isRunning) return; // do nothing if paused
+
+    const x = Math.random() * 10;
     stats.push(x);
 
-    // Update chart data
     xValues.push(stats.n);
     meanValues.push(stats.mean);
 
-    // Keep chart size manageable
     if (xValues.length > 200) {
       xValues.shift();
       meanValues.shift();
@@ -88,7 +91,6 @@ export function startOnlineDemo(outputElementId, canvasElementId) {
 
     chart.update();
 
-    // Update text display
     output.textContent =
       `Count:    ${stats.n}\n` +
       `Mean:     ${stats.mean.toFixed(4)}\n` +
