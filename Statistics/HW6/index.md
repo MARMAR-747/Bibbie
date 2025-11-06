@@ -441,15 +441,17 @@ When computing the mean and variance, there are two general approaches:
    \qquad
    s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2
    $$
+
    These methods require **access to all past data** and involve repeated summation over growing sets.
 
-2. **Online (incremental) methods** — update statistics as new data arrives using recurrence formulas:
+3. **Online (incremental) methods** — update statistics as new data arrives using recurrence formulas:
    $$
    \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
    $$
    $$
    M2_n = M2_{n-1} + \delta (x_n - \bar{x}_n), \qquad \delta = x_n - \bar{x}_{n-1}
    $$
+
    These methods store **only constant memory** and update in **$O(1)$ time per observation**.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
@@ -462,9 +464,9 @@ s^2 = \frac{1}{n-1}\left(\sum x_i^2 - n \bar{x}^2\right)
 $$
 
 This expression is well-known to be **numerically unstable**, because:
-- $\sum x_i^2$ and $n\bar{x}^2$ may be **very large**,
-- their **difference may be very small**,
-- causing **catastrophic cancellation** (loss of significant digits).
+- $\sum x_i^2$ and $n\bar{x}^2$ may be **very large**
+- their **difference may be very small**
+And this would cause **catastrophic cancellation** (loss of significant digits).
 
 Online algorithms **avoid this subtraction** entirely.  
 The update form:
