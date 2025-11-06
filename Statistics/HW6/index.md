@@ -448,7 +448,8 @@ When computing the mean and variance, there are two general approaches:
 3. **Online (incremental) methods** update statistics as new data arrives using recurrence formulas:
 
    $$
-   \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
+   \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n},
+   \\qquad
    $$
    $$
    M2_n = M2_{n-1} + \delta (x_n - \bar{x}_n), \qquad \delta = x_n - \bar{x}_{n-1}
