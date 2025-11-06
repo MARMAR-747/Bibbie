@@ -435,7 +435,8 @@ export function startOnlineDemo(outputElementId, canvasElementId, pauseButtonId,
 
 When computing the mean and variance, there are two general approaches:
 
-1. **Batch (recompute-all) methods** — use full data each time:
+1. **Batch (recompute-all) methods** use full data each time:
+
    $$
    \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i,
    \qquad
@@ -444,7 +445,8 @@ When computing the mean and variance, there are two general approaches:
 
    These methods require **access to all past data** and involve repeated summation over growing sets.
 
-3. **Online (incremental) methods** — update statistics as new data arrives using recurrence formulas:
+3. **Online (incremental) methods** update statistics as new data arrives using recurrence formulas:
+
    $$
    \bar{x}_n = \bar{x}_{n-1} + \frac{x_n - \bar{x}_{n-1}}{n}
    $$
