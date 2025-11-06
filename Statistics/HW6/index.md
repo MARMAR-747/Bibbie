@@ -469,6 +469,7 @@ $$
 This expression is well-known to be **numerically unstable**, because:
 - $\sum x_i^2$ and $n\bar{x}^2$ may be **very large**
 - their **difference may be very small**  
+
 And this would cause **catastrophic cancellation** (loss of significant digits).
 
 Online algorithms **avoid this subtraction** entirely.  
