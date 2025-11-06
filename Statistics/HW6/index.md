@@ -269,6 +269,19 @@ $$
 
 ## ⚙️ 3) JavaScript Implementation (Stable & Online)
 
+<pre id="stats-output" class="typewriter" style="
+  background:#111; color:#0f0; padding:12px; border-radius:6px; width:max-content;
+"></pre>
+
+<canvas id="stats-chart" style="max-width:700px; margin-top:20px;"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="module">
+  import { startOnlineDemo } from "{{ 'Statistics/HW_MeanVariance/assets/js/hw_online_stats.js' | relative_url }}";
+  startOnlineDemo("stats-output", "stats-chart");
+</script>
+
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
