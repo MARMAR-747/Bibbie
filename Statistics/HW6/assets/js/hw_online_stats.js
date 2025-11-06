@@ -38,15 +38,17 @@ export class OnlineStats {
 // ============================================================
 // This function attaches chart + live updates to the page.
 
-export function startOnlineDemo(outputElementId, canvasElementId, buttonElementId) {
+export function startOnlineDemo(outputElementId, canvasElementId, pauseButtonId, resetButtonId, listElementId) {
   const stats = new OnlineStats();
   const output = document.getElementById(outputElementId);
   const canvas = document.getElementById(canvasElementId).getContext("2d");
-  const button = document.getElementById(buttonElementId);
+  const pauseBtn = document.getElementById(pauseButtonId);
+  const resetBtn = document.getElementById(resetButtonId);
+  const listBox = document.getElementById(listElementId);
 
-  let isRunning = true; // controls play / pause
+  let isRunning = true;
+  let values = []; // store recent values for display
 
-  // Chart storage
   const xValues = [];
   const meanValues = [];
 
@@ -63,23 +65,46 @@ export function startOnlineDemo(outputElementId, canvasElementId, buttonElementI
         tension: 0.15
       }]
     },
-    options: {
-      responsive: true,
-      animation: false
-    }
+    options: { responsive: true, animation: false }
   });
 
-  // Toggle play/pause when button is pressed
-  button.addEventListener("click", () => {
+  function refreshOutput() {
+    output.textContent =
+      `Count:    ${stats.n}\n` +
+      `Mean:     ${stats.mean.toFixed(4)}\n` +
+      `Variance: ${stats.variance.toFixed(4)}\n` +
+      `Std Dev:  ${stats.std.toFixed(4)}`;
+  }
+
+  function refreshList() {
+    listBox.textContent = values.join(", ");
+  }
+
+  pauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
-    button.textContent = isRunning ? "⏸ Pause" : "▶ Play";
+    pauseBtn.textContent = isRunning ? "⏸ Pause" : "▶ Play";
+  });
+
+  resetBtn.addEventListener("click", () => {
+    stats.n = 0;
+    stats.mean = 0;
+    stats.M2 = 0;
+    values = [];
+    xValues.length = 0;
+    meanValues.length = 0;
+    chart.update();
+    refreshOutput();
+    refreshList();
   });
 
   setInterval(() => {
-    if (!isRunning) return; // do nothing if paused
+    if (!isRunning) return;
 
-    const x = Math.random() * 10;
+    const x = Math.random() * 10; // example: new value in [0,10]
     stats.push(x);
+
+    values.push(x.toFixed(2));
+    if (values.length > 200) values.shift(); // keep list manageable
 
     xValues.push(stats.n);
     meanValues.push(stats.mean);
@@ -90,12 +115,8 @@ export function startOnlineDemo(outputElementId, canvasElementId, buttonElementI
     }
 
     chart.update();
-
-    output.textContent =
-      `Count:    ${stats.n}\n` +
-      `Mean:     ${stats.mean.toFixed(4)}\n` +
-      `Variance: ${stats.variance.toFixed(4)}\n` +
-      `Std Dev:  ${stats.std.toFixed(4)}`;
+    refreshOutput();
+    refreshList();
 
   }, 1000);
 }
