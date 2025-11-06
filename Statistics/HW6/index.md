@@ -278,7 +278,7 @@ $$
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="module">
-  import { startOnlineDemo } from "{{ 'Statistics/HW_MeanVariance/assets/js/hw_online_stats.js' | relative_url }}";
+  import { startOnlineDemo } from "{{ 'Statistics/HW6/assets/js/hw_online_stats.js' | relative_url }}";
   startOnlineDemo("stats-output", "stats-chart");
 </script>
 
