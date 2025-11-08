@@ -110,38 +110,119 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
+<style>
+  /* --- Responsive form layout --- */
+  .rw-panel { margin: 12px 0 8px; }
+  .rw-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 12px 16px;
+    align-items: end;
+  }
+  .rw-controls .control label {
+    display: block;
+    font-weight: 600;
+    font-size: .92rem;
+    margin-bottom: 6px;
+  }
+  .rw-controls .control input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border, #d0d0d0);
+    border-radius: 8px;
+    background: var(--bg, #fff);
+  }
+
+  /* second row spans 2+1 columns nicely */
+  .rw-controls .span-2 { grid-column: span 2; }
+
+  /* Buttons row */
+  .rw-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .rw-actions button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border, #d0d0d0);
+    background: var(--bg, #fafafa);
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .rw-actions button:hover { background: #f2f2f2; }
+
+  /* Info box and canvases */
+  .rw-info {
+    background: #111; color: #0f0;
+    padding: 10px; border-radius: 8px; max-width: 520px;
+    margin: 10px 0 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap;
+  }
+  .rw-canvas { width: 100%; max-width: 900px; }
+
+  /* Dark theme compatibility (Just the Docs) */
+  @media (prefers-color-scheme: dark) {
+    :root { --border:#2c2c2c; --bg:#151515; }
+  }
+
+  /* Mobile: stack to one column */
+  @media (max-width: 820px) {
+    .rw-controls { grid-template-columns: 1fr; }
+    .rw-controls .span-2 { grid-column: auto; }
+  }
+</style>
+
 <h2>🛡️ Server Security — Random Walk Simulation (Animated)</h2>
-<p>
-  Weekly +1 if secure, −1 if breached (at least one attacker succeeds).<br>
-  Security probability per week: <code>q = (1 - p)^m</code>.
-</p>
 
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:10px; max-width:820px;">
-  <label>Weeks (n): <input id="nInput" type="number" value="20" min="1" step="1"></label>
-  <label>Attackers (m): <input id="mInput" type="number" value="5" min="1" step="1"></label>
-  <label>Attack probability (p): <input id="pInput" type="number" value="0.2" min="0" max="1" step="0.01"></label>
-  <label>Simulations (total runs): <input id="runsInput" type="number" value="2000" min="1" step="1"></label>
-  <label>Visible trajectories (animated): <input id="visiblesInput" type="number" value="10" min="1" max="60" step="1"></label>
+<div class="rw-panel">
+  <div class="rw-controls">
+    <!-- Row 1 -->
+    <div class="control">
+      <label for="nInput">Weeks (n)</label>
+      <input id="nInput" type="number" min="1" step="1" value="25">
+    </div>
+    <div class="control">
+      <label for="mInput">Attackers (m)</label>
+      <input id="mInput" type="number" min="1" step="1" value="20">
+    </div>
+    <div class="control">
+      <label for="pInput">Attack probability (p)</label>
+      <input id="pInput" type="number" min="0" max="1" step="0.01" value="0.01">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="control span-2">
+      <label for="runsInput">Simulations (total runs)</label>
+      <input id="runsInput" type="number" min="1" step="1" value="2000">
+    </div>
+    <div class="control">
+      <label for="visiblesInput">Visible trajectories (animated)</label>
+      <input id="visiblesInput" type="number" min="1" max="60" step="1" value="25">
+    </div>
+  </div>
+
+  <div class="rw-actions">
+    <button id="startBtn">▶ Start</button>
+    <button id="toggleBtn">⏸ Pause</button>
+    <button id="resetBtn">🧹 Reset</button>
+  </div>
 </div>
 
-<div style="margin:12px 0; display:flex; gap:8px; flex-wrap:wrap;">
-  <button id="startBtn">▶ Start</button>
-  <button id="toggleBtn">⏸ Pause</button>
-  <button id="resetBtn">🧹 Reset</button>
-</div>
+<pre id="infoBox" class="rw-info"></pre>
 
-<pre id="infoBox" style="background:#111;color:#0f0;padding:10px;border-radius:6px;max-width:420px;"></pre>
-
-<h3 style="margin-top:10px;">Animated trajectories</h3>
-<canvas id="pathCanvas" style="max-width:820px;"></canvas>
+<h3>Animated trajectories</h3>
+<canvas id="pathCanvas" class="rw-canvas"></canvas>
 
 <h3 style="margin-top:16px;">Distribution of final scores (empirical vs theoretical)</h3>
-<canvas id="distCanvas" style="max-width:820px;"></canvas>
+<canvas id="distCanvas" class="rw-canvas"></canvas>
 
+<!-- Chart.js + your existing module init stay as-is -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
   import { initSecurityUI } from "{{ 'Statistics/HW7/assets/js/hw_security_walk_animated.js' | relative_url }}";
-
   initSecurityUI({
     ids: {
       nInput: 'nInput',
@@ -156,9 +237,7 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
       distCanvasId: 'distCanvas',
       infoBoxId: 'infoBox'
     },
-    defaults: {
-      n: 20, m: 5, p: 0.2, runs: 2000, visibles: 10, tickMs: 50
-    }
+    defaults: { n: 25, m: 20, p: 0.01, runs: 2000, visibles: 25, tickMs: 50 }
   });
 </script>
 
@@ -166,14 +245,16 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
 
 ## 📈 Convergence to the Binomial Distribution
 
-As the number of simulations runs → ∞  
-the empirical distribution of final scores approaches the **binomial distribution** of the number of secure weeks.
+As the number of simulations runs → ∞ the empirical distribution of final scores approaches the **binomial distribution** of the number of secure weeks.
 
 As the number of weeks \( n \) grows, the random walk becomes smoother, and by the **Central Limit Theorem**, the distribution of scores approaches a **Gaussian shape** centered around:
+
 $$
 \mathbb{E}[S_n] = n(2q - 1)
 $$
-and variance
+
+and variance:
+
 $$
 \mathrm{Var}(S_n) = 4nq(1 - q)
 $$
