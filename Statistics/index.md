@@ -87,6 +87,18 @@ nav_exclude: true
       <td style="text-align: center;"><a href="HW6/">📄 HMWK</a></td>
       <td style="text-align: center;">06/11/25</td>
     </tr>
+    <tr>
+      <td style="text-align: center;">7</td>
+      <td style="text-align: left;">TBD</td>
+      <td style="text-align: center;"><a href="HW7/">📄 HMWK</a></td>
+      <td style="text-align: center;">13/11/25</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">8</td>
+      <td style="text-align: left;">TBD</td>
+      <td style="text-align: center;"><a href="HW8/">📄 HMWK</a></td>
+      <td style="text-align: center;">13/11/25</td>
+    </tr>
   </tbody>
 </table>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
