@@ -31,10 +31,9 @@ nav_exclude: true
   });
 </script>
 
-# 🔗 Connections between HW4 (LLN) and HW7
+# 🔗 Connections between HW4 and HW7
 
-HW7 is closely related to the **Bernoulli process simulation** used in the Law of Large Numbers (LLN) assignment.  
-In both cases, the system evolves through **independent repeated trials**, each resulting in either *success* or *failure*.
+HW7 is closely related to the **Bernoulli process simulation** used in the Law of Large Numbers (LLN) assignment. In both cases, the system evolves through **independent repeated trials**, each resulting in either *success* or *failure*.
 
 ## 🎯 Core Analogy
 
@@ -42,8 +41,8 @@ In both cases, the system evolves through **independent repeated trials**, each 
 |-------------|------------------------------|
 | Each trial returns 1 (success) or 0 (failure) | Each week returns +1 (secure) or −1 (breached) |
 | We studied the **relative frequency** of successes | We study the **cumulative score** over time |
-| Success probability = \( p \) | Security probability per week = \( q = (1 - p)^m \) |
-| LLN shows \( f(n) \to p \) | Score distribution converges to a **Binomial-derived random walk** |
+| Success probability = $$p$$ | Security probability per week = $$q = (1 - p)^m$$ |
+| LLN shows $$f(n) \to p$$ | Score distribution converges to a **Binomial-derived random walk** |
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
@@ -51,8 +50,8 @@ In both cases, the system evolves through **independent repeated trials**, each 
 
 Define:
 
-- \( X_i = +1 \) if the server remains secure in week \( i \)
-- \( X_i = -1 \) if the server is breached in week \( i \)
+- $$X_i = +1$$ if the server remains secure in week \( i \)
+- $$X_i = -1$$ if the server is breached in week \( i \)
 
 Then the cumulative score after \( n \) weeks is:
 
