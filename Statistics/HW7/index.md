@@ -110,38 +110,56 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-<h2>🛡️ Security vs Attackers — Random Walk Simulation</h2>
+<h2>🛡️ Server Security — Random Walk Simulation (Animated)</h2>
+<p>
+  Weekly +1 if secure, −1 if breached (at least one attacker succeeds).<br>
+  Security probability per week: <code>q = (1 - p)^m</code>.
+</p>
 
-<label>Weeks (n):</label>
-<input id="nInput" type="number" value="20"><br>
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:10px; max-width:820px;">
+  <label>Weeks (n): <input id="nInput" type="number" value="20" min="1" step="1"></label>
+  <label>Attackers (m): <input id="mInput" type="number" value="5" min="1" step="1"></label>
+  <label>Attack probability (p): <input id="pInput" type="number" value="0.2" min="0" max="1" step="0.01"></label>
+  <label>Simulations (total runs): <input id="runsInput" type="number" value="2000" min="1" step="1"></label>
+  <label>Visible trajectories (animated): <input id="visiblesInput" type="number" value="10" min="1" max="60" step="1"></label>
+</div>
 
-<label>Attackers (m):</label>
-<input id="mInput" type="number" value="5"><br>
+<div style="margin:12px 0; display:flex; gap:8px; flex-wrap:wrap;">
+  <button id="startBtn">▶ Start</button>
+  <button id="toggleBtn">⏸ Pause</button>
+  <button id="resetBtn">🧹 Reset</button>
+</div>
 
-<label>Attack probability (p):</label>
-<input id="pInput" type="number" value="0.2" step="0.01"><br>
+<pre id="infoBox" style="background:#111;color:#0f0;padding:10px;border-radius:6px;max-width:420px;"></pre>
 
-<label>Simulations:</label>
-<input id="runsInput" type="number" value="2000"><br><br>
+<h3 style="margin-top:10px;">Animated trajectories</h3>
+<canvas id="pathCanvas" style="max-width:820px;"></canvas>
 
-<button id="runSim">Run Simulation</button>
-
-<canvas id="securityChart" style="max-width:700px; margin-top:20px;"></canvas>
+<h3 style="margin-top:16px;">Distribution of final scores (empirical vs theoretical)</h3>
+<canvas id="distCanvas" style="max-width:820px;"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script type="module">
-  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW7/assets/js/hw_security_walk.js' | relative_url }}";
+  import { initSecurityUI } from "{{ 'Statistics/HW7/assets/js/hw_security_walk_animated.js' | relative_url }}";
 
-  document.getElementById("runSim").onclick = () => {
-    const n = +nInput.value;
-    const m = +mInput.value;
-    const p = +pInput.value;
-    const runs = +runsInput.value;
-
-    const { scoreCounts, q } = simulateSecurityWalk(n, m, p, runs);
-    plotResults(scoreCounts, q, n, runs, "securityChart");
-  };
+  initSecurityUI({
+    ids: {
+      nInput: 'nInput',
+      mInput: 'mInput',
+      pInput: 'pInput',
+      runsInput: 'runsInput',
+      visiblesInput: 'visiblesInput',
+      startBtn: 'startBtn',
+      toggleBtn: 'toggleBtn',
+      resetBtn: 'resetBtn',
+      pathCanvasId: 'pathCanvas',
+      distCanvasId: 'distCanvas',
+      infoBoxId: 'infoBox'
+    },
+    defaults: {
+      n: 20, m: 5, p: 0.2, runs: 2000, visibles: 10, tickMs: 50
+    }
+  });
 </script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
