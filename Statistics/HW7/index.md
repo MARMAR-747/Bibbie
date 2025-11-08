@@ -112,18 +112,26 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
 
 <h2>🛡️ Security vs Attackers — Random Walk Simulation</h2>
 
-<label>Weeks n:</label> <input id="nInput" type="number" value="20"><br>
-<label>Attackers m:</label> <input id="mInput" type="number" value="5"><br>
-<label>Attack probability p:</label> <input id="pInput" type="number" value="0.2" step="0.01"><br>
-<label>Simulations:</label> <input id="runsInput" type="number" value="2000"><br><br>
+<label>Weeks (n):</label>
+<input id="nInput" type="number" value="20"><br>
+
+<label>Attackers (m):</label>
+<input id="mInput" type="number" value="5"><br>
+
+<label>Attack probability (p):</label>
+<input id="pInput" type="number" value="0.2" step="0.01"><br>
+
+<label>Simulations:</label>
+<input id="runsInput" type="number" value="2000"><br><br>
 
 <button id="runSim">Run Simulation</button>
 
-<canvas id="securityChart" style="max-width:700px;margin-top:20px;"></canvas>
+<canvas id="securityChart" style="max-width:700px; margin-top:20px;"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script type="module">
-  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW7/assets/js/hw_security_walk.js' | relative_url }}";
+  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW_RandomWalkSecurity/assets/js/hw_security_walk.js' | relative_url }}";
 
   document.getElementById("runSim").onclick = () => {
     const n = +nInput.value;
