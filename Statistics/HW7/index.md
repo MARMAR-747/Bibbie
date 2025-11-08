@@ -31,7 +31,7 @@ nav_exclude: true
   });
 </script>
 
-## 🛡️ Random Security Updates and Attack Model
+# 🛡️ Random Security Updates and Attack Model
 
 A server receives weekly security updates across \( n \) weeks.  
 Each week, there are \( m \) independent attackers.  
@@ -43,7 +43,7 @@ We assume:
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 🎲 Probability of Security or Breach
+## 🎲 Probability of Security or Breach
 
 Since attackers act independently:
 
@@ -70,7 +70,7 @@ $$
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 🪜 Connection to Random Walks
+## 🪜 Connection to Random Walks
 
 This process defines a **biased random walk**:
 - Step **+1** with probability $$(1 - p)^m$$
@@ -92,7 +92,7 @@ This is equivalent to a **Binomial distribution** under a sign transformation.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
-### 📊 Distribution of Total Scores
+## 📊 Distribution of Total Scores
 
 Let $$K$$ = number of secure weeks, then:
 
@@ -107,6 +107,57 @@ S_n = 2K - n \quad\Longleftrightarrow\quad K = \frac{S_n + n}{2}
 $$
 
 Thus, the theoretical distribution of total scores is determined by the Binomial distribution of $$K$$.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+<h2>🛡️ Security vs Attackers — Random Walk Simulation</h2>
+
+<label>Weeks n:</label> <input id="nInput" type="number" value="20"><br>
+<label>Attackers m:</label> <input id="mInput" type="number" value="5"><br>
+<label>Attack probability p:</label> <input id="pInput" type="number" value="0.2" step="0.01"><br>
+<label>Simulations:</label> <input id="runsInput" type="number" value="2000"><br><br>
+
+<button id="runSim">Run Simulation</button>
+
+<canvas id="securityChart" style="max-width:700px;margin-top:20px;"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW7/assets/js/hw_security_walk.js' | relative_url }}";
+
+  document.getElementById("runSim").onclick = () => {
+    const n = +nInput.value;
+    const m = +mInput.value;
+    const p = +pInput.value;
+    const runs = +runsInput.value;
+
+    const { scoreCounts, q } = simulateSecurityWalk(n, m, p, runs);
+    plotResults(scoreCounts, q, n, runs, "securityChart");
+  };
+</script>
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+## 📈 Convergence to the Binomial Distribution
+
+As the number of simulations runs → ∞  
+the empirical distribution of final scores approaches the **binomial distribution** of the number of secure weeks.
+
+As the number of weeks \( n \) grows, the random walk becomes smoother, and by the **Central Limit Theorem**, the distribution of scores approaches a **Gaussian shape** centered around:
+$$
+\mathbb{E}[S_n] = n(2q - 1)
+$$
+and variance
+$$
+\mathrm{Var}(S_n) = 4nq(1 - q)
+$$
+
+This demonstrates how:
+- **Random walks**
+- **Independent security risks**
+- **Binomial distributions**
+
+are mathematically and computationally linked.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
