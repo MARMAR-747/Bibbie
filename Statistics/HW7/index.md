@@ -131,7 +131,7 @@ Thus, the theoretical distribution of total scores is determined by the Binomial
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="module">
-  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW_RandomWalkSecurity/assets/js/hw_security_walk.js' | relative_url }}";
+  import { simulateSecurityWalk, plotResults } from "{{ 'Statistics/HW7/assets/js/hw_security_walk.js' | relative_url }}";
 
   document.getElementById("runSim").onclick = () => {
     const n = +nInput.value;
