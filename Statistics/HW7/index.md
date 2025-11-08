@@ -31,7 +31,80 @@ nav_exclude: true
   });
 </script>
 
-# 📐 Online Mean & Variance — recurrence, proofs and implementation
+## 🛡️ Random Security Updates and Attack Model
+
+A server receives weekly security updates across \( n \) weeks.  
+Each week, there are \( m \) independent attackers.  
+Every attacker can successfully breach the system with probability \( p \).
+
+We assume:
+- If **at least one attacker succeeds**, the server is breached → score = **-1**
+- If **all attackers fail**, the server stays secure → score = **+1**
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🎲 Probability of Security or Breach
+
+Since attackers act independently:
+
+- Probability that one attacker fails: \( 1 - p \)
+- Probability that all \( m \) attackers fail:  
+  $$
+  P(\text{secure}) = (1 - p)^m
+  $$
+- Therefore:
+  $$
+  P(\text{breach}) = 1 - (1 - p)^m
+  $$
+
+Let
+$$
+X_i = \begin{cases}
++1 & \text{if week } i \text{ is secure} \\
+-1 & \text{if week } i \text{ is breached}
+\end{cases}
+$$
+
+Then the **cumulative security score** after \( n \) weeks is:
+$$
+S_n = \sum_{i=1}^{n} X_i
+$$
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 🪜 Connection to Random Walks
+
+This process defines a **biased random walk**:
+- Step **+1** with probability \( (1 - p)^m \)
+- Step **−1** with probability \( 1 - (1 - p)^m \)
+
+If we denote  
+$$
+q = (1 - p)^m,
+$$
+then:
+$$
+P(X_i = +1) = q, \quad P(X_i = -1) = 1 - q
+$$
+
+This is equivalent to a **Binomial distribution** under a sign transformation.
+
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+### 📊 Distribution of Total Scores
+
+Let \( K \) = number of secure weeks. Then:
+$$
+K \sim \mathrm{Binomial}(n, q)
+$$
+
+Since \( S_n = (+1)\cdot K + (-1)\cdot(n - K) = 2K - n \), we have:
+
+$$
+S_n = 2K - n \quad\Longleftrightarrow\quad K = \frac{S_n + n}{2}
+$$
+
+Thus, the theoretical distribution of total scores is determined by the Binomial distribution of \( K \).
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
