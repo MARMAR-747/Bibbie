@@ -48,10 +48,7 @@ We assume:
 Since attackers act independently:
 
 - Probability that one attacker fails: $$(1-p)$$
-- Probability that all \( m \) attackers fail:  
-  $$
-  P(\text{secure}) = (1 - p)^m
-  $$
+- Probability that all \( m \) attackers fail: $$P(\text{secure}) = (1 - p)^m$$  
 - Therefore:
   $$
   P(\text{breach}) = 1 - (1 - p)^m
@@ -82,7 +79,7 @@ This process defines a **biased random walk**:
 If we denote:
 
 $$
-q = (1 - p)^m,
+q = (1 - p)^m
 $$
 
 then:
