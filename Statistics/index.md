@@ -89,13 +89,13 @@ nav_exclude: true
     </tr>
     <tr>
       <td style="text-align: center;">7</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;">Penetration score process simulation (Random Walk)</td>
       <td style="text-align: center;"><a href="HW7/">📄 HMWK</a></td>
       <td style="text-align: center;">13/11/25</td>
     </tr>
     <tr>
       <td style="text-align: center;">8</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;">Compare Bernoullli process with Random walk, visual properties, Binomial Coefficients, Tartaglia, Fibonacci, etc.</td>
       <td style="text-align: center;"><a href="HW8/">📄 HMWK</a></td>
       <td style="text-align: center;">13/11/25</td>
     </tr>
