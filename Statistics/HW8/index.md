@@ -59,22 +59,22 @@ $$
 S_n = \sum_{i=1}^{n} X_i
 $$
 
-Let \( K \) be the number of secure weeks. Then:
+Let $$K$$ be the number of secure weeks. Then:
 
 $$
 S_n = (+1) \cdot K + (-1) \cdot (n-K) = 2K - n.
 $$
 
-So,
+So:
 
 $$
 K = \frac{S_n + n}{2}.
 $$
 
-Thus, the random walk is fully determined by the distribution of \( K \), which follows a **Binomial** law:
+Thus, the random walk is fully determined by the distribution of $$K$$, which follows a **Binomial** law:
 
 $$
-K \sim \text{Binomial}(n, q), \quad q = (1 - p)^m.
+K \sim \text{Binomial}(n, q), \quad q = (1 - p)^m
 $$
 
 Therefore:
@@ -93,7 +93,7 @@ $$
 P(K) = \binom{n}{K} q^K (1-q)^{n-K}.
 $$
 
-The coefficients \( \binom{n}{K} \) are the entries in **Pascal’s Triangle**, which satisfies the recurrence:
+The coefficients $$\binom{n}{K}$$ are the entries in **Pascal’s Triangle**, which satisfies the recurrence:
 
 $$
 \binom{n}{K} = \binom{n-1}{K} + \binom{n-1}{K-1}.
@@ -123,20 +123,7 @@ $$
 F_{n+1} = F_n + F_{n-1}.
 $$
 
-This is the same recurrence that defines the **Fibonacci sequence**.  
-Such models appear in **absorbing barriers**, e.g., *a system that fails permanently once breached*.
-
-<hr style="margin-top: 2rem; margin-bottom: 1rem;">
-
-## 🧭 Summary of Similarities and Differences
-
-| Feature | LLN (Bernoulli Simulation) | Security Random Walk |
-|--------|----------------------------|----------------------|
-| Model | Bernoulli trials | Bernoulli trials → mapped to ±1 walk |
-| Quantity studied | Frequency \( f(n) \) | Cumulative score \( S_n \) |
-| Distribution | Binomial | Binomial → shifted and scaled |
-| Behavior as \( n \to \infty \) | \( f(n) \to p \) | Score distribution approaches Normal (CLT) |
-| Visualization | Convergence to mean | Random walk spreading and histogram convergence |
+This is the same recurrence that defines the **Fibonacci sequence**. Such models appear in **absorbing barriers**, e.g., *a system that fails permanently once breached*.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
