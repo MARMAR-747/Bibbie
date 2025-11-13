@@ -89,8 +89,7 @@ $$
 
 ## 🔢 Binomial Coefficients
 
-The **Binomial coefficients** \( \binom{n}{K} \) play a central role in both the LLN simulation and the random walk model.  
-They represent the number of different ways to obtain exactly \( K \) successful outcomes (or secure weeks) out of \( n \) independent trials.
+The **Binomial coefficients** $$\binom{n}{K}$$ play a central role in both the LLN simulation and the random walk model. They represent the number of different ways to obtain exactly $$K$$ successful outcomes (or secure weeks) out of $$n$$ independent trials.
 
 Mathematically, each term is defined as:
 
@@ -98,29 +97,23 @@ $$
 \binom{n}{K} = \frac{n!}{K!(n-K)!}.
 $$
 
-In our security simulation, the term \( \binom{n}{K} q^K (1-q)^{n-K} \) expresses the **probability** that the server remains secure for exactly \( K \) weeks, given \( n \) total updates and weekly security probability \( q = (1 - p)^m \).
+In our security simulation, the term $$\binom{n}{K} q^K (1-q)^{n-K}$$ expresses the **probability** that the server remains secure for exactly $$K$$ weeks, given $$n$$ total updates and weekly security probability $$q = (1 - p)^m$$.
 
-Each possible outcome of the random walk — each final score \( S_n = 2K - n \) — therefore corresponds to a **combination** of \( K \) upward steps (+1) and \( n - K \) downward steps (−1).  
-The binomial coefficient counts how many distinct trajectories lead to that final position.
-
-Thus, the entire random walk is **combinatorially governed** by the structure of the binomial coefficients.
+Each possible outcome of the random walk — each final score $$S_n = 2K - n$$ — therefore corresponds to a **combination** of $$K$$ upward steps (+1) and $$n - K$$ downward steps (−1). The binomial coefficient counts how many distinct trajectories lead to that final position. Thus, the entire random walk is **combinatorially governed** by the structure of the binomial coefficients.
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
 ## 🧩 Pascal’s Triangle
 
-**Pascal’s Triangle** provides a recursive representation of the binomial coefficients.  
-Each row \( n \) corresponds to all coefficients \( \binom{n}{K} \) for \( K = 0, 1, 2, \dots, n \), and satisfies the recurrence relation:
+**Pascal’s Triangle** provides a recursive representation of the binomial coefficients. Each row $$n$$ corresponds to all coefficients $$\binom{n}{K}$$ for $$\( K = 0, 1, 2, \dots, n \)$$, and satisfies the recurrence relation:
 
 $$
 \binom{n}{K} = \binom{n-1}{K} + \binom{n-1}{K-1}.
 $$
 
-Graphically, each element is the **sum of the two entries above it**, forming the triangular pattern.
-
-This structure reflects exactly how **random walks evolve**:
-- Each trajectory at step \( n \) can be reached either from the “up” branch (a previous secure week) or from the “down” branch (a breach).  
-- The total number of trajectories reaching a given score after \( n \) steps equals the sum of the counts of trajectories leading to the two possible prior states.
+Graphically, each element is the **sum of the two entries above it**, forming the triangular pattern. This structure reflects exactly how **random walks evolve**:
+- Each trajectory at step $$n$$ can be reached either from the “up” branch (a previous secure week) or from the “down” branch (a breach).  
+- The total number of trajectories reaching a given score after $$n$$ steps equals the sum of the counts of trajectories leading to the two possible prior states.
 
 Therefore, Pascal’s Triangle not only encodes binomial coefficients but also captures the **branching logic of stochastic processes** like Bernoulli trials and random walks.
 
@@ -134,15 +127,13 @@ $$
 (a + b)^n = \sum_{K=0}^{n} \binom{n}{K} a^K b^{n-K}.
 $$
 
-If we substitute \( a = q \) and \( b = (1 - q) \), we obtain:
+If we substitute $$a = q$$ and $$b = (1 - q)$$, we obtain:
 
 $$
 (q + (1 - q))^n = \sum_{K=0}^{n} \binom{n}{K} q^K (1 - q)^{n-K}.
 $$
 
-The right-hand side represents the **probability distribution** of the number of secure weeks \( K \) — that is, the **Binomial distribution**.
-
-This direct connection shows that:
+The right-hand side represents the **probability distribution** of the number of secure weeks $$K$$ — that is, the **Binomial distribution**. This direct connection shows that:
 - The **random walk histogram** is a discrete representation of the binomial expansion.
 - The **empirical frequencies** observed in the simulation approximate the theoretical binomial probabilities.
 
@@ -152,21 +143,18 @@ In large samples, these empirical frequencies converge to the theoretical values
 
 ## 🌀 Fibonacci Sequence Connection
 
-When a random walk is **restricted** — for example, when the system cannot go below zero (an “absorbing boundary” scenario) — the number of valid trajectories becomes related to the **Fibonacci sequence**.
-
-To understand why, consider a process where the system can take one or two steps at a time but cannot cross the lower boundary.  
-The number of distinct paths to reach a given point satisfies the recurrence:
+When a random walk is **restricted** — for example, when the system cannot go below zero (an “absorbing boundary” scenario) — the number of valid trajectories becomes related to the **Fibonacci sequence**. To understand why, consider a process where the system can take one or two steps at a time but cannot cross the lower boundary. The number of distinct paths to reach a given point satisfies the recurrence:
 
 $$
 F_{n+1} = F_n + F_{n-1},
 $$
 
-with initial conditions \( F_1 = 1 \), \( F_2 = 1 \).
+with initial conditions $$F_1 = 1, F_2 = 1$$.
 
 This is precisely the **Fibonacci recurrence**, and it emerges in constrained random walks, queueing theory, and network reliability models.  
 Each new path can be constructed either by:
-- Extending a path that ended one step earlier, or  
-- Extending a path that ended two steps earlier.
+- Extending a path that ended one step earlier  
+- Extending a path that ended two steps earlier
 
 Hence, Fibonacci-like growth appears naturally when **combinatorial restrictions** are imposed on stochastic or recursive systems — a fascinating intersection between **combinatorics**, **recurrence relations**, and **probability theory**.
 
