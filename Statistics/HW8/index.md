@@ -105,7 +105,7 @@ Each possible outcome of the random walk — each final score $$S_n = 2K - n$$ �
 
 ## 🧩 Pascal’s Triangle
 
-**Pascal’s Triangle** provides a recursive representation of the binomial coefficients. Each row $$n$$ corresponds to all coefficients $$\binom{n}{K}$$ for $$\( K = 0, 1, 2, \dots, n \)$$, and satisfies the recurrence relation:
+**Pascal’s Triangle** provides a recursive representation of the binomial coefficients. Each row $$n$$ corresponds to all coefficients $$\binom{n}{K}$$ for $$K = 0, 1, 2, \dots, n$$, and satisfies the recurrence relation:
 
 $$
 \binom{n}{K} = \binom{n-1}{K} + \binom{n-1}{K-1}.
