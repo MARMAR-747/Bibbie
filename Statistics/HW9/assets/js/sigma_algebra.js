@@ -24,4 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   A.addEventListener("mouseleave", reset);
 
   // Hover A^c → dim A
-  Ac.addEventListener("mouseenter", focu
+  Ac.addEventListener("mouseenter", focusAc);
+  Ac.addEventListener("mouseleave", reset);
+});
