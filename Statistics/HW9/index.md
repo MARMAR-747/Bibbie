@@ -517,84 +517,8 @@ Click on A, B, or the overlap to highlight the corresponding term in the formula
 <!-- JAVASCRIPT FOR INTERACTIVITY                                    -->
 <!-- =============================================================== -->
 
-<script>
-// Sigma-algebra hover effect
-document.addEventListener("DOMContentLoaded", () => {
-  const A = document.getElementById("setA");
-  const Ac = document.getElementById("setAc");
-
-  if (A && Ac) {
-    A.addEventListener("mouseenter", () => Ac.style.opacity = "0.3");
-    A.addEventListener("mouseleave", () => Ac.style.opacity = "1");
-
-    Ac.addEventListener("mouseenter", () => A.style.opacity = "0.3");
-    Ac.addEventListener("mouseleave", () => A.style.opacity = "1");
-  }
-});
-</script>
-
-<script>
-// Inclusion–Exclusion interactive Venn
-document.addEventListener("DOMContentLoaded", () => {
-  const A = document.getElementById("vennA");
-  const B = document.getElementById("vennB");
-  const svg = document.getElementById("vennSVG");
-  const formula = document.getElementById("inExFormula");
-
-  if (!A || !B || !svg || !formula) return;
-
-  function renderLatex(latex){
-    formula.innerHTML = "$$" + latex + "$$";
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      MathJax.typesetPromise();
-    }
-  }
-
-  // Click A
-  A.addEventListener("click", e => {
-    A.style.opacity = "1";
-    B.style.opacity = "0.3";
-    renderLatex("P(A)");
-    e.stopPropagation();
-  });
-
-  // Click B
-  B.addEventListener("click", e => {
-    A.style.opacity = "0.3";
-    B.style.opacity = "1";
-    renderLatex("P(B)");
-    e.stopPropagation();
-  });
-
-  // Click: check if inside both => intersection
-  svg.addEventListener("click", (e) => {
-    const rect = svg.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const sx = svg.viewBox.baseVal.width / rect.width;
-    const sy = svg.viewBox.baseVal.height / rect.height;
-    const X = x * sx;
-    const Y = y * sy;
-
-    const inA = (X-75)**2 + (Y-75)**2 <= 50**2;
-    const inB = (X-125)**2 + (Y-75)**2 <= 50**2;
-
-    if (inA && inB) {
-      A.style.opacity = "1";
-      B.style.opacity = "1";
-      renderLatex("P(A \\\\cap B)");
-    }
-  });
-
-  // Double-click reset
-  svg.addEventListener("dblclick", () => {
-    A.style.opacity = "1";
-    B.style.opacity = "1";
-    renderLatex("P(A\\\\cup B)=P(A)+P(B)-P(A\\\\cap B)");
-  });
-});
-</script>
+<script src="{{ 'Statistics/HW9/assets/js/sigma_algebra.js' | relative_url }}"></script>
+<script src="{{ 'Statistics/HW9/assets/js/inclusion_exclusion.js' | relative_url }}"></script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
