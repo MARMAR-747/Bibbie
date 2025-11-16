@@ -267,3 +267,35 @@ pre.typewriter {
   background: linear-gradient(to right, transparent, #666, transparent);
 }
 
+/* Premium Definition/Theorem Box */
+.prob-premium-box {
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(80,130,255,0.12), rgba(80,200,255,0.12));
+  border-left: 6px solid #5a93ff;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .prob-premium-box {
+  background: linear-gradient(135deg, rgba(80,130,255,0.15), rgba(80,200,255,0.18));
+  border-left-color: #8ab4ff;
+}
+
+.prob-premium-title {
+  background: rgba(90,150,255,0.25);
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+[data-theme="dark"] .prob-premium-title {
+  background: rgba(90,150,255,0.32);
+}
+
+.prob-premium-content {
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
