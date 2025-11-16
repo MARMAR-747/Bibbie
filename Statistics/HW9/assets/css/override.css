@@ -168,3 +168,102 @@ pre.typewriter {
   word-break: break-all;
   hyphens: none;
 }
+
+/* ============================================================
+   Probability Homework — Enhanced Styling (safe for override.css)
+   Namespace: prob-*
+   ============================================================ */
+
+/* --- Section Titles --- */
+.prob-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Optional emoji bubble */
+.prob-emoji {
+  font-size: 1.9rem;
+}
+
+/* --- Subtitles --- */
+.prob-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Definition Boxes --- */
+.prob-box {
+  border-left: 5px solid var(--accent-color, #4a90e2);
+  padding: 12px 16px;
+  margin: 1.2rem 0;
+  background: rgba(0,0,0,0.03);
+  border-radius: 6px;
+}
+
+.prob-box strong {
+  font-weight: 700;
+}
+
+/* Adjust for dark mode (your theme supports auto-switching) */
+[data-theme="dark"] .prob-box {
+  background: rgba(255,255,255,0.06);
+  border-left-color: #71b4ff;
+}
+
+/* --- Highlighted Math Block --- */
+.prob-math {
+  padding: 12px 16px;
+  margin: 1.2rem 0;
+  background: rgba(255,255,255,0.55);
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .prob-math {
+  background: rgba(0,0,0,0.35);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* --- Clean List Styles --- */
+.prob-list {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.prob-list li {
+  margin: 0.4rem 0;
+  line-height: 1.55;
+}
+
+/* --- Quote Bubble --- */
+.prob-quote {
+  border-left: 4px solid #888;
+  padding-left: 14px;
+  margin: 1.2rem 0;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Dark mode */
+[data-theme="dark"] .prob-quote {
+  border-left-color: #ccc;
+}
+
+/* --- Horizontal separator with soft shadow --- */
+.prob-separator {
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(to right, transparent, #bbb, transparent);
+}
+
+[data-theme="dark"] .prob-separator {
+  background: linear-gradient(to right, transparent, #666, transparent);
+}
+
