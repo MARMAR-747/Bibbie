@@ -99,6 +99,12 @@ nav_exclude: true
       <td style="text-align: center;"><a href="HW8/">📄 HMWK</a></td>
       <td style="text-align: center;">13/11/25</td>
     </tr>
+    <tr>
+      <td style="text-align: center;">9</td>
+      <td style="text-align: left;">TBD</td>
+      <td style="text-align: center;"><a href="HW9/">📄 HMWK</a></td>
+      <td style="text-align: center;">20/11/25</td>
+    </tr>
   </tbody>
 </table>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
