@@ -1,29 +1,31 @@
-// Interactive effect for sigma-algebra diagram (A and A^c inside Ω)
-document.addEventListener("DOMContentLoaded", () => {
-  const A = document.getElementById("setA");
-  const Ac = document.getElementById("setAc");
+<script>
+  (function () {
+    const A   = document.getElementById('sigmaA');
+    const Ac  = document.getElementById('sigmaAc');
+    const hint = document.getElementById('sigmaHint');
 
-  if (!A || !Ac) return;
+    function clear() {
+      A.classList.remove('highlight');
+      Ac.classList.remove('highlight');
+      hint.textContent =
+        'Hover over A or A^c to highlight their complementarity inside Ω.';
+    }
 
-  // Helper: highlight one, dim the other
-  function focusA() {
-    A.style.opacity = "1";
-    Ac.style.opacity = "0.3";
-  }
-  function focusAc() {
-    A.style.opacity = "0.3";
-    Ac.style.opacity = "1";
-  }
-  function reset() {
-    A.style.opacity = "1";
-    Ac.style.opacity = "1";
-  }
+    A.addEventListener('mouseenter', () => {
+      A.classList.add('highlight');
+      Ac.classList.remove('highlight');
+      hint.textContent = 'A is highlighted (in red), its complement A^c is everything else inside Ω.';
+    });
 
-  // Hover A → dim A^c
-  A.addEventListener("mouseenter", focusA);
-  A.addEventListener("mouseleave", reset);
+    Ac.addEventListener('mouseenter', () => {
+      Ac.classList.add('highlight');
+      A.classList.remove('highlight');
+      hint.textContent = 'A^c is highlighted (in green), its complement A is the red region.';
+    });
 
-  // Hover A^c → dim A
-  Ac.addEventListener("mouseenter", focusAc);
-  Ac.addEventListener("mouseleave", reset);
-});
+    ['mouseleave', 'mouseout'].forEach(ev => {
+      A.addEventListener(ev, clear);
+      Ac.addEventListener(ev, clear);
+    });
+  })();
+</script>
