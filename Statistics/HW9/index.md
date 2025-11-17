@@ -297,33 +297,6 @@ From a modern perspective, probability theory is simply <strong>measure theory w
 Intuitively, $\mathcal{F}$ is the collection of “events” to which we are allowed to assign probabilities. Closure under complements and countable unions ensures that standard set operations produce events that are still measurable.
 </p>
 
-<h2>Interactive Sigma–Algebra Diagram</h2>
-
-<link rel="stylesheet" href="assets/css/sigma.css">
-
-<svg id="sigmaDiagram" class="sigma-svg" viewBox="0 0 600 350">
-  <!-- Ω -->
-  <rect x="40" y="40" width="520" height="270" rx="25"
-        fill="#e9f1ff" stroke="#4285f4" stroke-width="6"/>
-  <text x="300" y="80" text-anchor="middle" font-size="32">Ω</text>
-
-  <!-- A -->
-  <ellipse id="sigmaA" class="sigma-region sigma-A"
-           cx="260" cy="200" rx="120" ry="85"/>
-  <text x="260" y="205" text-anchor="middle" font-size="26">A</text>
-
-  <!-- Ac -->
-  <ellipse id="sigmaAc" class="sigma-region sigma-Ac"
-           cx="360" cy="200" rx="120" ry="85"/>
-  <text x="360" y="205" text-anchor="middle" font-size="26">
-    A<tspan baseline-shift="super" font-size="60%">c</tspan>
-  </text>
-</svg>
-
-<p id="sigmaHint"></p>
-
-<script src="{{ 'Statistics/HW9/assets/js/sigma_algebra.js' | relative_url }}"></script>
-
 <h3 class="prob-subtitle">3.2 Probability Measure</h3>
 
 <div class="prob-premium-box">
@@ -482,22 +455,6 @@ Another key identity is the inclusion–exclusion formula for two events, which 
     This proves the inclusion–exclusion principle for two events.
   </p>
 </div>
-
-<h2>Interactive Venn Diagram</h2>
-
-<link rel="stylesheet" href="assets/css/venn.css">
-
-<svg id="vennDiagram" class="venn-svg" viewBox="0 0 500 320">
-  <circle id="vennA" class="venn-circle venn-A" cx="200" cy="160" r="110"></circle>
-  <circle id="vennB" class="venn-circle venn-B" cx="300" cy="160" r="110"></circle>
-
-  <text x="200" y="165" text-anchor="middle" font-size="32">A</text>
-  <text x="300" y="165" text-anchor="middle" font-size="32">B</text>
-</svg>
-
-<p id="vennFormula"></p>
-
-<script src="{{ 'Statistics/HW9/assets/js/inclusion_exclusion.js' | relative_url }}"></script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
