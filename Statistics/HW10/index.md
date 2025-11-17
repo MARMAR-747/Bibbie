@@ -31,7 +31,7 @@ nav_exclude: true
   });
 </script>
 
-## 🎲 HW10 — Realtime Poisson Counting Process Simulation
+## 🎲 Realtime Poisson Counting Process Simulation
 
 <div class="poi-panel">
   <div class="poi-controls">
