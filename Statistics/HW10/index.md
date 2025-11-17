@@ -31,57 +31,141 @@ nav_exclude: true
   });
 </script>
 
-## 🔢 HW10 – Bernoulli Approximation of a Poisson Counting Process
+## 🎲 HW10 — Realtime Poisson Counting Process Simulation
 
-<p>
-Simulate a counting process on <strong>[0, T]</strong> by splitting the interval into
-<code>n</code> small subintervals and generating an event in each one with probability
-<code>λ · T / n</code>. The resulting cumulative counts approximate a
-<strong>Poisson process</strong> with rate λ, and the number of events in [0, T]
-approaches a <strong>Poisson(λT)</strong> distribution.
-</p>
+<div class="poi-panel">
+  <div class="poi-controls">
+    <div class="control">
+      <label for="TInput">Time horizon \(T\)</label>
+      <input id="TInput" type="number" value="1" step="0.1" min="0.1">
+    </div>
+    <div class="control">
+      <label for="lambdaInput">Rate \(\lambda\)</label>
+      <input id="lambdaInput" type="number" value="5" step="0.5" min="0.1">
+    </div>
+    <div class="control">
+      <label for="nInput">Subintervals \(n\)</label>
+      <input id="nInput" type="number" value="1000" min="50" step="50">
+    </div>
+    <div class="control">
+      <label for="pathsInput">Visible trajectories</label>
+      <input id="pathsInput" type="number" value="5" min="1" max="40">
+    </div>
+    <div class="control">
+      <label for="runsInput">Paths for histogram</label>
+      <input id="runsInput" type="number" value="2000" min="100">
+    </div>
+  </div>
 
-<div style="margin:12px 0; display:grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap:10px; max-width:820px;">
-  <label>Time horizon T:
-    <input id="TInput" type="number" value="1" step="0.1" min="0.1">
-  </label>
-  <label>Rate λ:
-    <input id="lambdaInput" type="number" value="5" step="0.5" min="0.1">
-  </label>
-  <label>Subintervals n:
-    <input id="nInput" type="number" value="5000" min="10" step="100">
-  </label>
-  <label>Visible trajectories:
-    <input id="pathsInput" type="number" value="5" min="1" max="20">
-  </label>
-  <label>Paths for histogram:
-    <input id="runsInput" type="number" value="2000" min="100">
-  </label>
+  <div class="poi-actions">
+    <button id="poiStartBtn">▶ Start</button>
+    <button id="poiToggleBtn">⏸ Pause</button>
+    <button id="poiResetBtn">🧹 Reset</button>
+  </div>
 </div>
 
-<button id="runPoissonBtn">▶ Run simulation</button>
+<pre id="poissonInfo" class="poi-info"></pre>
 
-<pre id="poissonInfo" style="
-  margin-top:10px;
-  background:#111;
-  color:#0f0;
-  padding:10px;
-  border-radius:8px;
-  max-width:820px;
-  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  white-space:pre-wrap;
-"></pre>
+<h3>Sample trajectories of the counting process \(N(t)\)</h3>
+<canvas id="poissonTrajCanvas" class="poi-canvas"></canvas>
 
-<h3>Sample trajectories of the counting process N(t)</h3>
-<canvas id="poissonTrajCanvas" style="max-width:820px;"></canvas>
+<h3 style="margin-top:1.2rem;">Distribution of \(N(T)\)</h3>
+<canvas id="poissonHistCanvas" class="poi-canvas"></canvas>
 
-<h3 style="margin-top:18px;">Distribution of N(T)</h3>
-<canvas id="poissonHistCanvas" style="max-width:820px;"></canvas>
+<h3>🧠 Theoretical interpretation</h3>
 
-<!-- Chart.js + your HW10 JS -->
+<p>
+  We divide the time interval \([0, T]\) into \(n\) small subintervals of length
+</p>
+
+<p>
+  $$
+  \Delta t = \frac{T}{n}
+  $$
+</p>
+
+<p>
+  and in each subinterval we generate at most one event with probability
+</p>
+
+<p>
+  $$
+  p = \lambda \,\Delta t.
+  $$
+</p>
+
+<p>
+  This is a <strong>Bernoulli approximation</strong> of a counting process.
+  Let \(N(t)\) be the cumulative number of events up to time \(t\).
+  For each fixed \(T\):
+</p>
+
+<ul>
+  <li>The total number of events \(N(T)\) is approximately the sum of \(n\) independent Bernoulli\((p)\) variables.</li>
+  <li>
+    As \(n \to \infty\) and \(\Delta t \to 0\) with \(\lambda\) fixed,
+    the law of \(N(T)\) converges to a <strong>Poisson distribution</strong> with mean \(\lambda T\):
+    $$
+    N(T) \;\overset{d}{\longrightarrow}\; \mathrm{Poisson}(\lambda T).
+    $$
+  </li>
+</ul>
+
+<p>
+  The limiting process \(\{N(t), t \ge 0\}\) is called a
+  <strong>Poisson counting process</strong> with rate \(\lambda\).
+  It has the following key properties:
+</p>
+
+<ul>
+  <li>\(N(0) = 0\).</li>
+  <li><strong>Independent increments</strong>: for disjoint intervals, the increments of \(N(t)\) are independent.</li>
+  <li>
+    <strong>Stationary increments</strong>: for any \(t \ge 0\) and \(h &gt; 0\),
+    $$
+    N(t + h) - N(t) \sim \mathrm{Poisson}(\lambda h).
+    $$
+  </li>
+</ul>
+
+<p>
+  In particular,
+</p>
+
+<p>
+  $$
+  \mathbb{E}[N(t)] = \lambda t,
+  \qquad
+  \mathrm{Var}(N(t)) = \lambda t.
+  $$
+</p>
+
+<p>
+  The parameter \(\lambda\) is the <strong>intensity</strong> or <strong>rate</strong> of the process:
+</p>
+
+<ul>
+  <li>\(\lambda\) is the <strong>expected number of events per unit time</strong>.</li>
+  <li>\(\lambda T\) is the expected number of events in the whole interval \([0, T]\).</li>
+  <li>A larger \(\lambda\) produces trajectories that climb faster and histograms centered around higher values of \(N(T)\).</li>
+</ul>
+
+<p>
+  In our simulation:
+</p>
+
+<ul>
+  <li>The <strong>step–like trajectories</strong> illustrate the random evolution of \(N(t)\) over time.</li>
+  <li>
+    The <strong>empirical histogram</strong> of \(N(T)\) gradually approaches the
+    <strong>Poisson\((\lambda T)\)</strong> probability mass function (orange curve)
+    as the number of simulated paths increases.
+  </li>
+</ul>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
-  import { initPoissonUI } from "{{ 'Statistics/HW10/assets/js/hw10_poisson.js' | relative_url }}";
+  import { initPoissonUI } from "{{ 'Statistics/HW10/assets/js/hw10_poisson_rt.js' | relative_url }}";
 
   initPoissonUI({
     ids: {
@@ -90,7 +174,9 @@ approaches a <strong>Poisson(λT)</strong> distribution.
       nInput: 'nInput',
       pathsInput: 'pathsInput',
       runsInput: 'runsInput',
-      runBtn: 'runPoissonBtn',
+      startBtn: 'poiStartBtn',
+      toggleBtn: 'poiToggleBtn',
+      resetBtn: 'poiResetBtn',
       infoBoxId: 'poissonInfo',
       trajCanvasId: 'poissonTrajCanvas',
       histCanvasId: 'poissonHistCanvas'
@@ -98,9 +184,10 @@ approaches a <strong>Poisson(λT)</strong> distribution.
     defaults: {
       T: 1,
       lambda: 5,
-      n: 5000,
+      n: 1000,
       visiblePaths: 5,
-      runs: 2000
+      runs: 2000,
+      tickMs: 40
     }
   });
 </script>
