@@ -31,7 +31,24 @@ nav_exclude: true
   });
 </script>
 
-## 🎲 Realtime Poisson Counting Process Simulation
+<div class="hw10-header">
+
+  <div class="hw10-badge">Homework 10</div>
+
+  <h1 class="hw10-title">
+    📊 Poisson Counting Process Simulation  
+    <span class="hw10-subtitle">Discrete Bernoulli approximation → Continuous-time stochastic process</span>
+  </h1>
+
+  <p class="hw10-intro">
+    This homework explores how a simple discrete-time construction—splitting a time interval
+    into many small Bernoulli trials—converges to the continuous-time
+    <strong>Poisson counting process</strong> with rate \(\lambda\).
+    The simulation below unfolds in real time, showing event occurrences, trajectory shapes,
+    and convergence of the distribution of \(N(T)\) to the theoretical Poisson law.
+  </p>
+
+</div>
 
 <div class="poi-panel">
   <div class="poi-controls">
