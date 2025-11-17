@@ -31,26 +31,79 @@ nav_exclude: true
   });
 </script>
 
-# 🔗 Connections between HW4 and HW7
+## 🔢 HW10 – Bernoulli Approximation of a Poisson Counting Process
 
-<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+<p>
+Simulate a counting process on <strong>[0, T]</strong> by splitting the interval into
+<code>n</code> small subintervals and generating an event in each one with probability
+<code>λ · T / n</code>. The resulting cumulative counts approximate a
+<strong>Poisson process</strong> with rate λ, and the number of events in [0, T]
+approaches a <strong>Poisson(λT)</strong> distribution.
+</p>
 
-## 🌀 Fibonacci Sequence Connection
+<div style="margin:12px 0; display:grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap:10px; max-width:820px;">
+  <label>Time horizon T:
+    <input id="TInput" type="number" value="1" step="0.1" min="0.1">
+  </label>
+  <label>Rate λ:
+    <input id="lambdaInput" type="number" value="5" step="0.5" min="0.1">
+  </label>
+  <label>Subintervals n:
+    <input id="nInput" type="number" value="5000" min="10" step="100">
+  </label>
+  <label>Visible trajectories:
+    <input id="pathsInput" type="number" value="5" min="1" max="20">
+  </label>
+  <label>Paths for histogram:
+    <input id="runsInput" type="number" value="2000" min="100">
+  </label>
+</div>
 
-When a random walk is **restricted** — for example, when the system cannot go below zero (an “absorbing boundary” scenario) — the number of valid trajectories becomes related to the **Fibonacci sequence**. To understand why, consider a process where the system can take one or two steps at a time but cannot cross the lower boundary. The number of distinct paths to reach a given point satisfies the recurrence:
+<button id="runPoissonBtn">▶ Run simulation</button>
 
-$$
-F_{n+1} = F_n + F_{n-1},
-$$
+<pre id="poissonInfo" style="
+  margin-top:10px;
+  background:#111;
+  color:#0f0;
+  padding:10px;
+  border-radius:8px;
+  max-width:820px;
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space:pre-wrap;
+"></pre>
 
-with initial conditions $$F_1 = 1, F_2 = 1$$.
+<h3>Sample trajectories of the counting process N(t)</h3>
+<canvas id="poissonTrajCanvas" style="max-width:820px;"></canvas>
 
-This is precisely the **Fibonacci recurrence**, and it emerges in constrained random walks, queueing theory, and network reliability models.  
-Each new path can be constructed either by:
-- Extending a path that ended one step earlier  
-- Extending a path that ended two steps earlier
+<h3 style="margin-top:18px;">Distribution of N(T)</h3>
+<canvas id="poissonHistCanvas" style="max-width:820px;"></canvas>
 
-Hence, Fibonacci-like growth appears naturally when **combinatorial restrictions** are imposed on stochastic or recursive systems — a fascinating intersection between **combinatorics**, **recurrence relations**, and **probability theory**.
+<!-- Chart.js + your HW10 JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { initPoissonUI } from "{{ 'Statistics/HW10/assets/js/hw10_poisson.js' | relative_url }}";
+
+  initPoissonUI({
+    ids: {
+      TInput: 'TInput',
+      lambdaInput: 'lambdaInput',
+      nInput: 'nInput',
+      pathsInput: 'pathsInput',
+      runsInput: 'runsInput',
+      runBtn: 'runPoissonBtn',
+      infoBoxId: 'poissonInfo',
+      trajCanvasId: 'poissonTrajCanvas',
+      histCanvasId: 'poissonHistCanvas'
+    },
+    defaults: {
+      T: 1,
+      lambda: 5,
+      n: 5000,
+      visiblePaths: 5,
+      runs: 2000
+    }
+  });
+</script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
