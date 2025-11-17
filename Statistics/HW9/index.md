@@ -299,45 +299,30 @@ Intuitively, $\mathcal{F}$ is the collection of “events” to which we are all
 
 <h2>Interactive Sigma–Algebra Diagram</h2>
 
-<style>
-  .sigma-svg {
-    max-width: 600px;
-    display: block;
-  }
-  .sigma-region {
-    transition: fill 0.2s, stroke-width 0.2s;
-  }
-  .sigma-A  { fill: rgba(255, 99, 132, 0.3); stroke: #ff6384; }
-  .sigma-Ac { fill: rgba(75, 192, 192, 0.3); stroke: #4bc0c0; }
-  .sigma-A.highlight  { fill: rgba(255, 99, 132, 0.6); stroke-width: 3; }
-  .sigma-Ac.highlight { fill: rgba(75, 192, 192, 0.6); stroke-width: 3; }
-</style>
+<link rel="stylesheet" href="assets/css/sigma.css">
 
 <svg id="sigmaDiagram" class="sigma-svg" viewBox="0 0 600 350">
-  <!-- Big rectangle = Ω -->
+  <!-- Ω -->
   <rect x="40" y="40" width="520" height="270" rx="25"
         fill="#e9f1ff" stroke="#4285f4" stroke-width="6"/>
   <text x="300" y="80" text-anchor="middle" font-size="32">Ω</text>
 
-  <!-- A (left oval) -->
+  <!-- A -->
   <ellipse id="sigmaA" class="sigma-region sigma-A"
            cx="260" cy="200" rx="120" ry="85"/>
+  <text x="260" y="205" text-anchor="middle" font-size="26">A</text>
 
-  <!-- A^c (right oval for visualization; complementary colour) -->
+  <!-- Ac -->
   <ellipse id="sigmaAc" class="sigma-region sigma-Ac"
            cx="360" cy="200" rx="120" ry="85"/>
-
-  <!-- Labels inside the ovals -->
-  <text x="260" y="205" text-anchor="middle" font-size="26">A</text>
   <text x="360" y="205" text-anchor="middle" font-size="26">
     A<tspan baseline-shift="super" font-size="60%">c</tspan>
   </text>
 </svg>
 
-<p id="sigmaHint" style="max-width:600px;">
-  Hover over <strong>A</strong> or <strong>A<tspan style="vertical-align:super;font-size:0.8em;">c</span></strong>
-  to highlight their complementarity inside Ω.
-</p>
+<p id="sigmaHint"></p>
+
+<script src="{{ 'Statistics/HW9/assets/js/sigma_algebra.js' | relative_url }}"></script>
 
 <h3 class="prob-subtitle">3.2 Probability Measure</h3>
 
@@ -500,44 +485,18 @@ Another key identity is the inclusion–exclusion formula for two events, which 
 
 <h2>Interactive Venn Diagram</h2>
 
-<style>
-  .venn-svg {
-    max-width: 500px;
-    display: block;
-  }
-  .venn-circle {
-    fill-opacity: 0.25;
-    stroke-width: 3;
-  }
-  .venn-A { fill: #ff6384; stroke: #ff6384; }
-  .venn-B { fill: #36a2eb; stroke: #36a2eb; }
-
-  .venn-highlight {
-    fill-opacity: 0.55 !important;
-  }
-</style>
+<link rel="stylesheet" href="assets/css/venn.css">
 
 <svg id="vennDiagram" class="venn-svg" viewBox="0 0 500 320">
-  <!-- A circle -->
   <circle id="vennA" class="venn-circle venn-A" cx="200" cy="160" r="110"></circle>
-  <!-- B circle -->
   <circle id="vennB" class="venn-circle venn-B" cx="300" cy="160" r="110"></circle>
 
-  <!-- labels -->
   <text x="200" y="165" text-anchor="middle" font-size="32">A</text>
   <text x="300" y="165" text-anchor="middle" font-size="32">B</text>
 </svg>
 
-<p id="vennFormula" style="font-size:1.1rem;">
-  Click inside A, B, or the overlap to highlight the corresponding region.<br>
-  Double-click anywhere to reset.
-</p>
+<p id="vennFormula"></p>
 
-<!-- =============================================================== -->
-<!-- JAVASCRIPT FOR INTERACTIVITY                                    -->
-<!-- =============================================================== -->
-
-<script src="{{ 'Statistics/HW9/assets/js/sigma_algebra.js' | relative_url }}"></script>
 <script src="{{ 'Statistics/HW9/assets/js/inclusion_exclusion.js' | relative_url }}"></script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
