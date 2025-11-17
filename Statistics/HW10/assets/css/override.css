@@ -168,3 +168,83 @@ pre.typewriter {
   word-break: break-all;
   hyphens: none;
 }
+
+/* ===================== HW10 Poisson UI ===================== */
+
+.poi-panel {
+  margin: 14px 0;
+}
+
+.poi-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+  gap: 10px 14px;
+  max-width: 880px;
+}
+
+.poi-controls .control label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.poi-controls .control input[type="number"] {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #d0d0d0);
+  background: var(--bg, #fff);
+}
+
+.poi-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.poi-actions button {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #d0d0d0);
+  background: var(--bg, #fafafa);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.poi-actions button:hover {
+  background: #f1f1f1;
+}
+
+.poi-info {
+  background: #111;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 880px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.poi-canvas {
+  max-width: 880px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* mobile */
+@media (max-width: 820px) {
+  .poi-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: #2b2b2b;
+    --bg: #151515;
+  }
+}
+
