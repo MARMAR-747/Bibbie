@@ -187,7 +187,7 @@ nav_exclude: true
       n: 1000,
       visiblePaths: 5,
       runs: 2000,
-      tickMs: 10
+      tickMs: 5
     }
   });
 </script>
