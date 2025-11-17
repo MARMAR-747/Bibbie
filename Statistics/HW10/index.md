@@ -72,96 +72,158 @@ nav_exclude: true
 <h3 style="margin-top:1.2rem;">Distribution of \(N(T)\)</h3>
 <canvas id="poissonHistCanvas" class="poi-canvas"></canvas>
 
-<h3>🧠 Theoretical interpretation</h3>
+<div class="hw10-expl">
 
-<p>
-  We divide the time interval \([0, T]\) into \(n\) small subintervals of length
-</p>
+  <div class="expl-header">
+    <span class="expl-badge">Theory</span>
+    <h3>🧠 What are we simulating here?</h3>
+    <p>
+      We consider a counting process on the time interval \([0, T]\), where events occur
+      at a constant average rate \(\lambda\) per unit time. This situation naturally leads
+      to a <strong>Poisson counting process</strong>.
+    </p>
+  </div>
 
-<p>
-  $$
-  \Delta t = \frac{T}{n}
-  $$
-</p>
+  <div class="expl-section">
+    <h4>⏱ Discretizing time</h4>
+    <p>
+      To simulate the process on a computer, we <strong>discretize time</strong>:
+    </p>
+    <p class="expl-formula">
+      $$
+      \Delta t = \frac{T}{n}, \qquad n \text{ large (e.g. } n = 1000 \text{ or more)}
+      $$
+    </p>
+    <p>
+      and in each small subinterval we allow at most one event, with probability
+    </p>
+    <p class="expl-formula">
+      $$
+      p = \lambda\,\Delta t.
+      $$
+    </p>
+    <p>
+      Each subinterval behaves like a <strong>Bernoulli trial</strong>:
+      either “event” (\(1\)) with probability \(p\), or “no event” (\(0\)) with probability \(1-p\).
+      The counting process \(N(t)\) is then the running sum of these Bernoulli outcomes.
+    </p>
+  </div>
 
-<p>
-  and in each subinterval we generate at most one event with probability
-</p>
+  <div class="expl-section expl-highlight">
+    <h4>📈 From Bernoulli sums to a Poisson process</h4>
+    <p>
+      Fix a final time \(T\). If we sum the events over all \(n\) subintervals, we get
+      an approximate total number of events:
+    </p>
+    <p class="expl-formula">
+      $$
+      N(T) \approx \sum_{k=1}^{n} X_k,
+      $$
+    </p>
+    <p>
+      where \(X_k \sim \text{Bernoulli}(p)\) and the \(X_k\)'s are independent.
+      For large \(n\), with \(\Delta t = T/n\) and \(p = \lambda \Delta t\), the distribution of
+      \(N(T)\) converges to a <strong>Poisson distribution</strong> with mean \(\lambda T\):
+    </p>
+    <p class="expl-formula">
+      $$
+      N(T) \;\overset{d}{\longrightarrow}\; \mathrm{Poisson}(\lambda T).
+      $$
+    </p>
+    <p>
+      When we repeat the whole simulation many times, the empirical histogram of \(N(T)\)
+      (blue bars) gets closer and closer to the <strong>Poisson\((\lambda T)\)</strong> curve
+      (orange line).
+    </p>
+  </div>
 
-<p>
-  $$
-  p = \lambda \,\Delta t.
-  $$
-</p>
+  <div class="expl-section">
+    <h4>🔍 Properties of the Poisson counting process</h4>
+    <div class="expl-grid">
+      <div>
+        <ul>
+          <li>\(N(0) = 0\).</li>
+          <li>
+            <strong>Independent increments</strong>:
+            the numbers of events in disjoint time intervals are independent.
+          </li>
+          <li>
+            <strong>Stationary increments</strong>:
+            only the length of the interval matters.
+            For any \(t \ge 0\) and \(h &gt; 0\),
+            $$
+            N(t+h) - N(t) \sim \mathrm{Poisson}(\lambda h).
+            $$
+          </li>
+        </ul>
+      </div>
+      <div class="expl-box">
+        <p class="expl-box-title">Mean and variance</p>
+        <p class="expl-formula">
+          $$
+          \mathbb{E}[N(t)] = \lambda t,
+          \qquad
+          \mathrm{Var}(N(t)) = \lambda t.
+          $$
+        </p>
+        <p>
+          This “mean = variance” identity is a distinctive fingerprint
+          of the Poisson family.
+        </p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  This is a <strong>Bernoulli approximation</strong> of a counting process.
-  Let \(N(t)\) be the cumulative number of events up to time \(t\).
-  For each fixed \(T\):
-</p>
+  <div class="expl-section">
+    <h4>⚙️ What does the rate \(\lambda\) mean?</h4>
+    <div class="expl-grid">
+      <div>
+        <ul>
+          <li>\(\lambda\) is the <strong>average number of events per unit time</strong>.</li>
+          <li>\(\lambda T\) is the expected number of events in the whole interval \([0, T]\).</li>
+        </ul>
+      </div>
+      <div class="expl-box">
+        <p class="expl-box-title">Visual effect of \(\lambda\)</p>
+        <ul>
+          <li>
+            <strong>Large \(\lambda\)</strong>: trajectories of \(N(t)\) climb faster and look steeper;
+            the histogram of \(N(T)\) is centered at larger values.
+          </li>
+          <li>
+            <strong>Small \(\lambda\)</strong>: events are rare, many paths stay flat for long periods;
+            the histogram is concentrated on small counts (0, 1, 2…).
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <li>The total number of events \(N(T)\) is approximately the sum of \(n\) independent Bernoulli\((p)\) variables.</li>
-  <li>
-    As \(n \to \infty\) and \(\Delta t \to 0\) with \(\lambda\) fixed,
-    the law of \(N(T)\) converges to a <strong>Poisson distribution</strong> with mean \(\lambda T\):
-    $$
-    N(T) \;\overset{d}{\longrightarrow}\; \mathrm{Poisson}(\lambda T).
-    $$
-  </li>
-</ul>
+  <div class="expl-section">
+    <h4>👀 How to read the simulation</h4>
+    <ul>
+      <li>
+        The <strong>top chart</strong> shows several sample trajectories of \(N(t)\).
+        Each one is a step function that increases by 1 whenever an event occurs.
+      </li>
+      <li>
+        The <strong>bottom chart</strong> collects the final values \(N(T)\)
+        from many simulated paths and builds an empirical histogram.
+      </li>
+      <li>
+        The <strong>orange line</strong> is the theoretical Poisson\((\lambda T)\)
+        probability mass function. As more paths finish, the blue bars align better
+        with this curve.
+      </li>
+    </ul>
+    <p>
+      Together, these plots show how a simple discrete Bernoulli construction in
+      small time steps converges to a <strong>continuous-time Poisson counting process</strong>
+      with rate \(\lambda\).
+    </p>
+  </div>
 
-<p>
-  The limiting process \(\{N(t), t \ge 0\}\) is called a
-  <strong>Poisson counting process</strong> with rate \(\lambda\).
-  It has the following key properties:
-</p>
-
-<ul>
-  <li>\(N(0) = 0\).</li>
-  <li><strong>Independent increments</strong>: for disjoint intervals, the increments of \(N(t)\) are independent.</li>
-  <li>
-    <strong>Stationary increments</strong>: for any \(t \ge 0\) and \(h &gt; 0\),
-    $$
-    N(t + h) - N(t) \sim \mathrm{Poisson}(\lambda h).
-    $$
-  </li>
-</ul>
-
-<p>
-  In particular,
-</p>
-
-<p>
-  $$
-  \mathbb{E}[N(t)] = \lambda t,
-  \qquad
-  \mathrm{Var}(N(t)) = \lambda t.
-  $$
-</p>
-
-<p>
-  The parameter \(\lambda\) is the <strong>intensity</strong> or <strong>rate</strong> of the process:
-</p>
-
-<ul>
-  <li>\(\lambda\) is the <strong>expected number of events per unit time</strong>.</li>
-  <li>\(\lambda T\) is the expected number of events in the whole interval \([0, T]\).</li>
-  <li>A larger \(\lambda\) produces trajectories that climb faster and histograms centered around higher values of \(N(T)\).</li>
-</ul>
-
-<p>
-  In our simulation:
-</p>
-
-<ul>
-  <li>The <strong>step–like trajectories</strong> illustrate the random evolution of \(N(t)\) over time.</li>
-  <li>
-    The <strong>empirical histogram</strong> of \(N(T)\) gradually approaches the
-    <strong>Poisson\((\lambda T)\)</strong> probability mass function (orange curve)
-    as the number of simulated paths increases.
-  </li>
-</ul>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
