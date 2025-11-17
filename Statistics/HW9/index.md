@@ -297,29 +297,46 @@ From a modern perspective, probability theory is simply <strong>measure theory w
 Intuitively, $\mathcal{F}$ is the collection of “events” to which we are allowed to assign probabilities. Closure under complements and countable unions ensures that standard set operations produce events that are still measurable.
 </p>
 
-<h3 class="prob-subtitle"><span class="prob-emoji">🌀</span> Interactive Sigma-Algebra Diagram</h3>
+<h2>Interactive Sigma–Algebra Diagram</h2>
 
-<div id="sigmaDiagram" style="max-width:500px;margin:auto;">
-  <svg viewBox="0 0 300 200" style="width:100%;">
-    <rect x="10" y="10" width="280" height="180" rx="15" 
-          id="omegaBox"
-          fill="rgba(100,150,255,0.15)" stroke="#4a8ef5" stroke-width="3"></rect>
-    <text x="150" y="30" text-anchor="middle" font-size="18" fill="var(--textColor)">Ω</text>
+<style>
+  .sigma-svg {
+    max-width: 600px;
+    display: block;
+  }
+  .sigma-region {
+    transition: fill 0.2s, stroke-width 0.2s;
+  }
+  .sigma-A  { fill: rgba(255, 99, 132, 0.3); stroke: #ff6384; }
+  .sigma-Ac { fill: rgba(75, 192, 192, 0.3); stroke: #4bc0c0; }
+  .sigma-A.highlight  { fill: rgba(255, 99, 132, 0.6); stroke-width: 3; }
+  .sigma-Ac.highlight { fill: rgba(75, 192, 192, 0.6); stroke-width: 3; }
+</style>
 
-    <ellipse cx="120" cy="110" rx="60" ry="40"
-             id="setA"
-             fill="rgba(255,100,120,0.20)" stroke="#ff6f87" stroke-width="2"></ellipse>
-    <text x="120" y="115" text-anchor="middle" fill="var(--textColor)">A</text>
+<svg id="sigmaDiagram" class="sigma-svg" viewBox="0 0 600 350">
+  <!-- Big rectangle = Ω -->
+  <rect x="40" y="40" width="520" height="270" rx="25"
+        fill="#e9f1ff" stroke="#4285f4" stroke-width="6"/>
+  <text x="300" y="80" text-anchor="middle" font-size="32">Ω</text>
 
-    <ellipse cx="200" cy="110" rx="60" ry="40"
-             id="setAc"
-             fill="rgba(120,255,160,0.20)" stroke="#52cc7a" stroke-width="2"></ellipse>
-    <text x="200" y="115" text-anchor="middle" fill="var(--textColor)">A<sup>c</sup></text>
-  </svg>
-</div>
+  <!-- A (left oval) -->
+  <ellipse id="sigmaA" class="sigma-region sigma-A"
+           cx="260" cy="200" rx="120" ry="85"/>
 
-<p style="text-align:center;font-size:0.9rem;opacity:0.8;">
-Hover over A or A<sup>c</sup> to highlight their complementarity inside Ω.
+  <!-- A^c (right oval for visualization; complementary colour) -->
+  <ellipse id="sigmaAc" class="sigma-region sigma-Ac"
+           cx="360" cy="200" rx="120" ry="85"/>
+
+  <!-- Labels inside the ovals -->
+  <text x="260" y="205" text-anchor="middle" font-size="26">A</text>
+  <text x="360" y="205" text-anchor="middle" font-size="26">
+    A<tspan baseline-shift="super" font-size="60%">c</tspan>
+  </text>
+</svg>
+
+<p id="sigmaHint" style="max-width:600px;">
+  Hover over <strong>A</strong> or <strong>A<tspan style="vertical-align:super;font-size:0.8em;">c</span></strong>
+  to highlight their complementarity inside Ω.
 </p>
 
 <h3 class="prob-subtitle">3.2 Probability Measure</h3>
@@ -481,37 +498,40 @@ Another key identity is the inclusion–exclusion formula for two events, which 
   </p>
 </div>
 
-<h3 class="prob-subtitle"><span class="prob-emoji">🧩</span> Interactive Venn Diagram</h3>
+<h2>Interactive Venn Diagram</h2>
 
-<div id="vennContainer" style="max-width:350px;margin:auto;">
-  <svg id="vennSVG" viewBox="0 0 200 140" style="width:100%;">
-    <circle id="vennA" cx="75" cy="75" r="50"
-            fill="rgba(255,110,110,0.25)" stroke="#ff6f6f" stroke-width="2"></circle>
-    <circle id="vennB" cx="125" cy="75" r="50"
-            fill="rgba(110,180,255,0.25)" stroke="#6eb4ff" stroke-width="2"></circle>
-    <text x="55" y="70" fill="var(--textColor)">A</text>
-    <text x="140" y="70" fill="var(--textColor)">B</text>
-  </svg>
-</div>
+<style>
+  .venn-svg {
+    max-width: 500px;
+    display: block;
+  }
+  .venn-circle {
+    fill-opacity: 0.25;
+    stroke-width: 3;
+  }
+  .venn-A { fill: #ff6384; stroke: #ff6384; }
+  .venn-B { fill: #36a2eb; stroke: #36a2eb; }
 
-<p style="text-align:center;font-size:0.9rem;opacity:0.8;">
-Click on A, B, or the overlap to highlight the corresponding term in the formula. Double-click to reset.
+  .venn-highlight {
+    fill-opacity: 0.55 !important;
+  }
+</style>
+
+<svg id="vennDiagram" class="venn-svg" viewBox="0 0 500 320">
+  <!-- A circle -->
+  <circle id="vennA" class="venn-circle venn-A" cx="200" cy="160" r="110"></circle>
+  <!-- B circle -->
+  <circle id="vennB" class="venn-circle venn-B" cx="300" cy="160" r="110"></circle>
+
+  <!-- labels -->
+  <text x="200" y="165" text-anchor="middle" font-size="32">A</text>
+  <text x="300" y="165" text-anchor="middle" font-size="32">B</text>
+</svg>
+
+<p id="vennFormula" style="font-size:1.1rem;">
+  Click inside A, B, or the overlap to highlight the corresponding region.<br>
+  Double-click anywhere to reset.
 </p>
-
-<div id="inExFormula" class="prob-math" style="text-align:center;">
-  $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$
-</div>
-
-<div class="prob-separator"></div>
-
-<h2 class="prob-subtitle"><span class="prob-emoji">🌟</span> 6. Summary</h2>
-
-<ul class="prob-list">
-  <li>Different interpretations (classical, frequentist, Bayesian, geometric) offer complementary perspectives on probability.</li>
-  <li>The axiomatic (Kolmogorov) framework unifies these interpretations under a single measure-theoretic structure.</li>
-  <li>Probability theory is measure theory on a probability space $(\Omega,\mathcal{F},P)$.</li>
-  <li>Important properties such as subadditivity and inclusion–exclusion are derived directly from the axioms.</li>
-</ul>
 
 <!-- =============================================================== -->
 <!-- JAVASCRIPT FOR INTERACTIVITY                                    -->
