@@ -1,79 +1,62 @@
-// Interactive Venn diagram for inclusion–exclusion
-document.addEventListener("DOMContentLoaded", () => {
-  const A = document.getElementById("vennA");
-  const B = document.getElementById("vennB");
-  const svg = document.getElementById("vennSVG");
-  const formula = document.getElementById("inExFormula");
+<script>
+  (function () {
+    const svg   = document.getElementById('vennDiagram');
+    const A     = document.getElementById('vennA');
+    const B     = document.getElementById('vennB');
+    const text  = document.getElementById('vennFormula');
 
-  if (!A || !B || !svg || !formula) return;
+    const r  = 110;
+    const ax = 200, ay = 160;
+    const bx = 300, by = 160;
 
-  function renderLatex(latex) {
-    // latex è una stringa tipo "P(A \\cup B)=..." etc.
-    formula.innerHTML = "$$" + latex + "$$";
-    if (window.MathJax && window.MathJax.typesetPromise) {
-      MathJax.typesetPromise();
+    function clearHighlight() {
+      A.classList.remove('venn-highlight');
+      B.classList.remove('venn-highlight');
+      text.innerHTML =
+        'Click inside A, B, or the overlap to highlight the corresponding region.<br>' +
+        'Double-click anywhere to reset.';
     }
-  }
 
-  // Centri dei due cerchi in coordinate SVG (dalla viewBox)
-  const cxA = 75, cyA = 75, rA = 50;
-  const cxB = 125, cyB = 75, rB = 50;
-
-  // Trasforma coordinate mouse → coordinate SVG
-  function getSVGCoords(evt) {
-    const pt = svg.createSVGPoint();
-    pt.x = evt.clientX;
-    pt.y = evt.clientY;
-    const inverted = svg.getScreenCTM().inverse();
-    return pt.matrixTransform(inverted);
-  }
-
-  // Reset completo
-  function resetAll() {
-    A.style.opacity = "1";
-    B.style.opacity = "1";
-    renderLatex("P(A \\cup B) = P(A) + P(B) - P(A \\cap B)");
-  }
-
-  // Click solo su A → P(A)
-  A.addEventListener("click", (e) => {
-    A.style.opacity = "1";
-    B.style.opacity = "0.3";
-    renderLatex("P(A)");
-    e.stopPropagation();
-  });
-
-  // Click solo su B → P(B)
-  B.addEventListener("click", (e) => {
-    A.style.opacity = "0.3";
-    B.style.opacity = "1";
-    renderLatex("P(B)");
-    e.stopPropagation();
-  });
-
-  // Click sullo SVG: se è nella zona comune → P(A ∩ B)
-  svg.addEventListener("click", (e) => {
-    const p = getSVGCoords(e);
-    const X = p.x;
-    const Y = p.y;
-
-    const inA = (X - cxA) ** 2 + (Y - cyA) ** 2 <= rA ** 2;
-    const inB = (X - cxB) ** 2 + (Y - cyB) ** 2 <= rB ** 2;
-
-    // Se è dentro entrambi i cerchi → intersezione
-    if (inA && inB) {
-      A.style.opacity = "1";
-      B.style.opacity = "1";
-      renderLatex("P(A \\cap B)");
+    function distanceSq(x1, y1, x2, y2) {
+      const dx = x1 - x2, dy = y1 - y2;
+      return dx*dx + dy*dy;
     }
-  });
 
-  // Doppio click ovunque sullo SVG → reset formula completa
-  svg.addEventListener("dblclick", (e) => {
-    e.preventDefault();
-    resetAll();
-  });
+    svg.addEventListener('click', (ev) => {
+      const rect = svg.getBoundingClientRect();
+      const x = ev.clientX - rect.left;
+      const y = ev.clientY - rect.top;
 
-  // Stato iniziale
-  resetAll();
-});
+      const inA = distanceSq(x, y, ax, ay) <= r*r;
+      const inB = distanceSq(x, y, bx, by) <= r*r;
+
+      clearHighlight();
+
+      if (inA && inB) {
+        // intersection: highlight both
+        A.classList.add('venn-highlight');
+        B.classList.add('venn-highlight');
+        text.innerHTML = 'You clicked on the intersection A ∩ B.<br>' +
+          'Formula: <span style="font-family:serif;">P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</span>';
+      } else if (inA) {
+        A.classList.add('venn-highlight');
+        text.innerHTML = 'You clicked inside A only.<br>' +
+          'This corresponds to the term P(A) in the formula.';
+      } else if (inB) {
+        B.classList.add('venn-highlight');
+        text.innerHTML = 'You clicked inside B only.<br>' +
+          'This corresponds to the term P(B) in the formula.';
+      } else {
+        // outside both → just reset message
+        clearHighlight();
+      }
+    });
+
+    svg.addEventListener('dblclick', (ev) => {
+      ev.preventDefault();
+      clearHighlight();
+    });
+
+    clearHighlight();
+  })();
+</script>
