@@ -101,13 +101,13 @@ nav_exclude: true
     </tr>
     <tr>
       <td style="text-align: center;">9</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;"> Kolmogorov Axioms / Measure Theory / Subadditivity / Inclusion-Exclusion principle</td>
       <td style="text-align: center;"><a href="HW9/">📄 HMWK</a></td>
       <td style="text-align: center;">20/11/25</td>
     </tr>
     <tr>
       <td style="text-align: center;">10</td>
-      <td style="text-align: left;">TBD</td>
+      <td style="text-align: left;">Poisson arrival/jump process (memoryless) simulation</td>
       <td style="text-align: center;"><a href="HW10/">📄 HMWK</a></td>
       <td style="text-align: center;">20/11/25</td>
     </tr>
