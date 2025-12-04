@@ -111,6 +111,12 @@ nav_exclude: true
       <td style="text-align: center;"><a href="HW10/">📄 HMWK</a></td>
       <td style="text-align: center;">20/11/25</td>
     </tr>
+    <tr>
+      <td style="text-align: center;">11</td>
+      <td style="text-align: left;">Wiener process simulation (ABM, Brownian motion)</td>
+      <td style="text-align: center;"><a href="HW11/">📄 HMWK</a></td>
+      <td style="text-align: center;">04/12/25</td>
+    </tr>
   </tbody>
 </table>
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
