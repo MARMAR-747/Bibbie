@@ -13,8 +13,9 @@ function boxMuller() {
 
 function normalPDF(x, mean, variance) {
   const std = Math.sqrt(variance);
+  const num = (x - mean) ** 2;
   return (1 / (std * Math.sqrt(2 * Math.PI))) *
-    Math.exp(-(x - mean) ** 2 / (2 * variance));
+    Math.exp(-num / (2 * variance));
 }
 
 export function initBrownianUI(cfg) {
