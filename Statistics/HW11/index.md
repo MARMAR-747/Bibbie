@@ -66,31 +66,6 @@ nav_exclude: true
 <h3>Distribution of \(B(T)\)</h3>
 <canvas id="B_canvasHist" class="bm-canvas"></canvas>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="module">
-  import { initBrownianUI } from "{{ 'Statistics/HW11/assets/js/hw11_brownian.js' | relative_url }}";
-
-  initBrownianUI({
-    ids: {
-      TInput: "B_TInput",
-      nInput: "B_nInput",
-      pathsInput: "B_pathsInput",
-      startBtn: "B_startBtn",
-      toggleBtn: "B_toggleBtn",
-      resetBtn: "B_resetBtn",
-      infoId: "B_info",
-      canvasPaths: "B_canvasPaths",
-      canvasHist: "B_canvasHist"
-    },
-    defaults: {
-      T: 1,
-      n: 1000,
-      visiblePaths: 5,
-      tickMs: 30
-    }
-  });
-</script>
-
 <div class="hw11-expl">
 
   <div class="expl-header">
@@ -187,6 +162,31 @@ nav_exclude: true
   </div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+  import { initBrownianUI } from "{{ 'Statistics/HW11/assets/js/hw11_brownian.js' | relative_url }}";
+
+  initBrownianUI({
+    ids: {
+      TInput: "B_TInput",
+      nInput: "B_nInput",
+      pathsInput: "B_pathsInput",
+      startBtn: "B_startBtn",
+      toggleBtn: "B_toggleBtn",
+      resetBtn: "B_resetBtn",
+      infoId: "B_info",
+      canvasPaths: "B_canvasPaths",
+      canvasHist: "B_canvasHist"
+    },
+    defaults: {
+      T: 1,
+      n: 1000,
+      visiblePaths: 5,
+      tickMs: 30
+    }
+  });
+</script>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
