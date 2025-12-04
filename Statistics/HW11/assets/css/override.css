@@ -433,3 +433,68 @@ pre.typewriter {
     color: #818cf8;
   }
 }
+
+/* ===================== HW11 Brownian Motion UI ===================== */
+
+.bm-panel {
+  margin: 14px 0;
+}
+
+.bm-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+  gap: 12px 14px;
+  max-width: 880px;
+}
+
+.bm-controls .control label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.bm-controls input[type="number"] {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #d0d0d0);
+  background: var(--bg, #fff);
+}
+
+.bm-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bm-buttons button {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #d0d0d0);
+  background: #fafafa;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.bm-buttons button:hover {
+  background: #f3f3f3;
+}
+
+.bm-info {
+  background: #111;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 880px;
+  white-space: pre-wrap;
+  font-family: ui-monospace;
+}
+
+.bm-canvas {
+  max-width: 880px;
+  width: 100%;
+  margin-top: 8px;
+}
+
