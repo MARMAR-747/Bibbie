@@ -36,18 +36,18 @@ nav_exclude: true
 <div class="bm-panel">
   <div class="bm-controls">
     <div class="control">
-      <label for="B_TInput">Time horizon \(T\)</label>
-      <input id="B_TInput" type="number" value="1" step="0.1" min="0.1">
+      <label>Time horizon \(T\)</label>
+      <input id="B_TInput" type="number" value="1" step="0.1">
     </div>
 
     <div class="control">
-      <label for="B_nInput">Time steps \(n\)</label>
+      <label>Time steps \(n\)</label>
       <input id="B_nInput" type="number" value="1000" min="200">
     </div>
 
     <div class="control">
-      <label for="B_pathsInput">Visible paths</label>
-      <input id="B_pathsInput" type="number" value="5" min="1" max="40">
+      <label>Visible paths</label>
+      <input id="B_pathsInput" type="number" value="5">
     </div>
   </div>
 
@@ -60,8 +60,11 @@ nav_exclude: true
 
 <pre id="B_info" class="bm-info"></pre>
 
-<h3>Sample trajectories of Brownian motion</h3>
-<canvas id="B_canvas" class="bm-canvas"></canvas>
+<h3>Trajectories of Brownian motion \(B(t)\)</h3>
+<canvas id="B_canvasPaths" class="bm-canvas"></canvas>
+
+<h3>Distribution of \(B(T)\)</h3>
+<canvas id="B_canvasHist" class="bm-canvas"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="module">
@@ -76,7 +79,8 @@ nav_exclude: true
       toggleBtn: "B_toggleBtn",
       resetBtn: "B_resetBtn",
       infoId: "B_info",
-      canvasId: "B_canvas"
+      canvasPaths: "B_canvasPaths",
+      canvasHist: "B_canvasHist"
     },
     defaults: {
       T: 1,
