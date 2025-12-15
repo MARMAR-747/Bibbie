@@ -1,0 +1,28 @@
+# ==================== Interface eth0 ====================
+# eth0 is a point-to-point link between r8 and r5
+auto eth0
+iface eth0 inet static
+    address 100.0.0.1
+    netmask 255.255.255.254
+
+# ==================== Interface eth1 ====================
+# eth1 is a point-to-point link between r8 and r6
+auto eth1
+iface eth1 inet static
+    address 100.0.0.11
+    netmask 255.255.255.254
+
+# ==================== Interface eth2 ====================
+# eth2 is a point-to-point link between r8 and r7
+auto eth2
+iface eth2 inet static
+    address 100.0.0.3
+    netmask 255.255.255.254
+
+# ==================== Interface eth3 ====================
+# eth3 connects r8 to an external network
+iface eth3 inet static
+    address 145.97.4.97
+    netmask 255.255.255.224
+
+

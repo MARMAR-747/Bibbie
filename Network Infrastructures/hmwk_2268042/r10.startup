@@ -1,0 +1,35 @@
+# Restart networking to ensure all interfaces and routes are properly initialized
+/etc/init.d/networking restart
+
+# ==================== ROUTING ====================
+# The default gateway is configured in /etc/network/interfaces.
+# This static route is required to correctly forward traffic
+# destined to the VPN subnet through the OpenVPN server (s3).
+
+ip route add 10.10.0.0/24 via 192.168.88.100
+
+# ==================== NAT (Point 4) ====================
+# Enable source NAT for traffic exiting the private subnet
+# 192.168.88.0/24 through the public interface (eth0).
+
+iptables -t nat -A POSTROUTING -s 192.168.88.0/24 -o eth0 -j MASQUERADE
+
+# ==================== FIREWALL (Point 5) ====================
+# Default policy: drop all forwarded traffic
+iptables -P FORWARD DROP
+
+# Allow forwarding of packets belonging to established or related connections
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow forwarding of new connections initiated by the private subnet
+# towards the external network
+iptables -A FORWARD -i eth1 -o eth0 -s 192.168.88.0/24 -m state --state NEW -j ACCEPT
+
+# ==================== VPN ACCESS (Point 9) ====================
+# Forward incoming TCP connections on port 7070 from the public side
+# to the OpenVPN server (s3) located in the private subnet.
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 7070 -j DNAT --to-destination 192.168.88.100:7070
+
+# Allow forwarding of new VPN connections towards s3:7070
+iptables -A FORWARD -i eth0 -o eth1 -p tcp -d 192.168.88.100 --dport 7070 -j ACCEPT
+

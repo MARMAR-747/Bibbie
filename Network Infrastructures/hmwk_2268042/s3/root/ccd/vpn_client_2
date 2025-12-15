@@ -1,0 +1,4 @@
+# Assign a static VPN IP address to vpn_client_2
+# This ensures that pc2 always receives the same
+# IP address inside the VPN subnet
+ifconfig-push 10.10.0.200 255.255.255.0

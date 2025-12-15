@@ -1,0 +1,2 @@
+#Remove password authentication
+PasswordAuthentication no

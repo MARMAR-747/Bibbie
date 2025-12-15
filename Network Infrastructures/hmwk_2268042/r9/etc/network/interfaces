@@ -1,0 +1,18 @@
+# ==================== Interface eth0 ====================
+# eth0 connects r9 to its private LAN (192.168.1.0/24)
+# This subnet is served via DHCP by r9
+auto eth0
+iface eth0 inet static
+    address 192.168.1.1
+    netmask 255.255.255.0
+
+# ==================== Interface eth1 ====================
+# eth1 connects r9 to the external network
+# This interface is used as the default route towards the rest of the topology
+auto eth1
+iface eth1 inet static
+    address 145.97.4.126
+    netmask 255.255.255.224
+
+    # Default gateway for r9
+    gateway 145.97.4.97

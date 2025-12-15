@@ -1,0 +1,22 @@
+# Restart networking to ensure all interfaces and routes are properly initialized
+/etc/init.d/networking restart
+
+# ==================== ROUTING ====================
+# The default gateway is configured in /r4/etc/network/interfaces.
+
+# Route towards the r1–r2 link via r2
+ip route add 50.0.0.0/31 via 50.0.0.4
+
+# Route towards the r1–r3 link via r3
+ip route add 50.0.0.2/31 via 50.0.0.6
+
+# ==================== FIREWALL (Point 12) ====================
+# Default policy: drop all forwarded traffic
+iptables -P FORWARD DROP
+
+# Allow forwarding of packets belonging to established or related connections
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow forwarding of new SSH connections only (TCP port 22)
+# This blocks OpenVPN traffic while still permitting SSH port forwarding
+iptables -A FORWARD -p tcp --dport 22 -m state --state NEW -j ACCEPT
