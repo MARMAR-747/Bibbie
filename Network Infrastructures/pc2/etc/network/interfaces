@@ -1,6 +1,0 @@
-# Automatically bring up interface eth0 at boot
-auto eth0
-
-# Configure eth0 using DHCP
-# The IP address is dynamically assigned by the DHCP server
-iface eth0 inet dhcp
