@@ -1,4 +1,0 @@
-# Restart networking to ensure all interfaces are correctly initialized
-/etc/init.d/networking restart
-
-
