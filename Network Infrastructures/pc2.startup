@@ -1,9 +1,0 @@
-# Restart the networking service to ensure interfaces/routes are up before running commands
-/etc/init.d/networking restart
-
-# =================== OpenVPN Support ===================
-
-# Create the TUN device required by OpenVPN (virtual network interface for the VPN tunnel)
-mkdir -p /dev/net
-mknod /dev/net/tun c 10 200
-chmod 600 /dev/net/tun
