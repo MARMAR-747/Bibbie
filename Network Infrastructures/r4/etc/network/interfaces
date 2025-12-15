@@ -1,0 +1,34 @@
+# ==================== Interface eth0 ====================
+# eth0 is a point-to-point link between r4 and r2
+auto eth0
+iface eth0 inet static
+    address 50.0.0.5
+    netmask 255.255.255.254
+
+# ==================== Interface eth1 ====================
+# eth1 is a point-to-point link between r4 and r1
+auto eth1
+iface eth1 inet static
+    address 50.0.0.9
+    netmask 255.255.255.254
+
+# ==================== Interface eth2 ====================
+# eth2 is a point-to-point link between r4 and r3
+auto eth2
+iface eth2 inet static
+    address 50.0.0.7
+    netmask 255.255.255.254
+
+# ==================== Interface eth3 ====================
+# eth3 connects r4 to the external network
+# This interface is used as the default route towards the OSPF domain
+auto eth3
+iface eth3 inet static
+    address 193.201.28.1
+    netmask 255.255.254.0
+
+    # Default gateway for r4 (towards the OSPF network)
+    gateway 193.201.29.254
+
+
+

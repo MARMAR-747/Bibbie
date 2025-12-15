@@ -1,0 +1,10 @@
+# ==================== Interface eth0 ====================
+# eth0 connects s1 to the external network
+# This interface is used to provide SSH access from other nodes
+auto eth0
+iface eth0 inet static
+    address 23.75.100.10
+    netmask 255.255.0.0
+
+    # Default gateway for s1
+    gateway 23.75.200.1

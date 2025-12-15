@@ -1,0 +1,14 @@
+# Automatically bring up interface eth0 at boot
+auto eth0
+
+# Configure eth0 with a static IP address
+# pc3 is part of the 192.168.88.0/24 LAN
+iface eth0 inet static
+    # Static IP address assigned to pc3
+    address 192.168.88.150
+
+    # Subnet mask for the LAN
+    netmask 255.255.255.0
+
+    # Default gateway (router r10)
+    gateway 192.168.88.1

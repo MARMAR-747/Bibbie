@@ -1,0 +1,13 @@
+# Restart networking to ensure all interfaces are properly initialized
+/etc/init.d/networking restart
+
+# Restart Quagga services (zebra and ospfd)
+# This enables dynamic routing using OSPF
+/etc/init.d/quagga restart
+
+# ==================== ROUTING ====================
+# Add a static route to reach the 50.0.0.0/24 network
+# through r4, which acts as the gateway between the
+# OSPF domain and the rest of the topology
+ip route add 50.0.0.0/24 via 193.201.28.1
+

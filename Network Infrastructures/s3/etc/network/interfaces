@@ -1,0 +1,11 @@
+# ==================== Interface eth0 ====================
+# eth0 connects s3 to the private LAN (192.168.88.0/24)
+# This interface is used to serve the OpenVPN service
+# and to route traffic between the VPN and the LAN
+auto eth0
+iface eth0 inet static
+    address 192.168.88.100
+    netmask 255.255.255.0
+
+    # Default gateway for s3 (r10)
+    gateway 192.168.88.1
