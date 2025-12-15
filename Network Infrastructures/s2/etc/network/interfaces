@@ -1,6 +1,0 @@
-# ==================== Interface eth0 ====================
-# eth0 connects s2 to the local network
-# The IP address is dynamically assigned via DHCP
-auto eth0
-iface eth0 inet dhcp
-
