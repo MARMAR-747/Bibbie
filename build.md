@@ -27,6 +27,4 @@ nav_order: 7
 # 💻 La mia build
 ---
 
-<img src="{{ '/assets/images/CV1.png' | relative_url }}" width="100%">  
-<img src="{{ '/assets/images/CV2.png' | relative_url }}" width="100%">  
-<img src="{{ '/assets/images/CV3.png' | relative_url }}" width="100%">
+<img src="{{ '/assets/images/Nuclear Reactor-share.png' | relative_url }}" width="100%">  
