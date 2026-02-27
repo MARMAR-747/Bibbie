@@ -173,7 +173,7 @@ raccolto **per anno e per materia**.
 - [Network Infrastructures](Network Infrastructures/) (6 CFU)
 - [Ethical Hacking] (9 CFU)
 - [Practical Network Defense] (6 CFU)
-- [Economics of Technology and Management] (6 CFU)
+- [Economics of Technology and Management](Economics of Technology and Management/) (6 CFU)
 - [Cyber and Computer Law] (6 CFU)
 
 ---
