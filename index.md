@@ -169,8 +169,12 @@ raccolto **per anno e per materia**.
 
 - [Statistics](Statistics/) (6 CFU)
 - [Cryptography] (6 CFU)
-- [Distributed Systems] (6 CFU)
-- [Network Infrastructures] (6 CFU)
+- [Distributed Systems](Distributed Systems/) (6 CFU)
+- [Network Infrastructures](Network Infrastructures/) (6 CFU)
+- [Ethical Hacking] (9 CFU)
+- [Practical Network Defense] (6 CFU)
+- [Economics of Technology and Management] (6 CFU)
+- [Cyber and Computer Law] (6 CFU)
 
 ---
 🔒 Tutto il materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
