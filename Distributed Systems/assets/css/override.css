@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, .site-nav, .site-header, .site-footer, .main-content{
+  font-family: 'Mozilla Text', sans-serif !important;
+}
+
+.theme-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.5rem;
+  color: var(--body-text-color);
+}
+
+/* Aumenta dimensione del testo nella navigation */
+.nav-list .nav-list-item .nav-list-link {
+  font-size: 1.05rem; /* Cambia il valore a piacere */
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.nav-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav-button:hover {
+  background-color: #005fa3;
+}
+
+.nav-button.left {
+  margin-right: auto;
+}
+
+.nav-button.right {
+  margin-left: auto;
+}
