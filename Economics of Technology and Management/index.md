@@ -68,8 +68,6 @@ nav_exclude: true
 
 ## Materiale disponibile:
 
-<img src="{{ '/assets/images/CopertinaRAD.png' | relative_url }}" width="80">
-
 <table>
   <thead>
     <tr>
@@ -83,29 +81,11 @@ nav_exclude: true
   <tbody>
     <tr>
       <td>
-        <a href="../Algebra/Il Vangelo di Algebra.pdf" target="_blank">IL VANGELO DI ALGEBRA</a>
+        <a href="../Economics of Technology and Management/Bible of Economics of Technology and Management.pdf" target="_blank">BIBLE OF ETM</a>
       </td>
       <td style="text-align: center;">Teoria/Esercizi</td>
-      <td style="text-align: center;">157</td>
-      <td style="text-align: center;">✅</td>
-      <td style="text-align: center;">☆☆☆☆☆ (0)</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="../Algebra/Breviario delle nozioni di Algebra.pdf" target="_blank">BREVIARIO DELLE NOZIONI DI ALGEBRA</a>
-      </td>
-      <td style="text-align: center;">Teoria</td>
-      <td style="text-align: center;">4</td>
-      <td style="text-align: center;">✅</td>
-      <td style="text-align: center;">☆☆☆☆☆ (0)</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="../Algebra/Vecchi compiti di Algebra.pdf" target="_blank">VECCHI COMPITI DI ALGEBRA</a>
-      </td>
-      <td style="text-align: center;">Esercizi</td>
-      <td style="text-align: center;">41</td>
-      <td style="text-align: center;">✅</td>
+      <td style="text-align: center;">31</td>
+      <td style="text-align: center;">Updated 28/02/26</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
   </tbody>
