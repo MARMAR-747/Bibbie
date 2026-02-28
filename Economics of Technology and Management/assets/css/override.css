@@ -236,6 +236,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .nav-prev-next a:hover{
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
 
 .title-divider-soft{
   width: 100%;
