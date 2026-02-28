@@ -37,25 +37,25 @@ nav_exclude: true
 
 <table>
   <tr>
-    <td><strong>Prof.</strong></td>
+    <td><strong>Professor</strong></td>
     <td>
       Idiano D'Adamo
     </td>
   </tr>
   <tr>
-    <td><strong>Descrizione</strong></td>
+    <td><strong>Description</strong></td>
     <td>
       
     </td>
   </tr>
   <tr>
-    <td><strong>Modalità d'esame</strong></td>
+    <td><strong>Exam type</strong></td>
     <td>
-      
+      Project (in solo or in pairs) + Oral
     </td>
   </tr>
   <tr>
-    <td><strong>Difficoltà</strong></td>
+    <td><strong>Difficulty</strong></td>
     <td>🟢 Medio-Bassa 💀💀⚪⚪⚪</td>
   </tr>
   <tr>
@@ -71,9 +71,9 @@ nav_exclude: true
 <table>
   <thead>
     <tr>
-      <th style="width: 69%; text-align: center;">Titolo</th>
-      <th style="width: 2%; text-align: center;">Tipologia</th>
-      <th style="width: 2%; text-align: center;">Pagine</th>
+      <th style="width: 69%; text-align: center;">Title</th>
+      <th style="width: 2%; text-align: center;">Type</th>
+      <th style="width: 2%; text-align: center;">Pages</th>
       <th style="width: 2%; text-align: center;">Status</th>
       <th style="width: 25%; text-align: center;">Score</th>
     </tr>
@@ -83,7 +83,7 @@ nav_exclude: true
       <td>
         <a href="../Economics of Technology and Management/Bible of Economics of Technology and Management.pdf" target="_blank">BIBLE OF ETM</a>
       </td>
-      <td style="text-align: center;">Teoria/Esercizi</td>
+      <td style="text-align: center;">Theory/Exercises</td>
       <td style="text-align: center;">31</td>
       <td style="text-align: center;">Updated 28/02/26</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
@@ -92,10 +92,10 @@ nav_exclude: true
 </table>
 
 <a href="https://forms.gle/sVfWQ4wJ9Fomwq1E9" target="_blank" rel="noopener noreferrer">
-  Valuta il materiale di Economics of Technology and Management ⭐
+  Rate the material of Economics of Technology and Management ⭐
 </a> <br><br>
 
-📬 Per segnalazione di eventuali errori:  
+📬 To report any errors:  
 &emsp;&nbsp;&nbsp;[marcomarino.ci@gmail.com](mailto:marcomarino.ci@gmail.com)
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
