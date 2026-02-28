@@ -56,7 +56,7 @@ nav_exclude: true
   </tr>
   <tr>
     <td><strong>Difficulty</strong></td>
-    <td>🟢 Medio-Bassa 💀💀⚪⚪⚪</td>
+    <td>🟢 Medium-Low 💀💀⚪⚪⚪</td>
   </tr>
   <tr>
     <td><strong>Tips</strong></td>
