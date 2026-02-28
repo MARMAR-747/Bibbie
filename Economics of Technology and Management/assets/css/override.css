@@ -87,40 +87,53 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   font-size: 0.95rem;
 }
 
-/* ===== Tables: elegant minimal ===== */
+/* ===== Tables: elegant, NO outer box ===== */
 .table-elegant{
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  overflow: hidden;
+  border-collapse: collapse;   /* niente “contenitore” */
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
   margin-top: 10px;
 }
 
+/* Celle */
 .table-elegant th,
 .table-elegant td{
   padding: 12px 12px;
   vertical-align: top;
+  border: none;
 }
 
+/* Header: leggero, senza box */
 .table-elegant thead th{
-  background: rgba(127,127,127,0.08);
   font-weight: 900;
+  background: rgba(127,127,127,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
 }
 
-.table-elegant tbody tr td{
-  border-top: 1px solid rgba(0,0,0,0.06);
+/* Separatore righe */
+.table-elegant tbody td{
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
+/* Separatore colonne (molto leggero) */
+.table-elegant th + th,
+.table-elegant td + td{
+  border-left: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Hover super soft (se non lo vuoi, elimina questo blocco) */
 .table-elegant tbody tr:hover td{
-  background: rgba(127,127,127,0.05);
+  background: rgba(127,127,127,0.03);
 }
 
+/* Overview: prima colonna “label” senza boxed look */
 .kv-table td:first-child{
   width: 190px;
   font-weight: 900;
-  background: rgba(127,127,127,0.05);
+  background: transparent;  /* <- importante: niente “colonna grigia a blocco” */
+  opacity: 0.95;
 }
 
 .file-link{
