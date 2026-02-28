@@ -101,7 +101,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .table-elegant th,
 .table-elegant td{
   padding: 12px 12px;
-  vertical-align: top;
+  vertical-align: middle;
   border: none;
 }
 
