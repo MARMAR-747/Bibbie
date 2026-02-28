@@ -33,12 +33,9 @@ nav_exclude: true
 
 <div class="course-header">
   <h1 class="course-title">📘 Economics of Technology and Management</h1>
-  <div class="course-subline">
-    <span class="tag">👤 Idiano D'Adamo</span>
-    <span class="tag">📝 Project (in solo or in pairs) + Oral</span>
-    <span class="tag">🟢 Medium-Low 💀💀⚪⚪⚪</span>
-  </div>
 </div>
+
+<div class="title-divider-soft"></div>
 
 ## Overview:
 
@@ -105,7 +102,7 @@ nav_exclude: true
   </a>
 
   <a class="btn-soft-secondary" href="mailto:marcomarino.ci@gmail.com">
-    📬 To report any errors: marcomarino.ci@gmail.com
+    📬 Report errors
   </a>
 </div>
 
