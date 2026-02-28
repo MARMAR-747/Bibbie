@@ -273,3 +273,49 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   border-radius: 2px;
 }
 
+/* ===== Divider sotto il titolo: sempre visibile ===== */
+.title-divider-soft{
+  display: block !important;
+  width: 100% !important;
+  height: 2px !important;
+  margin: 16px 0 26px 0 !important;
+
+  /* usa il colore bordo del tema se disponibile */
+  background: var(--border-color, #9aa0a6) !important;
+  opacity: 1 !important;
+}
+
+/* Variante un filo più elegante (leggero fade ai lati) */
+.title-divider-soft{
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color, #9aa0a6),
+    transparent
+  ) !important;
+}
+
+/* ===== Titoli sezione (Overview / Available Material): sempre visibili ===== */
+.section-title{
+  margin-top: 2.0rem !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+}
+
+.section-title::after{
+  content: "" !important;
+  display: block !important;
+  width: 56px !important;
+  height: 3px !important;
+  margin-top: 8px !important;
+
+  /* underline visibile in light/dark */
+  background: var(--link-color, var(--body-text-color, #007acc)) !important;
+  opacity: 1 !important;
+  border-radius: 999px !important;
+}
+
