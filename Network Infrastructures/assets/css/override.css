@@ -51,3 +51,299 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .nav-button.right {
   margin-left: auto;
 }
+
+/* ===== Minimal course styling ===== */
+.course-header{
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.course-title{
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.course-subline{
+  margin-top: 8px;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  opacity: 0.95;
+}
+
+/* pill minimal */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(127,127,127,0.06);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* ===== Tables: elegant, NO outer box ===== */
+.table-elegant{
+  width: 100%;
+  border-collapse: collapse;   /* niente “contenitore” */
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  margin-top: 10px;
+}
+
+/* Celle */
+.table-elegant th,
+.table-elegant td{
+  padding: 12px 12px;
+  vertical-align: middle;
+  border: none;
+}
+
+/* Header: leggero, senza box */
+.table-elegant thead th{
+  font-weight: 900;
+  background: rgba(127,127,127,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+/* Separatore righe */
+.table-elegant tbody td{
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Separatore colonne (molto leggero) */
+.table-elegant th + th,
+.table-elegant td + td{
+  border-left: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Hover super soft (se non lo vuoi, elimina questo blocco) */
+.table-elegant tbody tr:hover td{
+  background: rgba(127,127,127,0.03);
+}
+
+/* Overview: prima colonna “label” senza boxed look */
+.kv-table td:first-child{
+  width: 190px;
+  font-weight: 900;
+  background: transparent;  /* <- importante: niente “colonna grigia a blocco” */
+  opacity: 0.95;
+}
+
+/* Elimina spazio sopra la tabella "material" */
+.material-table-wrap{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.table-elegant{
+  margin-top: 0 !important; /* già dovrebbe essere 10px: lo forziamo a 0 */
+}
+
+/* Se per caso il tema mette padding sul thead */
+.table-elegant thead{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Se c’è un <br> o simili prima della tabella, evita “collasso” strano */
+.table-elegant{ display: table; }
+
+.file-link{
+  font-weight: 900;
+  text-decoration: none !important;
+}
+
+.file-link:hover{
+  text-decoration: underline !important;
+}
+
+/* ===== Buttons/links ===== */
+.action-row{
+  margin-top: 12px;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-soft{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  text-decoration: none !important;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(127,127,127,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-soft:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+.muted-note{
+  opacity: 0.9;
+}
+
+/* Seconda card/bottone stile "Rate", ma neutro */
+.btn-soft-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  text-decoration: none !important;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(127,127,127,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-soft-secondary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+/* ===== Prev/Next minimal ===== */
+.nav-prev-next{
+  margin-top: 3rem;
+  display:flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 900;
+}
+
+.nav-prev-next a{
+  text-decoration:none !important;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(127,127,127,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-prev-next a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+.title-divider-soft{
+  width: 100%;
+  height: 2px;
+  margin: 18px 0 30px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--link-color),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.section-title{
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+/* linea elegante sotto */
+.section-title::after{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin-top: 6px;
+  background: var(--link-color);
+  border-radius: 2px;
+}
+
+/* ===== Divider sotto il titolo: sempre visibile ===== */
+.title-divider-soft{
+  display: block !important;
+  width: 100% !important;
+  height: 2px !important;
+  margin: 16px 0 26px 0 !important;
+
+  /* usa il colore bordo del tema se disponibile */
+  background: var(--border-color, #9aa0a6) !important;
+  opacity: 1 !important;
+}
+
+/* Variante un filo più elegante (leggero fade ai lati) */
+.title-divider-soft{
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color, #9aa0a6),
+    transparent
+  ) !important;
+}
+
+/* ===== Titoli sezione (Overview / Available Material): sempre visibili ===== */
+.section-title{
+  margin-top: 2.0rem !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+}
+
+.section-title::after{
+  content: "" !important;
+  display: block !important;
+  width: 56px !important;
+  height: 3px !important;
+  margin-top: 8px !important;
+
+  /* underline visibile in light/dark */
+  background: var(--link-color, var(--body-text-color, #007acc)) !important;
+  opacity: 1 !important;
+  border-radius: 999px !important;
+}
+
+.page-footer-meta{
+  margin-top: 1.6rem;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(127,127,127,0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+}
+
+.page-footer-meta .meta-item{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.page-footer-meta a{
+  font-weight: 900;
+  text-decoration: none !important;
+}
+
+.page-footer-meta a:hover{
+  text-decoration: underline !important;
+}
