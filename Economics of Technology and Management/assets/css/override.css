@@ -239,14 +239,36 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 
 .title-divider-soft{
   width: 100%;
-  height: 1px;
+  height: 2px;
   margin: 18px 0 30px 0;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(0,0,0,0.15),
+    var(--link-color),
     transparent
   );
+  opacity: 0.6;
 }
+
+.section-title{
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+/* linea elegante sotto */
+.section-title::after{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin-top: 6px;
+  background: var(--link-color);
+  border-radius: 2px;
 }
 
