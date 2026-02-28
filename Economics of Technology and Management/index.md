@@ -103,6 +103,107 @@ nav_exclude: true
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
 
+<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+<div class="course-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">📘 Economics of Technology and Management</h1>
+      <div class="hero-tags">
+        <span class="pill">👤 Idiano D'Adamo</span>
+        <span class="pill pill-soft">🟢 Medium-Low 💀💀⚪⚪⚪</span>
+        <span class="pill pill-soft">📝 Project (in solo or in pairs) + Oral</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <a class="primary-link" href="https://forms.gle/sVfWQ4wJ9Fomwq1E9" target="_blank" rel="noopener noreferrer">
+        ⭐ Rate the material
+      </a>
+      <a class="mini-link" href="mailto:marcomarino.ci@gmail.com">📬 Report errors</a>
+    </div>
+  </div>
+
+  <!-- GRID: Overview + Material -->
+  <div class="grid-2">
+
+    <!-- Overview -->
+    <div class="card">
+      <h2>Overview</h2>
+
+      <table class="table-clean kv">
+        <tbody>
+          <tr>
+            <td><strong>Professor</strong></td>
+            <td>Idiano D'Adamo</td>
+          </tr>
+          <tr>
+            <td><strong>Description</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Exam type</strong></td>
+            <td>Project (in solo or in pairs) + Oral</td>
+          </tr>
+          <tr>
+            <td><strong>Difficulty</strong></td>
+            <td>🟢 Medium-Low 💀💀⚪⚪⚪</td>
+          </tr>
+          <tr>
+            <td><strong>Tips</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Material -->
+    <div class="card">
+      <h2>Available material</h2>
+
+      <table class="table-clean">
+        <thead>
+          <tr>
+            <th style="width: 69%; text-align: left;">Title</th>
+            <th style="width: 2%; text-align: center;">Type</th>
+            <th style="width: 2%; text-align: center;">Pages</th>
+            <th style="width: 2%; text-align: center;">Status</th>
+            <th style="width: 25%; text-align: center;">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="file-row">
+            <td>
+              <a href="../Economics of Technology and Management/Bible of Economics of Technology and Management.pdf" target="_blank">
+                BIBLE OF ETM
+              </a>
+            </td>
+            <td style="text-align: center;">Theory/Exercises</td>
+            <td style="text-align: center;">31</td>
+            <td style="text-align: center;">Updated 28/02/26</td>
+            <td style="text-align: center;">☆☆☆☆☆ (0)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="report-box">
+        📬 To report any errors:&nbsp;&nbsp;
+        <a href="mailto:marcomarino.ci@gmail.com">marcomarino.ci@gmail.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+
+  <div class="footer-note">
+    🔒 All material is released under license
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>.<br>
+    🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
+  </div>
+
 {% assign ordine = site.materie_order %}
 {% assign idx = page.order_index | plus: 0 %}
 
