@@ -136,6 +136,25 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   opacity: 0.95;
 }
 
+/* Elimina spazio sopra la tabella "material" */
+.material-table-wrap{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.table-elegant{
+  margin-top: 0 !important; /* già dovrebbe essere 10px: lo forziamo a 0 */
+}
+
+/* Se per caso il tema mette padding sul thead */
+.table-elegant thead{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Se c’è un <br> o simili prima della tabella, evita “collasso” strano */
+.table-elegant{ display: table; }
+
 .file-link{
   font-weight: 900;
   text-decoration: none !important;
@@ -175,6 +194,25 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 
 .muted-note{
   opacity: 0.9;
+}
+
+/* Seconda card/bottone stile "Rate", ma neutro */
+.btn-soft-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  text-decoration: none !important;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(127,127,127,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-soft-secondary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
 }
 
 /* ===== Prev/Next minimal ===== */
