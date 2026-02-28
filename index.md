@@ -143,43 +143,13 @@ raccolto **per anno e per materia**.
 }
 </style>
 
-## 📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Triennale in Ingegneria Informatica - UniPa)
----
-### ➀ Primo anno
-
-- [Algebra](Algebra/) (6 CFU)
-
-### ➁ Secondo anno
-
-- [Teoria dei segnali](Teoria Dei Segnali/) (9 CFU)
-- [Elettrotecnica](Elettrotecnica/) (6 CFU)
-- [Metodi matematici e numerici] (9 CFU)
-
-### ➂ Terzo anno
-
-- [Reti di calcolatori] (9 CFU)
-- [Elettronica](Elettronica/) (9 CFU)
-- [Controlli Automatici](Controlli Automatici/) (9 CFU)
-- [Ingegneria Del Software](Ingegneria Del Software/) (9 CFU)
-- [Programmazione Web e Mobile](Programmazione Web e Mobile/) (9 CFU)
-
-## 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Magistrale in Cybersecurity - UniSapienza)
----
-### ➀ Primo anno
-
-- [Statistics](Statistics/) (6 CFU)
-- [Cryptography] (6 CFU)
-- [Distributed Systems](Distributed Systems/) (6 CFU)
-- [Network Infrastructures](Network Infrastructures/) (6 CFU)
-- [Ethical Hacking] (9 CFU)
-- [Practical Network Defense] (6 CFU)
-- [Economics of Technology and Management](Economics of Technology and Management/) (6 CFU)
-- [Cyber and Computer Law] (6 CFU)
-
 <!-- ===== CARD GRID: TRIENNALE ===== -->
 <h2>📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Triennale in Ingegneria Informatica - UniPa)</h2>
 
-<h3>➀ Primo anno</h3>
+<div class="year-header">
+  <span class="year-badge">1°</span>
+  <span class="year-title">Primo anno</span>
+</div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Algebra/' | relative_url }}">
     <div class="card-title">Algebra</div>
@@ -187,7 +157,10 @@ raccolto **per anno e per materia**.
   </a>
 </div>
 
-<h3>➁ Secondo anno</h3>
+<div class="year-header">
+  <span class="year-badge">2°</span>
+  <span class="year-title">Secondo anno</span>
+</div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Teoria%20Dei%20Segnali/' | relative_url }}">
     <div class="card-title">Teoria dei Segnali</div>
@@ -205,7 +178,10 @@ raccolto **per anno e per materia**.
   </a>
 </div>
 
-<h3>➂ Terzo anno</h3>
+<div class="year-header">
+  <span class="year-badge">3°</span>
+  <span class="year-title">Terzo anno</span>
+</div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Reti%20di%20calcolatori/' | relative_url }}">
     <div class="card-title">Reti di calcolatori</div>
@@ -236,7 +212,10 @@ raccolto **per anno e per materia**.
 <!-- ===== CARD GRID: MAGISTRALE ===== -->
 <h2>📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Magistrale in Cybersecurity - UniSapienza)</h2>
 
-<h3>➀ Primo anno</h3>
+<div class="year-header">
+  <span class="year-badge">1°</span>
+  <span class="year-title">Primo anno</span>
+</div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Statistics/' | relative_url }}">
     <div class="card-title">Statistics</div>
