@@ -146,9 +146,12 @@ raccolto **per anno e per materia**.
 <!-- ===== CARD GRID: TRIENNALE ===== -->
 <h2>📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Triennale in Ingegneria Informatica - UniPa)</h2>
 
-<div class="year-header">
-  <span class="year-badge">1°</span>
-  <span class="year-title">Primo anno</span>
+<div class="year-card">
+  <span class="year-number">1°</span>
+  <div>
+    <div class="year-main">Primo anno</div>
+    <div class="year-sub">Triennale</div>
+  </div>
 </div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Algebra/' | relative_url }}">
@@ -157,9 +160,12 @@ raccolto **per anno e per materia**.
   </a>
 </div>
 
-<div class="year-header">
-  <span class="year-badge">2°</span>
-  <span class="year-title">Secondo anno</span>
+<div class="year-card">
+  <span class="year-number">2°</span>
+  <div>
+    <div class="year-main">Secondo anno</div>
+    <div class="year-sub">Triennale</div>
+  </div>
 </div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Teoria%20Dei%20Segnali/' | relative_url }}">
@@ -178,9 +184,12 @@ raccolto **per anno e per materia**.
   </a>
 </div>
 
-<div class="year-header">
-  <span class="year-badge">3°</span>
-  <span class="year-title">Terzo anno</span>
+<div class="year-card">
+  <span class="year-number">3°</span>
+  <div>
+    <div class="year-main">Terzo anno</div>
+    <div class="year-sub">Triennale</div>
+  </div>
 </div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Reti%20di%20calcolatori/' | relative_url }}">
@@ -212,9 +221,12 @@ raccolto **per anno e per materia**.
 <!-- ===== CARD GRID: MAGISTRALE ===== -->
 <h2>📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Magistrale in Cybersecurity - UniSapienza)</h2>
 
-<div class="year-header">
-  <span class="year-badge">1°</span>
-  <span class="year-title">Primo anno</span>
+<div class="year-card">
+  <span class="year-number">1°</span>
+  <div>
+    <div class="year-main">Primo anno</div>
+    <div class="year-sub">Magistrale</div>
+  </div>
 </div>
 <div class="cards-grid">
   <a class="course-card" href="{{ '/Statistics/' | relative_url }}">
