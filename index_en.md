@@ -91,7 +91,7 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 
 <div class="counter-container">
   <div class="counter-box">
-    <span id="pdf-count" class="counter" data-target="14">0</span>
+    <span id="pdf-count" class="counter" data-target="17">0</span>
     <p data-i18n="counter"></p>
     <p>📚 Available PDFs</p>
   </div>
@@ -125,35 +125,209 @@ Below you will find **all the material** I produced during my **Bachelor’s deg
 }
 </style>
 
-## 📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Bachelor’s Degree in computer engineering - UniPa)
----
-### ➀ First year
+<!-- ===================== BACHELOR ===================== -->
+<section class="material-section">
+  <div class="material-title">
+    📂
+    <span>Bachelor Material (IT)</span>
+  </div>
 
-- [Algebra](Algebra/) (6 CFU)
+  <!-- 1st year -->
+  <div class="year-block">
+    <div class="year-card">
+      <span class="year-number">1°</span>
+      <div>
+        <div class="year-main">First Year</div>
+        <div class="year-sub">Computer Engineering - UniPa</div>
+      </div>
+    </div>
 
-### ➁ Second year
+    <div class="cards-grid">
+      <a class="course-card" href="{{ '/Algebra/' | relative_url }}">
+        <div class="card-title">Algebra</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-- [Signal Theory](Teoria Dei Segnali/) (9 CFU)
-- [Electrical Engineering](Elettrotecnica/) (6 CFU)
-- [Mathematical and Numerical Methods] (9 CFU)
+  <!-- 2nd year -->
+  <div class="year-block">
+    <div class="year-card">
+      <span class="year-number">2°</span>
+      <div>
+        <div class="year-main">Second Year</div>
+        <div class="year-sub">Computer Engineering - UniPa</div>
+      </div>
+    </div>
 
-### ➂ Third year
+    <div class="cards-grid">
+      <a class="course-card" href="{{ '/Teoria%20Dei%20Segnali/' | relative_url }}">
+        <div class="card-title">Signals and Systems</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
 
-- [Computer Networks] (9 CFU)
-- [Electronics](Elettronica/) (9 CFU)
-- [Automatic Control](Controlli Automatici/) (9 CFU)
-- [Software Engineering](Ingegneria Del Software/) (9 CFU)
-- [Web and Mobile Programming](Programmazione Web e Mobile/) (9 CFU)
+      <a class="course-card" href="{{ '/Elettrotecnica/' | relative_url }}">
+        <div class="card-title">Electrical Engineering</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
 
+      <a class="course-card" href="{{ '/Metodi%20matematici%20e%20numerici/' | relative_url }}">
+        <div class="card-title">Mathematical and Numerical Methods (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
 
-## 📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Material (Master’s Degree in cybersecurity - UniSapienza)
----
-### ➀ First year
+  <!-- 3rd year -->
+  <div class="year-block">
+    <div class="year-card">
+      <span class="year-number">3°</span>
+      <div>
+        <div class="year-main">Third Year</div>
+        <div class="year-sub">Computer Engineering - UniPa</div>
+      </div>
+    </div>
 
-- [Statistics](Statistics/) (6 CFU)
-- [Cryptography] (6 CFU)
-- [Distributed Systems] (6 CFU)
-- [Network Infrastructures] (6 CFU)
+    <div class="cards-grid">
+      <a class="course-card" href="{{ '/Reti%20di%20calcolatori/' | relative_url }}">
+        <div class="card-title">Computer Networks (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Elettronica/' | relative_url }}">
+        <div class="card-title">Electronics</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Controlli%20Automatici/' | relative_url }}">
+        <div class="card-title">Automatic Control</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Ingegneria%20Del%20Software/' | relative_url }}">
+        <div class="card-title">Software Engineering</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Programmazione%20Web%20e%20Mobile/' | relative_url }}">
+        <div class="card-title">Web and Mobile Programming</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MASTER ===================== -->
+<section class="material-section">
+  <div class="material-title">
+    📂
+    <span>Master Material (ENG)</span>
+  </div>
+
+  <!-- 1st year -->
+  <div class="year-block">
+    <div class="year-card">
+      <span class="year-number">1°</span>
+      <div>
+        <div class="year-main">First Year</div>
+        <div class="year-sub">Cybersecurity - UniSapienza</div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <a class="course-card" href="{{ '/Statistics/' | relative_url }}">
+        <div class="card-title">Statistics</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Cryptography/' | relative_url }}">
+        <div class="card-title">Cryptography (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Distributed%20Systems/' | relative_url }}">
+        <div class="card-title">Distributed Systems (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Network%20Infrastructures/' | relative_url }}">
+        <div class="card-title">Network Infrastructures (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Ethical%20Hacking/' | relative_url }}">
+        <div class="card-title">Ethical Hacking (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">9 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Practical%20Network%20Defense/' | relative_url }}">
+        <div class="card-title">Practical Network Defense (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Economics%20of%20Technology%20and%20Management/' | relative_url }}">
+        <div class="card-title">Economics of Technology and Management</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="course-card" href="{{ '/Cyber%20and%20Computer%20Law/' | relative_url }}">
+        <div class="card-title">Cyber and Computer Law (SOON)</div>
+        <div class="card-meta">
+          <span class="cfu-pill">6 ECTS</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
 ---
 🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
