@@ -79,3 +79,32 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   background: rgba(127,127,127,0.12);
 }
 </style>
+
+<style>
+.year-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:30px 0 18px;
+}
+
+.year-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  font-weight:700;
+  font-size:0.95rem;
+  background: var(--link-color);
+  color:white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.year-title{
+  font-size:1.4rem;
+  font-weight:800;
+  letter-spacing:0.5px;
+}
+</style>
