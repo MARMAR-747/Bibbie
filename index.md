@@ -109,7 +109,7 @@ raccolto **per anno e per materia**.
 
 <div class="counter-container">
   <div class="counter-box">
-    <span id="pdf-count" class="counter" data-target="14">0</span>
+    <span id="pdf-count" class="counter" data-target="17">0</span>
     <p data-i18n="counter"></p>
     <p>📚 PDF disponibili</p>
   </div>
@@ -146,7 +146,7 @@ raccolto **per anno e per materia**.
 <!-- ===================== TRIENNALE ===================== -->
 <section class="material-section">
   <div class="material-title">
-    📂 <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
+    📂
     <span>Materiale Triennale (IT)</span>
   </div>
 
@@ -199,7 +199,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Metodi%20matematici%20e%20numerici/' | relative_url }}">
-        <div class="card-title">Metodi matematici e numerici</div>
+        <div class="card-title">Metodi matematici e numerici (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">9 CFU</span>
           <span class="card-arrow">→</span>
@@ -220,7 +220,7 @@ raccolto **per anno e per materia**.
 
     <div class="cards-grid">
       <a class="course-card" href="{{ '/Reti%20di%20calcolatori/' | relative_url }}">
-        <div class="card-title">Reti di calcolatori</div>
+        <div class="card-title">Reti di calcolatori (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">9 CFU</span>
           <span class="card-arrow">→</span>
@@ -289,7 +289,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Cryptography/' | relative_url }}">
-        <div class="card-title">Cryptography</div>
+        <div class="card-title">Cryptography (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
@@ -297,7 +297,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Distributed%20Systems/' | relative_url }}">
-        <div class="card-title">Distributed Systems</div>
+        <div class="card-title">Distributed Systems (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
@@ -305,7 +305,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Network%20Infrastructures/' | relative_url }}">
-        <div class="card-title">Network Infrastructures</div>
+        <div class="card-title">Network Infrastructures (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
@@ -313,7 +313,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Ethical%20Hacking/' | relative_url }}">
-        <div class="card-title">Ethical Hacking</div>
+        <div class="card-title">Ethical Hacking (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">9 CFU</span>
           <span class="card-arrow">→</span>
@@ -321,7 +321,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Practical%20Network%20Defense/' | relative_url }}">
-        <div class="card-title">Practical Network Defense</div>
+        <div class="card-title">Practical Network Defense (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
@@ -337,7 +337,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Cyber%20and%20Computer%20Law/' | relative_url }}">
-        <div class="card-title">Cyber and Computer Law</div>
+        <div class="card-title">Cyber and Computer Law (SOON)</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
