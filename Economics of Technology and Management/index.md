@@ -36,7 +36,7 @@ nav_exclude: true
   <div class="title-divider-soft"></div>
 </div>
 
-## Overview:
+<div class="section-title">Overview</div>
 
 <table class="table-elegant kv-table">
   <tr>
@@ -69,7 +69,7 @@ nav_exclude: true
   </tr>
 </table>
 
-## Materiale disponibile:
+<div class="section-title">Available Material</div>
 <div class="material-table-wrap">
 <table class="table-elegant">
   <thead>
