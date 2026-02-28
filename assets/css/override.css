@@ -88,7 +88,8 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   border-radius:16px;
   background: var(--card-background-color, var(--body-background-color));
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  margin:30px 0 20px;
+  
+  margin:60px 0 25px;   /* <-- aumentato spazio sopra e sotto */
 }
 
 .year-number{
