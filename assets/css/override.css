@@ -89,7 +89,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   background: var(--card-background-color, var(--body-background-color));
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   
-  margin:60px 0 25px;   /* <-- aumentato spazio sopra e sotto */
+  margin:120px 0 50px;   /* <-- aumentato spazio sopra e sotto */
 }
 
 .year-number{
