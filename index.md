@@ -176,6 +176,109 @@ raccolto **per anno e per materia**.
 - [Economics of Technology and Management](Economics of Technology and Management/) (6 CFU)
 - [Cyber and Computer Law] (6 CFU)
 
+<!-- ===== CARD GRID: TRIENNALE ===== -->
+<h2>📂<img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Triennale in Ingegneria Informatica - UniPa)</h2>
+
+<h3>➀ Primo anno</h3>
+<div class="cards-grid">
+  <a class="course-card" href="{{ '/Algebra/' | relative_url }}">
+    <div class="card-title">Algebra</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+</div>
+
+<h3>➁ Secondo anno</h3>
+<div class="cards-grid">
+  <a class="course-card" href="{{ '/Teoria%20Dei%20Segnali/' | relative_url }}">
+    <div class="card-title">Teoria dei Segnali</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Elettrotecnica/' | relative_url }}">
+    <div class="card-title">Elettrotecnica</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Metodi%20matematici%20e%20numerici/' | relative_url }}">
+    <div class="card-title">Metodi matematici e numerici</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+</div>
+
+<h3>➂ Terzo anno</h3>
+<div class="cards-grid">
+  <a class="course-card" href="{{ '/Reti%20di%20calcolatori/' | relative_url }}">
+    <div class="card-title">Reti di calcolatori</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Elettronica/' | relative_url }}">
+    <div class="card-title">Elettronica</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Controlli%20Automatici/' | relative_url }}">
+    <div class="card-title">Controlli Automatici</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Ingegneria%20Del%20Software/' | relative_url }}">
+    <div class="card-title">Ingegneria del Software</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Programmazione%20Web%20e%20Mobile/' | relative_url }}">
+    <div class="card-title">Programmazione Web e Mobile</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+</div>
+
+<!-- ===== CARD GRID: MAGISTRALE ===== -->
+<h2>📂<img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;"> Materiale (Magistrale in Cybersecurity - UniSapienza)</h2>
+
+<h3>➀ Primo anno</h3>
+<div class="cards-grid">
+  <a class="course-card" href="{{ '/Statistics/' | relative_url }}">
+    <div class="card-title">Statistics</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Cryptography/' | relative_url }}">
+    <div class="card-title">Cryptography</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Distributed%20Systems/' | relative_url }}">
+    <div class="card-title">Distributed Systems</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Network%20Infrastructures/' | relative_url }}">
+    <div class="card-title">Network Infrastructures</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Ethical%20Hacking/' | relative_url }}">
+    <div class="card-title">Ethical Hacking</div>
+    <div class="card-meta">9 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Practical%20Network%20Defense/' | relative_url }}">
+    <div class="card-title">Practical Network Defense</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Economics%20of%20Technology%20and%20Management/' | relative_url }}">
+    <div class="card-title">Economics of Technology and Management</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+
+  <a class="course-card" href="{{ '/Cyber%20and%20Computer%20Law/' | relative_url }}">
+    <div class="card-title">Cyber and Computer Law</div>
+    <div class="card-meta">6 CFU</div>
+  </a>
+</div>
+
 ---
 🔒 Tutto il materiale è rilasciato sotto licenza [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 🔗 Ultimo aggiornamento: {{ site.time | date: "%d/%m/%Y" }}
