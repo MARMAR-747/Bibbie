@@ -25,22 +25,77 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 }
 
 <style>
-/* Grid responsive */
+/* ===== Sezioni (IT/UK) ===== */
+.material-section{
+  margin-top: 2.2rem;
+}
+
+.material-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin: 2.2rem 0 1.2rem;
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.material-title img{
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+}
+
+/* ===== Blocchi anno ===== */
+.year-block{
+  margin: 2.8rem 0 3.2rem; /* spazio tra anni */
+}
+
+.year-card{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:16px 20px;
+  border-radius:16px;
+  background: var(--card-background-color, var(--body-background-color));
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  margin: 0 0 18px; /* separazione dal grid */
+}
+
+.year-number{
+  font-size:1.6rem;
+  font-weight:900;
+  color: var(--link-color);
+  line-height: 1;
+  min-width: 44px;
+  text-align:center;
+}
+
+.year-main{
+  font-size:1.15rem;
+  font-weight:900;
+}
+
+.year-sub{
+  font-size:0.9rem;
+  opacity:0.75;
+}
+
+/* ===== Grid Card ===== */
 .cards-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
-  margin: 14px 0 26px;
 }
 
-/* Card cliccabile */
+/* ===== Card corso ===== */
 .course-card{
   display:block;
   text-decoration:none !important;
   background: var(--card-background-color, var(--body-background-color));
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 16px;
-  padding: 16px 16px 14px;
+  padding: 16px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.07);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   color: var(--body-text-color);
@@ -57,53 +112,35 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   outline-offset: 3px;
 }
 
-/* Titolo e meta */
 .card-title{
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.05rem;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   color: var(--body-text-color);
 }
 
 .card-meta{
-  font-size: 0.9rem;
-  opacity: 0.85;
-  color: var(--body-text-color);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
-/* (Opzionale) badge CFU più “pill” */
-.card-meta{
+.cfu-pill{
   display:inline-block;
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(127,127,127,0.12);
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.card-arrow{
+  margin-left:auto;
+  opacity:0.55;
+  font-weight:900;
+}
+.course-card:hover .card-arrow{
+  opacity:0.9;
 }
 </style>
-
-.year-card{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  padding:16px 20px;
-  border-radius:16px;
-  background: var(--card-background-color, var(--body-background-color));
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  
-  margin:120px 0 50px;   /* <-- aumentato spazio sopra e sotto */
-}
-
-.year-number{
-  font-size:1.6rem;
-  font-weight:800;
-  color: var(--link-color);
-}
-
-.year-main{
-  font-size:1.2rem;
-  font-weight:800;
-}
-
-.year-sub{
-  font-size:0.85rem;
-  opacity:0.7;
-}
