@@ -32,10 +32,9 @@ nav_exclude: true
 </script>
 
 <div class="course-header">
-  <h1 class="course-title">📘 Economics of Technology and Management</h1>
+  <h1 class="course-title">💰 Economics of Technology and Management</h1>
+  <div class="title-divider-soft"></div>
 </div>
-
-<div class="title-divider-soft"></div>
 
 ## Overview:
 
@@ -49,7 +48,7 @@ nav_exclude: true
   <tr>
     <td><strong>Description</strong></td>
     <td>
-      
+      The course provides the essential tools to analyze firms’ decision-making processes, focusing on microeconomic foundations, organizational structures, technological innovation strategies, investment evaluation, and financial statement analysis.
     </td>
   </tr>
   <tr>
