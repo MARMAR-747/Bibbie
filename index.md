@@ -147,7 +147,7 @@ raccolto **per anno e per materia**.
 <section class="material-section">
   <div class="material-title">
     📂 <img src="{{ '/assets/images/IT_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
-    <span>Materiale (Triennale in Ingegneria Informatica - UniPa)</span>
+    <span>Materiale Triennale (IT)</span>
   </div>
 
   <!-- 1° anno -->
@@ -156,7 +156,7 @@ raccolto **per anno e per materia**.
       <span class="year-number">1°</span>
       <div>
         <div class="year-main">Primo anno</div>
-        <div class="year-sub">Fondamenti</div>
+        <div class="year-sub">Ingegneria Informatica - uniPa</div>
       </div>
     </div>
 
@@ -177,7 +177,7 @@ raccolto **per anno e per materia**.
       <span class="year-number">2°</span>
       <div>
         <div class="year-main">Secondo anno</div>
-        <div class="year-sub">Matematica applicata & circuiti</div>
+        <div class="year-sub">Ingegneria Informatica - uniPa</div>
       </div>
     </div>
 
@@ -214,7 +214,7 @@ raccolto **per anno e per materia**.
       <span class="year-number">3°</span>
       <div>
         <div class="year-main">Terzo anno</div>
-        <div class="year-sub">Sistemi, reti & controllo</div>
+        <div class="year-sub">Ingegneria Informatica - uniPa</div>
       </div>
     </div>
 
@@ -265,8 +265,8 @@ raccolto **per anno e per materia**.
 <!-- ===================== MAGISTRALE ===================== -->
 <section class="material-section">
   <div class="material-title">
-    📂 <img src="{{ '/assets/images/UK_flag.png' | relative_url }}" width="30" style="vertical-align: middle;">
-    <span>Materiale (Magistrale in Cybersecurity - UniSapienza)</span>
+    📂
+    <span>Materiale Magistrale (ENG)</span>
   </div>
 
   <!-- 1° anno -->
@@ -275,7 +275,7 @@ raccolto **per anno e per materia**.
       <span class="year-number">1°</span>
       <div>
         <div class="year-main">Primo anno</div>
-        <div class="year-sub">Core cybersecurity</div>
+        <div class="year-sub">Cybersecurity - UniSapienza</div>
       </div>
     </div>
 
