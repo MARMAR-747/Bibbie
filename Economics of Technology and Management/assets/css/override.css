@@ -52,7 +52,6 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   margin-left: auto;
 }
 
-<style>
 /* ===== Page layout ===== */
 .course-wrap{
   margin-top: 1rem;
@@ -237,4 +236,3 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.10);
 }
-</style>
