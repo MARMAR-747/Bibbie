@@ -74,7 +74,7 @@ nav_exclude: true
 </table>
 
 ## Materiale disponibile:
-
+<div class="material-table-wrap">
 <table class="table-elegant">
   <thead>
     <tr>
@@ -97,18 +97,17 @@ nav_exclude: true
     </tr>
   </tbody>
 </table>
+</div>
 
 <div class="action-row">
   <a class="btn-soft" href="https://forms.gle/sVfWQ4wJ9Fomwq1E9" target="_blank" rel="noopener noreferrer">
     ⭐ Rate the material of Economics of Technology and Management
   </a>
 
-  <span class="muted-note">📬 To report any errors:&nbsp;
-    <a href="mailto:marcomarino.ci@gmail.com">marcomarino.ci@gmail.com</a>
-  </span>
+  <a class="btn-soft-secondary" href="mailto:marcomarino.ci@gmail.com">
+    📬 To report any errors: marcomarino.ci@gmail.com
+  </a>
 </div>
-
-<br>
 
 <hr style="margin-top: 2rem; margin-bottom: 1rem;">
 
