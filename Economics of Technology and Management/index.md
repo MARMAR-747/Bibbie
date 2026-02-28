@@ -105,10 +105,16 @@ nav_exclude: true
   </a>
 </div>
 
-<hr style="margin-top: 2rem; margin-bottom: 1rem;">
+<div class="page-footer-meta">
+  <div class="meta-item">
+    🔒 <span>All material is released under license</span>
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>.
+  </div>
 
-🔒 All material is released under license [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
-🔗 Last update: {{ site.time | date: "%d/%m/%Y" }}
+  <div class="meta-item">
+    🔗 <span>Last update:</span> <strong>{{ site.time | date: "%d/%m/%Y" }}</strong>
+  </div>
+</div>
 
 {% assign ordine = site.materie_order %}
 {% assign idx = page.order_index | plus: 0 %}
