@@ -49,4 +49,10 @@ nav_order: 4
   <div class="contact-hint">
     Tip: se possibile, indica materia, pagina e un breve contesto — così lo correggo più velocemente.
   </div>
+
+  <a class="contact-btn"
+   href="https://www.linkedin.com/in/marco-marino-44977021/"
+   target="_blank" rel="noopener noreferrer">
+  💼 Connect on LinkedIn
+</a>
 </div>
