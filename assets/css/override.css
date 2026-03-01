@@ -24,7 +24,6 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   font-size: 1.05rem; /* Cambia il valore a piacere */
 }
 
-<style>
 /* ===== Sezioni (IT/UK) ===== */
 .material-section{
   margin-top: 2.2rem;
@@ -143,4 +142,68 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 .course-card:hover .card-arrow{
   opacity:0.9;
 }
-</style>
+
+/* Contacts page */
+.contacts-wrap{
+  margin-top: 1.2rem;
+}
+
+.contacts-title{
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.contacts-divider{
+  display:block;
+  width: 100%;
+  height: 2px;
+  margin: 16px 0 26px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color, #9aa0a6),
+    transparent
+  );
+}
+
+.contacts-lead{
+  margin-top: 0;
+  margin-bottom: 18px;
+  opacity: 0.92;
+  font-weight: 650;
+}
+
+.contacts-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Reuse your soft button style locally (works even if override.css changes) */
+.contact-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  text-decoration: none !important;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(127,127,127,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+.contact-hint{
+  margin-top: 14px;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
