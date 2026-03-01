@@ -32,7 +32,7 @@ nav_exclude: true
 </script>
 
 <div class="course-header">
-  <h1 class="course-title">💰 Economics of Technology and Management</h1>
+  <h1 class="course-title">💻 Practical Network Defense</h1>
   <div class="title-divider-soft"></div>
 </div>
 
@@ -42,24 +42,24 @@ nav_exclude: true
   <tr>
     <td><strong>Professor</strong></td>
     <td>
-      Idiano D'Adamo
+      Angelo Spognardi
     </td>
   </tr>
   <tr>
     <td><strong>Description</strong></td>
     <td>
-      The course provides the essential tools to analyze firms’ decision-making processes, focusing on microeconomic foundations, organizational structures, technological innovation strategies, investment evaluation, and financial statement analysis.
+      The course introduces the fundamental methodologies and tools for protecting computer networks, with strong emphasis on practical application. It covers network attack mechanisms, intrusion detection, traffic monitoring, vulnerability assessment, firewall configuration, and the design of defense-in-depth strategies.
     </td>
   </tr>
   <tr>
     <td><strong>Exam type</strong></td>
     <td>
-      Project (in solo or in pairs) + Oral
+      Homeworks (up to 4 people in a group) + Written exam
     </td>
   </tr>
   <tr>
     <td><strong>Difficulty</strong></td>
-    <td>🟢 Medium-Low 💀💀⚪⚪⚪</td>
+    <td>🔸 Medium 💀💀💀⚪⚪</td>
   </tr>
   <tr>
     <td><strong>Tips</strong></td>
@@ -97,7 +97,7 @@ nav_exclude: true
 
 <div class="action-row">
   <a class="btn-soft" href="https://forms.gle/sVfWQ4wJ9Fomwq1E9" target="_blank" rel="noopener noreferrer">
-    ⭐ Rate the material of Economics of Technology and Management
+    ⭐ Rate the material of Practical Network Defense
   </a>
 
   <a class="btn-soft-secondary" href="mailto:marcomarino.ci@gmail.com">
