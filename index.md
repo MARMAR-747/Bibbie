@@ -305,7 +305,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Network%20Infrastructures/' | relative_url }}">
-        <div class="card-title">Network Infrastructures (SOON)</div>
+        <div class="card-title">Network Infrastructures</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
@@ -321,7 +321,7 @@ raccolto **per anno e per materia**.
       </a>
 
       <a class="course-card" href="{{ '/Practical%20Network%20Defense/' | relative_url }}">
-        <div class="card-title">Practical Network Defense (SOON)</div>
+        <div class="card-title">Practical Network Defense</div>
         <div class="card-meta">
           <span class="cfu-pill">6 CFU</span>
           <span class="card-arrow">→</span>
