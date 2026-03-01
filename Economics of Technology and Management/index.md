@@ -100,8 +100,10 @@ nav_exclude: true
     ⭐ Rate the material of Economics of Technology and Management
   </a>
 
-  <a class="btn-soft-secondary" href="mailto:marcomarino.ci@gmail.com">
-    📬 Report errors
+  <a class="btn-soft-secondary"
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=marcomarino.ci@gmail.com&su=Report%20Error%20-%20Economics%20of%20Technology%20and%20Management&body=Please%20describe%20the%20issue%20here:"
+   target="_blank">
+   📬 Report errors
   </a>
 </div>
 
