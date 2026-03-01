@@ -40,12 +40,6 @@ nav_order: 4
     </a>
 
     <a class="contact-btn"
-       href="mailto:marcomarino.ci@gmail.com?subject=Segnalazione%20errore%20-%20Bibbie"
-       target="_blank" rel="noopener noreferrer">
-      📧 Email (client)
-    </a>
-
-    <a class="contact-btn"
        href="https://instagram.com/marco.marino747"
        target="_blank" rel="noopener noreferrer">
       📸 Instagram: @marco.marino747
