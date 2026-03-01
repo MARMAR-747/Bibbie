@@ -46,7 +46,7 @@ nav_order: 4
     </a>
 
     <a class="contact-btn"
-   href="https://www.linkedin.com/in/marco-marino-44977021/"
+   href="https://www.linkedin.com/in/marco-marino-44977021a/"
    target="_blank" rel="noopener noreferrer">
   💼 Connect on LinkedIn
     </a>
