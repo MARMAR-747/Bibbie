@@ -84,11 +84,11 @@ nav_exclude: true
   <tbody>
     <tr>
       <td>
-        <a class="file-link" href="../Economics of Technology and Management/Bible of Economics of Technology and Management.pdf" target="_blank">BIBLE OF ETM</a>
+        <a class="file-link" href="../Practical Network Defense/Bible of Practical Network Defense.pdf" target="_blank">BIBLE OF PND</a>
       </td>
       <td style="text-align: center;">Theory/Exercises</td>
-      <td style="text-align: center;">31</td>
-      <td style="text-align: center;">Updated 28/02/26</td>
+      <td style="text-align: center;">50</td>
+      <td style="text-align: center;">Updated 01/03/26</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
   </tbody>
@@ -96,7 +96,7 @@ nav_exclude: true
 </div>
 
 <div class="action-row">
-  <a class="btn-soft" href="https://forms.gle/sVfWQ4wJ9Fomwq1E9" target="_blank" rel="noopener noreferrer">
+  <a class="btn-soft" href="https://forms.gle/J7j6xVKH1AD9NF4x9" target="_blank" rel="noopener noreferrer">
     ⭐ Rate the material of Practical Network Defense
   </a>
 
