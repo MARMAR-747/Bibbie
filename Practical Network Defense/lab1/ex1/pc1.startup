@@ -1,4 +1,0 @@
-ip addr flush eth0
-ifdown eth0
-ifup eth0
-
