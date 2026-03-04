@@ -87,8 +87,8 @@ nav_exclude: true
         <a class="file-link" href="../Practical Network Defense/Bible of Practical Network Defense.pdf" target="_blank">BIBLE OF PND</a>
       </td>
       <td style="text-align: center;">Theory/Exercises</td>
-      <td style="text-align: center;">50</td>
-      <td style="text-align: center;">Updated 01/03/26</td>
+      <td style="text-align: center;">60</td>
+      <td style="text-align: center;">Updated 04/03/26</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
   </tbody>
