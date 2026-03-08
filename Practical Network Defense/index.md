@@ -101,7 +101,7 @@ nav_exclude: true
   </a>
 
   <a class="btn-soft-secondary"
-   href="https://mail.google.com/mail/?view=cm&fs=1&to=marcomarino.ci@gmail.com&su=Report%20Error%20-%20Economics%20of%20Technology%20and%20Management&body=Please%20describe%20the%20issue%20here:"
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=marcomarino.ci@gmail.com&su=Report%20Error%20-%20Practical%20Network%20Defense&body=Please%20describe%20the%20issue%20here:"
    target="_blank">
    📬 Report errors
   </a>
