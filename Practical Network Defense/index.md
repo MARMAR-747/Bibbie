@@ -91,7 +91,7 @@ nav_exclude: true
       <td style="text-align: center;">Theory/Exercises</td>
       <td style="text-align: center;">86</td>
       <td style="text-align: center;">Updated 08/03/26</td>
-      <td style="text-align: center;">☆☆☆☆☆ (0)</td>
+      <td style="text-align: center;">⭐⭐⭐⭐⭐ (1)</td>
     </tr>
   </tbody>
 </table>
