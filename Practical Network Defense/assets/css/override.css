@@ -95,6 +95,7 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   border-radius: 0 !important;
   overflow: visible !important;
   margin-top: 10px;
+  table-layout: fixed;   /* <-- AGGIUNGI QUESTA RIGA */
 }
 
 /* Celle */
