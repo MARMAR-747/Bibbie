@@ -74,13 +74,20 @@ nav_exclude: true
 <div class="section-title">Available Material</div>
 <div class="material-table-wrap">
 <table class="table-elegant">
+  <colgroup>
+    <col style="width: 52%;">
+    <col style="width: 16%;">
+    <col style="width: 8%;">
+    <col style="width: 12%;">
+    <col style="width: 12%;">
+  </colgroup>
   <thead>
     <tr>
-      <th style="width: 50%; text-align: center;">Title</th>
-      <th style="width: 12%; text-align: center;">Type</th>
-      <th style="width: 6%; text-align: center;">Pages</th>
-      <th style="width: 10%; text-align: center;">Status</th>
-      <th style="width: 22%; text-align: center;">Score</th>
+      <th style="text-align: center;">Title</th>
+      <th style="text-align: center;">Type</th>
+      <th style="text-align: center;">Pages</th>
+      <th style="text-align: center;">Status</th>
+      <th style="text-align: center;">Score</th>
     </tr>
   </thead>
   <tbody>
