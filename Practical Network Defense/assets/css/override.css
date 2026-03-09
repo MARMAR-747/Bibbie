@@ -90,12 +90,13 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 /* ===== Tables: elegant, NO outer box ===== */
 .table-elegant{
   width: 100%;
-  border-collapse: collapse;   /* niente “contenitore” */
+  border-collapse: collapse;
   border: none !important;
   border-radius: 0 !important;
   overflow: visible !important;
-  margin-top: 10px;
-  table-layout: fixed;   /* <-- AGGIUNGI QUESTA RIGA */
+  margin-top: 0 !important;
+  table-layout: auto;   /* <-- NON fixed */
+  display: table;
 }
 
 /* Celle */
@@ -357,4 +358,40 @@ body, .site-nav, .site-header, .site-footer, .main-content{
 
 .page-footer-meta a:hover{
   text-decoration: underline !important;
+}
+
+/* ===== Material table layout ===== */
+
+.material-table-wrap .table-elegant th,
+.material-table-wrap .table-elegant td{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.material-table-wrap .table-elegant th:nth-child(1),
+.material-table-wrap .table-elegant td:nth-child(1){
+  width: 32%;
+}
+
+.material-table-wrap .table-elegant th:nth-child(2),
+.material-table-wrap .table-elegant td:nth-child(2){
+  width: 22%;
+}
+
+.material-table-wrap .table-elegant th:nth-child(3),
+.material-table-wrap .table-elegant td:nth-child(3){
+  width: 10%;
+  white-space: nowrap;
+}
+
+.material-table-wrap .table-elegant th:nth-child(4),
+.material-table-wrap .table-elegant td:nth-child(4){
+  width: 18%;
+  white-space: nowrap;
+}
+
+.material-table-wrap .table-elegant th:nth-child(5),
+.material-table-wrap .table-elegant td:nth-child(5){
+  width: 18%;
+  white-space: nowrap;
 }
