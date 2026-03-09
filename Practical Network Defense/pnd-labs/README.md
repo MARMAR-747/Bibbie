@@ -1,3 +1,9 @@
+---
+layout: default
+title: PND-LABS
+nav_exclude: true
+---
+
 # pnd-labs
 Kathara labs for Practical Network Defense course at Sapienza
 
