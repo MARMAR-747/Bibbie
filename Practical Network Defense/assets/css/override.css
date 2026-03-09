@@ -143,6 +143,16 @@ body, .site-nav, .site-header, .site-footer, .main-content{
   padding-top: 0 !important;
 }
 
+.material-table-wrap td,
+.material-table-wrap th{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.material-table-wrap td{
+  white-space: nowrap;
+}
+
 .table-elegant{
   margin-top: 0 !important; /* già dovrebbe essere 10px: lo forziamo a 0 */
 }
