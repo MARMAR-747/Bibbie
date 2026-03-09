@@ -76,11 +76,11 @@ nav_exclude: true
 <table class="table-elegant">
   <thead>
     <tr>
-      <th style="width: 60%; text-align: center;">Title</th>
+      <th style="width: 50%; text-align: center;">Title</th>
       <th style="width: 12%; text-align: center;">Type</th>
       <th style="width: 6%; text-align: center;">Pages</th>
       <th style="width: 10%; text-align: center;">Status</th>
-      <th style="width: 12%; text-align: center;">Score</th>
+      <th style="width: 22%; text-align: center;">Score</th>
     </tr>
   </thead>
   <tbody>
