@@ -75,19 +75,19 @@ nav_exclude: true
 <div class="material-table-wrap">
 <table class="table-elegant">
   <colgroup>
-    <col style="width: 30%;">
-    <col style="width: 20%;">
-    <col style="width: 10%;">
-    <col style="width: 10%;">
-    <col style="width: 20%;">
+  <col style="width: 40%;">
+  <col style="width: 20%;">
+  <col style="width: 8%;">
+  <col style="width: 17%;">
+  <col style="width: 15%;">
   </colgroup>
   <thead>
     <tr>
-      <th style="text-align: center;">Title</th>
-      <th style="text-align: center;">Type</th>
-      <th style="text-align: center;">Pages</th>
-      <th style="text-align: center;">Status</th>
-      <th style="text-align: center;">Score</th>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Pages</th>
+      <th>Status</th>
+      <th>Score</th>
     </tr>
   </thead>
   <tbody>
@@ -95,10 +95,10 @@ nav_exclude: true
       <td>
         <a class="file-link" href="../Practical Network Defense/Bible of Practical Network Defense.pdf" target="_blank">BIBLE OF PND</a>
       </td>
-      <td style="text-align: center;">Theory/Exercises</td>
-      <td style="text-align: center;">86</td>
-      <td style="text-align: center;">Updated 08/03/26</td>
-      <td style="text-align: center;">⭐⭐⭐⭐⭐ (1)</td>
+      <td>Theory/Exercises</td>
+      <td>86</td>
+      <td>Updated 08/03/26</td>
+      <td>⭐⭐⭐⭐⭐ (1)</td>
     </tr>
   </tbody>
 </table>
