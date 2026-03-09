@@ -75,11 +75,11 @@ nav_exclude: true
 <div class="material-table-wrap">
 <table class="table-elegant">
   <colgroup>
-    <col style="width: 52%;">
-    <col style="width: 16%;">
-    <col style="width: 8%;">
-    <col style="width: 12%;">
-    <col style="width: 12%;">
+    <col style="width: 30%;">
+    <col style="width: 20%;">
+    <col style="width: 10%;">
+    <col style="width: 10%;">
+    <col style="width: 20%;">
   </colgroup>
   <thead>
     <tr>
