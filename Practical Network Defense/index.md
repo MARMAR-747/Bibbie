@@ -4,6 +4,8 @@ title: Practical Network Defense
 nav_exclude: true
 ---
 
+<meta http-equiv="refresh" content="300">
+
 <div class="nav-buttons">
   <a href="/Bibbie/Economics of Technology and Management/" class="nav-button right">➡️ ETM</a>
 </div>
