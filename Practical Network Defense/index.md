@@ -74,13 +74,6 @@ nav_exclude: true
 <div class="section-title">Available Material</div>
 <div class="material-table-wrap">
 <table class="table-elegant">
-  <colgroup>
-  <col style="width: 40%;">
-  <col style="width: 20%;">
-  <col style="width: 8%;">
-  <col style="width: 17%;">
-  <col style="width: 15%;">
-  </colgroup>
   <thead>
     <tr>
       <th>Title</th>
