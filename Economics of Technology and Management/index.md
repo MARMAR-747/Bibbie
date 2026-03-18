@@ -87,8 +87,8 @@ nav_exclude: true
         <a class="file-link" href="../Economics of Technology and Management/Bible of Economics of Technology and Management.pdf" target="_blank">BIBLE OF ETM</a>
       </td>
       <td style="text-align: center;">Theory/Exercises</td>
-      <td style="text-align: center;">31</td>
-      <td style="text-align: center;">Updated 28/02/26</td>
+      <td style="text-align: center;">61</td>
+      <td style="text-align: center;">Updated 18/03/26</td>
       <td style="text-align: center;">☆☆☆☆☆ (0)</td>
     </tr>
   </tbody>
